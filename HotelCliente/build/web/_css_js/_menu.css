@@ -1,0 +1,15 @@
+
+#lista-menu li a {    
+    color: white;
+}
+
+#lista-menu li {
+    display: inline-block;
+    margin-right: 10px; /* Ajusta este valor según tu preferencia */
+}
+
+#lista-menu li:last-child {
+    margin-right: 0; /* Elimina el margen derecho del último elemento para evitar un espacio extra */
+}
+
+

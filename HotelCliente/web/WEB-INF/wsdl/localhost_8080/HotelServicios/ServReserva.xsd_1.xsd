@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://servicio/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://servicio/">
+
+<xs:element name="buscarReserva" type="tns:buscarReserva"/>
+
+<xs:element name="buscarReservaResponse" type="tns:buscarReservaResponse"/>
+
+<xs:element name="listarReservas" type="tns:listarReservas"/>
+
+<xs:element name="listarReservasResponse" type="tns:listarReservasResponse"/>
+
+<xs:element name="registrarReserva" type="tns:registrarReserva"/>
+
+<xs:element name="registrarReservaResponse" type="tns:registrarReservaResponse"/>
+
+<xs:complexType name="listarReservas">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listarReservasResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:reserva" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="reserva">
+<xs:sequence>
+<xs:element name="cli" type="tns:cliente" minOccurs="0"/>
+<xs:element name="codRes" type="xs:string" minOccurs="0"/>
+<xs:element name="fecCreacion" type="xs:string" minOccurs="0"/>
+<xs:element name="fecFin" type="xs:string" minOccurs="0"/>
+<xs:element name="fecInicio" type="xs:string" minOccurs="0"/>
+<xs:element name="hab" type="tns:habitacion" minOccurs="0"/>
+<xs:element name="imp" type="xs:double" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cliente">
+<xs:sequence>
+<xs:element name="dni" type="xs:string" minOccurs="0"/>
+<xs:element name="nom" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="habitacion">
+<xs:sequence>
+<xs:element name="cod" type="xs:string" minOccurs="0"/>
+<xs:element name="estado" type="xs:string" minOccurs="0"/>
+<xs:element name="nom" type="xs:string" minOccurs="0"/>
+<xs:element name="pre" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarReserva">
+<xs:sequence>
+<xs:element name="dni" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarReservaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="registrarReserva">
+<xs:sequence>
+<xs:element name="hab" type="xs:string" minOccurs="0"/>
+<xs:element name="cli" type="xs:string" minOccurs="0"/>
+<xs:element name="fecInicio" type="xs:string" minOccurs="0"/>
+<xs:element name="fecFin" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="registrarReservaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

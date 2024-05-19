@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/HotelServicios/Servicios?wsdl" uri="wsdl/localhost_8080/HotelServicios/Servicios.wsdl"/>
+    <system systemId="http://localhost:8080/HotelServicios/Servicios?xsd=1" uri="wsdl/localhost_8080/HotelServicios/Servicios.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/HotelServicios/ServHabitacion?wsdl" uri="wsdl/localhost_8080/HotelServicios/ServHabitacion.wsdl"/>
+    <system systemId="http://localhost:8080/HotelServicios/ServHabitacion?xsd=1" uri="wsdl/localhost_8080/HotelServicios/ServHabitacion.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/HotelServicios/ServReserva?wsdl" uri="wsdl/localhost_8080/HotelServicios/ServReserva.wsdl"/>
+    <system systemId="http://localhost:8080/HotelServicios/ServReserva?xsd=1" uri="wsdl/localhost_8080/HotelServicios/ServReserva.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/HotelServiciosv3/ServHabitacion?wsdl" uri="wsdl/localhost_8080/HotelServiciosv3/ServHabitacion.wsdl"/>
+    <system systemId="http://localhost:8080/HotelServiciosv3/ServHabitacion?xsd=1" uri="wsdl/localhost_8080/HotelServiciosv3/ServHabitacion.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/HotelServiciosv3/Servicios?wsdl" uri="wsdl/localhost_8080/HotelServiciosv3/Servicios.wsdl"/>
+    <system systemId="http://localhost:8080/HotelServiciosv3/Servicios?xsd=1" uri="wsdl/localhost_8080/HotelServiciosv3/Servicios.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/HotelServiciosv3/ServReserva?wsdl" uri="wsdl/localhost_8080/HotelServiciosv3/ServReserva.wsdl"/>
+    <system systemId="http://localhost:8080/HotelServiciosv3/ServReserva?xsd=1" uri="wsdl/localhost_8080/HotelServiciosv3/ServReserva.xsd_1.xsd"/>
+</catalog>
