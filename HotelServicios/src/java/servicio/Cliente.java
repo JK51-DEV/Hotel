@@ -1,25 +1,22 @@
 package servicio;
 
 public class Cliente {
-    private String dni, nom;
+    private int dni;
+    private String  nom;
 
     public Cliente() {
     }
 
-    public Cliente(String dni, String nom) {
+    public Cliente(int dni, String nom) {
         this.dni = dni;
         this.nom = nom;
     }
 
-    public Cliente(String dni) {
-        this.dni = dni;
-    }
-
-    public String getDni() {
+    public int getDni() {
         return dni;
     }
 
-    public void setDni(String dni) {
+    public void setDni(int dni) {
         this.dni = dni;
     }
 
@@ -30,4 +27,7 @@ public class Cliente {
     public void setNom(String nom) {
         this.nom = nom;
     }
+
+    
+    
 }

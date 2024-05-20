@@ -20,7 +20,7 @@ public class ServReserva {
         if (nom != null) {
             Cliente c=new Cliente();
             
-            return nom;
+            return nom+" Si tiene reservas";
         }else{
             res="No existe reserva";
         }
@@ -30,31 +30,29 @@ public class ServReserva {
     /**
      * Web service operation
      */
-   @WebMethod(operationName = "registrarReserva")
-public String registrarReserva(@WebParam(name = "hab") String hab, @WebParam(name = "cli") String cli, @WebParam(name = "fecInicio") String fecInicio, @WebParam(name = "fecFin") String fecFin) {
-    Habitacion habi = DaoHabitacion.buscarHabitacion(hab);
-    Cliente clie = DaoCliente.buscar(cli);
+    @WebMethod(operationName = "registrarReserva")
+    public String registrarReserva(@WebParam(name = "hab") String hab, @WebParam(name = "cli") int cli, @WebParam(name = "fecInicio") String fecInicio, @WebParam(name = "fecFin") String fecFin) {
+        Habitacion habi = DaoHabitacion.buscarHabitacion(hab);
+        Cliente clie = DaoCliente.buscar(cli);
 
-    if (habi == null) {
-        return "No se encontró la habitación con el código: " + hab;
-    }
-    if (clie == null) {
-        return "No se encontró el cliente con el DNI: " + cli;
-    }
+        if (habi == null) {
+            return "No se encontró la habitación con el código: " + hab;
+        }
+        if (clie == null) {
+            return "No se encontró el cliente con el DNI: " + cli;
+        }
 
-    Reserva r = new Reserva();
-    r.setHab(habi);
-    r.setCli(clie);
-    r.setFecInicio(fecInicio);
-    r.setFecFin(fecFin);
+        Reserva r = new Reserva(habi, clie, fecInicio, fecFin);
 
-    String msg = DaoReserva.grabarReservas(r);
+        String msg = DaoReserva.grabarReservas(r);
 
-    if (msg == null) {
-        DaoReserva.cambioEstado(habi);
-        return "Se guardó la reserva correctamente";
-    } else {
-        return "No se pudo guardar la reserva: " + msg;
-    }
-}
+        if (msg == null) {
+            DaoReserva.cambioEstado(habi);
+            return "Se guardó la reserva correctamente";
+        } else {
+            return "No se pudo guardar la reserva: " + msg;
+        }
+        }
+    
+
     }

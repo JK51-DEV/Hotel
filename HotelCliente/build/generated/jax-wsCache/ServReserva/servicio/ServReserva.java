@@ -27,6 +27,18 @@ public interface ServReserva {
 
     /**
      * 
+     * @return
+     *     returns java.util.List<servicio.Reserva>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listarReservas", targetNamespace = "http://servicio/", className = "servicio.ListarReservas")
+    @ResponseWrapper(localName = "listarReservasResponse", targetNamespace = "http://servicio/", className = "servicio.ListarReservasResponse")
+    @Action(input = "http://servicio/ServReserva/listarReservasRequest", output = "http://servicio/ServReserva/listarReservasResponse")
+    public List<Reserva> listarReservas();
+
+    /**
+     * 
      * @param cli
      * @param hab
      * @param fecFin
@@ -48,18 +60,6 @@ public interface ServReserva {
         String fecInicio,
         @WebParam(name = "fecFin", targetNamespace = "")
         String fecFin);
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<servicio.Reserva>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listarReservas", targetNamespace = "http://servicio/", className = "servicio.ListarReservas")
-    @ResponseWrapper(localName = "listarReservasResponse", targetNamespace = "http://servicio/", className = "servicio.ListarReservasResponse")
-    @Action(input = "http://servicio/ServReserva/listarReservasRequest", output = "http://servicio/ServReserva/listarReservasResponse")
-    public List<Reserva> listarReservas();
 
     /**
      * 

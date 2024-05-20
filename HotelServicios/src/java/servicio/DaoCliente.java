@@ -32,11 +32,11 @@ public class DaoCliente {
 }
 
     
-    public static Cliente buscar(String dni){
-        String sql = "select * from cliente where dni='"+dni+"'";
+    public static Cliente buscar(int dni){
+        String sql = "select * from cliente where dni="+dni+"";
         Object[]f=Acceso.buscar(sql);
         if(f!=null){
-            Cliente c = new Cliente(f[0].toString(),f[1].toString());
+            Cliente c = new Cliente(Integer.parseInt(f[0].toString()),f[1].toString());
             return c;
         }
         return null;
@@ -49,7 +49,7 @@ public class DaoCliente {
         for (int i = 0; i < tabla.size(); i++) {
             Object[]f=(Object[])tabla.get(i);
             Cliente c=new Cliente();
-            c.setDni(f[0].toString());
+            c.setDni(Integer.parseInt(f[0].toString()));
             c.setNom(f[1].toString());
             lis.add(c);
         }
@@ -57,7 +57,7 @@ public class DaoCliente {
     }
     
     public static String eliminar(String dni){
-        String sql = "delete from cliente where dni='"+dni+"'";
+        String sql = "delete from cliente where dni="+dni+"";
         return Acceso.ejecutar(sql);
     }
     

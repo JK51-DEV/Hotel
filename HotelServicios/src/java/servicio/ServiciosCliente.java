@@ -17,15 +17,6 @@ public class ServiciosCliente {
         return pres.grabar(dni, nom);
     }
 
-
-    @WebMethod(operationName = "buscarCliente")
-    public String buscarCliente(@WebParam(name = "dni") String dni) {
-        String res;
-        Cliente nom=DaoCliente.buscar(dni);
-        res= "DNI: "+ nom.getDni()+ " Nombre: "+ nom.getNom();
-        return res;
-    }
-
     @WebMethod(operationName = "listarCliente")
     public List<Cliente> listarCliente() {
         return DaoCliente.listar();
@@ -62,5 +53,14 @@ public String buscarNombre(@WebParam(name = "dni") String dni) {
     DaoCliente daoCliente = new DaoCliente();
     return daoCliente.buscarNombre(dni);
 }
+
+    @WebMethod(operationName = "buscarCliente")
+    public String buscarCliente(@WebParam(name = "dni") int dni) {
+        String res;
+        Cliente nom=DaoCliente.buscar(dni);
+        res= "DNI: "+ nom.getDni()+ " Nombre: "+ nom.getNom();
+        return res;
+    }
+
 
 }

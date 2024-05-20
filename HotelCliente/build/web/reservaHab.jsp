@@ -58,6 +58,7 @@
                         <a class="btn btn-primary" href="/HotelCliente/vistaHabitaciones.jsp">Cancelar</a>
                         <br><br>
                         <button class="btn btn-info" type="button" onclick="RegistrarReserva()">Registrar</button>
+<!--                        <button class="btn btn-info" type="button" onclick="location.href = 'detalle_reserva.jsp'">Registrar</button>-->
                     </td>
                 </tr>
             </table>
