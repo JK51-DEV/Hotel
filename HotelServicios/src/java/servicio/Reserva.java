@@ -5,8 +5,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
-import static servicio.DaoReserva.listarReservas;
 
 public class Reserva {
     private String codRes;
@@ -18,14 +16,15 @@ public class Reserva {
 
     public Reserva() {
     }
-
+    
     public String getFecha(){
         Date dat=new Date();
          SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         return sdf.format(dat);
     }
 
-    public Reserva( Habitacion hab, Cliente cli, String fecInicio, String fecFin) {
+    public Reserva(String codRes, Habitacion hab, Cliente cli, String fecInicio, String fecFin) {
+        this.codRes = codRes;
         this.hab = hab;
         this.cli = cli;
         this.fecInicio = fecInicio;
@@ -44,14 +43,10 @@ public class Reserva {
     }
 
     public String getCodRes() {
-        List<Reserva> reservas = listarReservas();
-        int siguienteNumero = reservas.size() + 1;
-        codRes = String.format("R%03d", siguienteNumero);
         return codRes;
     }
 
     public void setCodRes(String codRes) {
-        
         this.codRes = codRes;
     }
 

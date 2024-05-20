@@ -27,30 +27,6 @@ public interface ServHabitacion {
 
     /**
      * 
-     * @param estado
-     * @param pre
-     * @param cod
-     * @param nom
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "registrarHabitacion", targetNamespace = "http://servicio/", className = "servicio.RegistrarHabitacion")
-    @ResponseWrapper(localName = "registrarHabitacionResponse", targetNamespace = "http://servicio/", className = "servicio.RegistrarHabitacionResponse")
-    @Action(input = "http://servicio/ServHabitacion/registrarHabitacionRequest", output = "http://servicio/ServHabitacion/registrarHabitacionResponse")
-    public String registrarHabitacion(
-        @WebParam(name = "cod", targetNamespace = "")
-        String cod,
-        @WebParam(name = "nom", targetNamespace = "")
-        String nom,
-        @WebParam(name = "estado", targetNamespace = "")
-        String estado,
-        @WebParam(name = "pre", targetNamespace = "")
-        String pre);
-
-    /**
-     * 
      * @return
      *     returns java.util.List<servicio.Habitacion>
      */
@@ -75,5 +51,29 @@ public interface ServHabitacion {
     public String buscarHabitacion(
         @WebParam(name = "cod", targetNamespace = "")
         String cod);
+
+    /**
+     * 
+     * @param estado
+     * @param pre
+     * @param cod
+     * @param nom
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "registrarHabitacion", targetNamespace = "http://servicio/", className = "servicio.RegistrarHabitacion")
+    @ResponseWrapper(localName = "registrarHabitacionResponse", targetNamespace = "http://servicio/", className = "servicio.RegistrarHabitacionResponse")
+    @Action(input = "http://servicio/ServHabitacion/registrarHabitacionRequest", output = "http://servicio/ServHabitacion/registrarHabitacionResponse")
+    public String registrarHabitacion(
+        @WebParam(name = "cod", targetNamespace = "")
+        String cod,
+        @WebParam(name = "nom", targetNamespace = "")
+        String nom,
+        @WebParam(name = "estado", targetNamespace = "")
+        String estado,
+        @WebParam(name = "pre", targetNamespace = "")
+        String pre);
 
 }
