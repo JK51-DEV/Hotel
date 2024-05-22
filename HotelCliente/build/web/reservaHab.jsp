@@ -44,12 +44,13 @@
                 <tr>
                     <td>Cliente:</td>
                     <td>
-                        <select class="form-control" id="cat" name="cat" size="1" required>
+                        <input class="form-control" type="text" value="${txtdni}" id="cat" name="cat" required>
+                       <%-- <select class="form-control" id="cat" name="cat" size="1" required>
                             <option value="">Seleccione</option>
                             <% for (Cliente c : cat) {%>
                             <option value="<%=c.getDni()%>" ><%=c.getDni()%></option>
                             <%  }%>
-                        </select>
+                        </select>--%>
                     </td>
                     <td>F. de inicio: </td>
                     <td><input class="form-control" type="date" id="fini" name="fini" required></td>

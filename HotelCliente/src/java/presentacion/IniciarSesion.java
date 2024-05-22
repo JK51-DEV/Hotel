@@ -59,7 +59,7 @@ public class IniciarSesion extends HttpServlet {
             if(iniciarSesion == true){ //EL usuario puede accesar por que esta registrado
                 out.println("alert('¡Bienvenido a mi Página! \\nIniciaste sesion como: "+txtnom+"')");
                 /*out.println("location = 'vistaReservas.jsp'");*/
-                response.sendRedirect("validarCliente.jsp");
+                response.sendRedirect("vistaHabitaciones.jsp");
                 
                 String nombre = buscarNombre(txtdni);
                 //System.out.println("El valor del nombre en el SERVLET es: " + nombre);
