@@ -11,8 +11,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Nuevo dispositivo</title>
+        <title>Reserva de Habitacion</title>
         <link href="_sweetAlert/sweetalert.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui/1.12.1/i18n/datepicker-es.js"></script>
         <%@include file="_referencias.jsp" %> 
         <style>
             td { padding: 10px;}
@@ -48,9 +52,9 @@
                         </select>
                     </td>
                     <td>F. de inicio: </td>
-                    <td><input class="form-control" type="text" id="fini" name="fini" required></td>
+                    <td><input class="form-control" type="date" id="fini" name="fini" required></td>
                     <td>F. de fin </td>
-                    <td><input class="form-control" type="text" id="ffin" name="ffin" required></td>
+                    <td><input class="form-control" type="date" id="ffin" name="ffin" required></td>
                 </tr>
                 <tr>
                     <td colspan="0"></td>
@@ -62,23 +66,35 @@
                 </tr>
             </table>
         </div>
+                        
+        <script src="_sweetAlert/sweetalert.js" type="text/javascript"></script>
+        <script src="_sweetAlert/sweetalert.min.js" type="text/javascript"></script>
+        <script>
+            $(function() {
+                $.datepicker.setDefaults($.datepicker.regional['es']);
+                $('#fini').datepicker({
+                    dateFormat: 'dd/mm/yy'
+                });
+                $('#ffin').datepicker({
+                    dateFormat: 'dd/mm/yy'
+                });
+            });
+
+            RegistrarReserva = function () {
+                $.post('ControlReservas', {
+                    hab: $('#hab').val(),
+                    cat: $('#cat').val(),
+                    fini: $('#fini').val(),
+                    ffin: $('#ffin').val()
+                }, function (res) {
+                    swal("Bien hecho!", res, "success");
+                    setTimeout(function () {
+                        window.location = '/HotelCliente/vistaReservas.jsp';
+                    }, 1200);
+                });
+            };
+        </script>
     </body>
-    <script src="_sweetAlert/sweetalert.js" type="text/javascript"></script>
-    <script src="_sweetAlert/sweetalert.min.js" type="text/javascript"></script>
-    <script>
-                            RegistrarReserva = function () {
-                                $.post('ControlReservas', {
-                                    hab: $('#hab').val(),
-                                    cat: $('#cat').val(),
-                                    fini: $('#fini').val(),
-                                    ffin: $('#ffin').val()
-                                }, function (res) {
-                                    swal("Bien hecho!", res, "success");
-                                    setTimeout(function () {
-                                        window.location = '/HotelCliente/vistaReservas.jsp';
-                                    }, 1200);
-                                });
-                            };
-    </script>
+    
 </html>
 

@@ -45,16 +45,34 @@ public interface ServiciosCliente {
 
     /**
      * 
+     * @param nom
+     * @param dni
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "buscarUsuarioInicioSesion", targetNamespace = "http://servicio/", className = "servicio.BuscarUsuarioInicioSesion")
+    @ResponseWrapper(localName = "buscarUsuarioInicioSesionResponse", targetNamespace = "http://servicio/", className = "servicio.BuscarUsuarioInicioSesionResponse")
+    @Action(input = "http://servicio/ServiciosCliente/buscarUsuarioInicioSesionRequest", output = "http://servicio/ServiciosCliente/buscarUsuarioInicioSesionResponse")
+    public boolean buscarUsuarioInicioSesion(
+        @WebParam(name = "dni", targetNamespace = "")
+        String dni,
+        @WebParam(name = "nom", targetNamespace = "")
+        String nom);
+
+    /**
+     * 
      * @param dni
      * @return
      *     returns java.lang.String
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "buscarCliente", targetNamespace = "http://servicio/", className = "servicio.BuscarCliente")
-    @ResponseWrapper(localName = "buscarClienteResponse", targetNamespace = "http://servicio/", className = "servicio.BuscarClienteResponse")
-    @Action(input = "http://servicio/ServiciosCliente/buscarClienteRequest", output = "http://servicio/ServiciosCliente/buscarClienteResponse")
-    public String buscarCliente(
+    @RequestWrapper(localName = "buscarNombre", targetNamespace = "http://servicio/", className = "servicio.BuscarNombre")
+    @ResponseWrapper(localName = "buscarNombreResponse", targetNamespace = "http://servicio/", className = "servicio.BuscarNombreResponse")
+    @Action(input = "http://servicio/ServiciosCliente/buscarNombreRequest", output = "http://servicio/ServiciosCliente/buscarNombreResponse")
+    public String buscarNombre(
         @WebParam(name = "dni", targetNamespace = "")
         String dni);
 
@@ -78,10 +96,10 @@ public interface ServiciosCliente {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "elmininarCliente", targetNamespace = "http://servicio/", className = "servicio.ElmininarCliente")
-    @ResponseWrapper(localName = "elmininarClienteResponse", targetNamespace = "http://servicio/", className = "servicio.ElmininarClienteResponse")
-    @Action(input = "http://servicio/ServiciosCliente/elmininarClienteRequest", output = "http://servicio/ServiciosCliente/elmininarClienteResponse")
-    public String elmininarCliente(
+    @RequestWrapper(localName = "buscarCliente", targetNamespace = "http://servicio/", className = "servicio.BuscarCliente")
+    @ResponseWrapper(localName = "buscarClienteResponse", targetNamespace = "http://servicio/", className = "servicio.BuscarClienteResponse")
+    @Action(input = "http://servicio/ServiciosCliente/buscarClienteRequest", output = "http://servicio/ServiciosCliente/buscarClienteResponse")
+    public String buscarCliente(
         @WebParam(name = "dni", targetNamespace = "")
         String dni);
 
@@ -93,10 +111,10 @@ public interface ServiciosCliente {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "buscarNombre", targetNamespace = "http://servicio/", className = "servicio.BuscarNombre")
-    @ResponseWrapper(localName = "buscarNombreResponse", targetNamespace = "http://servicio/", className = "servicio.BuscarNombreResponse")
-    @Action(input = "http://servicio/ServiciosCliente/buscarNombreRequest", output = "http://servicio/ServiciosCliente/buscarNombreResponse")
-    public String buscarNombre(
+    @RequestWrapper(localName = "elmininarCliente", targetNamespace = "http://servicio/", className = "servicio.ElmininarCliente")
+    @ResponseWrapper(localName = "elmininarClienteResponse", targetNamespace = "http://servicio/", className = "servicio.ElmininarClienteResponse")
+    @Action(input = "http://servicio/ServiciosCliente/elmininarClienteRequest", output = "http://servicio/ServiciosCliente/elmininarClienteResponse")
+    public String elmininarCliente(
         @WebParam(name = "dni", targetNamespace = "")
         String dni);
 
@@ -113,24 +131,6 @@ public interface ServiciosCliente {
     @ResponseWrapper(localName = "autenticarClienteResponse", targetNamespace = "http://servicio/", className = "servicio.AutenticarClienteResponse")
     @Action(input = "http://servicio/ServiciosCliente/autenticarClienteRequest", output = "http://servicio/ServiciosCliente/autenticarClienteResponse")
     public boolean autenticarCliente(
-        @WebParam(name = "dni", targetNamespace = "")
-        String dni,
-        @WebParam(name = "nom", targetNamespace = "")
-        String nom);
-
-    /**
-     * 
-     * @param nom
-     * @param dni
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "buscarUsuarioInicioSesion", targetNamespace = "http://servicio/", className = "servicio.BuscarUsuarioInicioSesion")
-    @ResponseWrapper(localName = "buscarUsuarioInicioSesionResponse", targetNamespace = "http://servicio/", className = "servicio.BuscarUsuarioInicioSesionResponse")
-    @Action(input = "http://servicio/ServiciosCliente/buscarUsuarioInicioSesionRequest", output = "http://servicio/ServiciosCliente/buscarUsuarioInicioSesionResponse")
-    public boolean buscarUsuarioInicioSesion(
         @WebParam(name = "dni", targetNamespace = "")
         String dni,
         @WebParam(name = "nom", targetNamespace = "")

@@ -4,12 +4,6 @@
 <xsd:import namespace="http://servicio/" schemaLocation="http://localhost:8080/HotelServicios/ServReserva?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="registrarReserva">
-<part name="parameters" element="tns:registrarReserva"/>
-</message>
-<message name="registrarReservaResponse">
-<part name="parameters" element="tns:registrarReservaResponse"/>
-</message>
 <message name="listarReservas">
 <part name="parameters" element="tns:listarReservas"/>
 </message>
@@ -22,11 +16,13 @@
 <message name="buscarReservaResponse">
 <part name="parameters" element="tns:buscarReservaResponse"/>
 </message>
+<message name="registrarReserva">
+<part name="parameters" element="tns:registrarReserva"/>
+</message>
+<message name="registrarReservaResponse">
+<part name="parameters" element="tns:registrarReservaResponse"/>
+</message>
 <portType name="ServReserva">
-<operation name="registrarReserva">
-<input wsam:Action="http://servicio/ServReserva/registrarReservaRequest" message="tns:registrarReserva"/>
-<output wsam:Action="http://servicio/ServReserva/registrarReservaResponse" message="tns:registrarReservaResponse"/>
-</operation>
 <operation name="listarReservas">
 <input wsam:Action="http://servicio/ServReserva/listarReservasRequest" message="tns:listarReservas"/>
 <output wsam:Action="http://servicio/ServReserva/listarReservasResponse" message="tns:listarReservasResponse"/>
@@ -35,18 +31,13 @@
 <input wsam:Action="http://servicio/ServReserva/buscarReservaRequest" message="tns:buscarReserva"/>
 <output wsam:Action="http://servicio/ServReserva/buscarReservaResponse" message="tns:buscarReservaResponse"/>
 </operation>
+<operation name="registrarReserva">
+<input wsam:Action="http://servicio/ServReserva/registrarReservaRequest" message="tns:registrarReserva"/>
+<output wsam:Action="http://servicio/ServReserva/registrarReservaResponse" message="tns:registrarReservaResponse"/>
+</operation>
 </portType>
 <binding name="ServReservaPortBinding" type="tns:ServReserva">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="registrarReserva">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
 <operation name="listarReservas">
 <soap:operation soapAction=""/>
 <input>
@@ -57,6 +48,15 @@
 </output>
 </operation>
 <operation name="buscarReserva">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="registrarReserva">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

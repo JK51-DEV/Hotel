@@ -5,26 +5,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DaoReserva {
-    public static List<Reserva>listarReservas(){
-        String sql="select * from reserva";
-        List tabla=Acceso.listar(sql);
-        List lis=new ArrayList();
-        for(int i=0;i<tabla.size();i++){
-            Object[]f=(Object[])tabla.get(i); 
-            Reserva res=new Reserva();
-            Cliente cli = DaoCliente.buscar(f[1].toString());
-            res.setCli(cli);
-            Habitacion hab = DaoHabitacion.buscarHabitacionCOD(f[2].toString());
-            res.setHab(hab);         
-            res.setCodRes(f[0].toString());
-            res.setFecCreacion(f[3].toString());
-            res.setFecInicio(f[4].toString());
-            res.setFecFin(f[5].toString());
-            res.setImp(Double.parseDouble(f[6].toString()));
-            lis.add(res);
-        }
-        return lis;
+    public static List<Reserva> listarReservas() {
+    String sql = "select * from reserva";
+    List tabla = Acceso.listar(sql);
+    List lis = new ArrayList();
+    for (int i = 0; i < tabla.size(); i++) {
+        Object[] f = (Object[]) tabla.get(i);
+        Reserva res = new Reserva();
+        Cliente cli = DaoCliente.buscar(f[1].toString());
+        res.setCli(cli);
+        Habitacion hab = DaoHabitacion.buscarHabitacionCOD(f[2].toString());
+        res.setHab(hab);
+        res.setCodRes(f[0].toString());
+        res.setFecCreacion(f[3].toString()); // Asignar la fecha de creación desde la base de datos
+        res.setFecInicio(f[4].toString());
+        res.setFecFin(f[5].toString());
+        res.setImp(Double.parseDouble(f[6].toString()));
+        lis.add(res);
     }
+    return lis;
+}
     
     public static String buscarReserva(String dni){
         String sql="select * from reserva where DNI_CLIENTE='"+dni+"'";

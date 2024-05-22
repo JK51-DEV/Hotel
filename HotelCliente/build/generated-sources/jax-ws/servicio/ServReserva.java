@@ -27,30 +27,6 @@ public interface ServReserva {
 
     /**
      * 
-     * @param cli
-     * @param hab
-     * @param fecFin
-     * @param fecInicio
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "registrarReserva", targetNamespace = "http://servicio/", className = "servicio.RegistrarReserva")
-    @ResponseWrapper(localName = "registrarReservaResponse", targetNamespace = "http://servicio/", className = "servicio.RegistrarReservaResponse")
-    @Action(input = "http://servicio/ServReserva/registrarReservaRequest", output = "http://servicio/ServReserva/registrarReservaResponse")
-    public String registrarReserva(
-        @WebParam(name = "hab", targetNamespace = "")
-        String hab,
-        @WebParam(name = "cli", targetNamespace = "")
-        String cli,
-        @WebParam(name = "fecInicio", targetNamespace = "")
-        String fecInicio,
-        @WebParam(name = "fecFin", targetNamespace = "")
-        String fecFin);
-
-    /**
-     * 
      * @return
      *     returns java.util.List<servicio.Reserva>
      */
@@ -75,5 +51,29 @@ public interface ServReserva {
     public String buscarReserva(
         @WebParam(name = "dni", targetNamespace = "")
         String dni);
+
+    /**
+     * 
+     * @param cli
+     * @param hab
+     * @param fecFin
+     * @param fecInicio
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "registrarReserva", targetNamespace = "http://servicio/", className = "servicio.RegistrarReserva")
+    @ResponseWrapper(localName = "registrarReservaResponse", targetNamespace = "http://servicio/", className = "servicio.RegistrarReservaResponse")
+    @Action(input = "http://servicio/ServReserva/registrarReservaRequest", output = "http://servicio/ServReserva/registrarReservaResponse")
+    public String registrarReserva(
+        @WebParam(name = "hab", targetNamespace = "")
+        String hab,
+        @WebParam(name = "cli", targetNamespace = "")
+        String cli,
+        @WebParam(name = "fecInicio", targetNamespace = "")
+        String fecInicio,
+        @WebParam(name = "fecFin", targetNamespace = "")
+        String fecFin);
 
 }

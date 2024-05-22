@@ -36,9 +36,6 @@ public class Reserva {
     }
 
     public void setFecCreacion(String fecCreacion) {
-        Date dat=new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        fecCreacion = sdf.format(dat);
         this.fecCreacion = fecCreacion;
     }
 
