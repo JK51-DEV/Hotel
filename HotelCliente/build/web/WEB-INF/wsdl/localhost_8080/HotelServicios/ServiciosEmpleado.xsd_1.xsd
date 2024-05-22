@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://servicio/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://servicio/">
+
+<xs:element name="autenticarEmpleado" type="tns:autenticarEmpleado"/>
+
+<xs:element name="autenticarEmpleadoResponse" type="tns:autenticarEmpleadoResponse"/>
+
+<xs:element name="buscarAdministradorInicioSesion" type="tns:buscarAdministradorInicioSesion"/>
+
+<xs:element name="buscarAdministradorInicioSesionResponse" type="tns:buscarAdministradorInicioSesionResponse"/>
+
+<xs:element name="buscarEmpleado" type="tns:buscarEmpleado"/>
+
+<xs:element name="buscarEmpleadoResponse" type="tns:buscarEmpleadoResponse"/>
+
+<xs:element name="buscarNombreAdministrador" type="tns:buscarNombreAdministrador"/>
+
+<xs:element name="buscarNombreAdministradorResponse" type="tns:buscarNombreAdministradorResponse"/>
+
+<xs:element name="elmininarEmpleado" type="tns:elmininarEmpleado"/>
+
+<xs:element name="elmininarEmpleadoResponse" type="tns:elmininarEmpleadoResponse"/>
+
+<xs:element name="grabarEmpleado" type="tns:grabarEmpleado"/>
+
+<xs:element name="grabarEmpleadoResponse" type="tns:grabarEmpleadoResponse"/>
+
+<xs:element name="listarEmpleado" type="tns:listarEmpleado"/>
+
+<xs:element name="listarEmpleadoResponse" type="tns:listarEmpleadoResponse"/>
+
+<xs:complexType name="autenticarEmpleado">
+<xs:sequence>
+<xs:element name="dni" type="xs:string" minOccurs="0"/>
+<xs:element name="nom" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="autenticarEmpleadoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarNombreAdministrador">
+<xs:sequence>
+<xs:element name="dni" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarNombreAdministradorResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarEmpleado">
+<xs:sequence>
+<xs:element name="dni" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarEmpleadoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarAdministradorInicioSesion">
+<xs:sequence>
+<xs:element name="dni" type="xs:string" minOccurs="0"/>
+<xs:element name="nom" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarAdministradorInicioSesionResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listarEmpleado">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listarEmpleadoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:empleado" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="empleado">
+<xs:sequence>
+<xs:element name="dni" type="xs:string" minOccurs="0"/>
+<xs:element name="nom" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="elmininarEmpleado">
+<xs:sequence>
+<xs:element name="dni" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="elmininarEmpleadoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="grabarEmpleado">
+<xs:sequence>
+<xs:element name="dni" type="xs:string" minOccurs="0"/>
+<xs:element name="nom" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="grabarEmpleadoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

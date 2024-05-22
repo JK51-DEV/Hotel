@@ -12,4 +12,6 @@
     <system systemId="http://localhost:8080/HotelServiciosv3/Servicios?xsd=1" uri="wsdl/localhost_8080/HotelServiciosv3/Servicios.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/HotelServiciosv3/ServReserva?wsdl" uri="wsdl/localhost_8080/HotelServiciosv3/ServReserva.wsdl"/>
     <system systemId="http://localhost:8080/HotelServiciosv3/ServReserva?xsd=1" uri="wsdl/localhost_8080/HotelServiciosv3/ServReserva.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/HotelServicios/ServiciosEmpleado?wsdl" uri="wsdl/localhost_8080/HotelServicios/ServiciosEmpleado.wsdl"/>
+    <system systemId="http://localhost:8080/HotelServicios/ServiciosEmpleado?xsd=1" uri="wsdl/localhost_8080/HotelServicios/ServiciosEmpleado.xsd_1.xsd"/>
 </catalog>

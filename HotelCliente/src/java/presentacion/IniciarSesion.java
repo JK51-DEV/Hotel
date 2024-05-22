@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.xml.ws.WebServiceRef;
 import servicio.Servicios;
+import servicio.ServiciosEmpleado_Service;
 
 /**
  *
@@ -22,6 +23,9 @@ import servicio.Servicios;
  */
 @WebServlet(name = "IniciarSesion", urlPatterns = {"/IniciarSesion"})
 public class IniciarSesion extends HttpServlet {
+
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/HotelServicios/ServiciosEmpleado.wsdl")
+    private ServiciosEmpleado_Service service_1;
 
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/HotelServicios/Servicios.wsdl")
     private Servicios service;
@@ -51,10 +55,10 @@ public class IniciarSesion extends HttpServlet {
             String txtnom = request.getParameter("txtnom");
             
             boolean iniciarSesion = buscarUsuarioInicioSesion(txtdni, txtnom);
-           /* boolean iniciarSesion2 = metodos.buscarAdministradorInicioSesion(txtUsuario, txtContrasena);*/
+           boolean iniciarSesion2 = buscarAdministradorInicioSesion(txtdni, txtnom);
             if(iniciarSesion == true){ //EL usuario puede accesar por que esta registrado
                 out.println("alert('¡Bienvenido a mi Página! \\nIniciaste sesion como: "+txtnom+"')");
-                out.println("location = 'vistaReservas.jsp'");
+                /*out.println("location = 'vistaReservas.jsp'");*/
                 response.sendRedirect("validarCliente.jsp");
                 
                 String nombre = buscarNombre(txtdni);
@@ -63,17 +67,18 @@ public class IniciarSesion extends HttpServlet {
                 sesion.setAttribute("nombre", nombre);
                 sesion.setAttribute("txtdni", txtdni);
                 
-           /* } else if(iniciarSesion2 == true){//EL administrador puede accesar por que esta registrado
-                out.println("alert('¡Bienvenido a la Página Administrador! \\nIniciaste sesion como: "+txtUsuario+"')");
-                out.println("location = 'paginaInicio.jsp'");
+            } else if(iniciarSesion2 == true){//EL administrador puede accesar por que esta registrado
+                out.println("alert('¡Bienvenido a la Página Administrador! \\nIniciaste sesion como: "+txtnom+"')");
+                /*out.println("location = 'paginaInicio.jsp'");*/
+                response.sendRedirect("validarEmpleado.jsp");
                 
-                String nombre = metodos.buscarNombreAdministrador(txtUsuario);
+                String nombre = buscarNombreAdministrador(txtdni);
                 //System.out.println("El valor del nombre en el SERVLET es: " + nombre);
-                request.setAttribute("cliente", nombre);
-                sesion.setAttribute("nombre", nombre);
-                sesion.setAttribute("txtUsuario", txtUsuario);
+               /* request.setAttribute("cliente", nombre);*/
+                sesion.setAttribute("nombreAdmin", nombre);
+                sesion.setAttribute("txtdniAdmin", txtdni);
                 
-              */  
+                
             }else{
                 out.println("alert('Datos Incorrectos, verifica tus credenciales o date de alta en el "
                         + "sistema')");
@@ -137,6 +142,20 @@ public class IniciarSesion extends HttpServlet {
         // If the calling of port operations may lead to race condition some synchronization is required.
         servicio.ServiciosCliente port = service.getServiciosClientePort();
         return port.buscarNombre(dni);
+    }
+
+    private boolean buscarAdministradorInicioSesion(java.lang.String dni, java.lang.String nom) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        servicio.ServiciosEmpleado port = service_1.getServiciosEmpleadoPort();
+        return port.buscarAdministradorInicioSesion(dni, nom);
+    }
+
+    private String buscarNombreAdministrador(java.lang.String dni) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        servicio.ServiciosEmpleado port = service_1.getServiciosEmpleadoPort();
+        return port.buscarNombreAdministrador(dni);
     }
 
 }
