@@ -7,11 +7,11 @@
     <service name="ServiciosCliente">
       <implementation-class>servicio.ServiciosCliente</implementation-class>
     </service>
-    <service name="ServReserva">
-      <implementation-class>servicio.ServReserva</implementation-class>
-    </service>
     <service name="ServiciosEmpleado">
       <implementation-class>servicio.ServiciosEmpleado</implementation-class>
+    </service>
+    <service name="ServReserva">
+      <implementation-class>servicio.ServReserva</implementation-class>
     </service>
   </services>
   <clients/>

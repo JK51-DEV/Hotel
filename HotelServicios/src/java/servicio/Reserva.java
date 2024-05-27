@@ -1,10 +1,11 @@
-
 package servicio;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
+import static servicio.DaoReserva.listarReservas;
 
 public class Reserva {
     private String codRes;
@@ -16,15 +17,17 @@ public class Reserva {
 
     public Reserva() {
     }
-    
+
     public String getFecha(){
         Date dat=new Date();
          SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         return sdf.format(dat);
     }
 
-    public Reserva(String codRes, Habitacion hab, Cliente cli, String fecInicio, String fecFin) {
-        this.codRes = codRes;
+    public Reserva( Habitacion hab, Cliente cli, String fecInicio, String fecFin) {
+        if (hab == null || cli == null || fecInicio == null || fecFin == null) {
+            throw new IllegalArgumentException("Ningún parámetro debe ser nulo");
+        }
         this.hab = hab;
         this.cli = cli;
         this.fecInicio = fecInicio;
@@ -36,14 +39,21 @@ public class Reserva {
     }
 
     public void setFecCreacion(String fecCreacion) {
+        Date dat=new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        fecCreacion = sdf.format(dat);
         this.fecCreacion = fecCreacion;
     }
 
     public String getCodRes() {
+        List<Reserva> reservas = listarReservas();
+        int siguienteNumero = reservas.size() + 1;
+        codRes = String.format("R%03d", siguienteNumero);
         return codRes;
     }
 
     public void setCodRes(String codRes) {
+        
         this.codRes = codRes;
     }
 
@@ -101,13 +111,17 @@ public class Reserva {
          return (int) diffdias;
     }
     
-    public void calcularImporte() {
-    int dias = diferenciaDias(fecInicio, fecFin);
-    double precioHabitacion = hab.getPre();
-    imp = dias * precioHabitacion;
-    }
+//    public Double calcularImporte() {
+//    int dias = diferenciaDias(fecInicio, fecFin);
+//    double precioHabitacion = hab.getPre();
+//    imp = dias * precioHabitacion;
+//    return imp;
+//    }
 
     public Double getImp() {
+        int dias = diferenciaDias(fecInicio, fecFin);
+        double precioHabitacion = hab.getPre();
+        imp = dias * precioHabitacion;
         return imp;
     }
 
@@ -115,9 +129,10 @@ public class Reserva {
         this.imp = imp;
     }
     
-    public double importe() {
-        int dias = diferenciaDias(fecInicio, fecFin);
-        double precio = hab.getPre();
-        return precio * dias;
-    }
+//    public double importe() {
+//        int dias = diferenciaDias(fecInicio, fecFin);
+//        double precio = hab.getPre();
+//        imp= precio * dias;
+//        return imp;
+//    }
 }

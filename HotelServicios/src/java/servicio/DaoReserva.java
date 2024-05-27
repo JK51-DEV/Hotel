@@ -24,7 +24,7 @@ public class DaoReserva {
         lis.add(res);
     }
     return lis;
-}
+    }
     
     public static String buscarReserva(String dni){
         String sql="select * from reserva where DNI_CLIENTE='"+dni+"'";
@@ -36,7 +36,7 @@ public class DaoReserva {
     }
     
     public static String grabarReservas(Reserva r){
-            // Obtener la lista de reservas para determinar el siguiente código consecutivo
+    // Obtener la lista de reservas para determinar el siguiente código consecutivo
     List<Reserva> reservas = listarReservas();
     // Determinar el siguiente número de reserva
     int siguienteNumero = reservas.size() + 1;
@@ -49,8 +49,19 @@ public class DaoReserva {
     // Construir la consulta SQL para insertar la reserva en la base de datos
         String sql="insert into reserva values ('"+r.getCodRes()+"','"+r.getCli().getDni()+"',"
                 + "'"+r.getHab().getCod()+"','"+r.getFecha()+"','"+r.getFecInicio()+"',"
-                + "'"+r.getFecFin()+"',"+r.importe()+")";
+                + "'"+r.getFecFin()+"',"+r.getImp()+")";
         return Acceso.ejecutar(sql);
+    }
+    
+    public static String RegistrarReservas(List<Reserva> reservas) {
+        StringBuilder errorMessages = new StringBuilder();
+        for (Reserva r : reservas) {
+            String result = grabarReservas(r);
+            if (result != null) {
+                errorMessages.append("Error al guardar la reserva ").append(r.getCodRes()).append(": ").append(result).append("\n");
+            }
+        }
+        return errorMessages.length() > 0 ? errorMessages.toString() : null;
     }
     
     public static String cambioEstado(Habitacion h){
