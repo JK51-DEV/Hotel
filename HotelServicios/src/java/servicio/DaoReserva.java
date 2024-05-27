@@ -13,14 +13,14 @@ public class DaoReserva {
         Object[] f = (Object[]) tabla.get(i);
         Reserva res = new Reserva();
         Cliente cli = DaoCliente.buscar(f[1].toString());
-        res.setCli(cli);
         Habitacion hab = DaoHabitacion.buscarHabitacionCOD(f[2].toString());
-        res.setHab(hab);
         res.setCodRes(f[0].toString());
-        res.setFecCreacion(f[3].toString()); // Asignar la fecha de creación desde la base de datos
+        res.setCli(cli);
+        res.setHab(hab);
+        res.setFecCreacion(f[3].toString()); // Asignar la fecha de creación desde la entidad reserva
         res.setFecInicio(f[4].toString());
         res.setFecFin(f[5].toString());
-        res.setImp(Double.parseDouble(f[6].toString()));
+        res.setImp(Double.parseDouble(f[6].toString())); // El calculo se hace des la entidad reserva
         lis.add(res);
     }
     return lis;
@@ -36,18 +36,8 @@ public class DaoReserva {
     }
     
     public static String grabarReservas(Reserva r){
-    // Obtener la lista de reservas para determinar el siguiente código consecutivo
-    List<Reserva> reservas = listarReservas();
-    // Determinar el siguiente número de reserva
-    int siguienteNumero = reservas.size() + 1;
-    // Formatear el número de reserva con ceros a la izquierda para mantener el formato RXXX
-    String codigoReserva = String.format("R%03d", siguienteNumero);
-    
-    // Asignar el código de reserva generado a la reserva
-    r.setCodRes(codigoReserva);
-    
     // Construir la consulta SQL para insertar la reserva en la base de datos
-        String sql="insert into reserva values ('"+r.getCodRes()+"','"+r.getCli().getDni()+"',"
+        String sql="insert into reserva values ('"+r.Codigoautomatico()+"','"+r.getCli().getDni()+"',"
                 + "'"+r.getHab().getCod()+"','"+r.getFecha()+"','"+r.getFecInicio()+"',"
                 + "'"+r.getFecFin()+"',"+r.getImp()+")";
         return Acceso.ejecutar(sql);

@@ -10,24 +10,24 @@ public class ServReserva {
 
     ResuReserva resumen = new ResuReserva();
     
-//    @WebMethod(operationName = "listarReservas")
-//    public List<Reserva> listarReservas() {
-//        return DaoReserva.listarReservas();
-//    }
+    @WebMethod(operationName = "listarReservas")
+    public List<Reserva> listarReservas() {
+        return DaoReserva.listarReservas();
+    }
 
-//    @WebMethod(operationName = "buscarReserva")
-//    public String buscarReserva(@WebParam(name = "dni") String dni) {
-//        String res;
-//        String nom=DaoReserva.buscarReserva(dni);
-//        if (nom != null) {
-//            Cliente c=new Cliente();
-//            
-//            return nom;
-//        }else{
-//            res="No existe reserva";
-//        }
-//    return res;
-//    }
+    @WebMethod(operationName = "buscarReserva")
+    public String buscarReserva(@WebParam(name = "dni") String dni) {
+        String res;
+        String nom=DaoReserva.buscarReserva(dni);
+        if (nom != null) {
+            Cliente c=new Cliente();
+            
+            return nom;
+        }else{
+            res="No existe reserva";
+        }
+    return res;
+    }
 
    @WebMethod(operationName = "registrarReserva")
 public String registrarReserva() {

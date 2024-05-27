@@ -36,7 +36,7 @@ public class DaoHabitacion {
         }
         return lis;
     }
-    // para buscar en general
+    // para buscar habitaciones reservadas general
     public static Habitacion buscarHabitacionCOD(String cod){
         String sql="select * from habitacion where cod='"+cod+"'";
         Object[]f=Acceso.buscar(sql);

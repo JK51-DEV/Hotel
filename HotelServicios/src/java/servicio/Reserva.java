@@ -46,15 +46,18 @@ public class Reserva {
     }
 
     public String getCodRes() {
-        List<Reserva> reservas = listarReservas();
-        int siguienteNumero = reservas.size() + 1;
-        codRes = String.format("R%03d", siguienteNumero);
         return codRes;
     }
 
     public void setCodRes(String codRes) {
-        
         this.codRes = codRes;
+    }
+    
+    public String Codigoautomatico(){
+        List<Reserva> reservas = listarReservas();
+        int siguienteNumero = reservas.size() + 1;
+        codRes = String.format("R%03d", siguienteNumero);
+        return codRes;
     }
 
     public Habitacion getHab() {
