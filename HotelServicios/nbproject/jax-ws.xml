@@ -22,6 +22,9 @@
     <service name="ServListarConsumo">
       <implementation-class>servicio.ServListarConsumo</implementation-class>
     </service>
+    <service name="ServVenta">
+      <implementation-class>servicio.ServVenta</implementation-class>
+    </service>
   </services>
   <clients/>
 </jax-ws>
