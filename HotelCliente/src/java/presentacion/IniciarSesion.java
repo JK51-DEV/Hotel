@@ -59,7 +59,7 @@ public class IniciarSesion extends HttpServlet {
             if(iniciarSesion == true){ //EL usuario puede accesar por que esta registrado
                 out.println("alert('¡Bienvenido a mi Página! \\nIniciaste sesion como: "+txtnom+"')");
                 /*out.println("location = 'vistaReservas.jsp'");*/
-                response.sendRedirect("vistaHabitaciones.jsp");
+                response.sendRedirect("vistaHabitaciones_cli.jsp");
                 
                 String nombre = buscarNombre(txtdni);
                 //System.out.println("El valor del nombre en el SERVLET es: " + nombre);
@@ -70,7 +70,7 @@ public class IniciarSesion extends HttpServlet {
             } else if(iniciarSesion2 == true){//EL administrador puede accesar por que esta registrado
                 out.println("alert('¡Bienvenido a la Página Administrador! \\nIniciaste sesion como: "+txtnom+"')");
                 /*out.println("location = 'paginaInicio.jsp'");*/
-                response.sendRedirect("validarEmpleado.jsp");
+                response.sendRedirect("vistaHabitaciones.jsp");
                 
                 String nombre = buscarNombreAdministrador(txtdni);
                 //System.out.println("El valor del nombre en el SERVLET es: " + nombre);

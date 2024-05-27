@@ -3,32 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/HotelCliente/web/Cesta.jsp</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/HotelCliente/web/index.jsp</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/HotelCliente/web/validarCliente.jsp</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/HotelCliente/web/registrarCliente.jsp</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/HotelCliente/web/index.html</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/HotelCliente/src/java/presentacion/ControlReservas.java</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/HotelCliente/web/_css_js/_menu.css</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/HotelCliente/src/java/presentacion/Control.java</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/HotelCliente/web/vistaReservas.jsp</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/HotelCliente/src/java/presentacion/ControlValidar.java</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/HotelCliente/web/Menu.jsp</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/HotelCliente/web/_menu.jsp</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/HotelCliente/web/_css_js/registro.css</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/HotelCliente/web/prueba.jsp</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/HotelCliente/src/java/presentacion/IniciarSesion.java</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/HotelCliente/web/index_nuevo.jsp</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/HotelCliente/web/login.jsp</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/HotelCliente/web/_css_js/estilos.css</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/HotelCliente/web/vistaHabitaciones.jsp</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/HotelCliente/web/_referencias.jsp</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/HotelCliente/src/java/presentacion/Presentador.java</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/HotelCliente/web/CrearCliente.jsp</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/HotelCliente/web/Men.jsp</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/HotelCliente/web/reservaHab.jsp</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/HotelCliente/web/_css_js/fondo.css</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/HotelCliente/web/vistaCliente.jsp</file>
+            <file>file:/C:/Users/Usuario/Documents/GitHub/Hotel/Hotel/HotelCliente/web/reservaHab.jsp</file>
+            <file>file:/C:/Users/Usuario/Documents/GitHub/Hotel/Hotel/HotelCliente/web/_referencias.jsp</file>
+            <file>file:/C:/Users/Usuario/Documents/GitHub/Hotel/Hotel/HotelCliente/web/validarEmpleado.jsp</file>
+            <file>file:/C:/Users/Usuario/Documents/GitHub/Hotel/Hotel/HotelCliente/src/java/presentacion/IniciarSesion.java</file>
+            <file>file:/C:/Users/Usuario/Documents/GitHub/Hotel/Hotel/HotelCliente/web/validarCliente.jsp</file>
+            <file>file:/C:/Users/Usuario/Documents/GitHub/Hotel/Hotel/HotelCliente/web/_menu.jsp</file>
+            <file>file:/C:/Users/Usuario/Documents/GitHub/Hotel/Hotel/HotelCliente/web/vistaHabitaciones.jsp</file>
+            <file>file:/C:/Users/Usuario/Documents/GitHub/Hotel/Hotel/HotelCliente/web/vistaCliente.jsp</file>
+            <file>file:/C:/Users/Usuario/Documents/GitHub/Hotel/Hotel/HotelCliente/web/vistaReservas.jsp</file>
         </group>
     </open-files>
 </project-private>

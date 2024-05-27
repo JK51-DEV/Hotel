@@ -11,7 +11,7 @@ body{
     background: #090909;
     color: #ffffff;
     margin: auto;
-    margin-top: 80px;
+    margin-top: 20px;
     padding: 5px 5px 30px 5px;
     border-top: 35px solid #141414;
     border-right: 35px solid #141414;
@@ -59,6 +59,7 @@ body{
     padding-left: 200px;
     font-weight: 900;
     font-family: times;
+    margin-bottom: 0px;
 }
 #marca a {
     text-decoration: none; 

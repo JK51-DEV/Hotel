@@ -6,7 +6,7 @@
                 <li style="display: inline-block"><a href="vistaCliente.jsp" class="btn btn-primary">CLIENTES</a></li>
                 <li style="display: inline-block"><a href="vistaHabitaciones.jsp" class="btn btn-primary">HABITACIONES</a></li>
                 <li style="display: inline-block"><a href="vistaReservas.jsp" class="btn btn-primary">RESERVAS</a></li>
-                <li style="display: inline-block"><a><strong>USUARIO: ${nombre}</strong></a></li>
+                <li style="display: inline-block"><a><strong>USUARIO: ${nombreAdmin}</strong></a></li>
                 <li style="display: inline-block"><a href="Menu.jsp" class="btn btn-danger">CERRAR SESIÓN</a></li>
             </ul> <br><br>
         </div>

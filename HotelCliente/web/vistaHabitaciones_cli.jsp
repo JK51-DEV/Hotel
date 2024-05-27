@@ -14,14 +14,14 @@ ServHabitacion port = server.getServHabitacionPort();
         <meta charset="UTF-8">
         <title>Inicio</title>
         <link href="_sweetAlert/sweetalert.css" rel="stylesheet" type="text/css"/>
-        <%@include file="_referencias.jsp" %> 
+        <%@include file="_referencias_cli.jsp" %> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <%@include file="_menu.jsp" %> 
+        <%@include file="_menu_cli.jsp" %> 
         <div class="container">
             <h4>Gestión de Habitaciones</h4>
-            <button class="btn btn-success" type="button" onclick="location.href = 'Menu_emp.jsp'">Reservar Habitación</button>
+            <button class="btn btn-success" type="button" onclick="location.href = 'reservaHab_cli.jsp'">Reservar Habitación</button>
             <br><br>
            <%-- <table>
                 <tr>

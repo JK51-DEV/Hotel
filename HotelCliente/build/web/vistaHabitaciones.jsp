@@ -21,7 +21,7 @@ ServHabitacion port = server.getServHabitacionPort();
         <%@include file="_menu.jsp" %> 
         <div class="container">
             <h4>Gestión de Habitaciones</h4>
-            <button class="btn btn-success" type="button" onclick="location.href = 'reservaHab.jsp'">Reservar Habitación</button>
+            <button class="btn btn-success" type="button" onclick="location.href = 'Menu_emp.jsp'">Reservar Habitación</button>
             <br><br>
            <%-- <table>
                 <tr>
