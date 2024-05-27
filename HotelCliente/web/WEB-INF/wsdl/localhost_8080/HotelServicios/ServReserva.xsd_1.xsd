@@ -1,8 +1,20 @@
 <?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://servicio/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://servicio/">
 
+<xs:element name="agregarReserva" type="tns:agregarReserva"/>
+
+<xs:element name="agregarReservaResponse" type="tns:agregarReservaResponse"/>
+
 <xs:element name="buscarReserva" type="tns:buscarReserva"/>
 
 <xs:element name="buscarReservaResponse" type="tns:buscarReservaResponse"/>
+
+<xs:element name="eliminarResumen" type="tns:eliminarResumen"/>
+
+<xs:element name="eliminarResumenResponse" type="tns:eliminarResumenResponse"/>
+
+<xs:element name="getTotal" type="tns:getTotal"/>
+
+<xs:element name="getTotalResponse" type="tns:getTotalResponse"/>
 
 <xs:element name="listarReservas" type="tns:listarReservas"/>
 
@@ -11,6 +23,32 @@
 <xs:element name="registrarReserva" type="tns:registrarReserva"/>
 
 <xs:element name="registrarReservaResponse" type="tns:registrarReservaResponse"/>
+
+<xs:element name="resumenReserva" type="tns:resumenReserva"/>
+
+<xs:element name="resumenReservaResponse" type="tns:resumenReservaResponse"/>
+
+<xs:complexType name="getTotal">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getTotalResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarReserva">
+<xs:sequence>
+<xs:element name="dni" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarReservaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
 
 <xs:complexType name="listarReservas">
 <xs:sequence/>
@@ -50,19 +88,27 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="buscarReserva">
-<xs:sequence>
-<xs:element name="dni" type="xs:string" minOccurs="0"/>
-</xs:sequence>
+<xs:complexType name="registrarReserva">
+<xs:sequence/>
 </xs:complexType>
 
-<xs:complexType name="buscarReservaResponse">
+<xs:complexType name="registrarReservaResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="registrarReserva">
+<xs:complexType name="resumenReserva">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="resumenReservaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:reserva" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="agregarReserva">
 <xs:sequence>
 <xs:element name="hab" type="xs:string" minOccurs="0"/>
 <xs:element name="cli" type="xs:string" minOccurs="0"/>
@@ -71,7 +117,17 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="registrarReservaResponse">
+<xs:complexType name="agregarReservaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarResumen">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="eliminarResumenResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>

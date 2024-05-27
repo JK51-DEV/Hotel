@@ -71,15 +71,6 @@
         <script src="_sweetAlert/sweetalert.js" type="text/javascript"></script>
         <script src="_sweetAlert/sweetalert.min.js" type="text/javascript"></script>
         <script>
-            $(function() {
-                $.datepicker.setDefaults($.datepicker.regional['es']);
-                $('#fini').datepicker({
-                    dateFormat: 'dd/mm/yy'
-                });
-                $('#ffin').datepicker({
-                    dateFormat: 'dd/mm/yy'
-                });
-            });
 
             RegistrarReserva = function () {
                 $.post('ControlReservas', {

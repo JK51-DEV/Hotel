@@ -24,18 +24,42 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _AgregarReserva_QNAME = new QName("http://servicio/", "agregarReserva");
+    private final static QName _AgregarReservaResponse_QNAME = new QName("http://servicio/", "agregarReservaResponse");
     private final static QName _BuscarReserva_QNAME = new QName("http://servicio/", "buscarReserva");
     private final static QName _BuscarReservaResponse_QNAME = new QName("http://servicio/", "buscarReservaResponse");
+    private final static QName _EliminarResumen_QNAME = new QName("http://servicio/", "eliminarResumen");
+    private final static QName _EliminarResumenResponse_QNAME = new QName("http://servicio/", "eliminarResumenResponse");
+    private final static QName _GetTotal_QNAME = new QName("http://servicio/", "getTotal");
+    private final static QName _GetTotalResponse_QNAME = new QName("http://servicio/", "getTotalResponse");
     private final static QName _ListarReservas_QNAME = new QName("http://servicio/", "listarReservas");
     private final static QName _ListarReservasResponse_QNAME = new QName("http://servicio/", "listarReservasResponse");
     private final static QName _RegistrarReserva_QNAME = new QName("http://servicio/", "registrarReserva");
     private final static QName _RegistrarReservaResponse_QNAME = new QName("http://servicio/", "registrarReservaResponse");
+    private final static QName _ResumenReserva_QNAME = new QName("http://servicio/", "resumenReserva");
+    private final static QName _ResumenReservaResponse_QNAME = new QName("http://servicio/", "resumenReservaResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: servicio
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link AgregarReserva }
+     * 
+     */
+    public AgregarReserva createAgregarReserva() {
+        return new AgregarReserva();
+    }
+
+    /**
+     * Create an instance of {@link AgregarReservaResponse }
+     * 
+     */
+    public AgregarReservaResponse createAgregarReservaResponse() {
+        return new AgregarReservaResponse();
     }
 
     /**
@@ -52,6 +76,38 @@ public class ObjectFactory {
      */
     public BuscarReservaResponse createBuscarReservaResponse() {
         return new BuscarReservaResponse();
+    }
+
+    /**
+     * Create an instance of {@link EliminarResumen }
+     * 
+     */
+    public EliminarResumen createEliminarResumen() {
+        return new EliminarResumen();
+    }
+
+    /**
+     * Create an instance of {@link EliminarResumenResponse }
+     * 
+     */
+    public EliminarResumenResponse createEliminarResumenResponse() {
+        return new EliminarResumenResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetTotal }
+     * 
+     */
+    public GetTotal createGetTotal() {
+        return new GetTotal();
+    }
+
+    /**
+     * Create an instance of {@link GetTotalResponse }
+     * 
+     */
+    public GetTotalResponse createGetTotalResponse() {
+        return new GetTotalResponse();
     }
 
     /**
@@ -87,6 +143,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ResumenReserva }
+     * 
+     */
+    public ResumenReserva createResumenReserva() {
+        return new ResumenReserva();
+    }
+
+    /**
+     * Create an instance of {@link ResumenReservaResponse }
+     * 
+     */
+    public ResumenReservaResponse createResumenReservaResponse() {
+        return new ResumenReservaResponse();
+    }
+
+    /**
      * Create an instance of {@link Reserva }
      * 
      */
@@ -111,6 +183,24 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AgregarReserva }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "agregarReserva")
+    public JAXBElement<AgregarReserva> createAgregarReserva(AgregarReserva value) {
+        return new JAXBElement<AgregarReserva>(_AgregarReserva_QNAME, AgregarReserva.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AgregarReservaResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "agregarReservaResponse")
+    public JAXBElement<AgregarReservaResponse> createAgregarReservaResponse(AgregarReservaResponse value) {
+        return new JAXBElement<AgregarReservaResponse>(_AgregarReservaResponse_QNAME, AgregarReservaResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link BuscarReserva }{@code >}}
      * 
      */
@@ -126,6 +216,42 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://servicio/", name = "buscarReservaResponse")
     public JAXBElement<BuscarReservaResponse> createBuscarReservaResponse(BuscarReservaResponse value) {
         return new JAXBElement<BuscarReservaResponse>(_BuscarReservaResponse_QNAME, BuscarReservaResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link EliminarResumen }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "eliminarResumen")
+    public JAXBElement<EliminarResumen> createEliminarResumen(EliminarResumen value) {
+        return new JAXBElement<EliminarResumen>(_EliminarResumen_QNAME, EliminarResumen.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link EliminarResumenResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "eliminarResumenResponse")
+    public JAXBElement<EliminarResumenResponse> createEliminarResumenResponse(EliminarResumenResponse value) {
+        return new JAXBElement<EliminarResumenResponse>(_EliminarResumenResponse_QNAME, EliminarResumenResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetTotal }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "getTotal")
+    public JAXBElement<GetTotal> createGetTotal(GetTotal value) {
+        return new JAXBElement<GetTotal>(_GetTotal_QNAME, GetTotal.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetTotalResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "getTotalResponse")
+    public JAXBElement<GetTotalResponse> createGetTotalResponse(GetTotalResponse value) {
+        return new JAXBElement<GetTotalResponse>(_GetTotalResponse_QNAME, GetTotalResponse.class, null, value);
     }
 
     /**
@@ -162,6 +288,24 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://servicio/", name = "registrarReservaResponse")
     public JAXBElement<RegistrarReservaResponse> createRegistrarReservaResponse(RegistrarReservaResponse value) {
         return new JAXBElement<RegistrarReservaResponse>(_RegistrarReservaResponse_QNAME, RegistrarReservaResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ResumenReserva }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "resumenReserva")
+    public JAXBElement<ResumenReserva> createResumenReserva(ResumenReserva value) {
+        return new JAXBElement<ResumenReserva>(_ResumenReserva_QNAME, ResumenReserva.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ResumenReservaResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "resumenReservaResponse")
+    public JAXBElement<ResumenReservaResponse> createResumenReservaResponse(ResumenReservaResponse value) {
+        return new JAXBElement<ResumenReservaResponse>(_ResumenReservaResponse_QNAME, ResumenReservaResponse.class, null, value);
     }
 
 }
