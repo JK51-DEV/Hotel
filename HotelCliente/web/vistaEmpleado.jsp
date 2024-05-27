@@ -2,8 +2,8 @@
 <%@page import="java.util.*" %>
 <%@page import="servicio.*" %>
 <%
-ServHabitacion_Service server = new ServHabitacion_Service();
-ServHabitacion port = server.getServHabitacionPort();
+ServiciosEmpleado_Service server = new ServiciosEmpleado_Service();
+ServiciosEmpleado port = server.getServiciosEmpleadoPort();
 
                   
  %>
@@ -13,16 +13,19 @@ ServHabitacion port = server.getServHabitacionPort();
         <meta charset="UTF-8">
         <title>Inicio</title>
         <link href="_sweetAlert/sweetalert.css" rel="stylesheet" type="text/css"/>
+        <link href="_css_js/fondo.css" rel="stylesheet" type="text/css"/>
         <%@include file="_referencias.jsp" %> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <%@include file="_menu.jsp" %> 
         <div class="container">
-            <h4>Gestión de Habitaciones</h4>
-            <button class="btn btn-success" type="button" onclick="location.href = 'login_emp.jsp'">Reservar Habitación</button>
+            <h4>Gestión de Empleados</h4>
+            <button class="btn btn-success" type="button" onclick="location.href = 'registrarCliente_emp.jsp'">Registar Empleado</button>
             <br><br>
-           <%-- <table>
+            <%--<button class="btn btn-success" type="button" onclick="location.href = 'index_nuevo.jsp'">Nuevo</button>--%>
+            
+            <%--<table>
                 <tr>
                     <td style="padding: 0px">Seleccionar filtro:</td>
                     <td style="padding: 10px">Fabricante</td>
@@ -46,27 +49,25 @@ ServHabitacion port = server.getServHabitacionPort();
                     
                     <td style="padding: 10px"><button class="btn btn-primary" onclick="buscar_dis()">Buscar</button></td>
                 </tr>
-            </table>--%>
+            </table> --%>
             <table class="table table-bordered">
                 <thead style="background-color: black; color: white">
                     <tr>
-                        <th>Código</th><th>Nombre</th><th>Estado</th><th>Precio</th>
+                        <th>Código</th><th>Nombre</th>
                        <%-- <th class="text-center">Mantenimiento</th>--%>
                     </tr>
                 </thead>
                 <tbody id="tabla1">
                    <%
-                       List<Habitacion> dis = port.listarHabitacion();
-                       for (Habitacion l : dis) {
+                       List<Empleado> dis = port.listarEmpleado();
+                       for (Empleado l : dis) {
                    %>  
                    <tr>
-                       <td><%=l.getCod()%></td>
+                       <td><%=l.getDni()%></td>
                        <td><%=l.getNom()%></td>
-                       <td><%=l.getEstado()%></td>
-                       <td>S/. <%=l.getPre()%></td>
                        <td class="text-center">
-                           <%-- <a class="btn btn-warning" href="/TutorialCliente/index_editar.jsp?id=<%=l.getIdDpc()%>">Editar</a>
-                           <button class="btn btn-danger" type="button" onclick="dis.eliminar(<%=l.getCod()%>)">Eliminar</button>--%>
+                          <%-- <a class="btn btn-warning" href="/HotelCliente/index_editar.jsp?id=<%=l.getDni()%>">Editar</a>
+                           <button class="btn btn-danger" type="button" onclick="dis.eliminar(<%=l.getDni()%>)">Eliminar</button>--%>
                        </td>
                    </tr>
                    <%  

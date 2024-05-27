@@ -90,7 +90,7 @@
                 }, function (res) {
                     swal("Bien hecho!", res, "success");
                     setTimeout(function () {
-                        window.location = '/HotelCliente/vistaReservas.jsp';
+                        window.location = '/HotelCliente/vistaHabitaciones_cli.jsp';
                     }, 1200);
                 });
             };

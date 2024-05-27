@@ -55,7 +55,7 @@
                         }, function (res) {
                             swal("Bien hecho!", res, "success");
                             setTimeout(function () {
-                                window.location = '/HotelCliente/vistaCliente.jsp';
+                                window.location = '/HotelCliente/login.jsp';
                             }, 1200);
                         });
                     };
