@@ -4,11 +4,33 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.*;
 import static servicio.Acceso.getConexion;
 
 public class DaoCliente {
     Connection d = getConexion();
+    
+    
+    public List<Cliente> dis_listar_avanzado(String dni){
+        List<Cliente> cliente = new ArrayList<>();
+        try{
+            Statement st= d.createStatement();
+            ResultSet rs = st.executeQuery("SELECT * FROM cliente WHERE dni='"+dni+"'");
+            Cliente dis;
+            while (rs.next()) {                
+                dis = new Cliente(
+                        rs.getString(1),
+                        rs.getString(2)
+                );
+                cliente.add(dis);
+            }
+            d.close();
+        }catch(Exception e){
+            System.out.println("Error: "+e.getMessage());
+        }
+        return cliente;
+    }
     
     public boolean grabar(String Dni, String Nom) {
     boolean estado = false;

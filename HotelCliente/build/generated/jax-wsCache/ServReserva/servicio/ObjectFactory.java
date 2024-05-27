@@ -28,6 +28,8 @@ public class ObjectFactory {
     private final static QName _AgregarReservaResponse_QNAME = new QName("http://servicio/", "agregarReservaResponse");
     private final static QName _BuscarReserva_QNAME = new QName("http://servicio/", "buscarReserva");
     private final static QName _BuscarReservaResponse_QNAME = new QName("http://servicio/", "buscarReservaResponse");
+    private final static QName _DisListarAvanzado_QNAME = new QName("http://servicio/", "dis_listar_avanzado");
+    private final static QName _DisListarAvanzadoResponse_QNAME = new QName("http://servicio/", "dis_listar_avanzadoResponse");
     private final static QName _EliminarResumen_QNAME = new QName("http://servicio/", "eliminarResumen");
     private final static QName _EliminarResumenResponse_QNAME = new QName("http://servicio/", "eliminarResumenResponse");
     private final static QName _GetTotal_QNAME = new QName("http://servicio/", "getTotal");
@@ -76,6 +78,22 @@ public class ObjectFactory {
      */
     public BuscarReservaResponse createBuscarReservaResponse() {
         return new BuscarReservaResponse();
+    }
+
+    /**
+     * Create an instance of {@link DisListarAvanzado }
+     * 
+     */
+    public DisListarAvanzado createDisListarAvanzado() {
+        return new DisListarAvanzado();
+    }
+
+    /**
+     * Create an instance of {@link DisListarAvanzadoResponse }
+     * 
+     */
+    public DisListarAvanzadoResponse createDisListarAvanzadoResponse() {
+        return new DisListarAvanzadoResponse();
     }
 
     /**
@@ -175,6 +193,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Empleado }
+     * 
+     */
+    public Empleado createEmpleado() {
+        return new Empleado();
+    }
+
+    /**
      * Create an instance of {@link Habitacion }
      * 
      */
@@ -216,6 +242,24 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://servicio/", name = "buscarReservaResponse")
     public JAXBElement<BuscarReservaResponse> createBuscarReservaResponse(BuscarReservaResponse value) {
         return new JAXBElement<BuscarReservaResponse>(_BuscarReservaResponse_QNAME, BuscarReservaResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DisListarAvanzado }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "dis_listar_avanzado")
+    public JAXBElement<DisListarAvanzado> createDisListarAvanzado(DisListarAvanzado value) {
+        return new JAXBElement<DisListarAvanzado>(_DisListarAvanzado_QNAME, DisListarAvanzado.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DisListarAvanzadoResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "dis_listar_avanzadoResponse")
+    public JAXBElement<DisListarAvanzadoResponse> createDisListarAvanzadoResponse(DisListarAvanzadoResponse value) {
+        return new JAXBElement<DisListarAvanzadoResponse>(_DisListarAvanzadoResponse_QNAME, DisListarAvanzadoResponse.class, null, value);
     }
 
     /**

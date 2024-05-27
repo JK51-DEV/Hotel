@@ -18,6 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence&gt;
  *         &lt;element name="cli" type="{http://servicio/}cliente" minOccurs="0"/&gt;
  *         &lt;element name="codRes" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="empleado" type="{http://servicio/}empleado" minOccurs="0"/&gt;
  *         &lt;element name="fecCreacion" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="fecFin" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="fecInicio" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
@@ -35,6 +36,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "reserva", propOrder = {
     "cli",
     "codRes",
+    "empleado",
     "fecCreacion",
     "fecFin",
     "fecInicio",
@@ -45,6 +47,7 @@ public class Reserva {
 
     protected Cliente cli;
     protected String codRes;
+    protected Empleado empleado;
     protected String fecCreacion;
     protected String fecFin;
     protected String fecInicio;
@@ -97,6 +100,30 @@ public class Reserva {
      */
     public void setCodRes(String value) {
         this.codRes = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad empleado.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Empleado }
+     *     
+     */
+    public Empleado getEmpleado() {
+        return empleado;
+    }
+
+    /**
+     * Define el valor de la propiedad empleado.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Empleado }
+     *     
+     */
+    public void setEmpleado(Empleado value) {
+        this.empleado = value;
     }
 
     /**

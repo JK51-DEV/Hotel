@@ -8,6 +8,10 @@
 
 <xs:element name="buscarReservaResponse" type="tns:buscarReservaResponse"/>
 
+<xs:element name="dis_listar_avanzado" type="tns:dis_listar_avanzado"/>
+
+<xs:element name="dis_listar_avanzadoResponse" type="tns:dis_listar_avanzadoResponse"/>
+
 <xs:element name="eliminarResumen" type="tns:eliminarResumen"/>
 
 <xs:element name="eliminarResumenResponse" type="tns:eliminarResumenResponse"/>
@@ -38,18 +42,6 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="buscarReserva">
-<xs:sequence>
-<xs:element name="dni" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="buscarReservaResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="listarReservas">
 <xs:sequence/>
 </xs:complexType>
@@ -64,6 +56,7 @@
 <xs:sequence>
 <xs:element name="cli" type="tns:cliente" minOccurs="0"/>
 <xs:element name="codRes" type="xs:string" minOccurs="0"/>
+<xs:element name="empleado" type="tns:empleado" minOccurs="0"/>
 <xs:element name="fecCreacion" type="xs:string" minOccurs="0"/>
 <xs:element name="fecFin" type="xs:string" minOccurs="0"/>
 <xs:element name="fecInicio" type="xs:string" minOccurs="0"/>
@@ -79,12 +72,31 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="empleado">
+<xs:sequence>
+<xs:element name="dni" type="xs:string" minOccurs="0"/>
+<xs:element name="nom" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="habitacion">
 <xs:sequence>
 <xs:element name="cod" type="xs:string" minOccurs="0"/>
 <xs:element name="estado" type="xs:string" minOccurs="0"/>
 <xs:element name="nom" type="xs:string" minOccurs="0"/>
 <xs:element name="pre" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarReserva">
+<xs:sequence>
+<xs:element name="dni" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarReservaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -130,6 +142,18 @@
 <xs:complexType name="eliminarResumenResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dis_listar_avanzado">
+<xs:sequence>
+<xs:element name="dni" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dis_listar_avanzadoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cliente" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>

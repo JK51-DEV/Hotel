@@ -17,12 +17,11 @@ public class ServiciosCliente {
         return pres.grabar(dni, nom);
     }
 
-
     @WebMethod(operationName = "buscarCliente")
     public String buscarCliente(@WebParam(name = "dni") String dni) {
         String res;
-        Cliente nom=DaoCliente.buscar(dni);
-        res= "DNI: "+ nom.getDni()+ " Nombre: "+ nom.getNom();
+        Cliente nom = DaoCliente.buscar(dni);
+        res = "DNI: " + nom.getDni() + " Nombre: " + nom.getNom();
         return res;
     }
 
@@ -33,9 +32,9 @@ public class ServiciosCliente {
 
     @WebMethod(operationName = "elmininarCliente")
     public String elmininarCliente(@WebParam(name = "dni") String dni) {
-        String msg=DaoCliente.eliminar(dni);
-        if(msg==null){
-            msg="Cliente Eliminado";
+        String msg = DaoCliente.eliminar(dni);
+        if (msg == null) {
+            msg = "Cliente Eliminado";
         }
         return msg;
     }
@@ -47,20 +46,27 @@ public class ServiciosCliente {
     ) {
         return DaoCliente.autenticarCliente(dni, nom);
     }
-    
-    @WebMethod(operationName = "buscarUsuarioInicioSesion")
-public boolean buscarUsuarioInicioSesion(
-        @WebParam(name = "dni") String dni,
-        @WebParam(name = "nom") String nom
-) {
-    DaoCliente daoCliente = new DaoCliente();
-    return daoCliente.buscarUsuarioInicioSesion(dni, nom);
-}
 
-@WebMethod(operationName = "buscarNombre")
-public String buscarNombre(@WebParam(name = "dni") String dni) {
-    DaoCliente daoCliente = new DaoCliente();
-    return daoCliente.buscarNombre(dni);
-}
+    @WebMethod(operationName = "buscarUsuarioInicioSesion")
+    public boolean buscarUsuarioInicioSesion(
+            @WebParam(name = "dni") String dni,
+            @WebParam(name = "nom") String nom
+    ) {
+        DaoCliente daoCliente = new DaoCliente();
+        return daoCliente.buscarUsuarioInicioSesion(dni, nom);
+    }
+
+    @WebMethod(operationName = "buscarNombre")
+    public String buscarNombre(@WebParam(name = "dni") String dni) {
+        DaoCliente daoCliente = new DaoCliente();
+        return daoCliente.buscarNombre(dni);
+    }
+
+    @WebMethod(operationName = "dis_listar_avanzado")
+    public List<Cliente> dis_listar_avanzado(
+            @WebParam(name = "dni") String dni) {
+        DaoCliente dis = new DaoCliente();
+        return dis.dis_listar_avanzado(dni);
+    }
 
 }

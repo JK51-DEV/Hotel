@@ -39,6 +39,21 @@ public interface ServReserva {
 
     /**
      * 
+     * @param dni
+     * @return
+     *     returns java.util.List<servicio.Cliente>
+     */
+    @WebMethod(operationName = "dis_listar_avanzado")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "dis_listar_avanzado", targetNamespace = "http://servicio/", className = "servicio.DisListarAvanzado")
+    @ResponseWrapper(localName = "dis_listar_avanzadoResponse", targetNamespace = "http://servicio/", className = "servicio.DisListarAvanzadoResponse")
+    @Action(input = "http://servicio/ServReserva/dis_listar_avanzadoRequest", output = "http://servicio/ServReserva/dis_listar_avanzadoResponse")
+    public List<Cliente> disListarAvanzado(
+        @WebParam(name = "dni", targetNamespace = "")
+        String dni);
+
+    /**
+     * 
      * @param cli
      * @param hab
      * @param fecFin
@@ -64,14 +79,14 @@ public interface ServReserva {
     /**
      * 
      * @return
-     *     returns java.lang.String
+     *     returns java.util.List<servicio.Reserva>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "eliminarResumen", targetNamespace = "http://servicio/", className = "servicio.EliminarResumen")
-    @ResponseWrapper(localName = "eliminarResumenResponse", targetNamespace = "http://servicio/", className = "servicio.EliminarResumenResponse")
-    @Action(input = "http://servicio/ServReserva/eliminarResumenRequest", output = "http://servicio/ServReserva/eliminarResumenResponse")
-    public String eliminarResumen();
+    @RequestWrapper(localName = "listarReservas", targetNamespace = "http://servicio/", className = "servicio.ListarReservas")
+    @ResponseWrapper(localName = "listarReservasResponse", targetNamespace = "http://servicio/", className = "servicio.ListarReservasResponse")
+    @Action(input = "http://servicio/ServReserva/listarReservasRequest", output = "http://servicio/ServReserva/listarReservasResponse")
+    public List<Reserva> listarReservas();
 
     /**
      * 
@@ -84,6 +99,18 @@ public interface ServReserva {
     @ResponseWrapper(localName = "registrarReservaResponse", targetNamespace = "http://servicio/", className = "servicio.RegistrarReservaResponse")
     @Action(input = "http://servicio/ServReserva/registrarReservaRequest", output = "http://servicio/ServReserva/registrarReservaResponse")
     public String registrarReserva();
+
+    /**
+     * 
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "eliminarResumen", targetNamespace = "http://servicio/", className = "servicio.EliminarResumen")
+    @ResponseWrapper(localName = "eliminarResumenResponse", targetNamespace = "http://servicio/", className = "servicio.EliminarResumenResponse")
+    @Action(input = "http://servicio/ServReserva/eliminarResumenRequest", output = "http://servicio/ServReserva/eliminarResumenResponse")
+    public String eliminarResumen();
 
     /**
      * 
@@ -111,17 +138,5 @@ public interface ServReserva {
     public String buscarReserva(
         @WebParam(name = "dni", targetNamespace = "")
         String dni);
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<servicio.Reserva>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listarReservas", targetNamespace = "http://servicio/", className = "servicio.ListarReservas")
-    @ResponseWrapper(localName = "listarReservasResponse", targetNamespace = "http://servicio/", className = "servicio.ListarReservasResponse")
-    @Action(input = "http://servicio/ServReserva/listarReservasRequest", output = "http://servicio/ServReserva/listarReservasResponse")
-    public List<Reserva> listarReservas();
 
 }

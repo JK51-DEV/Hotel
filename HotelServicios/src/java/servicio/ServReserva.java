@@ -87,5 +87,12 @@ public class ServReserva {
             return "Error al eliminar todas las reservas: " + e.getMessage();
         }
     }
+    
+    @WebMethod(operationName = "dis_listar_avanzado")
+    public List<Reserva> dis_listar_avanzado(
+            @WebParam(name = "dni") String dni_cliente) {
+        DaoReserva dis = new DaoReserva();
+        return dis.dis_listar_avanzado(dni_cliente);
+    }
 
     }

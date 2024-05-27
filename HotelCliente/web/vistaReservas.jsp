@@ -21,19 +21,19 @@
         <div class="container">
             <h4>Gestión de Reservas</h4>
             <%--<button class="btn btn-success" type="button" onclick="location.href = 'index_nuevo.jsp'">Nuevo</button>--%>
-            
+
             <table>
                 <tr>
                     <td style="padding: 0px">Ingresar filtro:</td>
                     <td style="padding: 10px">DNI:</td>
                     <td style="padding: 10px">
-                    <input class="form-control" id="fabricnate" name="fabricnate" size="8" required>
+                        <input class="form-control" id="fabricnate" name="fabricnate" size="8" required>
                     </td>
                     <%--<td style="padding: 10px">Categoria</td>
                     <td style="padding: 10px">
                     <input class="form-control" id="categoria" name="categoria" size="1" required>
                     </td>--%>
-                    
+
                     <td style="padding: 10px"><button class="btn btn-primary" onclick="buscar_dis()">Buscar</button></td>
                 </tr>
             </table>
@@ -71,21 +71,22 @@
                     </tr>
                 </thead>
                 <tbody id="tabla1">
-                    <%                       List<Reserva> dis = port.listarReservas();
+                    <%                       
+                        List<Reserva> dis = port.listarReservas();
                         for (Reserva l : dis) {
                     %>  
                     <tr>
                         <td><%=l.getCodRes()%></td>
                         <td><%=l.getCli().getDni()%></td>
                         <td><%=l.getCli().getNom()%></td>
-                        <td><%=l.getHab().getCod()%></td>
+                        <td><%=l.getHab().getCod() %></td>
                         <td><%=l.getHab().getNom()%></td>
                         <td><%=l.getHab().getPre()%></td>
                         <td><%=l.getFecCreacion()%></td>
                         <%-- <td><%=l.getFecCreacion()%></td>--%>
                         <td><%=l.getFecInicio()%></td>
                         <td><%=l.getFecFin()%></td>
-                         <td>S/. <%=l.getImp()%></td>
+                        <td>S/. <%=l.getImp()%></td>
                         <td class="text-center">
                             <%--<a class="btn btn-warning" href="/TutorialCliente/index_editar.jsp?id=<%=l.getIdDpc()%>">Editar</a>
                             <button class="btn btn-danger" type="button" onclick="dis.eliminar(<%=l.getCodRes()%>)">Eliminar</button>--%>
@@ -101,33 +102,33 @@
     <script src="_sweetAlert/sweetalert.js" type="text/javascript"></script>
     <script src="_sweetAlert/sweetalert.min.js" type="text/javascript"></script>
     <script>
-        dis_eliminar = function (id) {
-            swal({
-                tittle: "Estas seguro de eliminar?",
-                text: "Una vez eliminado no se podra recuperar!",
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonClass: "btn-danger",
-                confirmButtonText: "Si, Eliminar!",
-                cancelButtonText: "No, Cancelar!",
-                closeOnConfirm: false,
-                closeOnCancel: false
-            },
-                    function (isConfirm) {
-                        if (isConfirm) {
-                            $.post('dis_eliminar.do', {
-                                id: id
-                            }, function (res) {
-                                swal("Alerta del sistema!", res, "success");
-                                setTimeout(function () {
-                                    window.location = '/TutorialCliente/index.jsp';
-                                }, 1200);
-                            });
-                        } else {
-                            swal("Cancelado", "Cancelaste esto :)", "error");
-                        }
-                    });
-        };
+                        dis_eliminar = function (id) {
+                            swal({
+                                tittle: "Estas seguro de eliminar?",
+                                text: "Una vez eliminado no se podra recuperar!",
+                                type: "warning",
+                                showCancelButton: true,
+                                confirmButtonClass: "btn-danger",
+                                confirmButtonText: "Si, Eliminar!",
+                                cancelButtonText: "No, Cancelar!",
+                                closeOnConfirm: false,
+                                closeOnCancel: false
+                            },
+                                    function (isConfirm) {
+                                        if (isConfirm) {
+                                            $.post('dis_eliminar.do', {
+                                                id: id
+                                            }, function (res) {
+                                                swal("Alerta del sistema!", res, "success");
+                                                setTimeout(function () {
+                                                    window.location = '/TutorialCliente/index.jsp';
+                                                }, 1200);
+                                            });
+                                        } else {
+                                            swal("Cancelado", "Cancelaste esto :)", "error");
+                                        }
+                                    });
+                        };
     </script>
     <script>
         buscar_dis = function () {

@@ -32,6 +32,8 @@ public class ObjectFactory {
     private final static QName _BuscarNombreResponse_QNAME = new QName("http://servicio/", "buscarNombreResponse");
     private final static QName _BuscarUsuarioInicioSesion_QNAME = new QName("http://servicio/", "buscarUsuarioInicioSesion");
     private final static QName _BuscarUsuarioInicioSesionResponse_QNAME = new QName("http://servicio/", "buscarUsuarioInicioSesionResponse");
+    private final static QName _DisListarAvanzado_QNAME = new QName("http://servicio/", "dis_listar_avanzado");
+    private final static QName _DisListarAvanzadoResponse_QNAME = new QName("http://servicio/", "dis_listar_avanzadoResponse");
     private final static QName _ElmininarCliente_QNAME = new QName("http://servicio/", "elmininarCliente");
     private final static QName _ElmininarClienteResponse_QNAME = new QName("http://servicio/", "elmininarClienteResponse");
     private final static QName _GrabarCliente_QNAME = new QName("http://servicio/", "grabarCliente");
@@ -108,6 +110,22 @@ public class ObjectFactory {
      */
     public BuscarUsuarioInicioSesionResponse createBuscarUsuarioInicioSesionResponse() {
         return new BuscarUsuarioInicioSesionResponse();
+    }
+
+    /**
+     * Create an instance of {@link DisListarAvanzado }
+     * 
+     */
+    public DisListarAvanzado createDisListarAvanzado() {
+        return new DisListarAvanzado();
+    }
+
+    /**
+     * Create an instance of {@link DisListarAvanzadoResponse }
+     * 
+     */
+    public DisListarAvanzadoResponse createDisListarAvanzadoResponse() {
+        return new DisListarAvanzadoResponse();
     }
 
     /**
@@ -236,6 +254,24 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://servicio/", name = "buscarUsuarioInicioSesionResponse")
     public JAXBElement<BuscarUsuarioInicioSesionResponse> createBuscarUsuarioInicioSesionResponse(BuscarUsuarioInicioSesionResponse value) {
         return new JAXBElement<BuscarUsuarioInicioSesionResponse>(_BuscarUsuarioInicioSesionResponse_QNAME, BuscarUsuarioInicioSesionResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DisListarAvanzado }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "dis_listar_avanzado")
+    public JAXBElement<DisListarAvanzado> createDisListarAvanzado(DisListarAvanzado value) {
+        return new JAXBElement<DisListarAvanzado>(_DisListarAvanzado_QNAME, DisListarAvanzado.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DisListarAvanzadoResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "dis_listar_avanzadoResponse")
+    public JAXBElement<DisListarAvanzadoResponse> createDisListarAvanzadoResponse(DisListarAvanzadoResponse value) {
+        return new JAXBElement<DisListarAvanzadoResponse>(_DisListarAvanzadoResponse_QNAME, DisListarAvanzadoResponse.class, null, value);
     }
 
     /**

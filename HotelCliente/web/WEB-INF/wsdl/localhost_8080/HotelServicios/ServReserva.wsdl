@@ -10,23 +10,35 @@
 <message name="getTotalResponse">
 <part name="parameters" element="tns:getTotalResponse"/>
 </message>
+<message name="dis_listar_avanzado">
+<part name="parameters" element="tns:dis_listar_avanzado"/>
+</message>
+<message name="dis_listar_avanzadoResponse">
+<part name="parameters" element="tns:dis_listar_avanzadoResponse"/>
+</message>
 <message name="agregarReserva">
 <part name="parameters" element="tns:agregarReserva"/>
 </message>
 <message name="agregarReservaResponse">
 <part name="parameters" element="tns:agregarReservaResponse"/>
 </message>
-<message name="eliminarResumen">
-<part name="parameters" element="tns:eliminarResumen"/>
+<message name="listarReservas">
+<part name="parameters" element="tns:listarReservas"/>
 </message>
-<message name="eliminarResumenResponse">
-<part name="parameters" element="tns:eliminarResumenResponse"/>
+<message name="listarReservasResponse">
+<part name="parameters" element="tns:listarReservasResponse"/>
 </message>
 <message name="registrarReserva">
 <part name="parameters" element="tns:registrarReserva"/>
 </message>
 <message name="registrarReservaResponse">
 <part name="parameters" element="tns:registrarReservaResponse"/>
+</message>
+<message name="eliminarResumen">
+<part name="parameters" element="tns:eliminarResumen"/>
+</message>
+<message name="eliminarResumenResponse">
+<part name="parameters" element="tns:eliminarResumenResponse"/>
 </message>
 <message name="resumenReserva">
 <part name="parameters" element="tns:resumenReserva"/>
@@ -40,28 +52,30 @@
 <message name="buscarReservaResponse">
 <part name="parameters" element="tns:buscarReservaResponse"/>
 </message>
-<message name="listarReservas">
-<part name="parameters" element="tns:listarReservas"/>
-</message>
-<message name="listarReservasResponse">
-<part name="parameters" element="tns:listarReservasResponse"/>
-</message>
 <portType name="ServReserva">
 <operation name="getTotal">
 <input wsam:Action="http://servicio/ServReserva/getTotalRequest" message="tns:getTotal"/>
 <output wsam:Action="http://servicio/ServReserva/getTotalResponse" message="tns:getTotalResponse"/>
 </operation>
+<operation name="dis_listar_avanzado">
+<input wsam:Action="http://servicio/ServReserva/dis_listar_avanzadoRequest" message="tns:dis_listar_avanzado"/>
+<output wsam:Action="http://servicio/ServReserva/dis_listar_avanzadoResponse" message="tns:dis_listar_avanzadoResponse"/>
+</operation>
 <operation name="agregarReserva">
 <input wsam:Action="http://servicio/ServReserva/agregarReservaRequest" message="tns:agregarReserva"/>
 <output wsam:Action="http://servicio/ServReserva/agregarReservaResponse" message="tns:agregarReservaResponse"/>
 </operation>
-<operation name="eliminarResumen">
-<input wsam:Action="http://servicio/ServReserva/eliminarResumenRequest" message="tns:eliminarResumen"/>
-<output wsam:Action="http://servicio/ServReserva/eliminarResumenResponse" message="tns:eliminarResumenResponse"/>
+<operation name="listarReservas">
+<input wsam:Action="http://servicio/ServReserva/listarReservasRequest" message="tns:listarReservas"/>
+<output wsam:Action="http://servicio/ServReserva/listarReservasResponse" message="tns:listarReservasResponse"/>
 </operation>
 <operation name="registrarReserva">
 <input wsam:Action="http://servicio/ServReserva/registrarReservaRequest" message="tns:registrarReserva"/>
 <output wsam:Action="http://servicio/ServReserva/registrarReservaResponse" message="tns:registrarReservaResponse"/>
+</operation>
+<operation name="eliminarResumen">
+<input wsam:Action="http://servicio/ServReserva/eliminarResumenRequest" message="tns:eliminarResumen"/>
+<output wsam:Action="http://servicio/ServReserva/eliminarResumenResponse" message="tns:eliminarResumenResponse"/>
 </operation>
 <operation name="resumenReserva">
 <input wsam:Action="http://servicio/ServReserva/resumenReservaRequest" message="tns:resumenReserva"/>
@@ -70,10 +84,6 @@
 <operation name="buscarReserva">
 <input wsam:Action="http://servicio/ServReserva/buscarReservaRequest" message="tns:buscarReserva"/>
 <output wsam:Action="http://servicio/ServReserva/buscarReservaResponse" message="tns:buscarReservaResponse"/>
-</operation>
-<operation name="listarReservas">
-<input wsam:Action="http://servicio/ServReserva/listarReservasRequest" message="tns:listarReservas"/>
-<output wsam:Action="http://servicio/ServReserva/listarReservasResponse" message="tns:listarReservasResponse"/>
 </operation>
 </portType>
 <binding name="ServReservaPortBinding" type="tns:ServReserva">
@@ -87,6 +97,15 @@
 <soap:body use="literal"/>
 </output>
 </operation>
+<operation name="dis_listar_avanzado">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="agregarReserva">
 <soap:operation soapAction=""/>
 <input>
@@ -96,7 +115,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="eliminarResumen">
+<operation name="listarReservas">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -106,6 +125,15 @@
 </output>
 </operation>
 <operation name="registrarReserva">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="eliminarResumen">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -124,15 +152,6 @@
 </output>
 </operation>
 <operation name="buscarReserva">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="listarReservas">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
