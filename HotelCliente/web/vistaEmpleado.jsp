@@ -21,7 +21,7 @@ ServiciosEmpleado port = server.getServiciosEmpleadoPort();
         <%@include file="_menu.jsp" %> 
         <div class="container">
             <h4>Gestión de Empleados</h4>
-            <button class="btn btn-success" type="button" onclick="location.href = 'registrarCliente_emp.jsp'">Registar Empleado</button>
+                <button class="btn btn-success" type="button" onclick="location.href = 'registrarEmpleado.jsp'">Registar Empleado</button>
             <br><br>
             <%--<button class="btn btn-success" type="button" onclick="location.href = 'index_nuevo.jsp'">Nuevo</button>--%>
             
