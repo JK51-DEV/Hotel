@@ -52,7 +52,7 @@ public class ServReserva {
         return "Error al registrar todas las reservas: " + e.getMessage();
     }
         return "Registro exitoso";
-}
+    }
     @WebMethod(operationName = "getTotal")
     public String getTotal() {
        return String.valueOf(resumen.getTot());

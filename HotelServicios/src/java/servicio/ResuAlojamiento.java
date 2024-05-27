@@ -12,11 +12,11 @@ public class ResuAlojamiento {
     private List<Alojamiento> alojamiento=new ArrayList();
     private double tot;
 
-    public List<Alojamiento> getAlojamiento() {
+    public List<Alojamiento> getResumenAlojamiento() {
         return alojamiento;
     }
 
-    public void setAlojamiento(List<Alojamiento> alojamiento) {
+    public void getResumenAlojamiento(List<Alojamiento> alojamiento) {
         this.alojamiento = alojamiento;
     }
 
@@ -34,10 +34,10 @@ public class ResuAlojamiento {
         this.tot = tot;
     }
     
-     public void agregar(String codRes, Habitacion hab, Cliente cli, Empleado empleado, String fecInicio, String fecFin, String fecCreacion, Double imp) {
+     public void agregar(Habitacion hab, Cliente cli, Empleado empleado, String fecInicio, String fecFin) {
 
         if (hab != null && cli != null && empleado != null && fecInicio != null && fecFin != null) {
-            Alojamiento aloj = new Alojamiento(codRes,hab,cli, empleado, fecInicio, fecFin, fecCreacion, imp);
+            Alojamiento aloj = new Alojamiento(hab,cli, empleado, fecInicio, fecFin);
             alojamiento.add(aloj);
         } else {
             throw new IllegalArgumentException("Ningún parámetro debe ser nulo");

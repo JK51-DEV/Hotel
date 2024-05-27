@@ -130,25 +130,6 @@ public class Reserva {
          return (int) diffdias;
     }
    
-//    public Double Importe() {
-//        int dias = diferenciaDias(fecInicio, fecFin);
-//        double precioHabitacion = hab.getPre();
-//        imp = dias * precioHabitacion;
-//        return imp;
-//    }
-//    
-//    public static int diferenciaDias(String fecInicio, String fecFin) {
-//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-//        try {
-//            LocalDate inicio = LocalDate.parse(fecInicio, formatter);
-//            LocalDate fin = LocalDate.parse(fecFin, formatter);
-//            return (int) ChronoUnit.DAYS.between(inicio, fin);
-//        } catch (Exception e) {
-//            System.out.println("Se ha producido un error en los formatos de fechas: " + e.getMessage());
-//            return 0;
-//        }
-//    }
-
     public Double Importe() {
         int dias = diferenciaDias(fecInicio, fecFin);
         double precioHabitacion = hab.getPre();

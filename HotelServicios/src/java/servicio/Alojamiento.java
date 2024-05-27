@@ -20,31 +20,14 @@ public class Alojamiento {
     public Alojamiento() {
     }
 
-    public Alojamiento(String codRes, Habitacion hab, Cliente cli, Empleado empleado, String fecInicio, String fecFin, String fecCreacion, Double imp) {
-        this.codRes = codRes;
+    public Alojamiento(Habitacion hab, Cliente cli, Empleado empleado, String fecInicio, String fecFin) {
         this.hab = hab;
         this.cli = cli;
         this.empleado = empleado;
         this.fecInicio = fecInicio;
         this.fecFin = fecFin;
-        this.fecCreacion = fecCreacion;
-        this.imp = imp;
-    }
-    
-    public String getFecha(){
-        Date dat=new Date();
-         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        return sdf.format(dat);
     }
 
-    // genera codigo automaticamente de alojamiento
-    public String Codigoautomatico(){
-        List<Reserva> reservas = listarReservas();
-        int siguienteNumero = reservas.size() + 1;
-        codRes = String.format("R%03d", siguienteNumero);
-        return codRes;
-    }
-    
     public String getCodRes() {
         return codRes;
     }
@@ -93,13 +76,6 @@ public class Alojamiento {
         this.fecFin = fecFin;
     }
 
-    //genera fecha del dia automaticamente
-    public String getFechaAlojamiento(){
-        Date dat=new Date();
-         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        return sdf.format(dat);
-    }
-    
     public String getFecCreacion() {
         return fecCreacion;
     }
@@ -107,7 +83,32 @@ public class Alojamiento {
     public void setFecCreacion(String fecCreacion) {
         this.fecCreacion = fecCreacion;
     }
+
+    public Double getImp() {
+        return imp;
+    }
+
+    public void setImp(Double imp) {
+        this.imp = imp;
+    }
     
+    // genera codigo automaticamente de alojamiento
+    public String Codigoautomatico(){
+        List<Reserva> reservas = listarReservas();
+        int siguienteNumero = reservas.size() + 1;
+        codRes = String.format("R%03d", siguienteNumero);
+        return codRes;
+    }
+    
+   
+    //genera fecha del dia automaticamente
+    public String HoyAlojamiento(){
+        Date dat=new Date();
+         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        return sdf.format(dat);
+    }
+    
+   
     //genera la cantidad de dias que se reservará
     public static int diferenciaDias(String fecInicio, String fecFin){   
         Date dinicio = null, dfinal = null;
@@ -137,16 +138,5 @@ public class Alojamiento {
         imp = dias * precioHabitacion;
         return imp;
     }
-    
-    public Double getImp() {
-        return imp;
-    }
-
-    public void setImp(Double imp) {
-        this.imp = imp;
-    }
-    
-    
-    
     
 }
