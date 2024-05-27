@@ -8,35 +8,43 @@
 
 <xs:element name="buscarReservaResponse" type="tns:buscarReservaResponse"/>
 
-<xs:element name="dis_listar_avanzado" type="tns:dis_listar_avanzado"/>
-
-<xs:element name="dis_listar_avanzadoResponse" type="tns:dis_listar_avanzadoResponse"/>
-
 <xs:element name="eliminarResumen" type="tns:eliminarResumen"/>
 
 <xs:element name="eliminarResumenResponse" type="tns:eliminarResumenResponse"/>
 
-<xs:element name="getTotal" type="tns:getTotal"/>
+<xs:element name="getTotal" nillable="true" type="tns:getTotalAloj"/>
 
-<xs:element name="getTotalResponse" type="tns:getTotalResponse"/>
+<xs:element name="getTotalAloj" type="tns:getTotalAloj"/>
+
+<xs:element name="getTotalAlojResponse" type="tns:getTotalAlojResponse"/>
+
+<xs:element name="getTotalResponse" nillable="true" type="tns:getTotalAlojResponse"/>
 
 <xs:element name="listarReservas" type="tns:listarReservas"/>
 
 <xs:element name="listarReservasResponse" type="tns:listarReservasResponse"/>
 
-<xs:element name="registrarReserva" type="tns:registrarReserva"/>
+<xs:element name="listar_avanzado_reserva" type="tns:listar_avanzado_reserva"/>
 
-<xs:element name="registrarReservaResponse" type="tns:registrarReservaResponse"/>
+<xs:element name="listar_avanzado_reservaResponse" type="tns:listar_avanzado_reservaResponse"/>
+
+<xs:element name="registrarAlojamiento" type="tns:registrarAlojamiento"/>
+
+<xs:element name="registrarAlojamientoResponse" type="tns:registrarAlojamientoResponse"/>
+
+<xs:element name="registrarReserva" nillable="true" type="tns:registrarAlojamiento"/>
+
+<xs:element name="registrarReservaResponse" nillable="true" type="tns:registrarAlojamientoResponse"/>
 
 <xs:element name="resumenReserva" type="tns:resumenReserva"/>
 
 <xs:element name="resumenReservaResponse" type="tns:resumenReservaResponse"/>
 
-<xs:complexType name="getTotal">
+<xs:complexType name="getTotalAloj">
 <xs:sequence/>
 </xs:complexType>
 
-<xs:complexType name="getTotalResponse">
+<xs:complexType name="getTotalAlojResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
@@ -100,11 +108,11 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="registrarReserva">
+<xs:complexType name="registrarAlojamiento">
 <xs:sequence/>
 </xs:complexType>
 
-<xs:complexType name="registrarReservaResponse">
+<xs:complexType name="registrarAlojamientoResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
@@ -135,6 +143,18 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="listar_avanzado_reserva">
+<xs:sequence>
+<xs:element name="dni_cliente" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listar_avanzado_reservaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:reserva" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="eliminarResumen">
 <xs:sequence/>
 </xs:complexType>
@@ -142,18 +162,6 @@
 <xs:complexType name="eliminarResumenResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="dis_listar_avanzado">
-<xs:sequence>
-<xs:element name="dni" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="dis_listar_avanzadoResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:cliente" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>

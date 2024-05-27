@@ -88,11 +88,11 @@ public class ServReserva {
         }
     }
     
-    @WebMethod(operationName = "dis_listar_avanzado")
-    public List<Reserva> dis_listar_avanzado(
-            @WebParam(name = "dni") String dni_cliente) {
+    @WebMethod(operationName = "listar_avanzado_reserva")
+    public List<Reserva> listar_avanzado_reserva(
+            @WebParam(name = "dni_cliente") String dni_cliente) {
         DaoReserva dis = new DaoReserva();
-        return dis.dis_listar_avanzado(dni_cliente);
+        return dis.listar_avanzado_reserva(dni_cliente);
     }
 
     }

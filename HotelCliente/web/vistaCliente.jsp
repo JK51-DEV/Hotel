@@ -29,7 +29,7 @@ ServiciosCliente port = server.getServiciosClientePort();
                     <td style="padding: 0px">Ingresar filtro:</td>
                     <td style="padding: 10px">DNI:</td>
                     <td style="padding: 10px">
-                    <input class="form-control" id="fabricnate" name="fabricnate" size="8" required>
+                    <input class="form-control" id="dni" name="dni" size="8" required>
                     </td>
                     <%--<td style="padding: 10px">Categoria</td>
                     <td style="padding: 10px">
@@ -123,15 +123,13 @@ ServiciosCliente port = server.getServiciosClientePort();
         };
     </script>
     <script>
-        buscar_dis = function (){
-          var fabricante = $("#fabricante").val();
-          var categoria = $("#categoria").val();
-          $.post('dis_buscar.do', {
-                  fabricante: fabricante,
-                  categoria: categoria
-                }, function (res){
-                    $('#tabla1').html(res);
-                });
+        buscar_dis = function () {
+            var dni = $("#dni").val();
+            $.post('dis_buscar', {
+                dni: dni
+            }, function (res) {
+                $('#tabla1').html(res);
+            });
         };
     </script>
 </html>

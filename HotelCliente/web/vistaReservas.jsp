@@ -27,7 +27,7 @@
                     <td style="padding: 0px">Ingresar filtro:</td>
                     <td style="padding: 10px">DNI:</td>
                     <td style="padding: 10px">
-                        <input class="form-control" id="fabricnate" name="fabricnate" size="8" required>
+                        <input class="form-control" id="dni_cliente" name="dni_cliente" size="8" required>
                     </td>
                     <%--<td style="padding: 10px">Categoria</td>
                     <td style="padding: 10px">
@@ -65,7 +65,8 @@
             <table class="table table-bordered">
                 <thead style="background-color: black; color: white">
                     <tr>
-                        <th>Código</th><th>DNI</th><th>Nombre</th><th>Habitación</th><th>H. Tipo</th><th>Precio Ind.</th><th>F. Creacion</th><th>F. Inicio</th><th>F. Fin</th><th>Importe</th>
+                        <th>Código</th><th>DNI</th><th>Nombre</th><th>F. Creacion</th><th>F. Inicio</th><th>F. Fin</th><th>Importe</th>
+                        <%--<th>Código</th><th>DNI</th><th>Nombre</th><th>Habitación</th><th>H. Tipo</th><th>Precio Ind.</th><th>F. Creacion</th><th>F. Inicio</th><th>F. Fin</th><th>Importe</th>--%>
                             <%--  <th>Código</th><th>DNI</th><th>Habitación</th><th>F. Creación</th><th>F. Inicio</th><th>F. Fin</th><th>Importe</th>
                             <%--<th class="text-center">Mantenimiento</th>--%>
                     </tr>
@@ -79,9 +80,6 @@
                         <td><%=l.getCodRes()%></td>
                         <td><%=l.getCli().getDni()%></td>
                         <td><%=l.getCli().getNom()%></td>
-                        <td><%=l.getHab().getCod() %></td>
-                        <td><%=l.getHab().getNom()%></td>
-                        <td><%=l.getHab().getPre()%></td>
                         <td><%=l.getFecCreacion()%></td>
                         <%-- <td><%=l.getFecCreacion()%></td>--%>
                         <td><%=l.getFecInicio()%></td>
@@ -132,11 +130,9 @@
     </script>
     <script>
         buscar_dis = function () {
-            var fabricante = $("#fabricante").val();
-            var categoria = $("#categoria").val();
-            $.post('dis_buscar.do', {
-                fabricante: fabricante,
-                categoria: categoria
+            var dni_cliente = $("#dni_cliente").val();
+            $.post('dis_buscar_reserva', {
+                dni_cliente: dni_cliente
             }, function (res) {
                 $('#tabla1').html(res);
             });

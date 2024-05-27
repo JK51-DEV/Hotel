@@ -12,7 +12,7 @@ public class DaoReserva {
 
     Connection d = getConexion();
 
-    public List<Reserva> dis_listar_avanzado(String dni_cliente) {
+    public List<Reserva> listar_avanzado_reserva(String dni_cliente) {
         String sql = "select * from reserva WHERE DNI_CLIENTE='" + dni_cliente + "'";
         List tabla = Acceso.listar(sql);
         List lis = new ArrayList();
