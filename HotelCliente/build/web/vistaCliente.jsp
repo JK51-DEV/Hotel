@@ -1,4 +1,3 @@
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.*" %>
 <%@page import="servicio.*" %>
@@ -22,8 +21,24 @@ ServiciosCliente port = server.getServiciosClientePort();
         <%@include file="_menu.jsp" %> 
         <div class="container">
             <h4>Gestión de Clientes</h4>
+            <button class="btn btn-success" type="button" onclick="location.href = 'registrarCliente_emp.jsp'">Registar Cliente</button>
+            
             <%--<button class="btn btn-success" type="button" onclick="location.href = 'index_nuevo.jsp'">Nuevo</button>--%>
-            <br>
+            <table>
+                <tr>
+                    <td style="padding: 0px">Ingresar filtro:</td>
+                    <td style="padding: 10px">DNI:</td>
+                    <td style="padding: 10px">
+                    <input class="form-control" id="fabricnate" name="fabricnate" size="8" required>
+                    </td>
+                    <%--<td style="padding: 10px">Categoria</td>
+                    <td style="padding: 10px">
+                    <input class="form-control" id="categoria" name="categoria" size="1" required>
+                    </td>--%>
+                    
+                    <td style="padding: 10px"><button class="btn btn-primary" onclick="buscar_dis()">Buscar</button></td>
+                </tr>
+            </table>
             <%--<table>
                 <tr>
                     <td style="padding: 0px">Seleccionar filtro:</td>

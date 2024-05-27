@@ -21,7 +21,7 @@
     <body>
         <%@include file="_menu.jsp" %> 
         <div id="cuadro">
-            <form action="IniciarSesion" method="Post">
+            <form action="IniciarSesionEmp" method="Post">
                 <center><p id="titulo">INICIAR SESIÓN</p></center>
                 <center><label id="subtitulo3">CODIGO DE USUARIO</label></center>
                 <br/>
@@ -34,8 +34,8 @@
                 <input type="submit" name="acce" value="Iniciar Sesion" id="boton"/>
             </form>
             <br/>
-            <p id="marca"><a href="registrarCliente_emp.jsp">REGISTRAR</a></p>
-            <p ><a href="Menu_emp.jsp" style="color: white; text-decoration: none;">Volver</a></p>
+            <%--<p id="marca"><a href="registrarCliente_emp.jsp">REGISTRAR</a></p>
+            <p ><a href="vistaHabitaciones.jsp" style="color: white; text-decoration: none;">Volver</a></p>--%>
         </div>
     </body>
 </html>

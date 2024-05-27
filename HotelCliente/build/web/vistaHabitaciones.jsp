@@ -1,4 +1,3 @@
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.*" %>
 <%@page import="servicio.*" %>
@@ -21,7 +20,7 @@ ServHabitacion port = server.getServHabitacionPort();
         <%@include file="_menu.jsp" %> 
         <div class="container">
             <h4>Gestión de Habitaciones</h4>
-            <button class="btn btn-success" type="button" onclick="location.href = 'Menu_emp.jsp'">Reservar Habitación</button>
+            <button class="btn btn-success" type="button" onclick="location.href = 'login_emp.jsp'">Reservar Habitación</button>
             <br><br>
            <%-- <table>
                 <tr>
