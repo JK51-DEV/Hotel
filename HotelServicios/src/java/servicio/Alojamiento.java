@@ -1,7 +1,11 @@
 package servicio;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
+import static servicio.DaoReserva.listarReservas;
 
 public class Alojamiento {
     private String codRes;
@@ -32,6 +36,14 @@ public class Alojamiento {
         return sdf.format(dat);
     }
 
+    // genera codigo automaticamente de alojamiento
+    public String Codigoautomatico(){
+        List<Reserva> reservas = listarReservas();
+        int siguienteNumero = reservas.size() + 1;
+        codRes = String.format("R%03d", siguienteNumero);
+        return codRes;
+    }
+    
     public String getCodRes() {
         return codRes;
     }
@@ -80,6 +92,13 @@ public class Alojamiento {
         this.fecFin = fecFin;
     }
 
+    //genera fecha del dia automaticamente
+    public String getFechaAlojamiento(){
+        Date dat=new Date();
+         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        return sdf.format(dat);
+    }
+    
     public String getFecCreacion() {
         return fecCreacion;
     }
@@ -87,7 +106,30 @@ public class Alojamiento {
     public void setFecCreacion(String fecCreacion) {
         this.fecCreacion = fecCreacion;
     }
-
+    
+    public static int diferenciaDias(String fecInicio, String fecFin){   
+        Date dinicio = null, dfinal = null;
+        long milis1, milis2, diff;     
+        SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd");     
+        try {
+            dinicio = sdf.parse(fecInicio);
+            dfinal = sdf.parse(fecFin);                                           
+        } catch (ParseException e) {     
+            System.out.println("Se ha producido un error en los formatos de fechas");
+        }              
+         Calendar cinicio = Calendar.getInstance();
+         Calendar cfinal = Calendar.getInstance();     
+         cinicio.setTime(dinicio);
+         cfinal.setTime(dfinal);        
+         milis1 = cinicio.getTimeInMillis();     
+         milis2 = cfinal.getTimeInMillis();    
+         diff = milis2-milis1;        
+         long diffdias = Math.abs ( diff / (24 * 60 * 60 * 1000) );     
+         return (int) diffdias;
+    }
+    
+    
+    
     public Double getImp() {
         return imp;
     }

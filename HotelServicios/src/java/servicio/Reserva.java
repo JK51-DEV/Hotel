@@ -42,13 +42,6 @@ public class Reserva {
         this.fecCreacion = fecCreacion;
     }
     
-    public String fechacreacion(){
-        Date dat=new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        fecCreacion = sdf.format(dat);
-        return fecCreacion;
-    }
-
     public String getCodRes() {
         return codRes;
     }
@@ -117,15 +110,23 @@ public class Reserva {
          return (int) diffdias;
     }
    
-    public Double getImp() {
+    public Double Importe() {
         int dias = diferenciaDias(fecInicio, fecFin);
         double precioHabitacion = hab.getPre();
         imp = dias * precioHabitacion;
         return imp;
     }
 
+    public Double getImp() {
+        return imp;
+    }
+
     public void setImp(Double imp) {
         this.imp = imp;
     }
+    
+    
+    
+    
   
 }

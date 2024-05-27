@@ -39,7 +39,7 @@ public class DaoReserva {
     // Construir la consulta SQL para insertar la reserva en la base de datos
         String sql="insert into reserva values ('"+r.Codigoautomatico()+"','"+r.getCli().getDni()+"',"
                 + "'"+r.getHab().getCod()+"','"+r.getFecha()+"','"+r.getFecInicio()+"',"
-                + "'"+r.getFecFin()+"',"+r.getImp()+")";
+                + "'"+r.getFecFin()+"',"+r.Importe()+")";
         return Acceso.ejecutar(sql);
     }
     

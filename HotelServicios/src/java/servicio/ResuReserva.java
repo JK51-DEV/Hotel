@@ -20,7 +20,7 @@ public class ResuReserva {
         double total=0;
         for(int i=0;i<resumen.size();i++){
             Reserva res=(Reserva)resumen.get(i);
-            total+=res.getImp();
+            total+=res.Importe();
         }
         tot=total;
         return tot;
