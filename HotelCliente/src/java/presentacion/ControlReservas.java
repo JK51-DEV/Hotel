@@ -42,7 +42,7 @@ public class ControlReservas extends HttpServlet {
 
         // Llamar al método registrarReserva del servicio web
         //String resultado = port.registrarReserva(codRes, hab, cat, fecInicio, fecFin);
-        String resultado = port.registrarReserva(hab, cat, fecInicio, fecFin);
+        String resultado = port.agregarReserva(hab, cat, fecInicio, fecFin);
         // Verificar si la reserva se realizó correctamente
         if (resultado.startsWith("Se guardó")) {
             res = "Reserva realizada correctamente: " + resultado;

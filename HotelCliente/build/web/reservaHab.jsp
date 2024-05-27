@@ -81,7 +81,7 @@
                 }, function (res) {
                     swal("Bien hecho!", res, "success");
                     setTimeout(function () {
-                        window.location = '/HotelCliente/vistaReservas.jsp';
+                        window.location = '/HotelCliente/crearReserva.jsp';
                     }, 1200);
                 });
             };
