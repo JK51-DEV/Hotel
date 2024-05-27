@@ -6,6 +6,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import static servicio.DaoReserva.listarReservas;
+import static servicio.Reserva.diferenciaDias;
 
 public class Alojamiento {
     private String codRes;
@@ -107,6 +108,7 @@ public class Alojamiento {
         this.fecCreacion = fecCreacion;
     }
     
+    //genera la cantidad de dias que se reservará
     public static int diferenciaDias(String fecInicio, String fecFin){   
         Date dinicio = null, dfinal = null;
         long milis1, milis2, diff;     
@@ -128,7 +130,13 @@ public class Alojamiento {
          return (int) diffdias;
     }
     
-    
+    //Clacula el importe
+    public Double Importe() {
+        int dias = diferenciaDias(fecInicio, fecFin);
+        double precioHabitacion = hab.getPre();
+        imp = dias * precioHabitacion;
+        return imp;
+    }
     
     public Double getImp() {
         return imp;

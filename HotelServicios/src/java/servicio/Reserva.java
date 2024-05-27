@@ -2,6 +2,9 @@ package servicio;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -11,6 +14,7 @@ public class Reserva {
     private String codRes;
     private Habitacion hab;
     private Cliente cli;
+    private Empleado empleado;
     private String fecInicio, fecFin;
     private String fecCreacion;
     private Double imp;
@@ -27,34 +31,13 @@ public class Reserva {
         this.fecInicio = fecInicio;
         this.fecFin = fecFin;
     }
-    
-    public String getFecha(){
-        Date dat=new Date();
-         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        return sdf.format(dat);
-    }
 
-    public String getFecCreacion() {
-        return fecCreacion;
-    }
-
-    public void setFecCreacion(String fecCreacion) {
-        this.fecCreacion = fecCreacion;
-    }
-    
     public String getCodRes() {
         return codRes;
     }
 
     public void setCodRes(String codRes) {
         this.codRes = codRes;
-    }
-    
-    public String Codigoautomatico(){
-        List<Reserva> reservas = listarReservas();
-        int siguienteNumero = reservas.size() + 1;
-        codRes = String.format("R%03d", siguienteNumero);
-        return codRes;
     }
 
     public Habitacion getHab() {
@@ -73,6 +56,14 @@ public class Reserva {
         this.cli = cli;
     }
 
+    public Empleado getEmpleado() {
+        return empleado;
+    }
+
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
+    }
+
     public String getFecInicio() {
         return fecInicio;
     }
@@ -88,33 +79,13 @@ public class Reserva {
     public void setFecFin(String fecFin) {
         this.fecFin = fecFin;
     }
-    
-    public static int diferenciaDias(String fecInicio, String fecFin){   
-        Date dinicio = null, dfinal = null;
-        long milis1, milis2, diff;     
-        SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd");     
-        try {
-            dinicio = sdf.parse(fecInicio);
-            dfinal = sdf.parse(fecFin);                                           
-        } catch (ParseException e) {     
-            System.out.println("Se ha producido un error en los formatos de fechas");
-        }              
-         Calendar cinicio = Calendar.getInstance();
-         Calendar cfinal = Calendar.getInstance();     
-         cinicio.setTime(dinicio);
-         cfinal.setTime(dfinal);        
-         milis1 = cinicio.getTimeInMillis();     
-         milis2 = cfinal.getTimeInMillis();    
-         diff = milis2-milis1;        
-         long diffdias = Math.abs ( diff / (24 * 60 * 60 * 1000) );     
-         return (int) diffdias;
+
+    public String getFecCreacion() {
+        return fecCreacion;
     }
-   
-    public Double Importe() {
-        int dias = diferenciaDias(fecInicio, fecFin);
-        double precioHabitacion = hab.getPre();
-        imp = dias * precioHabitacion;
-        return imp;
+
+    public void setFecCreacion(String fecCreacion) {
+        this.fecCreacion = fecCreacion;
     }
 
     public Double getImp() {
@@ -125,8 +96,64 @@ public class Reserva {
         this.imp = imp;
     }
     
+    public String Hoy() {
+        Date dat=new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        return sdf.format(dat);
+    }
     
+    public String Codigoautomatico(){
+        List<Reserva> reservas = listarReservas();
+        int siguienteNumero = reservas.size() + 1;
+        codRes = String.format("R%03d", siguienteNumero);
+        return codRes;
+    }
+
+//    public static int diferenciaDias(String fecInicio, String fecFin){   
+//        Date dinicio = null, dfinal = null;
+//        long milis1, milis2, diff;     
+//        SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd");     
+//        try {
+//            dinicio = sdf.parse(fecInicio);
+//            dfinal = sdf.parse(fecFin);                                           
+//        } catch (ParseException e) {     
+//            System.out.println("Se ha producido un error en los formatos de fechas");
+//        }              
+//         Calendar cinicio = Calendar.getInstance();
+//         Calendar cfinal = Calendar.getInstance();     
+//         cinicio.setTime(dinicio);
+//         cfinal.setTime(dfinal);        
+//         milis1 = cinicio.getTimeInMillis();     
+//         milis2 = cfinal.getTimeInMillis();    
+//         diff = milis2-milis1;        
+//         long diffdias = Math.abs ( diff / (24 * 60 * 60 * 1000) );     
+//         return (int) diffdias;
+//    }
+//   
+//    public Double Importe() {
+//        int dias = diferenciaDias(fecInicio, fecFin);
+//        double precioHabitacion = hab.getPre();
+//        imp = dias * precioHabitacion;
+//        return imp;
+//    }
     
-    
-  
+    public static int diferenciaDias(String fecInicio, String fecFin) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        try {
+            LocalDate inicio = LocalDate.parse(fecInicio, formatter);
+            LocalDate fin = LocalDate.parse(fecFin, formatter);
+            return (int) ChronoUnit.DAYS.between(inicio, fin);
+        } catch (Exception e) {
+            System.out.println("Se ha producido un error en los formatos de fechas: " + e.getMessage());
+            return 0;
+        }
+    }
+
+    public Double Importe() {
+        int dias = diferenciaDias(fecInicio, fecFin);
+        double precioHabitacion = hab.getPre();
+        imp = dias * precioHabitacion;
+        return imp;
+    }
+
 }

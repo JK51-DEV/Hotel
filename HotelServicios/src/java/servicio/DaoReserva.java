@@ -13,14 +13,14 @@ public class DaoReserva {
         Object[] f = (Object[]) tabla.get(i);
         Reserva res = new Reserva();
         Cliente cli = DaoCliente.buscar(f[1].toString());
-        Habitacion hab = DaoHabitacion.buscarHabitacionCOD(f[2].toString());
+        Habitacion hab = DaoHabitacion.buscarHabitacionCOD(f[1].toString());
         res.setCodRes(f[0].toString());
         res.setCli(cli);
         res.setHab(hab);
-        res.setFecCreacion(f[3].toString()); // Asignar la fecha de creación desde la entidad reserva
-        res.setFecInicio(f[4].toString());
-        res.setFecFin(f[5].toString());
-        res.setImp(Double.parseDouble(f[6].toString())); // El calculo se hace des la entidad reserva
+        res.setFecCreacion(f[4].toString()); // Asignar la fecha de creación desde la entidad reserva
+        res.setFecInicio(f[5].toString());
+        res.setFecFin(f[6].toString());
+        res.setImp(Double.parseDouble(f[7].toString())); // El calculo se hace des la entidad reserva
         lis.add(res);
     }
     return lis;
@@ -36,13 +36,12 @@ public class DaoReserva {
     }
     
     public static String grabarReservas(Reserva r){
-    // Construir la consulta SQL para insertar la reserva en la base de datos
-        String sql="insert into reserva values ('"+r.Codigoautomatico()+"','"+r.getCli().getDni()+"',"
-                + "'"+r.getHab().getCod()+"','"+r.getFecha()+"','"+r.getFecInicio()+"',"
-                + "'"+r.getFecFin()+"',"+r.Importe()+")";
+        // Construir la consulta SQL para insertar la reserva en la base de datos
+        String sql = "insert into reserva values ('" + r.Codigoautomatico() + "','" + r.getCli().getDni() + "','11111111',"
+                + "'" + r.getHab().getCod() + "','" + r.Hoy() + "','" + r.getFecInicio() + "',"
+                + "'" + r.getFecFin() + "'," + r.Importe() + ")";
         return Acceso.ejecutar(sql);
-    }
-    
+}
     public static String RegistrarReservas(List<Reserva> reservas) {
         StringBuilder errorMessages = new StringBuilder();
         for (Reserva r : reservas) {

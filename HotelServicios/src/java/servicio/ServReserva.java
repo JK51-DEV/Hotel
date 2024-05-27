@@ -9,6 +9,7 @@ import javax.jws.WebParam;
 public class ServReserva {
 
     ResuReserva resumen = new ResuReserva();
+    Reserva res= new Reserva();
     
     @WebMethod(operationName = "listarReservas")
     public List<Reserva> listarReservas() {
@@ -30,7 +31,7 @@ public class ServReserva {
     }
 
    @WebMethod(operationName = "registrarReserva")
-public String registrarReserva() {
+    public String registrarReserva() {
     try {
             List<Reserva> reservas = resumen.getResumen();
             String result = DaoReserva.RegistrarReservas(reservas);
@@ -43,14 +44,20 @@ public String registrarReserva() {
                 return "Errores al guardar la reserva:\n" + result;
             }
     } catch (Exception e) {
+        Throwable cause = e.getCause();
+        while (cause != null) {
+            e = (Exception) cause;
+            cause = e.getCause();
+        }
         return "Error al registrar todas las reservas: " + e.getMessage();
     }
-        return "ok";
+        return "Registro exitoso";
 }
     @WebMethod(operationName = "getTotal")
     public String getTotal() {
        return String.valueOf(resumen.getTot());
     }
+   
     @WebMethod(operationName = "resumenReserva")
     public List<Reserva> resumenReserva() {
         return resumen.getResumen();
@@ -69,7 +76,7 @@ public String registrarReserva() {
         }
         
         resumen.agregar(habi, clie, fecInicio, fecFin);
-        return "ok";
+        return "La reserva se agregó";
     }
     @WebMethod(operationName = "eliminarResumen")
     public String eliminarResumen() {
