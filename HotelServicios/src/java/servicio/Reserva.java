@@ -109,45 +109,45 @@ public class Reserva {
         return codRes;
     }
 
-//    public static int diferenciaDias(String fecInicio, String fecFin){   
-//        Date dinicio = null, dfinal = null;
-//        long milis1, milis2, diff;     
-//        SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd");     
-//        try {
-//            dinicio = sdf.parse(fecInicio);
-//            dfinal = sdf.parse(fecFin);                                           
-//        } catch (ParseException e) {     
-//            System.out.println("Se ha producido un error en los formatos de fechas");
-//        }              
-//         Calendar cinicio = Calendar.getInstance();
-//         Calendar cfinal = Calendar.getInstance();     
-//         cinicio.setTime(dinicio);
-//         cfinal.setTime(dfinal);        
-//         milis1 = cinicio.getTimeInMillis();     
-//         milis2 = cfinal.getTimeInMillis();    
-//         diff = milis2-milis1;        
-//         long diffdias = Math.abs ( diff / (24 * 60 * 60 * 1000) );     
-//         return (int) diffdias;
-//    }
-//   
+    public static int diferenciaDias(String fecInicio, String fecFin){   
+        Date dinicio = null, dfinal = null;
+        long milis1, milis2, diff;     
+        SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd");     
+        try {
+            dinicio = sdf.parse(fecInicio);
+            dfinal = sdf.parse(fecFin);                                           
+        } catch (ParseException e) {     
+            System.out.println("Se ha producido un error en los formatos de fechas");
+        }              
+         Calendar cinicio = Calendar.getInstance();
+         Calendar cfinal = Calendar.getInstance();     
+         cinicio.setTime(dinicio);
+         cfinal.setTime(dfinal);        
+         milis1 = cinicio.getTimeInMillis();     
+         milis2 = cfinal.getTimeInMillis();    
+         diff = milis2-milis1;        
+         long diffdias = Math.abs ( diff / (24 * 60 * 60 * 1000) );     
+         return (int) diffdias;
+    }
+   
 //    public Double Importe() {
 //        int dias = diferenciaDias(fecInicio, fecFin);
 //        double precioHabitacion = hab.getPre();
 //        imp = dias * precioHabitacion;
 //        return imp;
 //    }
-    
-    public static int diferenciaDias(String fecInicio, String fecFin) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        try {
-            LocalDate inicio = LocalDate.parse(fecInicio, formatter);
-            LocalDate fin = LocalDate.parse(fecFin, formatter);
-            return (int) ChronoUnit.DAYS.between(inicio, fin);
-        } catch (Exception e) {
-            System.out.println("Se ha producido un error en los formatos de fechas: " + e.getMessage());
-            return 0;
-        }
-    }
+//    
+//    public static int diferenciaDias(String fecInicio, String fecFin) {
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+//        try {
+//            LocalDate inicio = LocalDate.parse(fecInicio, formatter);
+//            LocalDate fin = LocalDate.parse(fecFin, formatter);
+//            return (int) ChronoUnit.DAYS.between(inicio, fin);
+//        } catch (Exception e) {
+//            System.out.println("Se ha producido un error en los formatos de fechas: " + e.getMessage());
+//            return 0;
+//        }
+//    }
 
     public Double Importe() {
         int dias = diferenciaDias(fecInicio, fecFin);
