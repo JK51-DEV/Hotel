@@ -24,8 +24,10 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _BuscarCliente_QNAME = new QName("http://servicio/", "buscarCliente");
-    private final static QName _BuscarClienteResponse_QNAME = new QName("http://servicio/", "buscarClienteResponse");
+    private final static QName _GrabarVenta_QNAME = new QName("http://servicio/", "grabarVenta");
+    private final static QName _GrabarVentaResponse_QNAME = new QName("http://servicio/", "grabarVentaResponse");
+    private final static QName _NuevaVenta_QNAME = new QName("http://servicio/", "nuevaVenta");
+    private final static QName _NuevaVentaResponse_QNAME = new QName("http://servicio/", "nuevaVentaResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: servicio
@@ -35,37 +37,79 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link BuscarCliente }
+     * Create an instance of {@link GrabarVenta }
      * 
      */
-    public BuscarCliente createBuscarCliente() {
-        return new BuscarCliente();
+    public GrabarVenta createGrabarVenta() {
+        return new GrabarVenta();
     }
 
     /**
-     * Create an instance of {@link BuscarClienteResponse }
+     * Create an instance of {@link GrabarVentaResponse }
      * 
      */
-    public BuscarClienteResponse createBuscarClienteResponse() {
-        return new BuscarClienteResponse();
+    public GrabarVentaResponse createGrabarVentaResponse() {
+        return new GrabarVentaResponse();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BuscarCliente }{@code >}}
+     * Create an instance of {@link NuevaVenta }
      * 
      */
-    @XmlElementDecl(namespace = "http://servicio/", name = "buscarCliente")
-    public JAXBElement<BuscarCliente> createBuscarCliente(BuscarCliente value) {
-        return new JAXBElement<BuscarCliente>(_BuscarCliente_QNAME, BuscarCliente.class, null, value);
+    public NuevaVenta createNuevaVenta() {
+        return new NuevaVenta();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BuscarClienteResponse }{@code >}}
+     * Create an instance of {@link NuevaVentaResponse }
      * 
      */
-    @XmlElementDecl(namespace = "http://servicio/", name = "buscarClienteResponse")
-    public JAXBElement<BuscarClienteResponse> createBuscarClienteResponse(BuscarClienteResponse value) {
-        return new JAXBElement<BuscarClienteResponse>(_BuscarClienteResponse_QNAME, BuscarClienteResponse.class, null, value);
+    public NuevaVentaResponse createNuevaVentaResponse() {
+        return new NuevaVentaResponse();
+    }
+
+    /**
+     * Create an instance of {@link Venta }
+     * 
+     */
+    public Venta createVenta() {
+        return new Venta();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GrabarVenta }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "grabarVenta")
+    public JAXBElement<GrabarVenta> createGrabarVenta(GrabarVenta value) {
+        return new JAXBElement<GrabarVenta>(_GrabarVenta_QNAME, GrabarVenta.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GrabarVentaResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "grabarVentaResponse")
+    public JAXBElement<GrabarVentaResponse> createGrabarVentaResponse(GrabarVentaResponse value) {
+        return new JAXBElement<GrabarVentaResponse>(_GrabarVentaResponse_QNAME, GrabarVentaResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link NuevaVenta }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "nuevaVenta")
+    public JAXBElement<NuevaVenta> createNuevaVenta(NuevaVenta value) {
+        return new JAXBElement<NuevaVenta>(_NuevaVenta_QNAME, NuevaVenta.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link NuevaVentaResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "nuevaVentaResponse")
+    public JAXBElement<NuevaVentaResponse> createNuevaVentaResponse(NuevaVentaResponse value) {
+        return new JAXBElement<NuevaVentaResponse>(_NuevaVentaResponse_QNAME, NuevaVentaResponse.class, null, value);
     }
 
 }

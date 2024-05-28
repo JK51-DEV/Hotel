@@ -55,18 +55,6 @@ public interface ServCesta {
     /**
      * 
      * @return
-     *     returns java.util.List<servicio.Linea>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getCesta", targetNamespace = "http://servicio/", className = "servicio.GetCesta")
-    @ResponseWrapper(localName = "getCestaResponse", targetNamespace = "http://servicio/", className = "servicio.GetCestaResponse")
-    @Action(input = "http://servicio/ServCesta/getCestaRequest", output = "http://servicio/ServCesta/getCestaResponse")
-    public List<Linea> getCesta();
-
-    /**
-     * 
-     * @return
      *     returns java.lang.String
      */
     @WebMethod
@@ -99,5 +87,17 @@ public interface ServCesta {
         String pre,
         @WebParam(name = "can", targetNamespace = "")
         String can);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<servicio.Linea>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getCesta", targetNamespace = "http://servicio/", className = "servicio.GetCesta")
+    @ResponseWrapper(localName = "getCestaResponse", targetNamespace = "http://servicio/", className = "servicio.GetCestaResponse")
+    @Action(input = "http://servicio/ServCesta/getCestaRequest", output = "http://servicio/ServCesta/getCestaResponse")
+    public List<Linea> getCesta();
 
 }

@@ -4,6 +4,30 @@
 <xsd:import namespace="http://servicio/" schemaLocation="http://localhost:8080/HotelServicios/Servicios?xsd=1"/>
 </xsd:schema>
 </types>
+<message name="buscarNombre">
+<part name="parameters" element="tns:buscarNombre"/>
+</message>
+<message name="buscarNombreResponse">
+<part name="parameters" element="tns:buscarNombreResponse"/>
+</message>
+<message name="dis_listar_avanzado">
+<part name="parameters" element="tns:dis_listar_avanzado"/>
+</message>
+<message name="dis_listar_avanzadoResponse">
+<part name="parameters" element="tns:dis_listar_avanzadoResponse"/>
+</message>
+<message name="autenticarCliente">
+<part name="parameters" element="tns:autenticarCliente"/>
+</message>
+<message name="autenticarClienteResponse">
+<part name="parameters" element="tns:autenticarClienteResponse"/>
+</message>
+<message name="buscarUsuarioInicioSesion">
+<part name="parameters" element="tns:buscarUsuarioInicioSesion"/>
+</message>
+<message name="buscarUsuarioInicioSesionResponse">
+<part name="parameters" element="tns:buscarUsuarioInicioSesionResponse"/>
+</message>
 <message name="buscarCliente">
 <part name="parameters" element="tns:buscarCliente"/>
 </message>
@@ -16,11 +40,11 @@
 <message name="buscarResponse">
 <part name="parameters" element="tns:buscarResponse"/>
 </message>
-<message name="grabarCliente">
-<part name="parameters" element="tns:grabarCliente"/>
+<message name="elmininarCliente">
+<part name="parameters" element="tns:elmininarCliente"/>
 </message>
-<message name="grabarClienteResponse">
-<part name="parameters" element="tns:grabarClienteResponse"/>
+<message name="elmininarClienteResponse">
+<part name="parameters" element="tns:elmininarClienteResponse"/>
 </message>
 <message name="listarCliente">
 <part name="parameters" element="tns:listarCliente"/>
@@ -28,37 +52,29 @@
 <message name="listarClienteResponse">
 <part name="parameters" element="tns:listarClienteResponse"/>
 </message>
-<message name="elmininarCliente">
-<part name="parameters" element="tns:elmininarCliente"/>
+<message name="grabarCliente">
+<part name="parameters" element="tns:grabarCliente"/>
 </message>
-<message name="elmininarClienteResponse">
-<part name="parameters" element="tns:elmininarClienteResponse"/>
-</message>
-<message name="autenticarCliente">
-<part name="parameters" element="tns:autenticarCliente"/>
-</message>
-<message name="autenticarClienteResponse">
-<part name="parameters" element="tns:autenticarClienteResponse"/>
-</message>
-<message name="dis_listar_avanzado">
-<part name="parameters" element="tns:dis_listar_avanzado"/>
-</message>
-<message name="dis_listar_avanzadoResponse">
-<part name="parameters" element="tns:dis_listar_avanzadoResponse"/>
-</message>
-<message name="buscarUsuarioInicioSesion">
-<part name="parameters" element="tns:buscarUsuarioInicioSesion"/>
-</message>
-<message name="buscarUsuarioInicioSesionResponse">
-<part name="parameters" element="tns:buscarUsuarioInicioSesionResponse"/>
-</message>
-<message name="buscarNombre">
-<part name="parameters" element="tns:buscarNombre"/>
-</message>
-<message name="buscarNombreResponse">
-<part name="parameters" element="tns:buscarNombreResponse"/>
+<message name="grabarClienteResponse">
+<part name="parameters" element="tns:grabarClienteResponse"/>
 </message>
 <portType name="ServiciosCliente">
+<operation name="buscarNombre">
+<input wsam:Action="http://servicio/ServiciosCliente/buscarNombreRequest" message="tns:buscarNombre"/>
+<output wsam:Action="http://servicio/ServiciosCliente/buscarNombreResponse" message="tns:buscarNombreResponse"/>
+</operation>
+<operation name="dis_listar_avanzado">
+<input wsam:Action="http://servicio/ServiciosCliente/dis_listar_avanzadoRequest" message="tns:dis_listar_avanzado"/>
+<output wsam:Action="http://servicio/ServiciosCliente/dis_listar_avanzadoResponse" message="tns:dis_listar_avanzadoResponse"/>
+</operation>
+<operation name="autenticarCliente">
+<input wsam:Action="http://servicio/ServiciosCliente/autenticarClienteRequest" message="tns:autenticarCliente"/>
+<output wsam:Action="http://servicio/ServiciosCliente/autenticarClienteResponse" message="tns:autenticarClienteResponse"/>
+</operation>
+<operation name="buscarUsuarioInicioSesion">
+<input wsam:Action="http://servicio/ServiciosCliente/buscarUsuarioInicioSesionRequest" message="tns:buscarUsuarioInicioSesion"/>
+<output wsam:Action="http://servicio/ServiciosCliente/buscarUsuarioInicioSesionResponse" message="tns:buscarUsuarioInicioSesionResponse"/>
+</operation>
 <operation name="buscarCliente">
 <input wsam:Action="http://servicio/ServiciosCliente/buscarClienteRequest" message="tns:buscarCliente"/>
 <output wsam:Action="http://servicio/ServiciosCliente/buscarClienteResponse" message="tns:buscarClienteResponse"/>
@@ -67,37 +83,57 @@
 <input wsam:Action="http://servicio/ServiciosCliente/buscarRequest" message="tns:buscar"/>
 <output wsam:Action="http://servicio/ServiciosCliente/buscarResponse" message="tns:buscarResponse"/>
 </operation>
-<operation name="grabarCliente">
-<input wsam:Action="http://servicio/ServiciosCliente/grabarClienteRequest" message="tns:grabarCliente"/>
-<output wsam:Action="http://servicio/ServiciosCliente/grabarClienteResponse" message="tns:grabarClienteResponse"/>
+<operation name="elmininarCliente">
+<input wsam:Action="http://servicio/ServiciosCliente/elmininarClienteRequest" message="tns:elmininarCliente"/>
+<output wsam:Action="http://servicio/ServiciosCliente/elmininarClienteResponse" message="tns:elmininarClienteResponse"/>
 </operation>
 <operation name="listarCliente">
 <input wsam:Action="http://servicio/ServiciosCliente/listarClienteRequest" message="tns:listarCliente"/>
 <output wsam:Action="http://servicio/ServiciosCliente/listarClienteResponse" message="tns:listarClienteResponse"/>
 </operation>
-<operation name="elmininarCliente">
-<input wsam:Action="http://servicio/ServiciosCliente/elmininarClienteRequest" message="tns:elmininarCliente"/>
-<output wsam:Action="http://servicio/ServiciosCliente/elmininarClienteResponse" message="tns:elmininarClienteResponse"/>
-</operation>
-<operation name="autenticarCliente">
-<input wsam:Action="http://servicio/ServiciosCliente/autenticarClienteRequest" message="tns:autenticarCliente"/>
-<output wsam:Action="http://servicio/ServiciosCliente/autenticarClienteResponse" message="tns:autenticarClienteResponse"/>
-</operation>
-<operation name="dis_listar_avanzado">
-<input wsam:Action="http://servicio/ServiciosCliente/dis_listar_avanzadoRequest" message="tns:dis_listar_avanzado"/>
-<output wsam:Action="http://servicio/ServiciosCliente/dis_listar_avanzadoResponse" message="tns:dis_listar_avanzadoResponse"/>
-</operation>
-<operation name="buscarUsuarioInicioSesion">
-<input wsam:Action="http://servicio/ServiciosCliente/buscarUsuarioInicioSesionRequest" message="tns:buscarUsuarioInicioSesion"/>
-<output wsam:Action="http://servicio/ServiciosCliente/buscarUsuarioInicioSesionResponse" message="tns:buscarUsuarioInicioSesionResponse"/>
-</operation>
-<operation name="buscarNombre">
-<input wsam:Action="http://servicio/ServiciosCliente/buscarNombreRequest" message="tns:buscarNombre"/>
-<output wsam:Action="http://servicio/ServiciosCliente/buscarNombreResponse" message="tns:buscarNombreResponse"/>
+<operation name="grabarCliente">
+<input wsam:Action="http://servicio/ServiciosCliente/grabarClienteRequest" message="tns:grabarCliente"/>
+<output wsam:Action="http://servicio/ServiciosCliente/grabarClienteResponse" message="tns:grabarClienteResponse"/>
 </operation>
 </portType>
 <binding name="ServiciosClientePortBinding" type="tns:ServiciosCliente">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<operation name="buscarNombre">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="dis_listar_avanzado">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="autenticarCliente">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="buscarUsuarioInicioSesion">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="buscarCliente">
 <soap:operation soapAction=""/>
 <input>
@@ -116,7 +152,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="grabarCliente">
+<operation name="elmininarCliente">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -134,43 +170,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="elmininarCliente">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="autenticarCliente">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="dis_listar_avanzado">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="buscarUsuarioInicioSesion">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="buscarNombre">
+<operation name="grabarCliente">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

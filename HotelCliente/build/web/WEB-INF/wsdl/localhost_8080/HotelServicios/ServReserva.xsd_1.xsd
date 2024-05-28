@@ -4,9 +4,13 @@
 
 <xs:element name="agregarReservaResponse" type="tns:agregarReservaResponse"/>
 
+<xs:element name="buscarReserva" type="tns:buscarReserva"/>
+
 <xs:element name="buscarReservaDNI" type="tns:buscarReservaDNI"/>
 
 <xs:element name="buscarReservaDNIResponse" type="tns:buscarReservaDNIResponse"/>
+
+<xs:element name="buscarReservaResponse" type="tns:buscarReservaResponse"/>
 
 <xs:element name="eliminarResumen" type="tns:eliminarResumen"/>
 
@@ -37,6 +41,18 @@
 </xs:complexType>
 
 <xs:complexType name="getTotalResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarReserva">
+<xs:sequence>
+<xs:element name="codres" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarReservaResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
@@ -115,18 +131,6 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="listar_avanzado_reserva">
-<xs:sequence>
-<xs:element name="dni_cliente" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="listar_avanzado_reservaResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:reserva" minOccurs="0" maxOccurs="unbounded"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="buscarReservaDNI">
 <xs:sequence>
 <xs:element name="dni" type="xs:string" minOccurs="0"/>
@@ -136,6 +140,18 @@
 <xs:complexType name="buscarReservaDNIResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listar_avanzado_reserva">
+<xs:sequence>
+<xs:element name="dni_cliente" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listar_avanzado_reservaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:reserva" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 
