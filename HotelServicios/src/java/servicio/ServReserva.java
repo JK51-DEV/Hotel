@@ -72,6 +72,10 @@ public class ServReserva {
     public String getTotal() {
        return String.valueOf(resumen.getTot());
     }
+    @WebMethod(operationName = "codigoautomatico")
+    public String codigoautomatico() {
+       return String.valueOf(res.Codigoautomatico());
+    }
    
     @WebMethod(operationName = "resumenReserva")
     public List<Reserva> resumenReserva() {

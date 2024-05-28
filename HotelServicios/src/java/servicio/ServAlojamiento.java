@@ -97,5 +97,10 @@ public class ServAlojamiento {
            return "Error al registrar todas las reservas: " + e.getMessage();
        }
    }
+   
+   @WebMethod(operationName = "codigoautomaticoaloj")
+    public String codigoautomaticoaloj() {
+       return String.valueOf(aloj.CodigoautomaticoAloj());
+    }
 
 }
