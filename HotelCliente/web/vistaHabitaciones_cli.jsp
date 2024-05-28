@@ -22,7 +22,7 @@ ServHabitacion port = server.getServHabitacionPort();
         <div class="container">
             <h2></h2>
             <h4>Gestión de Habitaciones</h4>
-            <br><br>
+            <%--<br><br>--%>
            <%-- <table>
                 <tr>
                     <td style="padding: 0px">Seleccionar filtro:</td>
