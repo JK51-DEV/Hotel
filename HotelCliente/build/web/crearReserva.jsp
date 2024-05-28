@@ -84,7 +84,7 @@
                     <td>
                         <button class="btn btn-danger" type="button" onclick="RegistrarReserva()">Eliminar Resumen</button>
                         <br><br>
-                        <button class="btn btn-info" type="button" onclick="RegistrarReserva()">Registrar Rserva</button>
+                        <button class="btn btn-info" type="button" onclick="RegistrarReserva()">Registrar Reserva</button>
                     </td>
                 </tr>
                 <%

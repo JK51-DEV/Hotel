@@ -51,7 +51,7 @@ ServHabitacion port = server.getServHabitacionPort();
             <table class="table table-bordered">
                 <thead style="background-color: black; color: white">
                     <tr>
-                        <th>Código</th><th>Nombre</th><th>Estado</th><th>Precio</th>
+                        <th>Código</th><th>Nombre</th><th>Estado</th><th>Precio</th><th>Seleccionar</th>
                        <%-- <th class="text-center">Mantenimiento</th>--%>
                     </tr>
                 </thead>

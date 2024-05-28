@@ -20,8 +20,8 @@ ServHabitacion port = server.getServHabitacionPort();
     <body>
         <%@include file="_menu_cli.jsp" %> 
         <div class="container">
+            <h2></h2>
             <h4>Gestión de Habitaciones</h4>
-            <button class="btn btn-success" type="button" onclick="location.href = 'reservaHab_cli.jsp'">Reservar Habitación</button>
             <br><br>
            <%-- <table>
                 <tr>
@@ -51,7 +51,7 @@ ServHabitacion port = server.getServHabitacionPort();
             <table class="table table-bordered">
                 <thead style="background-color: black; color: white">
                     <tr>
-                        <th>Código</th><th>Nombre</th><th>Estado</th><th>Precio</th>
+                        <th>Código</th><th>Nombre</th><th>Estado</th><th>Precio</th><th>Seleccionar</th>
                        <%-- <th class="text-center">Mantenimiento</th>--%>
                     </tr>
                 </thead>
@@ -65,10 +65,9 @@ ServHabitacion port = server.getServHabitacionPort();
                        <td><%=l.getNom()%></td>
                        <td><%=l.getEstado()%></td>
                        <td>S/. <%=l.getPre()%></td>
-                       <td class="text-center">
-                           <%-- <a class="btn btn-warning" href="/TutorialCliente/index_editar.jsp?id=<%=l.getIdDpc()%>">Editar</a>
-                           <button class="btn btn-danger" type="button" onclick="dis.eliminar(<%=l.getCod()%>)">Eliminar</button>--%>
-                       </td>
+                        <td class="text-center">
+                            <button class="btn btn-success" onclick="reservarHabitacion('<%= l.getCod() %>')">Reservar Habitación</button>
+                        </td>
                    </tr>
                    <%  
                        }
@@ -120,5 +119,10 @@ ServHabitacion port = server.getServHabitacionPort();
                 });
         };
     </script>
+    <script>
+    function reservarHabitacion(codigoHabitacion) {
+        window.location.href = 'reservaHab_cli.jsp?codigoHabitacion=' + codigoHabitacion;
+    }
+</script>
 </html>
 
