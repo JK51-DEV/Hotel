@@ -22,17 +22,17 @@
 <message name="getCestaResponse">
 <part name="parameters" element="tns:getCestaResponse"/>
 </message>
-<message name="crearCesta">
-<part name="parameters" element="tns:crearCesta"/>
-</message>
-<message name="crearCestaResponse">
-<part name="parameters" element="tns:crearCestaResponse"/>
-</message>
 <message name="quitarLinea">
 <part name="parameters" element="tns:quitarLinea"/>
 </message>
 <message name="quitarLineaResponse">
 <part name="parameters" element="tns:quitarLineaResponse"/>
+</message>
+<message name="crearCesta">
+<part name="parameters" element="tns:crearCesta"/>
+</message>
+<message name="crearCestaResponse">
+<part name="parameters" element="tns:crearCestaResponse"/>
 </message>
 <portType name="ServCesta">
 <operation name="getTotal">
@@ -47,13 +47,13 @@
 <input wsam:Action="http://servicio/ServCesta/getCestaRequest" message="tns:getCesta"/>
 <output wsam:Action="http://servicio/ServCesta/getCestaResponse" message="tns:getCestaResponse"/>
 </operation>
-<operation name="crearCesta">
-<input wsam:Action="http://servicio/ServCesta/crearCestaRequest" message="tns:crearCesta"/>
-<output wsam:Action="http://servicio/ServCesta/crearCestaResponse" message="tns:crearCestaResponse"/>
-</operation>
 <operation name="quitarLinea">
 <input wsam:Action="http://servicio/ServCesta/quitarLineaRequest" message="tns:quitarLinea"/>
 <output wsam:Action="http://servicio/ServCesta/quitarLineaResponse" message="tns:quitarLineaResponse"/>
+</operation>
+<operation name="crearCesta">
+<input wsam:Action="http://servicio/ServCesta/crearCestaRequest" message="tns:crearCesta"/>
+<output wsam:Action="http://servicio/ServCesta/crearCestaResponse" message="tns:crearCestaResponse"/>
 </operation>
 </portType>
 <binding name="ServCestaPortBinding" type="tns:ServCesta">
@@ -85,7 +85,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="crearCesta">
+<operation name="quitarLinea">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -94,7 +94,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="quitarLinea">
+<operation name="crearCesta">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

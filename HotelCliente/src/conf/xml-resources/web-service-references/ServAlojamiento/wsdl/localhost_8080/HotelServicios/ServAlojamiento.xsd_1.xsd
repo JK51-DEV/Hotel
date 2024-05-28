@@ -10,6 +10,10 @@
 
 <xs:element name="buscarAlojamientoRESResponse" type="tns:buscarAlojamientoRESResponse"/>
 
+<xs:element name="buscarAlojamientoREStotal" type="tns:buscarAlojamientoREStotal"/>
+
+<xs:element name="buscarAlojamientoREStotalResponse" type="tns:buscarAlojamientoREStotalResponse"/>
+
 <xs:element name="buscarAlojamientoResponse" type="tns:buscarAlojamientoResponse"/>
 
 <xs:element name="codigoautomaticoaloj" type="tns:codigoautomaticoaloj"/>
@@ -160,6 +164,18 @@
 <xs:complexType name="buscarAlojamientoRESResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarAlojamientoREStotal">
+<xs:sequence>
+<xs:element name="codres" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarAlojamientoREStotalResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:alojamiento" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>

@@ -75,18 +75,6 @@ public interface ServCesta {
 
     /**
      * 
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "crearCesta", targetNamespace = "http://servicio/", className = "servicio.CrearCesta")
-    @ResponseWrapper(localName = "crearCestaResponse", targetNamespace = "http://servicio/", className = "servicio.CrearCestaResponse")
-    @Action(input = "http://servicio/ServCesta/crearCestaRequest", output = "http://servicio/ServCesta/crearCestaResponse")
-    public String crearCesta();
-
-    /**
-     * 
      * @param cod
      * @return
      *     returns java.lang.String
@@ -99,5 +87,17 @@ public interface ServCesta {
     public String quitarLinea(
         @WebParam(name = "cod", targetNamespace = "")
         String cod);
+
+    /**
+     * 
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "crearCesta", targetNamespace = "http://servicio/", className = "servicio.CrearCesta")
+    @ResponseWrapper(localName = "crearCestaResponse", targetNamespace = "http://servicio/", className = "servicio.CrearCestaResponse")
+    @Action(input = "http://servicio/ServCesta/crearCestaRequest", output = "http://servicio/ServCesta/crearCestaResponse")
+    public String crearCesta();
 
 }

@@ -29,6 +29,8 @@ public class ObjectFactory {
     private final static QName _BuscarAlojamiento_QNAME = new QName("http://servicio/", "buscarAlojamiento");
     private final static QName _BuscarAlojamientoRES_QNAME = new QName("http://servicio/", "buscarAlojamientoRES");
     private final static QName _BuscarAlojamientoRESResponse_QNAME = new QName("http://servicio/", "buscarAlojamientoRESResponse");
+    private final static QName _BuscarAlojamientoREStotal_QNAME = new QName("http://servicio/", "buscarAlojamientoREStotal");
+    private final static QName _BuscarAlojamientoREStotalResponse_QNAME = new QName("http://servicio/", "buscarAlojamientoREStotalResponse");
     private final static QName _BuscarAlojamientoResponse_QNAME = new QName("http://servicio/", "buscarAlojamientoResponse");
     private final static QName _Codigoautomaticoaloj_QNAME = new QName("http://servicio/", "codigoautomaticoaloj");
     private final static QName _CodigoautomaticoalojResponse_QNAME = new QName("http://servicio/", "codigoautomaticoalojResponse");
@@ -86,6 +88,22 @@ public class ObjectFactory {
      */
     public BuscarAlojamientoRESResponse createBuscarAlojamientoRESResponse() {
         return new BuscarAlojamientoRESResponse();
+    }
+
+    /**
+     * Create an instance of {@link BuscarAlojamientoREStotal }
+     * 
+     */
+    public BuscarAlojamientoREStotal createBuscarAlojamientoREStotal() {
+        return new BuscarAlojamientoREStotal();
+    }
+
+    /**
+     * Create an instance of {@link BuscarAlojamientoREStotalResponse }
+     * 
+     */
+    public BuscarAlojamientoREStotalResponse createBuscarAlojamientoREStotalResponse() {
+        return new BuscarAlojamientoREStotalResponse();
     }
 
     /**
@@ -259,6 +277,24 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://servicio/", name = "buscarAlojamientoRESResponse")
     public JAXBElement<BuscarAlojamientoRESResponse> createBuscarAlojamientoRESResponse(BuscarAlojamientoRESResponse value) {
         return new JAXBElement<BuscarAlojamientoRESResponse>(_BuscarAlojamientoRESResponse_QNAME, BuscarAlojamientoRESResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BuscarAlojamientoREStotal }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "buscarAlojamientoREStotal")
+    public JAXBElement<BuscarAlojamientoREStotal> createBuscarAlojamientoREStotal(BuscarAlojamientoREStotal value) {
+        return new JAXBElement<BuscarAlojamientoREStotal>(_BuscarAlojamientoREStotal_QNAME, BuscarAlojamientoREStotal.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BuscarAlojamientoREStotalResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "buscarAlojamientoREStotalResponse")
+    public JAXBElement<BuscarAlojamientoREStotalResponse> createBuscarAlojamientoREStotalResponse(BuscarAlojamientoREStotalResponse value) {
+        return new JAXBElement<BuscarAlojamientoREStotalResponse>(_BuscarAlojamientoREStotalResponse_QNAME, BuscarAlojamientoREStotalResponse.class, null, value);
     }
 
     /**

@@ -98,6 +98,23 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="listarCliente">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listarClienteResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cliente" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cliente">
+<xs:sequence>
+<xs:element name="dni" type="xs:string" minOccurs="0"/>
+<xs:element name="nom" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="buscarUsuarioInicioSesion">
 <xs:sequence>
 <xs:element name="dni" type="xs:string" minOccurs="0"/>
@@ -118,23 +135,6 @@
 </xs:complexType>
 
 <xs:complexType name="dis_listar_avanzadoResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:cliente" minOccurs="0" maxOccurs="unbounded"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="cliente">
-<xs:sequence>
-<xs:element name="dni" type="xs:string" minOccurs="0"/>
-<xs:element name="nom" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="listarCliente">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="listarClienteResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:cliente" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>

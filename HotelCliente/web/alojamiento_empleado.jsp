@@ -146,7 +146,7 @@
                                         emp_dni: $('#emp_dni').val(),
                                         cod: $('#cod').val()
                                     }, function (res) {
-                                        swal("Bien hecho!", res, "success");
+                                        swal("Reserva Encontrada!", res, "success");
                                         setTimeout(function () {
                                             window.location = '/HotelCliente/alojamiento_empleado.jsp';
                                         }, 1200);
