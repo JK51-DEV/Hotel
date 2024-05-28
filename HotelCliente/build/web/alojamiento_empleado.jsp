@@ -1,4 +1,3 @@
-
 <%@page import="java.util.List"%>
 <%@page import="presentacion.Presentador"%>
 <%@page import="servicio.*" %>
@@ -34,7 +33,7 @@
                 
                 <tr>
                     <td>Empleado : </td>
-                    <td><input class="form-control" type="text" value="${nombreAdmin}" id="emp_nom" name="emp_nom" required></td>
+                    <td><input class="form-control" type="text" value="${txtdniAdmin}" id="emp_nom" name="emp_nom" required></td>
                 </tr>
                     <td>Codigo de reserva</td>
                     <td>

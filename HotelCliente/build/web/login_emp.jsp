@@ -19,7 +19,7 @@
         <%@include file="_referencias.jsp" %> 
     </head>
     <body>
-        <%@include file="_menu.jsp" %> 
+        <%--<%@include file="_menu.jsp" %>--%>
         <div id="cuadro">
             <form action="IniciarSesionEmp" method="Post">
                 <center><p id="titulo">INICIAR SESIÓN</p></center>
