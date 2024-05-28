@@ -16,6 +16,11 @@
             response.setHeader("Pragma", "no-cache");//Directivas compatibles con memorias cache 
             response.setDateHeader("Expires", 0);//Proporciona Fecha y hora para decir el tiempo de respuesta caduco 
         %>
+        <link href="_css_js/registro_emp.css" rel="stylesheet" type="text/css"/>
+        <link href="_sweetAlert/sweetalert.css" rel="stylesheet" type="text/css"/>
+        <link href="_css_js/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script src="_css_js/jquery-3.7.1.min.js" type="text/javascript"></script>
+        <script src="_css_js/bootstrap.min.js" type="text/javascript"></script>
         <%@include file="_referencias.jsp" %> 
     </head>
     <body>
@@ -23,6 +28,7 @@
         <div id="cuadro">
             <form action="IniciarSesionEmp" method="Post">
                 <center><p id="titulo">INICIAR SESIÓN</p></center>
+                <br/><br/><br/>
                 <center><label id="subtitulo3">CODIGO DE USUARIO</label></center>
                 <br/>
                 <input type="text" name="txtdni" value="" id="txtdni" class="entrada"/>
