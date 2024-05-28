@@ -5,9 +5,9 @@
             <ul style="display: inline-block" class="nav navbar-nav" id="lista-menu">
                 <li style="display: inline-block"><a href="vistaEmpleado.jsp" class="btn btn-primary">EMPLEADOS</a></li>
                 <li style="display: inline-block"><a href="vistaCliente.jsp" class="btn btn-primary">CLIENTES</a></li>
-                <li style="display: inline-block"><a href="vistaHabitaciones_cli.jsp" class="btn btn-primary">HABITACIONES</a></li>
+                <li style="display: inline-block"><a href="vistaHabitaciones.jsp" class="btn btn-primary">HABITACIONES</a></li>
                 <li style="display: inline-block"><a href="vistaReservas.jsp" class="btn btn-primary">RESERVAS</a></li>
-                <li style="display: inline-block"><a href="alojamiento_empleado.jsp" class="btn btn-primary">ALOJAMIENTO</a></li>
+                <li style="display: inline-block"><a href="vistaAlojamiento.jsp" class="btn btn-primary">ALOJAMIENTO</a></li>
                 <li style="display: inline-block">
                 <form action="ControlConsumo" method="post">
                     <input type="hidden" name="acc" value="Crear Cesta">
@@ -20,3 +20,4 @@
         </div>
     </div>
 </header>
+
