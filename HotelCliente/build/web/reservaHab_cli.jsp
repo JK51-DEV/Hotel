@@ -1,9 +1,3 @@
-<%-- 
-    Document   : reservaHab
-    Created on : 23-abr-2024, 12:38:57
-    Author     : Usuario
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.*" %>
 <%@page import="servicio.*" %>

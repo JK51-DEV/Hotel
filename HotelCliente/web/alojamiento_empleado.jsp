@@ -3,6 +3,11 @@
 <%@page import="presentacion.Presentador"%>
 <%@page import="servicio.*" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+	servicio.ServAlojamiento_Service service = new servicio.ServAlojamiento_Service();
+	servicio.ServAlojamiento port = service.getServAlojamientoPort();
+	
+    %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,17 +24,18 @@
         <h1>Proceso de Venta</h1>
         <form >
             <table>
+                <%  String codigo=port.codigoautomaticoaloj();
+                %>
+                
                 <tr>
                     <td>Codigo de Alojamiento:  </td>
-                    <td><input class="form-control" type="text" id="aloj" name="aloj" required></td>
+                    <td><input class="form-control" value="<%=codigo%>" type="text" id="aloj" name="aloj" required></td>
                 </tr>
                 
                 <tr>
                     <td>Empleado : </td>
-                    <td><input class="form-control" type="text" id="emp" name="emp" required></td>
-                    <td><input class="form-control" type="text" id="emp_nom" name="emp_nom" required></td>
+                    <td><input class="form-control" type="text" value="${nombreAdmin}" id="emp_nom" name="emp_nom" required></td>
                 </tr>
-                <tr>
                     <td>Codigo de reserva</td>
                     <td>
                         <input class="form-control" type="text" name="cod" size="" />

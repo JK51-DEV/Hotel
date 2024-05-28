@@ -26,7 +26,7 @@ public class ControlReservas extends HttpServlet {
         throws ServletException, IOException {
     response.setContentType("text/html;charset=UTF-8");
     PrintWriter out = response.getWriter();
-    String res = "No se registró";
+    String res = "";
 
     try {
         // Obtener los parámetros del formulario
@@ -43,18 +43,15 @@ public class ControlReservas extends HttpServlet {
         // Llamar al método registrarReserva del servicio web
         //String resultado = port.registrarReserva(codRes, hab, cat, fecInicio, fecFin);
         String resultado = port.agregarReserva(hab, cat, fecInicio, fecFin);
-        // Verificar si la reserva se realizó correctamente
         if (resultado.startsWith("Se guardó")) {
             res = "Reserva realizada correctamente: " + resultado;
-        } else {
+        } /*else {
             res = "Error al realizar la reserva: " + resultado;
-        }
+        }*/
     } catch (Exception e) {
-        // Capturar cualquier excepción y manejarla adecuadamente
         res = "Error: " + e.getMessage();
         out.println("Error: Ingrese datos correctos");
     } finally {
-        // Enviar la respuesta al cliente
         out.println(res);
     }
 }
