@@ -1,20 +1,21 @@
+
 package servicio;
 
 public class Venta {
-    private String num, fec, hor;
-    private String dni, cod;
+    private String num,fec,hor;
+    private String dni,cod;
     private double tot;
 
-    public Venta() {
-    }
-
-    public Venta(String num, String fec, String hor, String dni, String cod, double tot) {
+    public Venta(String num, String fec, String hor,String dni, String cod, double tot) {
         this.num = num;
         this.fec = fec;
-        this.hor = hor;
+        this.hor=hor;
         this.dni = dni;
         this.cod = cod;
         this.tot = tot;
+    }
+
+    public Venta() {
     }
 
     public String getNum() {
@@ -64,6 +65,5 @@ public class Venta {
     public void setHor(String hor) {
         this.hor = hor;
     }
-    
     
 }

@@ -26,10 +26,12 @@ public class ObjectFactory {
 
     private final static QName _AutenticarCliente_QNAME = new QName("http://servicio/", "autenticarCliente");
     private final static QName _AutenticarClienteResponse_QNAME = new QName("http://servicio/", "autenticarClienteResponse");
+    private final static QName _Buscar_QNAME = new QName("http://servicio/", "buscar");
     private final static QName _BuscarCliente_QNAME = new QName("http://servicio/", "buscarCliente");
     private final static QName _BuscarClienteResponse_QNAME = new QName("http://servicio/", "buscarClienteResponse");
     private final static QName _BuscarNombre_QNAME = new QName("http://servicio/", "buscarNombre");
     private final static QName _BuscarNombreResponse_QNAME = new QName("http://servicio/", "buscarNombreResponse");
+    private final static QName _BuscarResponse_QNAME = new QName("http://servicio/", "buscarResponse");
     private final static QName _BuscarUsuarioInicioSesion_QNAME = new QName("http://servicio/", "buscarUsuarioInicioSesion");
     private final static QName _BuscarUsuarioInicioSesionResponse_QNAME = new QName("http://servicio/", "buscarUsuarioInicioSesionResponse");
     private final static QName _DisListarAvanzado_QNAME = new QName("http://servicio/", "dis_listar_avanzado");
@@ -65,6 +67,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Buscar }
+     * 
+     */
+    public Buscar createBuscar() {
+        return new Buscar();
+    }
+
+    /**
      * Create an instance of {@link BuscarCliente }
      * 
      */
@@ -94,6 +104,14 @@ public class ObjectFactory {
      */
     public BuscarNombreResponse createBuscarNombreResponse() {
         return new BuscarNombreResponse();
+    }
+
+    /**
+     * Create an instance of {@link BuscarResponse }
+     * 
+     */
+    public BuscarResponse createBuscarResponse() {
+        return new BuscarResponse();
     }
 
     /**
@@ -203,6 +221,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Buscar }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "buscar")
+    public JAXBElement<Buscar> createBuscar(Buscar value) {
+        return new JAXBElement<Buscar>(_Buscar_QNAME, Buscar.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link BuscarCliente }{@code >}}
      * 
      */
@@ -236,6 +263,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://servicio/", name = "buscarNombreResponse")
     public JAXBElement<BuscarNombreResponse> createBuscarNombreResponse(BuscarNombreResponse value) {
         return new JAXBElement<BuscarNombreResponse>(_BuscarNombreResponse_QNAME, BuscarNombreResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BuscarResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "buscarResponse")
+    public JAXBElement<BuscarResponse> createBuscarResponse(BuscarResponse value) {
+        return new JAXBElement<BuscarResponse>(_BuscarResponse_QNAME, BuscarResponse.class, null, value);
     }
 
     /**

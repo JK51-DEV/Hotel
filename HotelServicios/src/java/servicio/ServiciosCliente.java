@@ -68,5 +68,9 @@ public class ServiciosCliente {
         DaoCliente dis = new DaoCliente();
         return dis.dis_listar_avanzado(dni);
     }
-
+    
+    @WebMethod(operationName = "buscar")
+    public Object[] buscar(@WebParam(name = "dni") String dni) {
+        return DaoCliente.buscarCliente(dni);
+    }
 }

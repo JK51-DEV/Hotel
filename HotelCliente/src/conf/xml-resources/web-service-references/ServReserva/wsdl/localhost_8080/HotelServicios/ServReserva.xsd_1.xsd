@@ -4,9 +4,9 @@
 
 <xs:element name="agregarReservaResponse" type="tns:agregarReservaResponse"/>
 
-<xs:element name="buscarReserva" type="tns:buscarReserva"/>
+<xs:element name="buscarReservaDNI" type="tns:buscarReservaDNI"/>
 
-<xs:element name="buscarReservaResponse" type="tns:buscarReservaResponse"/>
+<xs:element name="buscarReservaDNIResponse" type="tns:buscarReservaDNIResponse"/>
 
 <xs:element name="eliminarResumen" type="tns:eliminarResumen"/>
 
@@ -56,7 +56,6 @@
 <xs:sequence>
 <xs:element name="cli" type="tns:cliente" minOccurs="0"/>
 <xs:element name="codRes" type="xs:string" minOccurs="0"/>
-<xs:element name="empleado" type="tns:empleado" minOccurs="0"/>
 <xs:element name="fecCreacion" type="xs:string" minOccurs="0"/>
 <xs:element name="fecFin" type="xs:string" minOccurs="0"/>
 <xs:element name="fecInicio" type="xs:string" minOccurs="0"/>
@@ -72,31 +71,12 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="empleado">
-<xs:sequence>
-<xs:element name="dni" type="xs:string" minOccurs="0"/>
-<xs:element name="nom" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="habitacion">
 <xs:sequence>
 <xs:element name="cod" type="xs:string" minOccurs="0"/>
 <xs:element name="estado" type="xs:string" minOccurs="0"/>
 <xs:element name="nom" type="xs:string" minOccurs="0"/>
 <xs:element name="pre" type="xs:double"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="buscarReserva">
-<xs:sequence>
-<xs:element name="dni" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="buscarReservaResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -144,6 +124,18 @@
 <xs:complexType name="listar_avanzado_reservaResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:reserva" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarReservaDNI">
+<xs:sequence>
+<xs:element name="dni" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarReservaDNIResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 

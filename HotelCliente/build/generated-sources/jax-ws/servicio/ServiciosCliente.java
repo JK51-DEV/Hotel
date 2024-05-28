@@ -42,6 +42,21 @@ public interface ServiciosCliente {
 
     /**
      * 
+     * @param dni
+     * @return
+     *     returns java.util.List<java.lang.Object>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "buscar", targetNamespace = "http://servicio/", className = "servicio.Buscar")
+    @ResponseWrapper(localName = "buscarResponse", targetNamespace = "http://servicio/", className = "servicio.BuscarResponse")
+    @Action(input = "http://servicio/ServiciosCliente/buscarRequest", output = "http://servicio/ServiciosCliente/buscarResponse")
+    public List<Object> buscar(
+        @WebParam(name = "dni", targetNamespace = "")
+        String dni);
+
+    /**
+     * 
      * @param nom
      * @param dni
      * @return
@@ -87,21 +102,6 @@ public interface ServiciosCliente {
 
     /**
      * 
-     * @param dni
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "buscarNombre", targetNamespace = "http://servicio/", className = "servicio.BuscarNombre")
-    @ResponseWrapper(localName = "buscarNombreResponse", targetNamespace = "http://servicio/", className = "servicio.BuscarNombreResponse")
-    @Action(input = "http://servicio/ServiciosCliente/buscarNombreRequest", output = "http://servicio/ServiciosCliente/buscarNombreResponse")
-    public String buscarNombre(
-        @WebParam(name = "dni", targetNamespace = "")
-        String dni);
-
-    /**
-     * 
      * @param nom
      * @param dni
      * @return
@@ -117,6 +117,21 @@ public interface ServiciosCliente {
         String dni,
         @WebParam(name = "nom", targetNamespace = "")
         String nom);
+
+    /**
+     * 
+     * @param dni
+     * @return
+     *     returns java.util.List<servicio.Cliente>
+     */
+    @WebMethod(operationName = "dis_listar_avanzado")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "dis_listar_avanzado", targetNamespace = "http://servicio/", className = "servicio.DisListarAvanzado")
+    @ResponseWrapper(localName = "dis_listar_avanzadoResponse", targetNamespace = "http://servicio/", className = "servicio.DisListarAvanzadoResponse")
+    @Action(input = "http://servicio/ServiciosCliente/dis_listar_avanzadoRequest", output = "http://servicio/ServiciosCliente/dis_listar_avanzadoResponse")
+    public List<Cliente> disListarAvanzado(
+        @WebParam(name = "dni", targetNamespace = "")
+        String dni);
 
     /**
      * 
@@ -140,14 +155,14 @@ public interface ServiciosCliente {
      * 
      * @param dni
      * @return
-     *     returns java.util.List<servicio.Cliente>
+     *     returns java.lang.String
      */
-    @WebMethod(operationName = "dis_listar_avanzado")
+    @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "dis_listar_avanzado", targetNamespace = "http://servicio/", className = "servicio.DisListarAvanzado")
-    @ResponseWrapper(localName = "dis_listar_avanzadoResponse", targetNamespace = "http://servicio/", className = "servicio.DisListarAvanzadoResponse")
-    @Action(input = "http://servicio/ServiciosCliente/dis_listar_avanzadoRequest", output = "http://servicio/ServiciosCliente/dis_listar_avanzadoResponse")
-    public List<Cliente> disListarAvanzado(
+    @RequestWrapper(localName = "buscarNombre", targetNamespace = "http://servicio/", className = "servicio.BuscarNombre")
+    @ResponseWrapper(localName = "buscarNombreResponse", targetNamespace = "http://servicio/", className = "servicio.BuscarNombreResponse")
+    @Action(input = "http://servicio/ServiciosCliente/buscarNombreRequest", output = "http://servicio/ServiciosCliente/buscarNombreResponse")
+    public String buscarNombre(
         @WebParam(name = "dni", targetNamespace = "")
         String dni);
 

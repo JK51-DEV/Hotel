@@ -1,5 +1,4 @@
 package servicio;
-
 import java.util.List;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
@@ -7,12 +6,10 @@ import javax.jws.WebParam;
 
 @WebService(serviceName = "ServCesta")
 public class ServCesta {
-
     private Cesta cesta;
-    
     @WebMethod(operationName = "crearCesta")
     public String crearCesta() {
-        cesta = new Cesta();
+        cesta=new Cesta();
         return "OK";
     }
 

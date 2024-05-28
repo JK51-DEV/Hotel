@@ -1,7 +1,8 @@
+
 package servicio;
 
 public class Linea {
-    private String cod, nom;
+    private String cod,nom;
     private double pre;
     private int can;
     private double imp;
@@ -49,11 +50,12 @@ public class Linea {
     }
 
     public double getImp() {
-        imp = pre * can;
+        imp=pre*can;
         return imp;
     }
 
     public void setImp(double imp) {
         this.imp = imp;
     }
+    
 }

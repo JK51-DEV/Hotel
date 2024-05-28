@@ -200,4 +200,8 @@ public class DaoCliente {
         return nombre;
     }
     
+    public static Object[] buscarCliente(String dni){
+        String sql="select * from cliente where dni='"+dni+"'";
+        return Acceso.buscar(sql);
+    }
 }

@@ -1,13 +1,14 @@
+
 package servicio;
 
-public class Consumo {
-    private String cod, nom;
+public class Articulo {
+    private String cod,nom;
     private double pre;
 
-    public Consumo() {
+    public Articulo() {
     }
 
-    public Consumo(String cod, String nom, double pre) {
+    public Articulo(String cod, String nom, double pre) {
         this.cod = cod;
         this.nom = nom;
         this.pre = pre;
@@ -36,4 +37,5 @@ public class Consumo {
     public void setPre(double pre) {
         this.pre = pre;
     }
+    
 }

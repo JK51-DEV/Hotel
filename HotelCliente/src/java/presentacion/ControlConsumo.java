@@ -14,10 +14,14 @@ import servicio.ServCesta_Service;
 import servicio.ServCliente_Service;
 import servicio.ServListarArticulos_Service;
 import servicio.ServVenta_Service;
+import servicio.Servicios;
 import servicio.Venta;
 
 @WebServlet(name = "ControlConsumo", urlPatterns = {"/ControlConsumo"})
 public class ControlConsumo extends HttpServlet {
+
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/HotelServicios/Servicios.wsdl")
+    private Servicios service_4;
 
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/SupermercadoServicios/ServCliente.wsdl")
     private ServCliente_Service service_3;
@@ -122,7 +126,7 @@ public class ControlConsumo extends HttpServlet {
         }
         if(acc.equals("Buscar Cliente")){
             String dni=request.getParameter("dni");
-            java.util.List<java.lang.Object>lis=buscarCliente(dni);
+            java.util.List<java.lang.Object>lis=buscar(dni);
             if(lis.size()>0){
                 Object[]fil2=new Object[2];
                 fil2[0]=lis.get(0);
@@ -234,10 +238,10 @@ public class ControlConsumo extends HttpServlet {
         return port.nuevaVenta();
     }
 
-    private java.util.List<java.lang.Object> buscarCliente(java.lang.String dni) {
+    private java.util.List<java.lang.Object> buscar(java.lang.String dni) {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
-        servicio.ServCliente port = service_3.getServClientePort();
-        return port.buscarCliente(dni);
+        servicio.ServiciosCliente port = service_4.getServiciosClientePort();
+        return port.buscar(dni);
     }
 }

@@ -4,6 +4,8 @@
 
 <xs:element name="autenticarClienteResponse" type="tns:autenticarClienteResponse"/>
 
+<xs:element name="buscar" type="tns:buscar"/>
+
 <xs:element name="buscarCliente" type="tns:buscarCliente"/>
 
 <xs:element name="buscarClienteResponse" type="tns:buscarClienteResponse"/>
@@ -11,6 +13,8 @@
 <xs:element name="buscarNombre" type="tns:buscarNombre"/>
 
 <xs:element name="buscarNombreResponse" type="tns:buscarNombreResponse"/>
+
+<xs:element name="buscarResponse" type="tns:buscarResponse"/>
 
 <xs:element name="buscarUsuarioInicioSesion" type="tns:buscarUsuarioInicioSesion"/>
 
@@ -111,6 +115,18 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="dis_listar_avanzado">
+<xs:sequence>
+<xs:element name="dni" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dis_listar_avanzadoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cliente" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="buscarUsuarioInicioSesion">
 <xs:sequence>
 <xs:element name="dni" type="xs:string" minOccurs="0"/>
@@ -124,15 +140,15 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="dis_listar_avanzado">
+<xs:complexType name="buscar">
 <xs:sequence>
 <xs:element name="dni" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="dis_listar_avanzadoResponse">
+<xs:complexType name="buscarResponse">
 <xs:sequence>
-<xs:element name="return" type="tns:cliente" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="return" type="xs:anyType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>

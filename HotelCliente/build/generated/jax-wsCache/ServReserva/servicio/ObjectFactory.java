@@ -26,8 +26,8 @@ public class ObjectFactory {
 
     private final static QName _AgregarReserva_QNAME = new QName("http://servicio/", "agregarReserva");
     private final static QName _AgregarReservaResponse_QNAME = new QName("http://servicio/", "agregarReservaResponse");
-    private final static QName _BuscarReserva_QNAME = new QName("http://servicio/", "buscarReserva");
-    private final static QName _BuscarReservaResponse_QNAME = new QName("http://servicio/", "buscarReservaResponse");
+    private final static QName _BuscarReservaDNI_QNAME = new QName("http://servicio/", "buscarReservaDNI");
+    private final static QName _BuscarReservaDNIResponse_QNAME = new QName("http://servicio/", "buscarReservaDNIResponse");
     private final static QName _EliminarResumen_QNAME = new QName("http://servicio/", "eliminarResumen");
     private final static QName _EliminarResumenResponse_QNAME = new QName("http://servicio/", "eliminarResumenResponse");
     private final static QName _GetTotal_QNAME = new QName("http://servicio/", "getTotal");
@@ -65,19 +65,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link BuscarReserva }
+     * Create an instance of {@link BuscarReservaDNI }
      * 
      */
-    public BuscarReserva createBuscarReserva() {
-        return new BuscarReserva();
+    public BuscarReservaDNI createBuscarReservaDNI() {
+        return new BuscarReservaDNI();
     }
 
     /**
-     * Create an instance of {@link BuscarReservaResponse }
+     * Create an instance of {@link BuscarReservaDNIResponse }
      * 
      */
-    public BuscarReservaResponse createBuscarReservaResponse() {
-        return new BuscarReservaResponse();
+    public BuscarReservaDNIResponse createBuscarReservaDNIResponse() {
+        return new BuscarReservaDNIResponse();
     }
 
     /**
@@ -193,14 +193,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Empleado }
-     * 
-     */
-    public Empleado createEmpleado() {
-        return new Empleado();
-    }
-
-    /**
      * Create an instance of {@link Habitacion }
      * 
      */
@@ -227,21 +219,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BuscarReserva }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BuscarReservaDNI }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://servicio/", name = "buscarReserva")
-    public JAXBElement<BuscarReserva> createBuscarReserva(BuscarReserva value) {
-        return new JAXBElement<BuscarReserva>(_BuscarReserva_QNAME, BuscarReserva.class, null, value);
+    @XmlElementDecl(namespace = "http://servicio/", name = "buscarReservaDNI")
+    public JAXBElement<BuscarReservaDNI> createBuscarReservaDNI(BuscarReservaDNI value) {
+        return new JAXBElement<BuscarReservaDNI>(_BuscarReservaDNI_QNAME, BuscarReservaDNI.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BuscarReservaResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BuscarReservaDNIResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://servicio/", name = "buscarReservaResponse")
-    public JAXBElement<BuscarReservaResponse> createBuscarReservaResponse(BuscarReservaResponse value) {
-        return new JAXBElement<BuscarReservaResponse>(_BuscarReservaResponse_QNAME, BuscarReservaResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://servicio/", name = "buscarReservaDNIResponse")
+    public JAXBElement<BuscarReservaDNIResponse> createBuscarReservaDNIResponse(BuscarReservaDNIResponse value) {
+        return new JAXBElement<BuscarReservaDNIResponse>(_BuscarReservaDNIResponse_QNAME, BuscarReservaDNIResponse.class, null, value);
     }
 
     /**
