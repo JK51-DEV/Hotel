@@ -25,10 +25,10 @@
             <br/>
             <button id="boton" onclick="window.location.href = 'registrarCliente.jsp'">Registrar</button>
             <br/><br/>
-            <center><label id="subtitulo4">RESERVAR HABITACIÓN</label></center>
+            <%-- <center><label id="subtitulo4">RESERVAR HABITACIÓN</label></center>
             <br/>
             <button id="boton" onclick="window.location.href = 'login_emp.jsp'">Reservar</button>
-            <br/><br/>
+            <br/><br/>--%>
 
         </div>
     </body>
