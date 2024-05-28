@@ -6,14 +6,6 @@
     <system systemId="http://localhost:8080/HotelServiciosv3/Servicios?xsd=1" uri="src/conf/xml-resources/web-service-references/Servicios/wsdl/localhost_8080/HotelServiciosv3/Servicios.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/HotelServiciosv3/ServReserva?wsdl" uri="src/conf/xml-resources/web-service-references/ServReserva/wsdl/localhost_8080/HotelServiciosv3/ServReserva.wsdl"/>
     <system systemId="http://localhost:8080/HotelServiciosv3/ServReserva?xsd=1" uri="src/conf/xml-resources/web-service-references/ServReserva/wsdl/localhost_8080/HotelServiciosv3/ServReserva.xsd_1.xsd"/>
-    <system systemId="http://localhost:8080/HotelServicios/ServHabitacion?wsdl" uri="src/conf/xml-resources/web-service-references/ServHabitacion/wsdl/localhost_8080/HotelServicios/ServHabitacion.wsdl"/>
-    <system systemId="http://localhost:8080/HotelServicios/ServHabitacion?xsd=1" uri="src/conf/xml-resources/web-service-references/ServHabitacion/wsdl/localhost_8080/HotelServicios/ServHabitacion.xsd_1.xsd"/>
-    <system systemId="http://localhost:8080/HotelServicios/Servicios?wsdl" uri="src/conf/xml-resources/web-service-references/Servicios/wsdl/localhost_8080/HotelServicios/Servicios.wsdl"/>
-    <system systemId="http://localhost:8080/HotelServicios/Servicios?xsd=1" uri="src/conf/xml-resources/web-service-references/Servicios/wsdl/localhost_8080/HotelServicios/Servicios.xsd_1.xsd"/>
-    <system systemId="http://localhost:8080/HotelServicios/ServReserva?wsdl" uri="src/conf/xml-resources/web-service-references/ServReserva/wsdl/localhost_8080/HotelServicios/ServReserva.wsdl"/>
-    <system systemId="http://localhost:8080/HotelServicios/ServReserva?xsd=1" uri="src/conf/xml-resources/web-service-references/ServReserva/wsdl/localhost_8080/HotelServicios/ServReserva.xsd_1.xsd"/>
-    <system systemId="http://localhost:8080/HotelServicios/ServiciosEmpleado?wsdl" uri="src/conf/xml-resources/web-service-references/ServiciosEmpleado/wsdl/localhost_8080/HotelServicios/ServiciosEmpleado.wsdl"/>
-    <system systemId="http://localhost:8080/HotelServicios/ServiciosEmpleado?xsd=1" uri="src/conf/xml-resources/web-service-references/ServiciosEmpleado/wsdl/localhost_8080/HotelServicios/ServiciosEmpleado.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/SupermercadoServicios/ServListarArticulos?wsdl" uri="src/conf/xml-resources/web-service-references/ServListarArticulos/wsdl/localhost_8080/SupermercadoServicios/ServListarArticulos.wsdl"/>
     <system systemId="http://localhost:8080/SupermercadoServicios/ServListarArticulos?xsd=1" uri="src/conf/xml-resources/web-service-references/ServListarArticulos/wsdl/localhost_8080/SupermercadoServicios/ServListarArticulos.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/SupermercadoServicios/ServCesta?wsdl" uri="src/conf/xml-resources/web-service-references/ServCesta/wsdl/localhost_8080/SupermercadoServicios/ServCesta.wsdl"/>
@@ -22,4 +14,18 @@
     <system systemId="http://localhost:8080/SupermercadoServicios/ServVenta?xsd=1" uri="src/conf/xml-resources/web-service-references/ServVenta/wsdl/localhost_8080/SupermercadoServicios/ServVenta.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/SupermercadoServicios/ServCliente?wsdl" uri="src/conf/xml-resources/web-service-references/ServCliente/wsdl/localhost_8080/SupermercadoServicios/ServCliente.wsdl"/>
     <system systemId="http://localhost:8080/SupermercadoServicios/ServCliente?xsd=1" uri="src/conf/xml-resources/web-service-references/ServCliente/wsdl/localhost_8080/SupermercadoServicios/ServCliente.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/HotelServicios/ServHabitacion?wsdl" uri="src/conf/xml-resources/web-service-references/ServHabitacion/wsdl/localhost_8080/HotelServicios/ServHabitacion.wsdl"/>
+    <system systemId="http://localhost:8080/HotelServicios/ServHabitacion?xsd=1" uri="src/conf/xml-resources/web-service-references/ServHabitacion/wsdl/localhost_8080/HotelServicios/ServHabitacion.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/HotelServicios/ServReserva?wsdl" uri="src/conf/xml-resources/web-service-references/ServReserva/wsdl/localhost_8080/HotelServicios/ServReserva.wsdl"/>
+    <system systemId="http://localhost:8080/HotelServicios/ServReserva?xsd=1" uri="src/conf/xml-resources/web-service-references/ServReserva/wsdl/localhost_8080/HotelServicios/ServReserva.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/HotelServicios/ServiciosEmpleado?wsdl" uri="src/conf/xml-resources/web-service-references/ServiciosEmpleado/wsdl/localhost_8080/HotelServicios/ServiciosEmpleado.wsdl"/>
+    <system systemId="http://localhost:8080/HotelServicios/ServiciosEmpleado?xsd=1" uri="src/conf/xml-resources/web-service-references/ServiciosEmpleado/wsdl/localhost_8080/HotelServicios/ServiciosEmpleado.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/HotelServicios/ServListarArticulos?wsdl" uri="src/conf/xml-resources/web-service-references/ServListarArticulos/wsdl/localhost_8080/HotelServicios/ServListarArticulos.wsdl"/>
+    <system systemId="http://localhost:8080/HotelServicios/ServListarArticulos?xsd=1" uri="src/conf/xml-resources/web-service-references/ServListarArticulos/wsdl/localhost_8080/HotelServicios/ServListarArticulos.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/HotelServicios/Servicios?wsdl" uri="src/conf/xml-resources/web-service-references/Servicios/wsdl/localhost_8080/HotelServicios/Servicios.wsdl"/>
+    <system systemId="http://localhost:8080/HotelServicios/Servicios?xsd=1" uri="src/conf/xml-resources/web-service-references/Servicios/wsdl/localhost_8080/HotelServicios/Servicios.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/HotelServicios/ServCesta?wsdl" uri="src/conf/xml-resources/web-service-references/ServCesta/wsdl/localhost_8080/HotelServicios/ServCesta.wsdl"/>
+    <system systemId="http://localhost:8080/HotelServicios/ServCesta?xsd=1" uri="src/conf/xml-resources/web-service-references/ServCesta/wsdl/localhost_8080/HotelServicios/ServCesta.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/HotelServicios/ServVenta?wsdl" uri="src/conf/xml-resources/web-service-references/ServVenta/wsdl/localhost_8080/HotelServicios/ServVenta.wsdl"/>
+    <system systemId="http://localhost:8080/HotelServicios/ServVenta?xsd=1" uri="src/conf/xml-resources/web-service-references/ServVenta/wsdl/localhost_8080/HotelServicios/ServVenta.xsd_1.xsd"/>
 </catalog>

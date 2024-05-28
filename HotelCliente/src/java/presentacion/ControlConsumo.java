@@ -11,7 +11,6 @@ import javax.xml.ws.WebServiceRef;
 import servicio.Articulo;
 import servicio.Linea;
 import servicio.ServCesta_Service;
-import servicio.ServCliente_Service;
 import servicio.ServListarArticulos_Service;
 import servicio.ServVenta_Service;
 import servicio.Servicios;
@@ -20,20 +19,18 @@ import servicio.Venta;
 @WebServlet(name = "ControlConsumo", urlPatterns = {"/ControlConsumo"})
 public class ControlConsumo extends HttpServlet {
 
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/HotelServicios/ServVenta.wsdl")
+    private ServVenta_Service service_2;
+
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/HotelServicios/ServCesta.wsdl")
+    private ServCesta_Service service_1;
+
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/HotelServicios/ServListarArticulos.wsdl")
+    private ServListarArticulos_Service service;
+
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/HotelServicios/Servicios.wsdl")
     private Servicios service_4;
 
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/SupermercadoServicios/ServCliente.wsdl")
-    private ServCliente_Service service_3;
-
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/SupermercadoServicios/ServVenta.wsdl")
-    private ServVenta_Service service_2;
-
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/SupermercadoServicios/ServCesta.wsdl")
-    private ServCesta_Service service_1;
-
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/SupermercadoServicios/ServListarArticulos.wsdl")
-    private ServListarArticulos_Service service;
     private Presentador pres;
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -189,6 +186,19 @@ public class ControlConsumo extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
+    private java.util.List<servicio.Linea> getCesta() {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        servicio.ServCesta port = service_1.getServCestaPort();
+        return port.getCesta();
+    }
+    private java.util.List<java.lang.Object> buscar(java.lang.String dni) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        servicio.ServiciosCliente port = service_4.getServiciosClientePort();
+        return port.buscar(dni);
+    }
+
     private java.util.List<servicio.Articulo> listarArticulos() {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
@@ -201,20 +211,6 @@ public class ControlConsumo extends HttpServlet {
         // If the calling of port operations may lead to race condition some synchronization is required.
         servicio.ServCesta port = service_1.getServCestaPort();
         return port.agregarLinea(cod, nom, pre, can);
-    }
-
-    private String crearCesta() {
-        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
-        // If the calling of port operations may lead to race condition some synchronization is required.
-        servicio.ServCesta port = service_1.getServCestaPort();
-        return port.crearCesta();
-    }
-
-    private java.util.List<servicio.Linea> getCesta() {
-        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
-        // If the calling of port operations may lead to race condition some synchronization is required.
-        servicio.ServCesta port = service_1.getServCestaPort();
-        return port.getCesta();
     }
 
     private String getTotal() {
@@ -238,10 +234,11 @@ public class ControlConsumo extends HttpServlet {
         return port.nuevaVenta();
     }
 
-    private java.util.List<java.lang.Object> buscar(java.lang.String dni) {
+    private String crearCesta() {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
-        servicio.ServiciosCliente port = service_4.getServiciosClientePort();
-        return port.buscar(dni);
+        servicio.ServCesta port = service_1.getServCestaPort();
+        return port.crearCesta();
     }
+    
 }

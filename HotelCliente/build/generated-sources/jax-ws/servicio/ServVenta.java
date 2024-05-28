@@ -26,6 +26,18 @@ public interface ServVenta {
 
     /**
      * 
+     * @return
+     *     returns servicio.Venta
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "nuevaVenta", targetNamespace = "http://servicio/", className = "servicio.NuevaVenta")
+    @ResponseWrapper(localName = "nuevaVentaResponse", targetNamespace = "http://servicio/", className = "servicio.NuevaVentaResponse")
+    @Action(input = "http://servicio/ServVenta/nuevaVentaRequest", output = "http://servicio/ServVenta/nuevaVentaResponse")
+    public Venta nuevaVenta();
+
+    /**
+     * 
      * @param tot
      * @param cod
      * @param dni
@@ -44,17 +56,5 @@ public interface ServVenta {
         String cod,
         @WebParam(name = "tot", targetNamespace = "")
         double tot);
-
-    /**
-     * 
-     * @return
-     *     returns servicio.Venta
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "nuevaVenta", targetNamespace = "http://servicio/", className = "servicio.NuevaVenta")
-    @ResponseWrapper(localName = "nuevaVentaResponse", targetNamespace = "http://servicio/", className = "servicio.NuevaVentaResponse")
-    @Action(input = "http://servicio/ServVenta/nuevaVentaRequest", output = "http://servicio/ServVenta/nuevaVentaResponse")
-    public Venta nuevaVenta();
 
 }

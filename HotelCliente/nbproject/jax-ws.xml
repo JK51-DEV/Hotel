@@ -34,38 +34,6 @@
         </wsimport-option>
       </wsimport-options>
     </client>
-    <client name="Servicios">
-      <wsdl-url>http://localhost:8080/HotelServicios/Servicios?wsdl</wsdl-url>
-      <local-wsdl-file>localhost_8080/HotelServicios/Servicios.wsdl</local-wsdl-file>
-      <package-name>servicio</package-name>
-      <catalog-file>catalog.xml</catalog-file>
-      <wsimport-options>
-        <wsimport-option>
-          <wsimport-option-name>extension</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>verbose</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>fork</wsimport-option-name>
-          <wsimport-option-value>false</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/HotelServicios/Servicios?wsdl</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>xnocompile</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>xendorsed</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-      </wsimport-options>
-    </client>
     <client name="ServReserva">
       <wsdl-url>http://localhost:8080/HotelServicios/ServReserva?wsdl</wsdl-url>
       <local-wsdl-file>localhost_8080/HotelServicios/ServReserva.wsdl</local-wsdl-file>
@@ -131,8 +99,8 @@
       </wsimport-options>
     </client>
     <client name="ServListarArticulos">
-      <wsdl-url>http://localhost:8080/SupermercadoServicios/ServListarArticulos?wsdl</wsdl-url>
-      <local-wsdl-file>localhost_8080/SupermercadoServicios/ServListarArticulos.wsdl</local-wsdl-file>
+      <wsdl-url>http://localhost:8080/HotelServicios/ServListarArticulos?wsdl</wsdl-url>
+      <local-wsdl-file>localhost_8080/HotelServicios/ServListarArticulos.wsdl</local-wsdl-file>
       <package-name>servicio</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
@@ -150,7 +118,39 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/SupermercadoServicios/ServListarArticulos?wsdl</wsimport-option-value>
+          <wsimport-option-value>http://localhost:8080/HotelServicios/ServListarArticulos?wsdl</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xnocompile</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xendorsed</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+      </wsimport-options>
+    </client>
+    <client name="Servicios">
+      <wsdl-url>http://localhost:8080/HotelServicios/Servicios?wsdl</wsdl-url>
+      <local-wsdl-file>localhost_8080/HotelServicios/Servicios.wsdl</local-wsdl-file>
+      <package-name>servicio</package-name>
+      <catalog-file>catalog.xml</catalog-file>
+      <wsimport-options>
+        <wsimport-option>
+          <wsimport-option-name>extension</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>verbose</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>fork</wsimport-option-name>
+          <wsimport-option-value>false</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>wsdlLocation</wsimport-option-name>
+          <wsimport-option-value>http://localhost:8080/HotelServicios/Servicios?wsdl</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>
@@ -163,8 +163,8 @@
       </wsimport-options>
     </client>
     <client name="ServCesta">
-      <wsdl-url>http://localhost:8080/SupermercadoServicios/ServCesta?wsdl</wsdl-url>
-      <local-wsdl-file>localhost_8080/SupermercadoServicios/ServCesta.wsdl</local-wsdl-file>
+      <wsdl-url>http://localhost:8080/HotelServicios/ServCesta?wsdl</wsdl-url>
+      <local-wsdl-file>localhost_8080/HotelServicios/ServCesta.wsdl</local-wsdl-file>
       <package-name>servicio</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
@@ -182,7 +182,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/SupermercadoServicios/ServCesta?wsdl</wsimport-option-value>
+          <wsimport-option-value>http://localhost:8080/HotelServicios/ServCesta?wsdl</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>
@@ -195,8 +195,8 @@
       </wsimport-options>
     </client>
     <client name="ServVenta">
-      <wsdl-url>http://localhost:8080/SupermercadoServicios/ServVenta?wsdl</wsdl-url>
-      <local-wsdl-file>localhost_8080/SupermercadoServicios/ServVenta.wsdl</local-wsdl-file>
+      <wsdl-url>http://localhost:8080/HotelServicios/ServVenta?wsdl</wsdl-url>
+      <local-wsdl-file>localhost_8080/HotelServicios/ServVenta.wsdl</local-wsdl-file>
       <package-name>servicio</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
@@ -214,39 +214,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/SupermercadoServicios/ServVenta?wsdl</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>xnocompile</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>xendorsed</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-      </wsimport-options>
-    </client>
-    <client name="ServCliente">
-      <wsdl-url>http://localhost:8080/SupermercadoServicios/ServCliente?wsdl</wsdl-url>
-      <local-wsdl-file>localhost_8080/SupermercadoServicios/ServCliente.wsdl</local-wsdl-file>
-      <package-name>servicio</package-name>
-      <catalog-file>catalog.xml</catalog-file>
-      <wsimport-options>
-        <wsimport-option>
-          <wsimport-option-name>extension</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>verbose</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>fork</wsimport-option-name>
-          <wsimport-option-value>false</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/SupermercadoServicios/ServCliente?wsdl</wsimport-option-value>
+          <wsimport-option-value>http://localhost:8080/HotelServicios/ServVenta?wsdl</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>
