@@ -21,6 +21,22 @@ public class DaoAlojamiento {
     return lis;
     }
     
+    public List<Alojamiento> BuscarAlojamiento(String codaloj) {
+    String sql="select * from alojamiento where cod_aloj='"+codaloj+"'";
+    List tabla = Acceso.listar(sql);
+    List lis = new ArrayList();
+    for (int i = 0; i < tabla.size(); i++) {
+        Object[] f = (Object[]) tabla.get(i);
+        Alojamiento aloj = new Alojamiento();
+        Reserva reserva = DaoReserva.buscarReservaLista(f[1].toString());
+        aloj.setCodAloj(f[0].toString());
+        aloj.setReserva(reserva);
+        aloj.setFecCreacionAloj(f[3].toString()); // Asignar la fecha de creación desde la entidad alojamiento
+        lis.add(aloj);
+    }
+    return lis;
+    }
+    
     public static String buscarAlojamiento(String codaloj){
         String sql="select * from alojamiento where cod_aloj='"+codaloj+"'";
         Object[]f=Acceso.buscar(sql);

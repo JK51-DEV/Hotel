@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://servicio/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://servicio/">
+
+<xs:element name="agregarAlojamiento" type="tns:agregarAlojamiento"/>
+
+<xs:element name="agregarAlojamientoResponse" type="tns:agregarAlojamientoResponse"/>
+
+<xs:element name="buscarAlojamiento" type="tns:buscarAlojamiento"/>
+
+<xs:element name="buscarAlojamientoRES" type="tns:buscarAlojamientoRES"/>
+
+<xs:element name="buscarAlojamientoRESResponse" type="tns:buscarAlojamientoRESResponse"/>
+
+<xs:element name="buscarAlojamientoResponse" type="tns:buscarAlojamientoResponse"/>
+
+<xs:element name="codigoautomaticoaloj" type="tns:codigoautomaticoaloj"/>
+
+<xs:element name="codigoautomaticoalojResponse" type="tns:codigoautomaticoalojResponse"/>
+
+<xs:element name="eliminarResumenAloj" type="tns:eliminarResumenAloj"/>
+
+<xs:element name="eliminarResumenAlojResponse" type="tns:eliminarResumenAlojResponse"/>
+
+<xs:element name="listarAlojamiento" type="tns:listarAlojamiento"/>
+
+<xs:element name="listarAlojamientoResponse" type="tns:listarAlojamientoResponse"/>
+
+<xs:element name="registrarAlojamiento" type="tns:registrarAlojamiento"/>
+
+<xs:element name="registrarAlojamientoResponse" type="tns:registrarAlojamientoResponse"/>
+
+<xs:element name="resumenAlojamiento" type="tns:resumenAlojamiento"/>
+
+<xs:element name="resumenAlojamientoResponse" type="tns:resumenAlojamientoResponse"/>
+
+<xs:complexType name="eliminarResumenAloj">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="eliminarResumenAlojResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="codigoautomaticoaloj">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="codigoautomaticoalojResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarAlojamiento">
+<xs:sequence>
+<xs:element name="codaloj" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarAlojamientoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="registrarAlojamiento">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="registrarAlojamientoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="agregarAlojamiento">
+<xs:sequence>
+<xs:element name="codres" type="xs:string" minOccurs="0"/>
+<xs:element name="emp" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="agregarAlojamientoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listarAlojamiento">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listarAlojamientoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:alojamiento" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="alojamiento">
+<xs:sequence>
+<xs:element name="codAloj" type="xs:string" minOccurs="0"/>
+<xs:element name="empleado" type="tns:empleado" minOccurs="0"/>
+<xs:element name="fecCreacionAloj" type="xs:string" minOccurs="0"/>
+<xs:element name="reserva" type="tns:reserva" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="empleado">
+<xs:sequence>
+<xs:element name="dni" type="xs:string" minOccurs="0"/>
+<xs:element name="nom" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="reserva">
+<xs:sequence>
+<xs:element name="cli" type="tns:cliente" minOccurs="0"/>
+<xs:element name="codRes" type="xs:string" minOccurs="0"/>
+<xs:element name="fecCreacion" type="xs:string" minOccurs="0"/>
+<xs:element name="fecFin" type="xs:string" minOccurs="0"/>
+<xs:element name="fecInicio" type="xs:string" minOccurs="0"/>
+<xs:element name="hab" type="tns:habitacion" minOccurs="0"/>
+<xs:element name="imp" type="xs:double" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cliente">
+<xs:sequence>
+<xs:element name="dni" type="xs:string" minOccurs="0"/>
+<xs:element name="nom" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="habitacion">
+<xs:sequence>
+<xs:element name="cod" type="xs:string" minOccurs="0"/>
+<xs:element name="estado" type="xs:string" minOccurs="0"/>
+<xs:element name="nom" type="xs:string" minOccurs="0"/>
+<xs:element name="pre" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="resumenAlojamiento">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="resumenAlojamientoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:alojamiento" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarAlojamientoRES">
+<xs:sequence>
+<xs:element name="codres" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarAlojamientoRESResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

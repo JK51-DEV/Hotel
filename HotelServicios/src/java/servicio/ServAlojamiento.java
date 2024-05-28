@@ -11,6 +11,7 @@ import javax.jws.WebParam;
 public class ServAlojamiento {
     ResuAlojamiento alojamiento=new ResuAlojamiento();
     Alojamiento aloj=new Alojamiento();
+    DaoAlojamiento daoaloj=new DaoAlojamiento();
     
     @WebMethod(operationName = "listarAlojamiento")
     public List<Alojamiento> listarAlojamiento() {
@@ -43,6 +44,11 @@ public class ServAlojamiento {
             res="No hay reservas en esta habitacion";
         }
     return res;
+    }
+    
+    @WebMethod(operationName = "buscarAlojamientoREStotal")
+    public List<Alojamiento> buscarAlojamientoREStotal(@WebParam(name = "codres") String codres) {
+        return daoaloj.BuscarAlojamiento(codres);
     }
     
     @WebMethod(operationName = "agregarAlojamiento")

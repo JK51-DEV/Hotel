@@ -34,69 +34,6 @@ public interface ServiciosEmpleado {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "grabarEmpleado", targetNamespace = "http://servicio/", className = "servicio.GrabarEmpleado")
-    @ResponseWrapper(localName = "grabarEmpleadoResponse", targetNamespace = "http://servicio/", className = "servicio.GrabarEmpleadoResponse")
-    @Action(input = "http://servicio/ServiciosEmpleado/grabarEmpleadoRequest", output = "http://servicio/ServiciosEmpleado/grabarEmpleadoResponse")
-    public boolean grabarEmpleado(
-        @WebParam(name = "dni", targetNamespace = "")
-        String dni,
-        @WebParam(name = "nom", targetNamespace = "")
-        String nom);
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<servicio.Empleado>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listarEmpleado", targetNamespace = "http://servicio/", className = "servicio.ListarEmpleado")
-    @ResponseWrapper(localName = "listarEmpleadoResponse", targetNamespace = "http://servicio/", className = "servicio.ListarEmpleadoResponse")
-    @Action(input = "http://servicio/ServiciosEmpleado/listarEmpleadoRequest", output = "http://servicio/ServiciosEmpleado/listarEmpleadoResponse")
-    public List<Empleado> listarEmpleado();
-
-    /**
-     * 
-     * @param nom
-     * @param dni
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "autenticarEmpleado", targetNamespace = "http://servicio/", className = "servicio.AutenticarEmpleado")
-    @ResponseWrapper(localName = "autenticarEmpleadoResponse", targetNamespace = "http://servicio/", className = "servicio.AutenticarEmpleadoResponse")
-    @Action(input = "http://servicio/ServiciosEmpleado/autenticarEmpleadoRequest", output = "http://servicio/ServiciosEmpleado/autenticarEmpleadoResponse")
-    public boolean autenticarEmpleado(
-        @WebParam(name = "dni", targetNamespace = "")
-        String dni,
-        @WebParam(name = "nom", targetNamespace = "")
-        String nom);
-
-    /**
-     * 
-     * @param dni
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "elmininarEmpleado", targetNamespace = "http://servicio/", className = "servicio.ElmininarEmpleado")
-    @ResponseWrapper(localName = "elmininarEmpleadoResponse", targetNamespace = "http://servicio/", className = "servicio.ElmininarEmpleadoResponse")
-    @Action(input = "http://servicio/ServiciosEmpleado/elmininarEmpleadoRequest", output = "http://servicio/ServiciosEmpleado/elmininarEmpleadoResponse")
-    public String elmininarEmpleado(
-        @WebParam(name = "dni", targetNamespace = "")
-        String dni);
-
-    /**
-     * 
-     * @param nom
-     * @param dni
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "buscarAdministradorInicioSesion", targetNamespace = "http://servicio/", className = "servicio.BuscarAdministradorInicioSesion")
     @ResponseWrapper(localName = "buscarAdministradorInicioSesionResponse", targetNamespace = "http://servicio/", className = "servicio.BuscarAdministradorInicioSesionResponse")
     @Action(input = "http://servicio/ServiciosEmpleado/buscarAdministradorInicioSesionRequest", output = "http://servicio/ServiciosEmpleado/buscarAdministradorInicioSesionResponse")
@@ -129,11 +66,74 @@ public interface ServiciosEmpleado {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "elmininarEmpleado", targetNamespace = "http://servicio/", className = "servicio.ElmininarEmpleado")
+    @ResponseWrapper(localName = "elmininarEmpleadoResponse", targetNamespace = "http://servicio/", className = "servicio.ElmininarEmpleadoResponse")
+    @Action(input = "http://servicio/ServiciosEmpleado/elmininarEmpleadoRequest", output = "http://servicio/ServiciosEmpleado/elmininarEmpleadoResponse")
+    public String elmininarEmpleado(
+        @WebParam(name = "dni", targetNamespace = "")
+        String dni);
+
+    /**
+     * 
+     * @param nom
+     * @param dni
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "autenticarEmpleado", targetNamespace = "http://servicio/", className = "servicio.AutenticarEmpleado")
+    @ResponseWrapper(localName = "autenticarEmpleadoResponse", targetNamespace = "http://servicio/", className = "servicio.AutenticarEmpleadoResponse")
+    @Action(input = "http://servicio/ServiciosEmpleado/autenticarEmpleadoRequest", output = "http://servicio/ServiciosEmpleado/autenticarEmpleadoResponse")
+    public boolean autenticarEmpleado(
+        @WebParam(name = "dni", targetNamespace = "")
+        String dni,
+        @WebParam(name = "nom", targetNamespace = "")
+        String nom);
+
+    /**
+     * 
+     * @param dni
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "buscarEmpleado", targetNamespace = "http://servicio/", className = "servicio.BuscarEmpleado")
     @ResponseWrapper(localName = "buscarEmpleadoResponse", targetNamespace = "http://servicio/", className = "servicio.BuscarEmpleadoResponse")
     @Action(input = "http://servicio/ServiciosEmpleado/buscarEmpleadoRequest", output = "http://servicio/ServiciosEmpleado/buscarEmpleadoResponse")
     public String buscarEmpleado(
         @WebParam(name = "dni", targetNamespace = "")
         String dni);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<servicio.Empleado>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listarEmpleado", targetNamespace = "http://servicio/", className = "servicio.ListarEmpleado")
+    @ResponseWrapper(localName = "listarEmpleadoResponse", targetNamespace = "http://servicio/", className = "servicio.ListarEmpleadoResponse")
+    @Action(input = "http://servicio/ServiciosEmpleado/listarEmpleadoRequest", output = "http://servicio/ServiciosEmpleado/listarEmpleadoResponse")
+    public List<Empleado> listarEmpleado();
+
+    /**
+     * 
+     * @param nom
+     * @param dni
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "grabarEmpleado", targetNamespace = "http://servicio/", className = "servicio.GrabarEmpleado")
+    @ResponseWrapper(localName = "grabarEmpleadoResponse", targetNamespace = "http://servicio/", className = "servicio.GrabarEmpleadoResponse")
+    @Action(input = "http://servicio/ServiciosEmpleado/grabarEmpleadoRequest", output = "http://servicio/ServiciosEmpleado/grabarEmpleadoResponse")
+    public boolean grabarEmpleado(
+        @WebParam(name = "dni", targetNamespace = "")
+        String dni,
+        @WebParam(name = "nom", targetNamespace = "")
+        String nom);
 
 }
