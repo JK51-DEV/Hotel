@@ -90,5 +90,69 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/servicio"/>
         <delete dir="${build.generated.dir}/jax-wsCache/ServiciosEmpleado"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-ServHabitacion, wsimport-client-Servicios, wsimport-client-ServReserva, wsimport-client-ServiciosEmpleado"/>
+    <target name="wsimport-client-ServListarArticulos" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/ServListarArticulos"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ServListarArticulos" destdir="${build.generated.dir}/jax-wsCache/ServListarArticulos" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/ServListarArticulos/wsdl/localhost_8080/SupermercadoServicios/ServListarArticulos.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/SupermercadoServicios/ServListarArticulos?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/ServListarArticulos/wsdl/localhost_8080/SupermercadoServicios/ServListarArticulos.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/ServListarArticulos"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/ServListarArticulos">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-ServListarArticulos" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/servicio"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/ServListarArticulos"/>
+    </target>
+    <target name="wsimport-client-ServCesta" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/ServCesta"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ServCesta" destdir="${build.generated.dir}/jax-wsCache/ServCesta" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/ServCesta/wsdl/localhost_8080/SupermercadoServicios/ServCesta.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/SupermercadoServicios/ServCesta?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/ServCesta/wsdl/localhost_8080/SupermercadoServicios/ServCesta.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/ServCesta"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/ServCesta">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-ServCesta" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/servicio"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/ServCesta"/>
+    </target>
+    <target name="wsimport-client-ServVenta" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/ServVenta"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ServVenta" destdir="${build.generated.dir}/jax-wsCache/ServVenta" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/ServVenta/wsdl/localhost_8080/SupermercadoServicios/ServVenta.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/SupermercadoServicios/ServVenta?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/ServVenta/wsdl/localhost_8080/SupermercadoServicios/ServVenta.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/ServVenta"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/ServVenta">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-ServVenta" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/servicio"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/ServVenta"/>
+    </target>
+    <target name="wsimport-client-ServCliente" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/ServCliente"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ServCliente" destdir="${build.generated.dir}/jax-wsCache/ServCliente" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/ServCliente/wsdl/localhost_8080/SupermercadoServicios/ServCliente.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/SupermercadoServicios/ServCliente?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/ServCliente/wsdl/localhost_8080/SupermercadoServicios/ServCliente.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/ServCliente"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/ServCliente">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-ServCliente" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/servicio"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/ServCliente"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-ServHabitacion, wsimport-client-Servicios, wsimport-client-ServReserva, wsimport-client-ServiciosEmpleado, wsimport-client-ServListarArticulos, wsimport-client-ServCesta, wsimport-client-ServVenta, wsimport-client-ServCliente"/>
 </project>
