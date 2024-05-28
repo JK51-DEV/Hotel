@@ -65,21 +65,23 @@
             <table class="table table-bordered">
                 <thead style="background-color: black; color: white">
                     <tr>
-                        <th>Código</th><th>DNI</th><th>Nombre</th><th>F. Creacion</th><th>F. Inicio</th><th>F. Fin</th><th>Importe</th>
-                        <%--<th>Código</th><th>DNI</th><th>Nombre</th><th>Habitación</th><th>H. Tipo</th><th>Precio Ind.</th><th>F. Creacion</th><th>F. Inicio</th><th>F. Fin</th><th>Importe</th>--%>
+                        <%--<<th>Código</th><th>DNI</th><th>Nombre</th><th>F. Creacion</th><th>F. Inicio</th><th>F. Fin</th><th>Importe</th>--%>
+                        <th>Código</th><th>DNI</th><th>Nombre</th><th>Habitación</th><th>H. Tipo</th><th>Precio Ind.</th><th>F. Creacion</th><th>F. Inicio</th><th>F. Fin</th><th>Importe</th>
                             <%--  <th>Código</th><th>DNI</th><th>Habitación</th><th>F. Creación</th><th>F. Inicio</th><th>F. Fin</th><th>Importe</th>
                             <%--<th class="text-center">Mantenimiento</th>--%>
                     </tr>
                 </thead>
                 <tbody id="tabla1">
-                    <%                       
-                        List<Reserva> dis = port.listarReservas();
+                    <%                        List<Reserva> dis = port.listarReservas();
                         for (Reserva l : dis) {
                     %>  
                     <tr>
                         <td><%=l.getCodRes()%></td>
                         <td><%=l.getCli().getDni()%></td>
                         <td><%=l.getCli().getNom()%></td>
+                        <td><%=l.getHab().getCod()%></td>
+                        <td><%=l.getHab().getNom()%></td>
+                        <td><%=l.getHab().getPre()%></td>
                         <td><%=l.getFecCreacion()%></td>
                         <%-- <td><%=l.getFecCreacion()%></td>--%>
                         <td><%=l.getFecInicio()%></td>

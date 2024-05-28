@@ -46,6 +46,9 @@ public class dis_buscar_reserva extends HttpServlet {
                 out.print("<td>" + d.getCodRes() +"</td>");
                 out.print("<td>" + d.getCli().getDni() +"</td>");
                 out.print("<td>" + d.getCli().getNom() +"</td>");
+                out.print("<td>" + d.getHab().getCod() +"</td>");
+                out.print("<td>" + d.getHab().getNom() +"</td>");
+                out.print("<td>" + d.getHab().getPre() +"</td>");
                 out.print("<td>" + d.getFecCreacion() +"</td>");
                 out.print("<td>" + d.getFecInicio() +"</td>");
                 out.print("<td>" + d.getFecFin() +"</td>");
