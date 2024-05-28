@@ -24,26 +24,20 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _AgregarReserva_QNAME = new QName("http://servicio/", "agregarReserva");
-    private final static QName _AgregarReservaResponse_QNAME = new QName("http://servicio/", "agregarReservaResponse");
-    private final static QName _BuscarReserva_QNAME = new QName("http://servicio/", "buscarReserva");
-    private final static QName _BuscarReservaResponse_QNAME = new QName("http://servicio/", "buscarReservaResponse");
-    private final static QName _EliminarResumen_QNAME = new QName("http://servicio/", "eliminarResumen");
-    private final static QName _EliminarResumenResponse_QNAME = new QName("http://servicio/", "eliminarResumenResponse");
-    private final static QName _GetTotal_QNAME = new QName("http://servicio/", "getTotal");
-    private final static QName _GetTotalAloj_QNAME = new QName("http://servicio/", "getTotalAloj");
-    private final static QName _GetTotalAlojResponse_QNAME = new QName("http://servicio/", "getTotalAlojResponse");
-    private final static QName _GetTotalResponse_QNAME = new QName("http://servicio/", "getTotalResponse");
-    private final static QName _ListarReservas_QNAME = new QName("http://servicio/", "listarReservas");
-    private final static QName _ListarReservasResponse_QNAME = new QName("http://servicio/", "listarReservasResponse");
-    private final static QName _ListarAvanzadoReserva_QNAME = new QName("http://servicio/", "listar_avanzado_reserva");
-    private final static QName _ListarAvanzadoReservaResponse_QNAME = new QName("http://servicio/", "listar_avanzado_reservaResponse");
-    private final static QName _RegistrarAlojamiento_QNAME = new QName("http://servicio/", "registrarAlojamiento");
-    private final static QName _RegistrarAlojamientoResponse_QNAME = new QName("http://servicio/", "registrarAlojamientoResponse");
-    private final static QName _RegistrarReserva_QNAME = new QName("http://servicio/", "registrarReserva");
-    private final static QName _RegistrarReservaResponse_QNAME = new QName("http://servicio/", "registrarReservaResponse");
-    private final static QName _ResumenReserva_QNAME = new QName("http://servicio/", "resumenReserva");
-    private final static QName _ResumenReservaResponse_QNAME = new QName("http://servicio/", "resumenReservaResponse");
+    private final static QName _AutenticarEmpleado_QNAME = new QName("http://servicio/", "autenticarEmpleado");
+    private final static QName _AutenticarEmpleadoResponse_QNAME = new QName("http://servicio/", "autenticarEmpleadoResponse");
+    private final static QName _BuscarAdministradorInicioSesion_QNAME = new QName("http://servicio/", "buscarAdministradorInicioSesion");
+    private final static QName _BuscarAdministradorInicioSesionResponse_QNAME = new QName("http://servicio/", "buscarAdministradorInicioSesionResponse");
+    private final static QName _BuscarEmpleado_QNAME = new QName("http://servicio/", "buscarEmpleado");
+    private final static QName _BuscarEmpleadoResponse_QNAME = new QName("http://servicio/", "buscarEmpleadoResponse");
+    private final static QName _BuscarNombreAdministrador_QNAME = new QName("http://servicio/", "buscarNombreAdministrador");
+    private final static QName _BuscarNombreAdministradorResponse_QNAME = new QName("http://servicio/", "buscarNombreAdministradorResponse");
+    private final static QName _ElmininarEmpleado_QNAME = new QName("http://servicio/", "elmininarEmpleado");
+    private final static QName _ElmininarEmpleadoResponse_QNAME = new QName("http://servicio/", "elmininarEmpleadoResponse");
+    private final static QName _GrabarEmpleado_QNAME = new QName("http://servicio/", "grabarEmpleado");
+    private final static QName _GrabarEmpleadoResponse_QNAME = new QName("http://servicio/", "grabarEmpleadoResponse");
+    private final static QName _ListarEmpleado_QNAME = new QName("http://servicio/", "listarEmpleado");
+    private final static QName _ListarEmpleadoResponse_QNAME = new QName("http://servicio/", "listarEmpleadoResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: servicio
@@ -53,147 +47,115 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AgregarReserva }
+     * Create an instance of {@link AutenticarEmpleado }
      * 
      */
-    public AgregarReserva createAgregarReserva() {
-        return new AgregarReserva();
+    public AutenticarEmpleado createAutenticarEmpleado() {
+        return new AutenticarEmpleado();
     }
 
     /**
-     * Create an instance of {@link AgregarReservaResponse }
+     * Create an instance of {@link AutenticarEmpleadoResponse }
      * 
      */
-    public AgregarReservaResponse createAgregarReservaResponse() {
-        return new AgregarReservaResponse();
+    public AutenticarEmpleadoResponse createAutenticarEmpleadoResponse() {
+        return new AutenticarEmpleadoResponse();
     }
 
     /**
-     * Create an instance of {@link BuscarReserva }
+     * Create an instance of {@link BuscarAdministradorInicioSesion }
      * 
      */
-    public BuscarReserva createBuscarReserva() {
-        return new BuscarReserva();
+    public BuscarAdministradorInicioSesion createBuscarAdministradorInicioSesion() {
+        return new BuscarAdministradorInicioSesion();
     }
 
     /**
-     * Create an instance of {@link BuscarReservaResponse }
+     * Create an instance of {@link BuscarAdministradorInicioSesionResponse }
      * 
      */
-    public BuscarReservaResponse createBuscarReservaResponse() {
-        return new BuscarReservaResponse();
+    public BuscarAdministradorInicioSesionResponse createBuscarAdministradorInicioSesionResponse() {
+        return new BuscarAdministradorInicioSesionResponse();
     }
 
     /**
-     * Create an instance of {@link EliminarResumen }
+     * Create an instance of {@link BuscarEmpleado }
      * 
      */
-    public EliminarResumen createEliminarResumen() {
-        return new EliminarResumen();
+    public BuscarEmpleado createBuscarEmpleado() {
+        return new BuscarEmpleado();
     }
 
     /**
-     * Create an instance of {@link EliminarResumenResponse }
+     * Create an instance of {@link BuscarEmpleadoResponse }
      * 
      */
-    public EliminarResumenResponse createEliminarResumenResponse() {
-        return new EliminarResumenResponse();
+    public BuscarEmpleadoResponse createBuscarEmpleadoResponse() {
+        return new BuscarEmpleadoResponse();
     }
 
     /**
-     * Create an instance of {@link GetTotalAloj }
+     * Create an instance of {@link BuscarNombreAdministrador }
      * 
      */
-    public GetTotalAloj createGetTotalAloj() {
-        return new GetTotalAloj();
+    public BuscarNombreAdministrador createBuscarNombreAdministrador() {
+        return new BuscarNombreAdministrador();
     }
 
     /**
-     * Create an instance of {@link GetTotalAlojResponse }
+     * Create an instance of {@link BuscarNombreAdministradorResponse }
      * 
      */
-    public GetTotalAlojResponse createGetTotalAlojResponse() {
-        return new GetTotalAlojResponse();
+    public BuscarNombreAdministradorResponse createBuscarNombreAdministradorResponse() {
+        return new BuscarNombreAdministradorResponse();
     }
 
     /**
-     * Create an instance of {@link ListarReservas }
+     * Create an instance of {@link ElmininarEmpleado }
      * 
      */
-    public ListarReservas createListarReservas() {
-        return new ListarReservas();
+    public ElmininarEmpleado createElmininarEmpleado() {
+        return new ElmininarEmpleado();
     }
 
     /**
-     * Create an instance of {@link ListarReservasResponse }
+     * Create an instance of {@link ElmininarEmpleadoResponse }
      * 
      */
-    public ListarReservasResponse createListarReservasResponse() {
-        return new ListarReservasResponse();
+    public ElmininarEmpleadoResponse createElmininarEmpleadoResponse() {
+        return new ElmininarEmpleadoResponse();
     }
 
     /**
-     * Create an instance of {@link ListarAvanzadoReserva }
+     * Create an instance of {@link GrabarEmpleado }
      * 
      */
-    public ListarAvanzadoReserva createListarAvanzadoReserva() {
-        return new ListarAvanzadoReserva();
+    public GrabarEmpleado createGrabarEmpleado() {
+        return new GrabarEmpleado();
     }
 
     /**
-     * Create an instance of {@link ListarAvanzadoReservaResponse }
+     * Create an instance of {@link GrabarEmpleadoResponse }
      * 
      */
-    public ListarAvanzadoReservaResponse createListarAvanzadoReservaResponse() {
-        return new ListarAvanzadoReservaResponse();
+    public GrabarEmpleadoResponse createGrabarEmpleadoResponse() {
+        return new GrabarEmpleadoResponse();
     }
 
     /**
-     * Create an instance of {@link RegistrarAlojamiento }
+     * Create an instance of {@link ListarEmpleado }
      * 
      */
-    public RegistrarAlojamiento createRegistrarAlojamiento() {
-        return new RegistrarAlojamiento();
+    public ListarEmpleado createListarEmpleado() {
+        return new ListarEmpleado();
     }
 
     /**
-     * Create an instance of {@link RegistrarAlojamientoResponse }
+     * Create an instance of {@link ListarEmpleadoResponse }
      * 
      */
-    public RegistrarAlojamientoResponse createRegistrarAlojamientoResponse() {
-        return new RegistrarAlojamientoResponse();
-    }
-
-    /**
-     * Create an instance of {@link ResumenReserva }
-     * 
-     */
-    public ResumenReserva createResumenReserva() {
-        return new ResumenReserva();
-    }
-
-    /**
-     * Create an instance of {@link ResumenReservaResponse }
-     * 
-     */
-    public ResumenReservaResponse createResumenReservaResponse() {
-        return new ResumenReservaResponse();
-    }
-
-    /**
-     * Create an instance of {@link Reserva }
-     * 
-     */
-    public Reserva createReserva() {
-        return new Reserva();
-    }
-
-    /**
-     * Create an instance of {@link Cliente }
-     * 
-     */
-    public Cliente createCliente() {
-        return new Cliente();
+    public ListarEmpleadoResponse createListarEmpleadoResponse() {
+        return new ListarEmpleadoResponse();
     }
 
     /**
@@ -205,191 +167,129 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Habitacion }
+     * Create an instance of {@link JAXBElement }{@code <}{@link AutenticarEmpleado }{@code >}}
      * 
      */
-    public Habitacion createHabitacion() {
-        return new Habitacion();
+    @XmlElementDecl(namespace = "http://servicio/", name = "autenticarEmpleado")
+    public JAXBElement<AutenticarEmpleado> createAutenticarEmpleado(AutenticarEmpleado value) {
+        return new JAXBElement<AutenticarEmpleado>(_AutenticarEmpleado_QNAME, AutenticarEmpleado.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AgregarReserva }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link AutenticarEmpleadoResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://servicio/", name = "agregarReserva")
-    public JAXBElement<AgregarReserva> createAgregarReserva(AgregarReserva value) {
-        return new JAXBElement<AgregarReserva>(_AgregarReserva_QNAME, AgregarReserva.class, null, value);
+    @XmlElementDecl(namespace = "http://servicio/", name = "autenticarEmpleadoResponse")
+    public JAXBElement<AutenticarEmpleadoResponse> createAutenticarEmpleadoResponse(AutenticarEmpleadoResponse value) {
+        return new JAXBElement<AutenticarEmpleadoResponse>(_AutenticarEmpleadoResponse_QNAME, AutenticarEmpleadoResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AgregarReservaResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BuscarAdministradorInicioSesion }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://servicio/", name = "agregarReservaResponse")
-    public JAXBElement<AgregarReservaResponse> createAgregarReservaResponse(AgregarReservaResponse value) {
-        return new JAXBElement<AgregarReservaResponse>(_AgregarReservaResponse_QNAME, AgregarReservaResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://servicio/", name = "buscarAdministradorInicioSesion")
+    public JAXBElement<BuscarAdministradorInicioSesion> createBuscarAdministradorInicioSesion(BuscarAdministradorInicioSesion value) {
+        return new JAXBElement<BuscarAdministradorInicioSesion>(_BuscarAdministradorInicioSesion_QNAME, BuscarAdministradorInicioSesion.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BuscarReserva }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BuscarAdministradorInicioSesionResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://servicio/", name = "buscarReserva")
-    public JAXBElement<BuscarReserva> createBuscarReserva(BuscarReserva value) {
-        return new JAXBElement<BuscarReserva>(_BuscarReserva_QNAME, BuscarReserva.class, null, value);
+    @XmlElementDecl(namespace = "http://servicio/", name = "buscarAdministradorInicioSesionResponse")
+    public JAXBElement<BuscarAdministradorInicioSesionResponse> createBuscarAdministradorInicioSesionResponse(BuscarAdministradorInicioSesionResponse value) {
+        return new JAXBElement<BuscarAdministradorInicioSesionResponse>(_BuscarAdministradorInicioSesionResponse_QNAME, BuscarAdministradorInicioSesionResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BuscarReservaResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BuscarEmpleado }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://servicio/", name = "buscarReservaResponse")
-    public JAXBElement<BuscarReservaResponse> createBuscarReservaResponse(BuscarReservaResponse value) {
-        return new JAXBElement<BuscarReservaResponse>(_BuscarReservaResponse_QNAME, BuscarReservaResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://servicio/", name = "buscarEmpleado")
+    public JAXBElement<BuscarEmpleado> createBuscarEmpleado(BuscarEmpleado value) {
+        return new JAXBElement<BuscarEmpleado>(_BuscarEmpleado_QNAME, BuscarEmpleado.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link EliminarResumen }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BuscarEmpleadoResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://servicio/", name = "eliminarResumen")
-    public JAXBElement<EliminarResumen> createEliminarResumen(EliminarResumen value) {
-        return new JAXBElement<EliminarResumen>(_EliminarResumen_QNAME, EliminarResumen.class, null, value);
+    @XmlElementDecl(namespace = "http://servicio/", name = "buscarEmpleadoResponse")
+    public JAXBElement<BuscarEmpleadoResponse> createBuscarEmpleadoResponse(BuscarEmpleadoResponse value) {
+        return new JAXBElement<BuscarEmpleadoResponse>(_BuscarEmpleadoResponse_QNAME, BuscarEmpleadoResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link EliminarResumenResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BuscarNombreAdministrador }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://servicio/", name = "eliminarResumenResponse")
-    public JAXBElement<EliminarResumenResponse> createEliminarResumenResponse(EliminarResumenResponse value) {
-        return new JAXBElement<EliminarResumenResponse>(_EliminarResumenResponse_QNAME, EliminarResumenResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://servicio/", name = "buscarNombreAdministrador")
+    public JAXBElement<BuscarNombreAdministrador> createBuscarNombreAdministrador(BuscarNombreAdministrador value) {
+        return new JAXBElement<BuscarNombreAdministrador>(_BuscarNombreAdministrador_QNAME, BuscarNombreAdministrador.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetTotalAloj }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BuscarNombreAdministradorResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://servicio/", name = "getTotal")
-    public JAXBElement<GetTotalAloj> createGetTotal(GetTotalAloj value) {
-        return new JAXBElement<GetTotalAloj>(_GetTotal_QNAME, GetTotalAloj.class, null, value);
+    @XmlElementDecl(namespace = "http://servicio/", name = "buscarNombreAdministradorResponse")
+    public JAXBElement<BuscarNombreAdministradorResponse> createBuscarNombreAdministradorResponse(BuscarNombreAdministradorResponse value) {
+        return new JAXBElement<BuscarNombreAdministradorResponse>(_BuscarNombreAdministradorResponse_QNAME, BuscarNombreAdministradorResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetTotalAloj }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ElmininarEmpleado }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://servicio/", name = "getTotalAloj")
-    public JAXBElement<GetTotalAloj> createGetTotalAloj(GetTotalAloj value) {
-        return new JAXBElement<GetTotalAloj>(_GetTotalAloj_QNAME, GetTotalAloj.class, null, value);
+    @XmlElementDecl(namespace = "http://servicio/", name = "elmininarEmpleado")
+    public JAXBElement<ElmininarEmpleado> createElmininarEmpleado(ElmininarEmpleado value) {
+        return new JAXBElement<ElmininarEmpleado>(_ElmininarEmpleado_QNAME, ElmininarEmpleado.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetTotalAlojResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ElmininarEmpleadoResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://servicio/", name = "getTotalAlojResponse")
-    public JAXBElement<GetTotalAlojResponse> createGetTotalAlojResponse(GetTotalAlojResponse value) {
-        return new JAXBElement<GetTotalAlojResponse>(_GetTotalAlojResponse_QNAME, GetTotalAlojResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://servicio/", name = "elmininarEmpleadoResponse")
+    public JAXBElement<ElmininarEmpleadoResponse> createElmininarEmpleadoResponse(ElmininarEmpleadoResponse value) {
+        return new JAXBElement<ElmininarEmpleadoResponse>(_ElmininarEmpleadoResponse_QNAME, ElmininarEmpleadoResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetTotalAlojResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GrabarEmpleado }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://servicio/", name = "getTotalResponse")
-    public JAXBElement<GetTotalAlojResponse> createGetTotalResponse(GetTotalAlojResponse value) {
-        return new JAXBElement<GetTotalAlojResponse>(_GetTotalResponse_QNAME, GetTotalAlojResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://servicio/", name = "grabarEmpleado")
+    public JAXBElement<GrabarEmpleado> createGrabarEmpleado(GrabarEmpleado value) {
+        return new JAXBElement<GrabarEmpleado>(_GrabarEmpleado_QNAME, GrabarEmpleado.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ListarReservas }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GrabarEmpleadoResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://servicio/", name = "listarReservas")
-    public JAXBElement<ListarReservas> createListarReservas(ListarReservas value) {
-        return new JAXBElement<ListarReservas>(_ListarReservas_QNAME, ListarReservas.class, null, value);
+    @XmlElementDecl(namespace = "http://servicio/", name = "grabarEmpleadoResponse")
+    public JAXBElement<GrabarEmpleadoResponse> createGrabarEmpleadoResponse(GrabarEmpleadoResponse value) {
+        return new JAXBElement<GrabarEmpleadoResponse>(_GrabarEmpleadoResponse_QNAME, GrabarEmpleadoResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ListarReservasResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListarEmpleado }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://servicio/", name = "listarReservasResponse")
-    public JAXBElement<ListarReservasResponse> createListarReservasResponse(ListarReservasResponse value) {
-        return new JAXBElement<ListarReservasResponse>(_ListarReservasResponse_QNAME, ListarReservasResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://servicio/", name = "listarEmpleado")
+    public JAXBElement<ListarEmpleado> createListarEmpleado(ListarEmpleado value) {
+        return new JAXBElement<ListarEmpleado>(_ListarEmpleado_QNAME, ListarEmpleado.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ListarAvanzadoReserva }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListarEmpleadoResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://servicio/", name = "listar_avanzado_reserva")
-    public JAXBElement<ListarAvanzadoReserva> createListarAvanzadoReserva(ListarAvanzadoReserva value) {
-        return new JAXBElement<ListarAvanzadoReserva>(_ListarAvanzadoReserva_QNAME, ListarAvanzadoReserva.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ListarAvanzadoReservaResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://servicio/", name = "listar_avanzado_reservaResponse")
-    public JAXBElement<ListarAvanzadoReservaResponse> createListarAvanzadoReservaResponse(ListarAvanzadoReservaResponse value) {
-        return new JAXBElement<ListarAvanzadoReservaResponse>(_ListarAvanzadoReservaResponse_QNAME, ListarAvanzadoReservaResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RegistrarAlojamiento }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://servicio/", name = "registrarAlojamiento")
-    public JAXBElement<RegistrarAlojamiento> createRegistrarAlojamiento(RegistrarAlojamiento value) {
-        return new JAXBElement<RegistrarAlojamiento>(_RegistrarAlojamiento_QNAME, RegistrarAlojamiento.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RegistrarAlojamientoResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://servicio/", name = "registrarAlojamientoResponse")
-    public JAXBElement<RegistrarAlojamientoResponse> createRegistrarAlojamientoResponse(RegistrarAlojamientoResponse value) {
-        return new JAXBElement<RegistrarAlojamientoResponse>(_RegistrarAlojamientoResponse_QNAME, RegistrarAlojamientoResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RegistrarAlojamiento }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://servicio/", name = "registrarReserva")
-    public JAXBElement<RegistrarAlojamiento> createRegistrarReserva(RegistrarAlojamiento value) {
-        return new JAXBElement<RegistrarAlojamiento>(_RegistrarReserva_QNAME, RegistrarAlojamiento.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RegistrarAlojamientoResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://servicio/", name = "registrarReservaResponse")
-    public JAXBElement<RegistrarAlojamientoResponse> createRegistrarReservaResponse(RegistrarAlojamientoResponse value) {
-        return new JAXBElement<RegistrarAlojamientoResponse>(_RegistrarReservaResponse_QNAME, RegistrarAlojamientoResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ResumenReserva }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://servicio/", name = "resumenReserva")
-    public JAXBElement<ResumenReserva> createResumenReserva(ResumenReserva value) {
-        return new JAXBElement<ResumenReserva>(_ResumenReserva_QNAME, ResumenReserva.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ResumenReservaResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://servicio/", name = "resumenReservaResponse")
-    public JAXBElement<ResumenReservaResponse> createResumenReservaResponse(ResumenReservaResponse value) {
-        return new JAXBElement<ResumenReservaResponse>(_ResumenReservaResponse_QNAME, ResumenReservaResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://servicio/", name = "listarEmpleadoResponse")
+    public JAXBElement<ListarEmpleadoResponse> createListarEmpleadoResponse(ListarEmpleadoResponse value) {
+        return new JAXBElement<ListarEmpleadoResponse>(_ListarEmpleadoResponse_QNAME, ListarEmpleadoResponse.class, null, value);
     }
 
 }
