@@ -48,6 +48,12 @@
                 </tr>
             </table>--%>
             <table>
+                <%                        String dise = port.codigoautomatico();
+                %>
+                <tr>
+                    <td style="padding: 0px">Codigo de reserva:</td>
+                    <td style="padding: 10px"><%=dise%></td>
+                </tr>
                 <%                        List<Reserva> dis = port.resumenReserva();
                     for (Reserva l : dis) {
                 %>  
@@ -78,6 +84,10 @@
                 <tr>
                     <td style="padding: 0px">Fecha de fin:</td>
                     <td style="padding: 10px"><%=l.getFecFin()%></td>
+                </tr>
+                <tr>
+                    <td style="padding: 0px">Importe total:</td>
+                    <td style="padding: 10px"><%=l.getImp()%></td>
                 </tr>
                 <tr>
                     <td colspan="0"></td>

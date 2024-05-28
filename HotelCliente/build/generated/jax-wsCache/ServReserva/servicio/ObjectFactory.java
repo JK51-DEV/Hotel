@@ -30,6 +30,8 @@ public class ObjectFactory {
     private final static QName _BuscarReservaDNI_QNAME = new QName("http://servicio/", "buscarReservaDNI");
     private final static QName _BuscarReservaDNIResponse_QNAME = new QName("http://servicio/", "buscarReservaDNIResponse");
     private final static QName _BuscarReservaResponse_QNAME = new QName("http://servicio/", "buscarReservaResponse");
+    private final static QName _Codigoautomatico_QNAME = new QName("http://servicio/", "codigoautomatico");
+    private final static QName _CodigoautomaticoResponse_QNAME = new QName("http://servicio/", "codigoautomaticoResponse");
     private final static QName _EliminarResumen_QNAME = new QName("http://servicio/", "eliminarResumen");
     private final static QName _EliminarResumenResponse_QNAME = new QName("http://servicio/", "eliminarResumenResponse");
     private final static QName _GetTotal_QNAME = new QName("http://servicio/", "getTotal");
@@ -96,6 +98,22 @@ public class ObjectFactory {
      */
     public BuscarReservaResponse createBuscarReservaResponse() {
         return new BuscarReservaResponse();
+    }
+
+    /**
+     * Create an instance of {@link Codigoautomatico }
+     * 
+     */
+    public Codigoautomatico createCodigoautomatico() {
+        return new Codigoautomatico();
+    }
+
+    /**
+     * Create an instance of {@link CodigoautomaticoResponse }
+     * 
+     */
+    public CodigoautomaticoResponse createCodigoautomaticoResponse() {
+        return new CodigoautomaticoResponse();
     }
 
     /**
@@ -270,6 +288,24 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://servicio/", name = "buscarReservaResponse")
     public JAXBElement<BuscarReservaResponse> createBuscarReservaResponse(BuscarReservaResponse value) {
         return new JAXBElement<BuscarReservaResponse>(_BuscarReservaResponse_QNAME, BuscarReservaResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Codigoautomatico }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "codigoautomatico")
+    public JAXBElement<Codigoautomatico> createCodigoautomatico(Codigoautomatico value) {
+        return new JAXBElement<Codigoautomatico>(_Codigoautomatico_QNAME, Codigoautomatico.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CodigoautomaticoResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "codigoautomaticoResponse")
+    public JAXBElement<CodigoautomaticoResponse> createCodigoautomaticoResponse(CodigoautomaticoResponse value) {
+        return new JAXBElement<CodigoautomaticoResponse>(_CodigoautomaticoResponse_QNAME, CodigoautomaticoResponse.class, null, value);
     }
 
     /**
