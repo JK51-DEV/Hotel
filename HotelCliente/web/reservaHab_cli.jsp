@@ -32,7 +32,7 @@
                     <%--<td>Codigo: </td>--%>
                     <%--<td><input class="form-control" type="text" id="rese" name="rese" required></td>--%>
                     <td>N. de Habitación: </td>
-                    <td><input class="form-control" type="text" id="hab" name="hab" required></td>
+                    <td><input class="form-control" type="text" value="${hab}" id="hab" name="hab" required></td>
                     
                     
                 </tr>
@@ -94,6 +94,17 @@
                     }, 1200);
                 });
             };
+        </script>
+        <script>
+            function getCodigoHabitacionFromURL() {
+                var url = window.location.href;
+                var codigoHabitacion = url.split('?')[1].split('=')[1];
+                return codigoHabitacion;
+            }
+            $(document).ready(function() {
+                var codigoHabitacion = getCodigoHabitacionFromURL();
+                $('#hab').val(codigoHabitacion);
+            });
         </script>
     </body>
     
