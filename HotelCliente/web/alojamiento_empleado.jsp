@@ -122,7 +122,7 @@
                         <td>
                             <button class="btn btn-danger" type="button" onclick="eliminarResumenAloj()">Eliminar Resumen</button>
                             <br><br>
-                            <button class="btn btn-info" type="button" onclick="registrarAlojamiento()">Registrar Reserva</button>
+                            <button class="btn btn-info" type="button" onclick="registrarAlojamiento()">Registrar Alojamiento</button>
                             <br>
                             <br>
                             <br>
@@ -157,11 +157,11 @@
     <script>
         function eliminarResumenAloj() {
             // Enviar una solicitud POST al controlador correspondiente
-            $.post('Resumen_reserva_eliminar', function (res) {
+            $.post('Resumen_alojamiento_eliminar', function (res) {
                 // Mostrar un mensaje o realizar alguna acción adicional si es necesario
                 //swal("Resumen eliminado!", res, "success");
                 setTimeout(function () {
-                    window.location = '/HotelCliente/vistaHabitaciones_cli.jsp';
+                    window.location = '/HotelCliente/vistaAlojamiento.jsp';
                 }, 1200);
             });
         }
@@ -169,12 +169,12 @@
     <script>
         function registrarAlojamiento() {
             // Enviar una solicitud POST al controlador correspondiente
-            $.post('Resumen_reserva_guardar', function (res) {
+            $.post('Resumen_alojamiento_guardar', function (res) {
                 // Mostrar un mensaje o realizar alguna acción adicional si es necesario
-                swal("Reserva registrada!", res, "success");
-                eliminarResumen();
+                swal("Alojamiento registrado!", res, "success");
+                eliminarResumenAloj();
                 setTimeout(function () {
-                    window.location = '/HotelCliente/vistaHabitaciones_cli.jsp';
+                    window.location = '/HotelCliente/vistaAlojamiento.jsp';
                 }, 1200);
             });
         }
