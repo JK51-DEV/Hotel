@@ -31,15 +31,11 @@ public class ObjectFactory {
     private final static QName _EliminarResumen_QNAME = new QName("http://servicio/", "eliminarResumen");
     private final static QName _EliminarResumenResponse_QNAME = new QName("http://servicio/", "eliminarResumenResponse");
     private final static QName _GetTotal_QNAME = new QName("http://servicio/", "getTotal");
-    private final static QName _GetTotalAloj_QNAME = new QName("http://servicio/", "getTotalAloj");
-    private final static QName _GetTotalAlojResponse_QNAME = new QName("http://servicio/", "getTotalAlojResponse");
     private final static QName _GetTotalResponse_QNAME = new QName("http://servicio/", "getTotalResponse");
     private final static QName _ListarReservas_QNAME = new QName("http://servicio/", "listarReservas");
     private final static QName _ListarReservasResponse_QNAME = new QName("http://servicio/", "listarReservasResponse");
     private final static QName _ListarAvanzadoReserva_QNAME = new QName("http://servicio/", "listar_avanzado_reserva");
     private final static QName _ListarAvanzadoReservaResponse_QNAME = new QName("http://servicio/", "listar_avanzado_reservaResponse");
-    private final static QName _RegistrarAlojamiento_QNAME = new QName("http://servicio/", "registrarAlojamiento");
-    private final static QName _RegistrarAlojamientoResponse_QNAME = new QName("http://servicio/", "registrarAlojamientoResponse");
     private final static QName _RegistrarReserva_QNAME = new QName("http://servicio/", "registrarReserva");
     private final static QName _RegistrarReservaResponse_QNAME = new QName("http://servicio/", "registrarReservaResponse");
     private final static QName _ResumenReserva_QNAME = new QName("http://servicio/", "resumenReserva");
@@ -101,19 +97,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetTotalAloj }
+     * Create an instance of {@link GetTotal }
      * 
      */
-    public GetTotalAloj createGetTotalAloj() {
-        return new GetTotalAloj();
+    public GetTotal createGetTotal() {
+        return new GetTotal();
     }
 
     /**
-     * Create an instance of {@link GetTotalAlojResponse }
+     * Create an instance of {@link GetTotalResponse }
      * 
      */
-    public GetTotalAlojResponse createGetTotalAlojResponse() {
-        return new GetTotalAlojResponse();
+    public GetTotalResponse createGetTotalResponse() {
+        return new GetTotalResponse();
     }
 
     /**
@@ -149,19 +145,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link RegistrarAlojamiento }
+     * Create an instance of {@link RegistrarReserva }
      * 
      */
-    public RegistrarAlojamiento createRegistrarAlojamiento() {
-        return new RegistrarAlojamiento();
+    public RegistrarReserva createRegistrarReserva() {
+        return new RegistrarReserva();
     }
 
     /**
-     * Create an instance of {@link RegistrarAlojamientoResponse }
+     * Create an instance of {@link RegistrarReservaResponse }
      * 
      */
-    public RegistrarAlojamientoResponse createRegistrarAlojamientoResponse() {
-        return new RegistrarAlojamientoResponse();
+    public RegistrarReservaResponse createRegistrarReservaResponse() {
+        return new RegistrarReservaResponse();
     }
 
     /**
@@ -267,39 +263,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetTotalAloj }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetTotal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://servicio/", name = "getTotal")
-    public JAXBElement<GetTotalAloj> createGetTotal(GetTotalAloj value) {
-        return new JAXBElement<GetTotalAloj>(_GetTotal_QNAME, GetTotalAloj.class, null, value);
+    public JAXBElement<GetTotal> createGetTotal(GetTotal value) {
+        return new JAXBElement<GetTotal>(_GetTotal_QNAME, GetTotal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetTotalAloj }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://servicio/", name = "getTotalAloj")
-    public JAXBElement<GetTotalAloj> createGetTotalAloj(GetTotalAloj value) {
-        return new JAXBElement<GetTotalAloj>(_GetTotalAloj_QNAME, GetTotalAloj.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetTotalAlojResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://servicio/", name = "getTotalAlojResponse")
-    public JAXBElement<GetTotalAlojResponse> createGetTotalAlojResponse(GetTotalAlojResponse value) {
-        return new JAXBElement<GetTotalAlojResponse>(_GetTotalAlojResponse_QNAME, GetTotalAlojResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetTotalAlojResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetTotalResponse }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://servicio/", name = "getTotalResponse")
-    public JAXBElement<GetTotalAlojResponse> createGetTotalResponse(GetTotalAlojResponse value) {
-        return new JAXBElement<GetTotalAlojResponse>(_GetTotalResponse_QNAME, GetTotalAlojResponse.class, null, value);
+    public JAXBElement<GetTotalResponse> createGetTotalResponse(GetTotalResponse value) {
+        return new JAXBElement<GetTotalResponse>(_GetTotalResponse_QNAME, GetTotalResponse.class, null, value);
     }
 
     /**
@@ -339,39 +317,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RegistrarAlojamiento }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://servicio/", name = "registrarAlojamiento")
-    public JAXBElement<RegistrarAlojamiento> createRegistrarAlojamiento(RegistrarAlojamiento value) {
-        return new JAXBElement<RegistrarAlojamiento>(_RegistrarAlojamiento_QNAME, RegistrarAlojamiento.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RegistrarAlojamientoResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://servicio/", name = "registrarAlojamientoResponse")
-    public JAXBElement<RegistrarAlojamientoResponse> createRegistrarAlojamientoResponse(RegistrarAlojamientoResponse value) {
-        return new JAXBElement<RegistrarAlojamientoResponse>(_RegistrarAlojamientoResponse_QNAME, RegistrarAlojamientoResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RegistrarAlojamiento }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link RegistrarReserva }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://servicio/", name = "registrarReserva")
-    public JAXBElement<RegistrarAlojamiento> createRegistrarReserva(RegistrarAlojamiento value) {
-        return new JAXBElement<RegistrarAlojamiento>(_RegistrarReserva_QNAME, RegistrarAlojamiento.class, null, value);
+    public JAXBElement<RegistrarReserva> createRegistrarReserva(RegistrarReserva value) {
+        return new JAXBElement<RegistrarReserva>(_RegistrarReserva_QNAME, RegistrarReserva.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RegistrarAlojamientoResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link RegistrarReservaResponse }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://servicio/", name = "registrarReservaResponse")
-    public JAXBElement<RegistrarAlojamientoResponse> createRegistrarReservaResponse(RegistrarAlojamientoResponse value) {
-        return new JAXBElement<RegistrarAlojamientoResponse>(_RegistrarReservaResponse_QNAME, RegistrarAlojamientoResponse.class, null, value);
+    public JAXBElement<RegistrarReservaResponse> createRegistrarReservaResponse(RegistrarReservaResponse value) {
+        return new JAXBElement<RegistrarReservaResponse>(_RegistrarReservaResponse_QNAME, RegistrarReservaResponse.class, null, value);
     }
 
     /**

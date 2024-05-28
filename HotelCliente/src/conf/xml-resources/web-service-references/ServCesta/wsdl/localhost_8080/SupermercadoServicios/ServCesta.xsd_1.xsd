@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://servicio/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://servicio/">
+
+<xs:element name="agregarLinea" type="tns:agregarLinea"/>
+
+<xs:element name="agregarLineaResponse" type="tns:agregarLineaResponse"/>
+
+<xs:element name="crearCesta" type="tns:crearCesta"/>
+
+<xs:element name="crearCestaResponse" type="tns:crearCestaResponse"/>
+
+<xs:element name="getCesta" type="tns:getCesta"/>
+
+<xs:element name="getCestaResponse" type="tns:getCestaResponse"/>
+
+<xs:element name="getTotal" type="tns:getTotal"/>
+
+<xs:element name="getTotalResponse" type="tns:getTotalResponse"/>
+
+<xs:element name="quitarLinea" type="tns:quitarLinea"/>
+
+<xs:element name="quitarLineaResponse" type="tns:quitarLineaResponse"/>
+
+<xs:complexType name="agregarLinea">
+<xs:sequence>
+<xs:element name="cod" type="xs:string" minOccurs="0"/>
+<xs:element name="nom" type="xs:string" minOccurs="0"/>
+<xs:element name="pre" type="xs:string" minOccurs="0"/>
+<xs:element name="can" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="agregarLineaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCesta">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getCestaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:linea" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="linea">
+<xs:sequence>
+<xs:element name="can" type="xs:int"/>
+<xs:element name="cod" type="xs:string" minOccurs="0"/>
+<xs:element name="imp" type="xs:double"/>
+<xs:element name="nom" type="xs:string" minOccurs="0"/>
+<xs:element name="pre" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getTotal">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getTotalResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="crearCesta">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="crearCestaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="quitarLinea">
+<xs:sequence>
+<xs:element name="cod" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="quitarLineaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

@@ -14,4 +14,12 @@
     <system systemId="http://localhost:8080/HotelServiciosv3/ServReserva?xsd=1" uri="wsdl/localhost_8080/HotelServiciosv3/ServReserva.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/HotelServicios/ServiciosEmpleado?wsdl" uri="wsdl/localhost_8080/HotelServicios/ServiciosEmpleado.wsdl"/>
     <system systemId="http://localhost:8080/HotelServicios/ServiciosEmpleado?xsd=1" uri="wsdl/localhost_8080/HotelServicios/ServiciosEmpleado.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/SupermercadoServicios/ServListarArticulos?wsdl" uri="wsdl/localhost_8080/SupermercadoServicios/ServListarArticulos.wsdl"/>
+    <system systemId="http://localhost:8080/SupermercadoServicios/ServListarArticulos?xsd=1" uri="wsdl/localhost_8080/SupermercadoServicios/ServListarArticulos.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/SupermercadoServicios/ServCesta?wsdl" uri="wsdl/localhost_8080/SupermercadoServicios/ServCesta.wsdl"/>
+    <system systemId="http://localhost:8080/SupermercadoServicios/ServCesta?xsd=1" uri="wsdl/localhost_8080/SupermercadoServicios/ServCesta.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/SupermercadoServicios/ServVenta?wsdl" uri="wsdl/localhost_8080/SupermercadoServicios/ServVenta.wsdl"/>
+    <system systemId="http://localhost:8080/SupermercadoServicios/ServVenta?xsd=1" uri="wsdl/localhost_8080/SupermercadoServicios/ServVenta.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/SupermercadoServicios/ServCliente?wsdl" uri="wsdl/localhost_8080/SupermercadoServicios/ServCliente.wsdl"/>
+    <system systemId="http://localhost:8080/SupermercadoServicios/ServCliente?xsd=1" uri="wsdl/localhost_8080/SupermercadoServicios/ServCliente.xsd_1.xsd"/>
 </catalog>
