@@ -14,7 +14,6 @@ public class Reserva {
     private String codRes;
     private Habitacion hab;
     private Cliente cli;
-    private Empleado empleado;
     private String fecInicio, fecFin;
     private String fecCreacion;
     private Double imp;
@@ -54,14 +53,6 @@ public class Reserva {
 
     public void setCli(Cliente cli) {
         this.cli = cli;
-    }
-
-    public Empleado getEmpleado() {
-        return empleado;
-    }
-
-    public void setEmpleado(Empleado empleado) {
-        this.empleado = empleado;
     }
 
     public String getFecInicio() {

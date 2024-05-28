@@ -58,11 +58,35 @@ public class DaoReserva {
         String sql = "select * from reserva where DNI_CLIENTE='" + dni_cliente + "'";
         Object[] f = Acceso.buscar(sql);
         if (f != null) {
-            return f[2].toString();
+            return "COD RESERVA: " +f[0].toString() + "COD Hab: "+ f[2].toString();
         }
         return null;
     }
+    
+    public static Reserva buscarReservaLista(String codRes) {
+        String sql = "select * from reserva where COD_RES='" + codRes + "'";
+        Object[] f = Acceso.buscar(sql);
+        if (f != null) {
+        String dniCliente = f[1].toString();
+        String codHab = f[2].toString();
 
+        Cliente cli = DaoCliente.buscar(dniCliente); 
+        Habitacion hab = DaoHabitacion.buscarHabitacionCOD(codHab); 
+
+        String fecInicio = f[4].toString();
+        String fecFin = f[5].toString();  
+
+        // Crear la instancia de Reserva usando el constructor
+        Reserva r = new Reserva(hab, cli, fecInicio, fecFin);
+        r.setCodRes(f[0].toString());      
+        r.setFecCreacion(f[3].toString()); 
+        r.setImp(Double.parseDouble(f[6].toString()));
+
+        return r;
+    }
+    return null;
+    }
+    
     public static String grabarReservas(Reserva r) {
         // Construir la consulta SQL para insertar la reserva en la base de datos
         String sql = "insert into reserva values ('" + r.Codigoautomatico() + "','" + r.getCli().getDni() + "',"

@@ -17,26 +17,13 @@ public class ServAlojamiento {
         return DaoAlojamiento.listarAlojamiento();
     }
    
-    @WebMethod(operationName = "buscarAlojamientoDNI")
-    public String buscarAlojamientoDNI(@WebParam(name = "dni") String dni) {
+    // buscar por ID alojamiento
+    @WebMethod(operationName = "buscarAlojamiento")
+    public String buscarAlojamiento(@WebParam(name = "codaloj") String codaloj) {
         String res;
-        String nom=DaoAlojamiento.buscarAlojamiento(dni);
+        String nom=DaoAlojamiento.buscarAlojamiento(codaloj);
         if (nom != null) {
-            Cliente c=new Cliente();
-            
-            return nom;
-        }else{
-            res="No existe reserva";
-        }
-    return res;
-    }
-    
-    @WebMethod(operationName = "buscarAlojamientoCODHAB")
-    public String buscarAlojamientoCODHAB(@WebParam(name = "codhab") String codhab) {
-        String res;
-        String nom=DaoAlojamiento.buscarAlojamientocodhabi(codhab);
-        if (nom != null) {
-            Habitacion h=new Habitacion();
+            //Habitacion h=new Habitacion();
             
             return nom;
         }else{
@@ -46,22 +33,18 @@ public class ServAlojamiento {
     }
     
     @WebMethod(operationName = "agregarAlojamiento")
-    public String agregarAlojamiento(@WebParam(name = "hab") String hab, @WebParam(name = "cli") String cli,@WebParam(name = "emp") String emp, @WebParam(name = "fecInicio") String fecInicio, @WebParam(name = "fecFin") String fecFin) {
-        Habitacion habi = DaoHabitacion.buscarHabitacion(hab);
-        Cliente clie = DaoCliente.buscar(cli);
-        Empleado empe=DaoEmpleado.buscar(emp);
+    public String agregarAlojamiento(@WebParam(name = "codres") String codres,@WebParam(name = "emp") String emp ) {
+        Reserva res = DaoReserva.buscarReservaLista(codres);
+        Empleado empleado=DaoEmpleado.buscar(emp);
         
-        if (habi == null) {
-            return "No se encontró la habitación con el código: " + hab;
+        if (res == null) {
+            return "No se encontró la habitación con el código: " + res;
         }
-        if (clie == null) {
-            return "No se encontró el cliente con el DNI: " + cli;
-        }
-        if (clie == null) {
-            return "No se encontró el empleado con el DNI: " + emp;
+        if (empleado == null) {
+            return "No se encontró la habitación con el código: " + res;
         }
         
-        alojamiento.agregar(habi, clie, empe, fecInicio, fecFin);
+        alojamiento.agregar(res, empleado);
         
         return "La reserva se agregó";
     }
@@ -79,21 +62,15 @@ public class ServAlojamiento {
             return "Error al eliminar todas las reservas: " + e.getMessage();
         }
     }
-    @WebMethod(operationName = "getTotalAloj")
-    public String getTotal() {
-       return String.valueOf(alojamiento.getTot());
-    }
     
     @WebMethod(operationName = "registrarAlojamiento")
-    public String registrarReserva() {
+    public String registrarAlojamiento() {
     try {
             List<Alojamiento> aloj = alojamiento.getResumenAlojamiento();
             String result = DaoAlojamiento.RegistrarAlojamiento(aloj);
 
             if (result == null) {
-                aloj.forEach((r) -> {
-                    DaoReserva.cambioEstado(r.getHab());
-                });
+                return "Correcto:\n" + result;
             } else {
                 return "Errores al guardar la reserva:\n" + result;
             }
@@ -105,7 +82,7 @@ public class ServAlojamiento {
         }
         return "Error al registrar todas las reservas: " + e.getMessage();
     }
-        return "Registro exitoso";
-}
+        
+    }
     
 }

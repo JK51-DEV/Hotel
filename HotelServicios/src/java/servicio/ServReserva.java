@@ -15,9 +15,10 @@ public class ServReserva {
     public List<Reserva> listarReservas() {
         return DaoReserva.listarReservas();
     }
-
-    @WebMethod(operationName = "buscarReserva")
-    public String buscarReserva(@WebParam(name = "dni") String dni) {
+    
+    // BUSCAR RESERVA POR DNI
+    @WebMethod(operationName = "buscarReservaDNI")
+    public String buscarReservaDNI(@WebParam(name = "dni") String dni) {
         String res;
         String nom=DaoReserva.buscarReserva(dni);
         if (nom != null) {
