@@ -151,7 +151,7 @@
             // Enviar una solicitud POST al controlador correspondiente
             $.post('Resumen_reserva_eliminar', function (res) {
                 // Mostrar un mensaje o realizar alguna acción adicional si es necesario
-                swal("Resumen eliminado!", res, "success");
+                //swal("Resumen eliminado!", res, "success");
                 setTimeout(function () {
                     window.location = '/HotelCliente/vistaHabitaciones_cli.jsp';
                 }, 1200);
@@ -164,6 +164,7 @@
             $.post('Resumen_reserva_guardar', function (res) {
                 // Mostrar un mensaje o realizar alguna acción adicional si es necesario
                 swal("Reserva registrada!", res, "success");
+                eliminarResumen();
                 setTimeout(function () {
                     window.location = '/HotelCliente/vistaHabitaciones_cli.jsp';
                 }, 1200);

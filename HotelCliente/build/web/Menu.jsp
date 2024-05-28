@@ -27,7 +27,7 @@
             <br/><br/>
             <center><label id="subtitulo4">RESERVAR HABITACIÓN</label></center>
             <br/>
-            <button id="boton" onclick="window.location.href = 'vistaHabitaciones.jsp'">Reservar</button>
+            <button id="boton" onclick="window.location.href = 'vistaHabitaciones_cli.jsp'">Reservar</button>
             <br/><br/>
 
         </div>
