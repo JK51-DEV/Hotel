@@ -16,14 +16,14 @@
     <service name="ServAlojamiento">
       <implementation-class>servicio.ServAlojamiento</implementation-class>
     </service>
+    <service name="ServCesta">
+      <implementation-class>servicio.ServCesta</implementation-class>
+    </service>
     <service name="ServVenta">
       <implementation-class>servicio.ServVenta</implementation-class>
     </service>
     <service name="ServListarArticulos">
       <implementation-class>servicio.ServListarArticulos</implementation-class>
-    </service>
-    <service name="ServCesta">
-      <implementation-class>servicio.ServCesta</implementation-class>
     </service>
   </services>
   <clients/>

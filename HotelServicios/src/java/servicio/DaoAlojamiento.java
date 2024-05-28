@@ -26,13 +26,13 @@ public class DaoAlojamiento {
         Object[]f=Acceso.buscar(sql);
         if(f!=null){
             
-            return "Codigo Alojamiento: "+f[0].toString()+"Codigo Reserva: "+f[1].toString()+"DNI empleado: "+f[2].toString();
+            return "Codigo Alojamiento: "+f[0].toString()+" Codigo Reserva: "+f[1].toString()+" DNI empleado: "+f[2].toString();
         }
         return null;
     }
-    
-    public static String buscarAlojamientocodhabi(String codres){
-        String sql="select * from reserva where COD_RES='"+codres+"'";
+    // busca alojamiento por codifo de reserva
+    public static String buscarAlojamientocodRES(String codres){
+        String sql="select * from alojamiento where COD_RES='"+codres+"'";
         Object[]f=Acceso.buscar(sql);
         if(f!=null){
             return f[1].toString();
@@ -42,19 +42,20 @@ public class DaoAlojamiento {
     
     public static String grabarAlojamiento(Alojamiento a){
         // Construir la consulta SQL para insertar la reserva en la base de datos
-        String sql = "insert into reserva values ('" + a.CodigoautomaticoAloj() + "','" + a.getReserva()+ "','" + a.HoyAlojamiento() + "')";
+        String sql = "insert into alojamiento values ('" + a.CodigoautomaticoAloj() + "','" + a.getReserva().getCodRes()+ "','" + a.getEmpleado().getDni()+ "','" + a.HoyAlojamiento() + "')";
         return Acceso.ejecutar(sql);
     }
     
-    public static String RegistrarAlojamiento(List<Alojamiento> alojamientos) {
+    public static String RegistrarAlojamiento(List<Alojamiento> alojamiento) {
         StringBuilder errorMessages = new StringBuilder();
-        for (Alojamiento a : alojamientos) {
+        for (Alojamiento a : alojamiento) {
             String result = grabarAlojamiento(a);
             if (result != null) {
-                errorMessages.append("Error al guardar la reserva ").append(a.getCodAloj()).append(": ").append(result).append("\n");
+                errorMessages.append("Error al guardar el alojamiento ").append(a.getCodAloj()).append(": ").append(result).append("\n");
             }
         }
         return errorMessages.length() > 0 ? errorMessages.toString() : null;
     }
+    
 
 }

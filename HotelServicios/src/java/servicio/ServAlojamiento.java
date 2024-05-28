@@ -32,16 +32,29 @@ public class ServAlojamiento {
     return res;
     }
     
+    //BUSCA ALOJAMIENTO POR CODIGO DE RESERVA
+    @WebMethod(operationName = "buscarAlojamientoRES")
+    public String buscarAlojamientoRES(@WebParam(name = "codres") String codres) {
+        String res;
+        String nom=DaoAlojamiento.buscarAlojamientocodRES(codres);
+        if (nom != null) {
+            return nom;
+        }else{
+            res="No hay reservas en esta habitacion";
+        }
+    return res;
+    }
+    
     @WebMethod(operationName = "agregarAlojamiento")
     public String agregarAlojamiento(@WebParam(name = "codres") String codres,@WebParam(name = "emp") String emp ) {
         Reserva res = DaoReserva.buscarReservaLista(codres);
         Empleado empleado=DaoEmpleado.buscar(emp);
         
         if (res == null) {
-            return "No se encontró la habitación con el código: " + res;
+            return "No se encontró la reserva ";
         }
         if (empleado == null) {
-            return "No se encontró la habitación con el código: " + res;
+            return "No se encontró el empleado";
         }
         
         alojamiento.agregar(res, empleado);
@@ -64,25 +77,25 @@ public class ServAlojamiento {
     }
     
     @WebMethod(operationName = "registrarAlojamiento")
-    public String registrarAlojamiento() {
-    try {
-            List<Alojamiento> aloj = alojamiento.getResumenAlojamiento();
-            String result = DaoAlojamiento.RegistrarAlojamiento(aloj);
+   public String registrarAlojamiento() {
+       try {
+           List<Alojamiento> aloj = alojamiento.getResumenAlojamiento();
+           String aloja = DaoAlojamiento.RegistrarAlojamiento(aloj);
 
-            if (result == null) {
-                return "Correcto:\n" + result;
+            if (aloja == null) {
+                return "SE guardo la reserva:\n";
             } else {
-                return "Errores al guardar la reserva:\n" + result;
+                return "Errores al guardar la reserva:\n" + aloja;
             }
-    } catch (Exception e) {
-        Throwable cause = e.getCause();
-        while (cause != null) {
-            e = (Exception) cause;
-            cause = e.getCause();
-        }
-        return "Error al registrar todas las reservas: " + e.getMessage();
-    }
-        
-    }
-    
+       } catch (Exception e) {
+           // Manejo de excepciones
+           Throwable cause = e.getCause();
+           while (cause != null) {
+               e = (Exception) cause;
+               cause = e.getCause();
+           }
+           return "Error al registrar todas las reservas: " + e.getMessage();
+       }
+   }
+
 }

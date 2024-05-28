@@ -30,6 +30,20 @@ public class ServReserva {
         }
     return res;
     }
+    
+    @WebMethod(operationName = "buscarReserva")
+    public String buscarReserva(@WebParam(name = "codres") String codres) {
+        String res;
+        String nom=DaoReserva.buscarReserva(codres);
+        if (nom != null) {
+            Cliente c=new Cliente();
+            
+            return nom;
+        }else{
+            res="No existe reserva";
+        }
+    return res;
+    }
 
    @WebMethod(operationName = "registrarReserva")
     public String registrarReserva() {
