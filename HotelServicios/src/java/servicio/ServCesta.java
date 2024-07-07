@@ -34,4 +34,10 @@ public class ServCesta {
     public String getTotal() {
         return String.valueOf(cesta.getTot());
     }
+
+    @WebMethod(operationName = "grabarCompra")
+    public String grabarCompra() {
+        //TODO write your implementation code here:
+        return null;
+    }
 }

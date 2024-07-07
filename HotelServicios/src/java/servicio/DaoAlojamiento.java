@@ -57,7 +57,6 @@ public class DaoAlojamiento {
     }
     
     public static String grabarAlojamiento(Alojamiento a){
-        // Construir la consulta SQL para insertar la reserva en la base de datos
         String sql = "insert into alojamiento values ('" + a.CodigoautomaticoAloj() + "','" + a.getReserva().getCodRes()+ "','" + a.getEmpleado().getDni()+ "','" + a.HoyAlojamiento() + "')";
         return Acceso.ejecutar(sql);
     }

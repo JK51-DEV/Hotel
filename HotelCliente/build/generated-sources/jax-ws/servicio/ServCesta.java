@@ -39,6 +39,21 @@ public interface ServCesta {
 
     /**
      * 
+     * @param cod
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "quitarLinea", targetNamespace = "http://servicio/", className = "servicio.QuitarLinea")
+    @ResponseWrapper(localName = "quitarLineaResponse", targetNamespace = "http://servicio/", className = "servicio.QuitarLineaResponse")
+    @Action(input = "http://servicio/ServCesta/quitarLineaRequest", output = "http://servicio/ServCesta/quitarLineaResponse")
+    public String quitarLinea(
+        @WebParam(name = "cod", targetNamespace = "")
+        String cod);
+
+    /**
+     * 
      * @param can
      * @param pre
      * @param cod
@@ -75,21 +90,6 @@ public interface ServCesta {
 
     /**
      * 
-     * @param cod
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "quitarLinea", targetNamespace = "http://servicio/", className = "servicio.QuitarLinea")
-    @ResponseWrapper(localName = "quitarLineaResponse", targetNamespace = "http://servicio/", className = "servicio.QuitarLineaResponse")
-    @Action(input = "http://servicio/ServCesta/quitarLineaRequest", output = "http://servicio/ServCesta/quitarLineaResponse")
-    public String quitarLinea(
-        @WebParam(name = "cod", targetNamespace = "")
-        String cod);
-
-    /**
-     * 
      * @return
      *     returns java.lang.String
      */
@@ -99,5 +99,17 @@ public interface ServCesta {
     @ResponseWrapper(localName = "crearCestaResponse", targetNamespace = "http://servicio/", className = "servicio.CrearCestaResponse")
     @Action(input = "http://servicio/ServCesta/crearCestaRequest", output = "http://servicio/ServCesta/crearCestaResponse")
     public String crearCesta();
+
+    /**
+     * 
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "grabarCompra", targetNamespace = "http://servicio/", className = "servicio.GrabarCompra")
+    @ResponseWrapper(localName = "grabarCompraResponse", targetNamespace = "http://servicio/", className = "servicio.GrabarCompraResponse")
+    @Action(input = "http://servicio/ServCesta/grabarCompraRequest", output = "http://servicio/ServCesta/grabarCompraResponse")
+    public String grabarCompra();
 
 }

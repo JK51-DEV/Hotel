@@ -1,4 +1,3 @@
-
 package servicio;
 
 import javax.jws.WebService;
@@ -20,7 +19,6 @@ public class ServVenta {
 
     @WebMethod(operationName = "grabarVenta")
     public String grabarVenta(@WebParam(name = "dni") String dni, @WebParam(name = "cod") String cod, @WebParam(name = "tot") double tot) {
-        //TODO write your implementation code here:
         return null;
     }
 }

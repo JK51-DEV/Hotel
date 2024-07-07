@@ -94,7 +94,6 @@ public class ServAlojamiento {
                 return "Errores al guardar la reserva:\n" + aloja;
             }
        } catch (Exception e) {
-           // Manejo de excepciones
            Throwable cause = e.getCause();
            while (cause != null) {
                e = (Exception) cause;

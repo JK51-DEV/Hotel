@@ -29,7 +29,7 @@ public class ControlConsumo extends HttpServlet {
     private ServListarArticulos_Service service;
 
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/HotelServicios/Servicios.wsdl")
-    private Servicios service_4;
+    private Servicios service_3;
 
     private Presentador pres;
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -195,7 +195,7 @@ public class ControlConsumo extends HttpServlet {
     private java.util.List<java.lang.Object> buscar(java.lang.String dni) {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
-        servicio.ServiciosCliente port = service_4.getServiciosClientePort();
+        servicio.ServiciosCliente port = service_3.getServiciosClientePort();
         return port.buscar(dni);
     }
 

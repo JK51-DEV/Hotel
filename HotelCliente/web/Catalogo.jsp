@@ -8,26 +8,6 @@
     <title>Catálogo de Artículos</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <%@include file="_referencias.jsp" %> 
-    <style>
-        body {
-            padding-top: 20px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 8px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .btn-primary {
-            margin-right: 5px;
-        }
-    </style>
 </head>
 <body>
     <%@include file="_menu.jsp" %> 

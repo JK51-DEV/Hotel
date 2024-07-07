@@ -146,19 +146,13 @@
                                         emp_dni: $('#emp_dni').val(),
                                         cod: $('#cod').val()
                                     }, function (res) {
-                                        swal("Reserva Encontrada!", res, "success");
-                                        setTimeout(function () {
                                             window.location = '/HotelCliente/alojamiento_empleado.jsp';
-                                        }, 1200);
-
                                     });
                                 };
     </script>
     <script>
         function eliminarResumenAloj() {
-            // Enviar una solicitud POST al controlador correspondiente
             $.post('Resumen_alojamiento_eliminar', function (res) {
-                // Mostrar un mensaje o realizar alguna acción adicional si es necesario
                 //swal("Resumen eliminado!", res, "success");
                 setTimeout(function () {
                     window.location = '/HotelCliente/vistaAlojamiento.jsp';
@@ -168,9 +162,7 @@
     </script>
     <script>
         function registrarAlojamiento() {
-            // Enviar una solicitud POST al controlador correspondiente
             $.post('Resumen_alojamiento_guardar', function (res) {
-                // Mostrar un mensaje o realizar alguna acción adicional si es necesario
                 swal("Alojamiento registrado!", res, "success");
                 eliminarResumenAloj();
                 setTimeout(function () {

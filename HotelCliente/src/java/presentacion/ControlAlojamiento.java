@@ -83,8 +83,4 @@ public class ControlAlojamiento extends HttpServlet {
         servicio.ServAlojamiento port = service_1.getServAlojamientoPort();
         return port.codigoautomaticoaloj();
     }
-    
-
-    
-
 }

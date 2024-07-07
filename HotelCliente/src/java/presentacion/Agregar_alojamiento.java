@@ -20,15 +20,12 @@ public class Agregar_alojamiento extends HttpServlet {
         String res = "";
 
         try {
-            // Obtener los parámetros del formulario
             String emp_dni = request.getParameter("emp_dni");
             String cod = request.getParameter("cod");
 
-            // Crear el Alojamiento del servicio web
             servicio.ServAlojamiento_Service service = new servicio.ServAlojamiento_Service();
             servicio.ServAlojamiento port = service.getServAlojamientoPort();
 
-            // Llamar al método agregarAlojamiento del servicio web
             String resultado = port.agregarAlojamiento(cod, emp_dni);
             if (resultado.startsWith("Se guardó")) {
                 res = "Reserva realizada correctamente: " + resultado;
@@ -37,10 +34,8 @@ public class Agregar_alojamiento extends HttpServlet {
             }
         } catch (Exception e) {
             res = "Error: " + e.getMessage();
-            // Si hay un error, imprimir el mensaje de error en la respuesta
             out.println("Error: Ingrese datos correctos");
         } finally {
-            // Finalmente, imprimir el resultado en la respuesta
             out.println(res);
         }
     }

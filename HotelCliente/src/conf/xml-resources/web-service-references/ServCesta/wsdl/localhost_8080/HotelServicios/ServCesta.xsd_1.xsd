@@ -16,6 +16,10 @@
 
 <xs:element name="getTotalResponse" type="tns:getTotalResponse"/>
 
+<xs:element name="grabarCompra" type="tns:grabarCompra"/>
+
+<xs:element name="grabarCompraResponse" type="tns:grabarCompraResponse"/>
+
 <xs:element name="quitarLinea" type="tns:quitarLinea"/>
 
 <xs:element name="quitarLineaResponse" type="tns:quitarLineaResponse"/>
@@ -82,6 +86,16 @@
 </xs:complexType>
 
 <xs:complexType name="quitarLineaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="grabarCompra">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="grabarCompraResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
