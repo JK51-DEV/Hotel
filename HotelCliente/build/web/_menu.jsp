@@ -8,6 +8,7 @@
                 <li style="display: inline-block"><a href="vistaHabitaciones.jsp" class="btn btn-primary">HABITACIONES</a></li>
                 <li style="display: inline-block"><a href="vistaReservas.jsp" class="btn btn-primary">RESERVAS</a></li>
                 <li style="display: inline-block"><a href="vistaAlojamiento.jsp" class="btn btn-primary">ALOJAMIENTO</a></li>
+                <li style="display: inline-block"><a href="GenerarFactura.jsp" class="btn btn-primary">FACTURACION</a></li>
                 <li style="display: inline-block">
                 <form action="ControlConsumo" method="post">
                     <input type="hidden" name="acc" value="Crear Cesta">
