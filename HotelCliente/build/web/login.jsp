@@ -35,7 +35,7 @@
             </form>
             <br/>
             <p id="marca"><a href="registrarCliente.jsp">REGISTRAR</a></p>
-            <p ><a href="Menu.jsp" style="color: white; text-decoration: none;">Volver</a></p>
+            <p ><a href="Inicio.jsp" style="color: white; text-decoration: none;">Volver</a></p>
         </div>
     </body>
 </html>
