@@ -154,5 +154,21 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/servicio"/>
         <delete dir="${build.generated.dir}/jax-wsCache/ServAlojamiento"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-ServHabitacion, wsimport-client-ServReserva, wsimport-client-ServiciosEmpleado, wsimport-client-ServListarArticulos, wsimport-client-Servicios, wsimport-client-ServCesta, wsimport-client-ServVenta, wsimport-client-ServAlojamiento"/>
+    <target name="wsimport-client-ServFactura" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/ServFactura"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ServFactura" destdir="${build.generated.dir}/jax-wsCache/ServFactura" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/ServFactura/wsdl/localhost_8080/HotelServicios/ServFactura.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/HotelServicios/ServFactura?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/ServFactura/wsdl/localhost_8080/HotelServicios/ServFactura.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/ServFactura"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/ServFactura">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-ServFactura" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/servicio"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/ServFactura"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-ServHabitacion, wsimport-client-ServReserva, wsimport-client-ServiciosEmpleado, wsimport-client-ServListarArticulos, wsimport-client-Servicios, wsimport-client-ServCesta, wsimport-client-ServVenta, wsimport-client-ServAlojamiento, wsimport-client-ServFactura"/>
 </project>
