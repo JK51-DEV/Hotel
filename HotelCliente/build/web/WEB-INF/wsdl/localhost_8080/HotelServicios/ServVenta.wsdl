@@ -10,20 +10,20 @@
 <message name="nuevaVentaResponse">
 <part name="parameters" element="tns:nuevaVentaResponse"/>
 </message>
-<message name="grabarVenta">
-<part name="parameters" element="tns:grabarVenta"/>
+<message name="grabarCompra">
+<part name="parameters" element="tns:grabarCompra"/>
 </message>
-<message name="grabarVentaResponse">
-<part name="parameters" element="tns:grabarVentaResponse"/>
+<message name="grabarCompraResponse">
+<part name="parameters" element="tns:grabarCompraResponse"/>
 </message>
 <portType name="ServVenta">
 <operation name="nuevaVenta">
 <input wsam:Action="http://servicio/ServVenta/nuevaVentaRequest" message="tns:nuevaVenta"/>
 <output wsam:Action="http://servicio/ServVenta/nuevaVentaResponse" message="tns:nuevaVentaResponse"/>
 </operation>
-<operation name="grabarVenta">
-<input wsam:Action="http://servicio/ServVenta/grabarVentaRequest" message="tns:grabarVenta"/>
-<output wsam:Action="http://servicio/ServVenta/grabarVentaResponse" message="tns:grabarVentaResponse"/>
+<operation name="grabarCompra">
+<input wsam:Action="http://servicio/ServVenta/grabarCompraRequest" message="tns:grabarCompra"/>
+<output wsam:Action="http://servicio/ServVenta/grabarCompraResponse" message="tns:grabarCompraResponse"/>
 </operation>
 </portType>
 <binding name="ServVentaPortBinding" type="tns:ServVenta">
@@ -37,7 +37,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="grabarVenta">
+<operation name="grabarCompra">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

@@ -4,31 +4,31 @@
 <xsd:import namespace="http://servicio/" schemaLocation="http://localhost:8080/HotelServicios/ServFactura?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="buscarMontoCompra">
-<part name="parameters" element="tns:buscarMontoCompra"/>
-</message>
-<message name="buscarMontoCompraResponse">
-<part name="parameters" element="tns:buscarMontoCompraResponse"/>
-</message>
 <message name="generarfactura">
 <part name="parameters" element="tns:generarfactura"/>
 </message>
 <message name="generarfacturaResponse">
 <part name="parameters" element="tns:generarfacturaResponse"/>
 </message>
+<message name="buscarMontoCompra">
+<part name="parameters" element="tns:buscarMontoCompra"/>
+</message>
+<message name="buscarMontoCompraResponse">
+<part name="parameters" element="tns:buscarMontoCompraResponse"/>
+</message>
 <portType name="ServFactura">
-<operation name="buscarMontoCompra">
-<input wsam:Action="http://servicio/ServFactura/buscarMontoCompraRequest" message="tns:buscarMontoCompra"/>
-<output wsam:Action="http://servicio/ServFactura/buscarMontoCompraResponse" message="tns:buscarMontoCompraResponse"/>
-</operation>
 <operation name="generarfactura">
 <input wsam:Action="http://servicio/ServFactura/generarfacturaRequest" message="tns:generarfactura"/>
 <output wsam:Action="http://servicio/ServFactura/generarfacturaResponse" message="tns:generarfacturaResponse"/>
 </operation>
+<operation name="buscarMontoCompra">
+<input wsam:Action="http://servicio/ServFactura/buscarMontoCompraRequest" message="tns:buscarMontoCompra"/>
+<output wsam:Action="http://servicio/ServFactura/buscarMontoCompraResponse" message="tns:buscarMontoCompraResponse"/>
+</operation>
 </portType>
 <binding name="ServFacturaPortBinding" type="tns:ServFactura">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="buscarMontoCompra">
+<operation name="generarfactura">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -37,7 +37,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="generarfactura">
+<operation name="buscarMontoCompra">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

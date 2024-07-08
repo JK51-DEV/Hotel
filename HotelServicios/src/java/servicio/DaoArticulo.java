@@ -3,7 +3,7 @@ import java.util.*;
 
 public class DaoArticulo {
     public static List<Articulo>listar(){
-        String sql="select * from consumo";
+        String sql="select * from articulo";
         List tabla=Acceso.listar(sql);
         List lis=new ArrayList();
         for(int i=0;i<tabla.size();i++){

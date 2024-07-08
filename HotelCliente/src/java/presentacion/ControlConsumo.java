@@ -139,6 +139,19 @@ public class ControlConsumo extends HttpServlet {
             }
             response.sendRedirect("Venta.jsp");
         }
+        if (acc.equals("Grabar Compra")) {
+        String numVenta = pres.getFil()[0].toString(); // Obtener número de venta
+        String fecVenta = pres.getFil()[1].toString(); // Obtener fecha de venta
+        double totVenta = Double.parseDouble(pres.getTot()); // Obtener total de venta
+        String msgGrabacion = grabarCompra(numVenta, fecVenta, totVenta); // Llamar al método para grabar compra
+
+        if (msgGrabacion.equals("OK")) {
+            pres.setMsg("Compra Exitosa");
+        } else {
+            pres.setMsg("Error al grabar la venta en la base de datos: " + msgGrabacion);
+        }
+        response.sendRedirect("Venta.jsp");
+        } 
         if(acc.equals("")){
             
         }
@@ -239,6 +252,13 @@ public class ControlConsumo extends HttpServlet {
         // If the calling of port operations may lead to race condition some synchronization is required.
         servicio.ServCesta port = service_1.getServCestaPort();
         return port.crearCesta();
+    }
+
+    private String grabarCompra(java.lang.String num, java.lang.String fec, double tot) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        servicio.ServVenta port = service_2.getServVentaPort();
+        return port.grabarCompra(num, fec, tot);
     }
     
 }

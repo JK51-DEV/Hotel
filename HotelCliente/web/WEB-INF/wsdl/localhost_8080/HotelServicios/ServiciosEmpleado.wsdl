@@ -10,17 +10,11 @@
 <message name="buscarEmpleadoResponse">
 <part name="parameters" element="tns:buscarEmpleadoResponse"/>
 </message>
-<message name="grabarEmpleado">
-<part name="parameters" element="tns:grabarEmpleado"/>
+<message name="buscarNombreAdministrador">
+<part name="parameters" element="tns:buscarNombreAdministrador"/>
 </message>
-<message name="grabarEmpleadoResponse">
-<part name="parameters" element="tns:grabarEmpleadoResponse"/>
-</message>
-<message name="listarEmpleado">
-<part name="parameters" element="tns:listarEmpleado"/>
-</message>
-<message name="listarEmpleadoResponse">
-<part name="parameters" element="tns:listarEmpleadoResponse"/>
+<message name="buscarNombreAdministradorResponse">
+<part name="parameters" element="tns:buscarNombreAdministradorResponse"/>
 </message>
 <message name="elmininarEmpleado">
 <part name="parameters" element="tns:elmininarEmpleado"/>
@@ -34,30 +28,32 @@
 <message name="autenticarEmpleadoResponse">
 <part name="parameters" element="tns:autenticarEmpleadoResponse"/>
 </message>
-<message name="buscarNombreAdministrador">
-<part name="parameters" element="tns:buscarNombreAdministrador"/>
-</message>
-<message name="buscarNombreAdministradorResponse">
-<part name="parameters" element="tns:buscarNombreAdministradorResponse"/>
-</message>
 <message name="buscarAdministradorInicioSesion">
 <part name="parameters" element="tns:buscarAdministradorInicioSesion"/>
 </message>
 <message name="buscarAdministradorInicioSesionResponse">
 <part name="parameters" element="tns:buscarAdministradorInicioSesionResponse"/>
 </message>
+<message name="listarEmpleado">
+<part name="parameters" element="tns:listarEmpleado"/>
+</message>
+<message name="listarEmpleadoResponse">
+<part name="parameters" element="tns:listarEmpleadoResponse"/>
+</message>
+<message name="grabarEmpleado">
+<part name="parameters" element="tns:grabarEmpleado"/>
+</message>
+<message name="grabarEmpleadoResponse">
+<part name="parameters" element="tns:grabarEmpleadoResponse"/>
+</message>
 <portType name="ServiciosEmpleado">
 <operation name="buscarEmpleado">
 <input wsam:Action="http://servicio/ServiciosEmpleado/buscarEmpleadoRequest" message="tns:buscarEmpleado"/>
 <output wsam:Action="http://servicio/ServiciosEmpleado/buscarEmpleadoResponse" message="tns:buscarEmpleadoResponse"/>
 </operation>
-<operation name="grabarEmpleado">
-<input wsam:Action="http://servicio/ServiciosEmpleado/grabarEmpleadoRequest" message="tns:grabarEmpleado"/>
-<output wsam:Action="http://servicio/ServiciosEmpleado/grabarEmpleadoResponse" message="tns:grabarEmpleadoResponse"/>
-</operation>
-<operation name="listarEmpleado">
-<input wsam:Action="http://servicio/ServiciosEmpleado/listarEmpleadoRequest" message="tns:listarEmpleado"/>
-<output wsam:Action="http://servicio/ServiciosEmpleado/listarEmpleadoResponse" message="tns:listarEmpleadoResponse"/>
+<operation name="buscarNombreAdministrador">
+<input wsam:Action="http://servicio/ServiciosEmpleado/buscarNombreAdministradorRequest" message="tns:buscarNombreAdministrador"/>
+<output wsam:Action="http://servicio/ServiciosEmpleado/buscarNombreAdministradorResponse" message="tns:buscarNombreAdministradorResponse"/>
 </operation>
 <operation name="elmininarEmpleado">
 <input wsam:Action="http://servicio/ServiciosEmpleado/elmininarEmpleadoRequest" message="tns:elmininarEmpleado"/>
@@ -67,13 +63,17 @@
 <input wsam:Action="http://servicio/ServiciosEmpleado/autenticarEmpleadoRequest" message="tns:autenticarEmpleado"/>
 <output wsam:Action="http://servicio/ServiciosEmpleado/autenticarEmpleadoResponse" message="tns:autenticarEmpleadoResponse"/>
 </operation>
-<operation name="buscarNombreAdministrador">
-<input wsam:Action="http://servicio/ServiciosEmpleado/buscarNombreAdministradorRequest" message="tns:buscarNombreAdministrador"/>
-<output wsam:Action="http://servicio/ServiciosEmpleado/buscarNombreAdministradorResponse" message="tns:buscarNombreAdministradorResponse"/>
-</operation>
 <operation name="buscarAdministradorInicioSesion">
 <input wsam:Action="http://servicio/ServiciosEmpleado/buscarAdministradorInicioSesionRequest" message="tns:buscarAdministradorInicioSesion"/>
 <output wsam:Action="http://servicio/ServiciosEmpleado/buscarAdministradorInicioSesionResponse" message="tns:buscarAdministradorInicioSesionResponse"/>
+</operation>
+<operation name="listarEmpleado">
+<input wsam:Action="http://servicio/ServiciosEmpleado/listarEmpleadoRequest" message="tns:listarEmpleado"/>
+<output wsam:Action="http://servicio/ServiciosEmpleado/listarEmpleadoResponse" message="tns:listarEmpleadoResponse"/>
+</operation>
+<operation name="grabarEmpleado">
+<input wsam:Action="http://servicio/ServiciosEmpleado/grabarEmpleadoRequest" message="tns:grabarEmpleado"/>
+<output wsam:Action="http://servicio/ServiciosEmpleado/grabarEmpleadoResponse" message="tns:grabarEmpleadoResponse"/>
 </operation>
 </portType>
 <binding name="ServiciosEmpleadoPortBinding" type="tns:ServiciosEmpleado">
@@ -87,16 +87,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="grabarEmpleado">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="listarEmpleado">
+<operation name="buscarNombreAdministrador">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -123,7 +114,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="buscarNombreAdministrador">
+<operation name="buscarAdministradorInicioSesion">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -132,7 +123,16 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="buscarAdministradorInicioSesion">
+<operation name="listarEmpleado">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="grabarEmpleado">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

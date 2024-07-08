@@ -24,8 +24,8 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _GrabarVenta_QNAME = new QName("http://servicio/", "grabarVenta");
-    private final static QName _GrabarVentaResponse_QNAME = new QName("http://servicio/", "grabarVentaResponse");
+    private final static QName _GrabarCompra_QNAME = new QName("http://servicio/", "grabarCompra");
+    private final static QName _GrabarCompraResponse_QNAME = new QName("http://servicio/", "grabarCompraResponse");
     private final static QName _NuevaVenta_QNAME = new QName("http://servicio/", "nuevaVenta");
     private final static QName _NuevaVentaResponse_QNAME = new QName("http://servicio/", "nuevaVentaResponse");
 
@@ -37,19 +37,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GrabarVenta }
+     * Create an instance of {@link GrabarCompra }
      * 
      */
-    public GrabarVenta createGrabarVenta() {
-        return new GrabarVenta();
+    public GrabarCompra createGrabarCompra() {
+        return new GrabarCompra();
     }
 
     /**
-     * Create an instance of {@link GrabarVentaResponse }
+     * Create an instance of {@link GrabarCompraResponse }
      * 
      */
-    public GrabarVentaResponse createGrabarVentaResponse() {
-        return new GrabarVentaResponse();
+    public GrabarCompraResponse createGrabarCompraResponse() {
+        return new GrabarCompraResponse();
     }
 
     /**
@@ -77,21 +77,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GrabarVenta }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GrabarCompra }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://servicio/", name = "grabarVenta")
-    public JAXBElement<GrabarVenta> createGrabarVenta(GrabarVenta value) {
-        return new JAXBElement<GrabarVenta>(_GrabarVenta_QNAME, GrabarVenta.class, null, value);
+    @XmlElementDecl(namespace = "http://servicio/", name = "grabarCompra")
+    public JAXBElement<GrabarCompra> createGrabarCompra(GrabarCompra value) {
+        return new JAXBElement<GrabarCompra>(_GrabarCompra_QNAME, GrabarCompra.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GrabarVentaResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GrabarCompraResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://servicio/", name = "grabarVentaResponse")
-    public JAXBElement<GrabarVentaResponse> createGrabarVentaResponse(GrabarVentaResponse value) {
-        return new JAXBElement<GrabarVentaResponse>(_GrabarVentaResponse_QNAME, GrabarVentaResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://servicio/", name = "grabarCompraResponse")
+    public JAXBElement<GrabarCompraResponse> createGrabarCompraResponse(GrabarCompraResponse value) {
+        return new JAXBElement<GrabarCompraResponse>(_GrabarCompraResponse_QNAME, GrabarCompraResponse.class, null, value);
     }
 
     /**

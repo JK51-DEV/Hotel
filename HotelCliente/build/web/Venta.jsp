@@ -93,31 +93,9 @@
                 </tr>            
             </tbody>
         </table>
-        <div id="resumenVenta" class="modal" style="display:none">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Resumen de la Venta</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Cliente: <%= fil2[1] %></p>
-                        <p>Productos:</p>
-                        <ul>
-                            <% for(int i=0; i<lis.size(); i++) { %>
-                                <% Object[] f = (Object[])lis.get(i); %>
-                                <li><%= f[1] %> - Cantidad: <%= f[3] %>, Precio: <%= f[2] %></li>
-                            <% } %>
-                        </ul>
-                        <p>Total de la venta: <%= tot %></p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#resumenVenta">Grabar Venta</button>
+        <form action="ControlConsumo" method="Post">
+            <input type="submit" name="acc" class="btn btn-primary" value="Grabar Compra"/>
+        </form>
         <!-- Botón para regresar a Cesta.jsp -->
         <a href="Cesta.jsp" class="btn btn-secondary">Regresar</a>
     </div>

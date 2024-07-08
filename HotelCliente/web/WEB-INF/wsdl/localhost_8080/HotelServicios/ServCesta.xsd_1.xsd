@@ -92,7 +92,11 @@
 </xs:complexType>
 
 <xs:complexType name="grabarCompra">
-<xs:sequence/>
+<xs:sequence>
+<xs:element name="num" type="xs:string" minOccurs="0"/>
+<xs:element name="fec" type="xs:string" minOccurs="0"/>
+<xs:element name="tot" type="xs:double"/>
+</xs:sequence>
 </xs:complexType>
 
 <xs:complexType name="grabarCompraResponse">

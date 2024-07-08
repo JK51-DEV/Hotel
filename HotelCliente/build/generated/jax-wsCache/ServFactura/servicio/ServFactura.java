@@ -27,21 +27,6 @@ public interface ServFactura {
 
     /**
      * 
-     * @param num
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "buscarMontoCompra", targetNamespace = "http://servicio/", className = "servicio.BuscarMontoCompra")
-    @ResponseWrapper(localName = "buscarMontoCompraResponse", targetNamespace = "http://servicio/", className = "servicio.BuscarMontoCompraResponse")
-    @Action(input = "http://servicio/ServFactura/buscarMontoCompraRequest", output = "http://servicio/ServFactura/buscarMontoCompraResponse")
-    public String buscarMontoCompra(
-        @WebParam(name = "num", targetNamespace = "")
-        String num);
-
-    /**
-     * 
      * @param compra
      * @param reser
      * @param dni
@@ -60,5 +45,20 @@ public interface ServFactura {
         String reser,
         @WebParam(name = "compra", targetNamespace = "")
         String compra);
+
+    /**
+     * 
+     * @param num
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "buscarMontoCompra", targetNamespace = "http://servicio/", className = "servicio.BuscarMontoCompra")
+    @ResponseWrapper(localName = "buscarMontoCompraResponse", targetNamespace = "http://servicio/", className = "servicio.BuscarMontoCompraResponse")
+    @Action(input = "http://servicio/ServFactura/buscarMontoCompraRequest", output = "http://servicio/ServFactura/buscarMontoCompraResponse")
+    public String buscarMontoCompra(
+        @WebParam(name = "num", targetNamespace = "")
+        String num);
 
 }

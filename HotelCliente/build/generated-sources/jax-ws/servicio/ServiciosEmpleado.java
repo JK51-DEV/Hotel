@@ -33,6 +33,36 @@ public interface ServiciosEmpleado {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "buscarEmpleado", targetNamespace = "http://servicio/", className = "servicio.BuscarEmpleado")
+    @ResponseWrapper(localName = "buscarEmpleadoResponse", targetNamespace = "http://servicio/", className = "servicio.BuscarEmpleadoResponse")
+    @Action(input = "http://servicio/ServiciosEmpleado/buscarEmpleadoRequest", output = "http://servicio/ServiciosEmpleado/buscarEmpleadoResponse")
+    public String buscarEmpleado(
+        @WebParam(name = "dni", targetNamespace = "")
+        String dni);
+
+    /**
+     * 
+     * @param dni
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "buscarNombreAdministrador", targetNamespace = "http://servicio/", className = "servicio.BuscarNombreAdministrador")
+    @ResponseWrapper(localName = "buscarNombreAdministradorResponse", targetNamespace = "http://servicio/", className = "servicio.BuscarNombreAdministradorResponse")
+    @Action(input = "http://servicio/ServiciosEmpleado/buscarNombreAdministradorRequest", output = "http://servicio/ServiciosEmpleado/buscarNombreAdministradorResponse")
+    public String buscarNombreAdministrador(
+        @WebParam(name = "dni", targetNamespace = "")
+        String dni);
+
+    /**
+     * 
+     * @param dni
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "elmininarEmpleado", targetNamespace = "http://servicio/", className = "servicio.ElmininarEmpleado")
     @ResponseWrapper(localName = "elmininarEmpleadoResponse", targetNamespace = "http://servicio/", className = "servicio.ElmininarEmpleadoResponse")
     @Action(input = "http://servicio/ServiciosEmpleado/elmininarEmpleadoRequest", output = "http://servicio/ServiciosEmpleado/elmininarEmpleadoResponse")
@@ -78,21 +108,6 @@ public interface ServiciosEmpleado {
 
     /**
      * 
-     * @param dni
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "buscarNombreAdministrador", targetNamespace = "http://servicio/", className = "servicio.BuscarNombreAdministrador")
-    @ResponseWrapper(localName = "buscarNombreAdministradorResponse", targetNamespace = "http://servicio/", className = "servicio.BuscarNombreAdministradorResponse")
-    @Action(input = "http://servicio/ServiciosEmpleado/buscarNombreAdministradorRequest", output = "http://servicio/ServiciosEmpleado/buscarNombreAdministradorResponse")
-    public String buscarNombreAdministrador(
-        @WebParam(name = "dni", targetNamespace = "")
-        String dni);
-
-    /**
-     * 
      * @return
      *     returns java.util.List<servicio.Empleado>
      */
@@ -120,20 +135,5 @@ public interface ServiciosEmpleado {
         String dni,
         @WebParam(name = "nom", targetNamespace = "")
         String nom);
-
-    /**
-     * 
-     * @param dni
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "buscarEmpleado", targetNamespace = "http://servicio/", className = "servicio.BuscarEmpleado")
-    @ResponseWrapper(localName = "buscarEmpleadoResponse", targetNamespace = "http://servicio/", className = "servicio.BuscarEmpleadoResponse")
-    @Action(input = "http://servicio/ServiciosEmpleado/buscarEmpleadoRequest", output = "http://servicio/ServiciosEmpleado/buscarEmpleadoResponse")
-    public String buscarEmpleado(
-        @WebParam(name = "dni", targetNamespace = "")
-        String dni);
 
 }

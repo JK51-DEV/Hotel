@@ -38,22 +38,22 @@ public interface ServVenta {
 
     /**
      * 
+     * @param fec
+     * @param num
      * @param tot
-     * @param cod
-     * @param dni
      * @return
      *     returns java.lang.String
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "grabarVenta", targetNamespace = "http://servicio/", className = "servicio.GrabarVenta")
-    @ResponseWrapper(localName = "grabarVentaResponse", targetNamespace = "http://servicio/", className = "servicio.GrabarVentaResponse")
-    @Action(input = "http://servicio/ServVenta/grabarVentaRequest", output = "http://servicio/ServVenta/grabarVentaResponse")
-    public String grabarVenta(
-        @WebParam(name = "dni", targetNamespace = "")
-        String dni,
-        @WebParam(name = "cod", targetNamespace = "")
-        String cod,
+    @RequestWrapper(localName = "grabarCompra", targetNamespace = "http://servicio/", className = "servicio.GrabarCompra")
+    @ResponseWrapper(localName = "grabarCompraResponse", targetNamespace = "http://servicio/", className = "servicio.GrabarCompraResponse")
+    @Action(input = "http://servicio/ServVenta/grabarCompraRequest", output = "http://servicio/ServVenta/grabarCompraResponse")
+    public String grabarCompra(
+        @WebParam(name = "num", targetNamespace = "")
+        String num,
+        @WebParam(name = "fec", targetNamespace = "")
+        String fec,
         @WebParam(name = "tot", targetNamespace = "")
         double tot);
 
