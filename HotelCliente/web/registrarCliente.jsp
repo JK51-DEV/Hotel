@@ -42,7 +42,7 @@
             </form>
             <br/>
             <p id="marca"><a href="login.jsp">INGRESAR</a></p>
-            <p ><a href="Menu.jsp" style="color: white; text-decoration: none;">Volver</a></p>
+            <p ><a href="Inicio.jsp" style="color: white; text-decoration: none;">Volver</a></p>
         </div>
     </body>
     <script src="_sweetAlert/sweetalert.js" type="text/javascript"></script>
