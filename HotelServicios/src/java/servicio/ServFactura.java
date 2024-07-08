@@ -41,7 +41,6 @@ public class ServFactura {
         }
     }
 
-    
     @WebMethod(operationName = "buscarMontoCompra")
     public String buscarMontoCompra(@WebParam(name = "num") String num) {
         String res;
@@ -53,5 +52,7 @@ public class ServFactura {
         }
     return res;
     }
+    
+    
     
 }
