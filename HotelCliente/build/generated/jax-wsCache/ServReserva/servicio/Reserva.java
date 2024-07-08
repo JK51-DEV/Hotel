@@ -18,6 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence&gt;
  *         &lt;element name="cli" type="{http://servicio/}cliente" minOccurs="0"/&gt;
  *         &lt;element name="codRes" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="dia" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="fecCreacion" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="fecFin" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="fecInicio" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
@@ -35,6 +36,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "reserva", propOrder = {
     "cli",
     "codRes",
+    "dia",
     "fecCreacion",
     "fecFin",
     "fecInicio",
@@ -45,6 +47,7 @@ public class Reserva {
 
     protected Cliente cli;
     protected String codRes;
+    protected int dia;
     protected String fecCreacion;
     protected String fecFin;
     protected String fecInicio;
@@ -97,6 +100,22 @@ public class Reserva {
      */
     public void setCodRes(String value) {
         this.codRes = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad dia.
+     * 
+     */
+    public int getDia() {
+        return dia;
+    }
+
+    /**
+     * Define el valor de la propiedad dia.
+     * 
+     */
+    public void setDia(int value) {
+        this.dia = value;
     }
 
     /**

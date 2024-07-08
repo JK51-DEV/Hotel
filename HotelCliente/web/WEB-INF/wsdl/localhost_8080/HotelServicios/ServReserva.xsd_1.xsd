@@ -50,18 +50,6 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="buscarReserva">
-<xs:sequence>
-<xs:element name="codres" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="buscarReservaResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="listarReservas">
 <xs:sequence/>
 </xs:complexType>
@@ -76,6 +64,7 @@
 <xs:sequence>
 <xs:element name="cli" type="tns:cliente" minOccurs="0"/>
 <xs:element name="codRes" type="xs:string" minOccurs="0"/>
+<xs:element name="dia" type="xs:int"/>
 <xs:element name="fecCreacion" type="xs:string" minOccurs="0"/>
 <xs:element name="fecFin" type="xs:string" minOccurs="0"/>
 <xs:element name="fecInicio" type="xs:string" minOccurs="0"/>
@@ -97,6 +86,18 @@
 <xs:element name="estado" type="xs:string" minOccurs="0"/>
 <xs:element name="nom" type="xs:string" minOccurs="0"/>
 <xs:element name="pre" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarReserva">
+<xs:sequence>
+<xs:element name="codres" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarReservaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 

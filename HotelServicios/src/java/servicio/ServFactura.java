@@ -13,17 +13,7 @@ import javax.jws.WebParam;
  */
 @WebService(serviceName = "ServFactura")
 public class ServFactura {
-//
-//    @WebMethod(operationName = "generarfactura")
-//    public List<Factura> generarfactura(@WebParam(name = "dni") String dni, @WebParam(name = "reser") String res, @WebParam(name = "compra") String compra) {
-//        List<Factura> nom = DaoFactura.generar_factura(dni, res, compra);
-//        if (nom != null) {
-//            return nom;
-//        } else {
-//            return new ArrayList<>();
-//        }
-//    }
-    
+
     @WebMethod(operationName = "generarfactura")
     public List<Factura> generarfactura(@WebParam(name = "dni") String dni, @WebParam(name = "reser") String res, @WebParam(name = "compra") String compra) {
         
@@ -48,7 +38,7 @@ public class ServFactura {
         if (nom != null) {
             return nom;
         }else{
-            res="No existe reserva";
+            res="No EXISTE COMPRA";
         }
     return res;
     }

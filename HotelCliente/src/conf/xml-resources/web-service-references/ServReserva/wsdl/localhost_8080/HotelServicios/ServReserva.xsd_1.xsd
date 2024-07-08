@@ -64,6 +64,7 @@
 <xs:sequence>
 <xs:element name="cli" type="tns:cliente" minOccurs="0"/>
 <xs:element name="codRes" type="xs:string" minOccurs="0"/>
+<xs:element name="dia" type="xs:int"/>
 <xs:element name="fecCreacion" type="xs:string" minOccurs="0"/>
 <xs:element name="fecFin" type="xs:string" minOccurs="0"/>
 <xs:element name="fecInicio" type="xs:string" minOccurs="0"/>
@@ -145,18 +146,6 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="listar_avanzado_reserva">
-<xs:sequence>
-<xs:element name="dni_cliente" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="listar_avanzado_reservaResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:reserva" minOccurs="0" maxOccurs="unbounded"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="buscarReservaDNI">
 <xs:sequence>
 <xs:element name="dni" type="xs:string" minOccurs="0"/>
@@ -166,6 +155,18 @@
 <xs:complexType name="buscarReservaDNIResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listar_avanzado_reserva">
+<xs:sequence>
+<xs:element name="dni_cliente" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listar_avanzado_reservaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:reserva" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 

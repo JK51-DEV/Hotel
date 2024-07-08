@@ -17,6 +17,7 @@ public class Reserva {
     private String fecInicio, fecFin;
     private String fecCreacion;
     private Double imp;
+    private int dia;
 
     public Reserva() {
     }
@@ -127,5 +128,16 @@ public class Reserva {
         imp = dias * precioHabitacion;
         return imp;
     }
+
+    public int getDia() {
+        int dia = diferenciaDias(fecInicio, fecFin);
+        return dia;
+    }
+
+    public void setDia(int dia) {
+        this.dia = dia;
+    }
+    
+    
 
 }

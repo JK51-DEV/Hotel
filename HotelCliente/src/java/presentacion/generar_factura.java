@@ -7,13 +7,18 @@ package presentacion;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.ws.WebServiceRef;
+import servicio.Factura;
+import servicio.ServFactura;
 import servicio.ServFactura_Service;
+import servicio.ServReserva;
+import servicio.ServReserva_Service;
 
 /**
  *
@@ -25,69 +30,49 @@ public class generar_factura extends HttpServlet {
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/HotelServicios/ServFactura.wsdl")
     private ServFactura_Service service;
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-           
-	servicio.ServFactura_Service service = new servicio.ServFactura_Service();
-	servicio.ServFactura port = service.getServFacturaPort();
-    
+
+        String dni = request.getParameter("dniCliente");
+        String reser = request.getParameter("codigoReserva");
+        String compra = request.getParameter("numeroCompra");
+
+        // Llamar al método del servicio web para generar la factura
+        List<Factura> facturas = generarfactura(dni, reser, compra);
+
+        if (!facturas.isEmpty()) {
+            // Guardar las facturas en el atributo de solicitud para ser utilizadas en el JSP
+            request.setAttribute("facturas", facturas);
+
+            // Enviar los datos al JSP para mostrarlos
+            request.getRequestDispatcher("/Factura.jsp").forward(request, response);
+        } else {
+            // Redireccionar a la página de generación de factura si no se encontraron facturas
+            response.sendRedirect("GenerarFactura.jsp");
         }
+    
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
     @Override
     public String getServletInfo() {
-        return "Short description";
+        return "Generacion de factura";
     }// </editor-fold>
 
-    private java.util.List<servicio.Factura> generarfactura(java.lang.String dni, java.lang.String reser, java.lang.String compra) {
-        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
-        // If the calling of port operations may lead to race condition some synchronization is required.
-        servicio.ServFactura port = service.getServFacturaPort();
+    private List<Factura> generarfactura(String dni, String reser, String compra) {
+        ServFactura port = service.getServFacturaPort();
         return port.generarfactura(dni, reser, compra);
     }
 

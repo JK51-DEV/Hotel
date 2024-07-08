@@ -4,7 +4,12 @@
     Author     : Usuario
 --%>
 
+<%@page import="servicio.*"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+    <%-- start web service invocation --%><hr/>
+    <%-- end web service invocation --%><hr/>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,18 +23,19 @@
     <div class="row">
       <div class="col-2-4">
         <div class="slogan">Facturación </div>
+        <script>
+        // Función para mostrar una alerta
+        function mostrarAlerta() {
+            alert("No se encontraron facturas para los parámetros dados.");
+        }
+    </script>
 
-        <!--<label for="config_tax">IVA:
-          <input type="checkbox" id="config_tax" />
-        </label>
-        <label for="config_tax_rate" class="taxrelated">Tasa:
-          <input type="text" id="config_tax_rate" value="13"/>%
-        </label>-->
         <label for="config_note">Nota:
           <input type="checkbox" id="config_note" />
         </label>
         
-      </div>
+        
+     </div>
       <div class="col-4 text-right">
           <a href="login.jsp">Volver</a>
         <a href="javascript:window.print()">Imprimir</a>
@@ -43,23 +49,10 @@
       <img src="https://wimbledon-hotel.com/wp-content/uploads/2022/08/cropped-logo-hwimbledon.png">
    <!-- <img src="assets/img/logo.png">-->
   </div><!--.logoholder-->
-
    <div class="me">
- 
   </div>
-  
-   <!--
-    <p contenteditable>
-      <strong>Sistema Web S.A. de C.V.</strong><br>
-      234/90, New York Street<br>
-      Perú.<br>
-      
-    </p>
 
-  -->
-  <!--.me-->
-
-  <div class="info">
+   <div class="info">
    <p>
       <strong>Hotel Wimbledon</strong><br>
       Av. Costanera 2098, San Miguel 15087<br>
@@ -67,7 +60,6 @@
       
     </p>
   </div>
-  <!-- .info -->
 
   <div class="bank">
     <p>
@@ -77,50 +69,43 @@
       Twitter: @wimbledon-hotel
     </p>
   </div>
-  <!--.bank-->
-  
-  
-  <!--
-      <p contenteditable>
-      Datos bacarios: <br>
-      Titular de la cuenta: <br>
-      IBAN: <br>
-      BIC:
-    </p>
-
-  -->
-
 </header>
-
 
 <div class="row section">
 
 	<div class="col-2">
     <h1>Factura</h1>
   </div><!--.col-->
-
+<% 
+                // Obtener la lista de facturas desde el atributo de solicitud
+                List<servicio.Factura> facturas = (List<servicio.Factura>) request.getAttribute("facturas");
+                
+                // Verificar si hay facturas para mostrar
+                if (facturas != null && !facturas.isEmpty()) {
+                    // Iterar sobre la lista de facturas y mostrar cada una en una fila de la tabla
+                    for (servicio.Factura factura : facturas) {
+            %>
   <div class="col-2 text-right details">
     <p>
       Fecha: <input type="text" class="datePicker" /><br>
-      Factura #: <input type="text" value="100" /><br>
-     Vence: <input class="twoweeks" type="text"/>
+      Factura #: <input type="text" value="1" /><br>
+      Vence: <input class="twoweeks" type="text"/>
     </p>
   </div><!--.col-->
-  
-  
-  
+
   <div class="col-2">
     
-
     <p class="client">
       <strong>Cobrar a</strong><br>
-      [Nombre cliente]<br>
-      [DNI cliente]
+     
+      CLIENTE: <%= factura.getCliente().getNom() %><br> <!-- Ejemplo de acceso al nombre del cliente -->
+      DNI: <%= factura.getCliente().getDni() %>
+        
     </p>
+    
   </div><!--.col-->
-  
-  
-  <div class="col-2">
+           
+ <!-- <div class="col-2">
    
 
     <p class="client">
@@ -130,36 +115,7 @@
     </p>
   </div><!--.col-->
 
-  
-
 </div>
-<!--.row-->
-
-<!--<div class="row section" style="margin-top:-1rem">
-<div class="col-1">
-	<table style='width:100%'>
-    <thead contenteditable>
-	<tr class="invoice_detail">
-      <th width="25%" style="text-align">Vendedor</th>
-       <th width="25%">Orden de compra </th>
-      <th width="20%">Enviar por</th>
-      <th width="30%">Términos y condiciones</th>
-	 </tr> 
-    </thead>
-    <tbody contenteditable>
-	<tr class="invoice_detail">
-      <td width="25%" style="text-align">John Doe</td>
-       <td width="25%">#PO-2020 </td>
-      <td width="20%">DHL</td>
-      <td width="30%">Pago al contado</td>
-	 </tr>
-	</tbody>
-	</table>
-</div>
-
-</div>-->
-
-<!--.row-->
 
 <div class="invoicelist-body">
   <table>
@@ -174,16 +130,23 @@
     </thead>
     <tbody>
       <tr>
-        <td width='5%'> <span>12345</span></td> <!--<a class="control removeRow" href="#">x</a>-->
-        <td width='60%'><span>Descripción</span></td>
-        <td class="amount"><input type="text" value="1"/></td>
-        <td class="rate"><input type="text" value="99" /></td>
-        <td class="tax taxrelated"></td>
-        <td class="sum"></td>
+        <td width='5%'> <span><%= factura.getRes().getHab().getCod() %></span></td> <!--<a class="control removeRow" href="#">x</a>-->
+        <td width='60%'><span>Habitacion: <%= factura.getRes().getHab().getNom() %></span></td>
+        <td class="amount"><input type="text"/><%= factura.getRes().getDia() %></td>
+        <td class="rate"><%= factura.getRes().getHab().getPre() %></td>
+        <td class="tax taxrelated">hola</td>
+        <td ><%= factura.getRes().getImp() %></td>
+      </tr>
+      <tr>
+        <td width='5%'> <span><%= factura.getComp().getNum() %></span></td> <!--<a class="control removeRow" href="#">x</a>-->
+        <td width='60%'><span>Consumo de la estadia</span></td>
+        <td class="amount"><input type="text"/>#</td>
+        <td class="rate"><%= factura.getComp().getTot() %></td>
+        <td class="tax taxrelated">hola</td>
+        <td ><%= factura.getComp().getTot() %></td>
       </tr>
     </tbody>
   </table>
- <!-- <a class="control newRow" href="#">+ Nueva fila</a>-->
 </div><!--.invoice-body-->
 
 <div class="invoicelist-footer">
@@ -194,7 +157,7 @@
     </tr>
     <tr>
       <td><strong>Total:</strong></td>
-      <td id="total_price"></td>
+      <td ><%= factura.getTot() %></td>
     </tr>
   </table>
 </div>
@@ -202,7 +165,15 @@
 <div class="note" contenteditable>
   <h2>Nota:</h2>
 </div><!--.note-->
-
+<% 
+                    } // Fin del bucle for
+                } else {
+            %>
+            <script>
+                mostrarAlerta()
+                </script>
+                
+            <% } %>
 <footer class="row">
   <div class="col-1 text-center">
     <p class="notaxrelated" contenteditable>El monto de la factura no incluye el impuesto sobre las ventas.</p>
