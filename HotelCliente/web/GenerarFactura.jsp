@@ -21,17 +21,45 @@
         <%@include file="_menu.jsp" %> 
         <h1>Generar Factura</h1>
     
-    <form method="post" action="ruta/a/tu/servlet/o/controlador">
-        <label for="dniCliente">DNI Cliente:</label>
-        <input type="text" id="dniCliente" name="dniCliente"><br><br>
-        
-        <label for="codigoReserva">Código de Reserva:</label>
-        <input type="text" id="codigoReserva" name="codigoReserva"><br><br>
-        
-        <label for="numeroCompra">Número de Compra:</label>
-        <input type="text" id="numeroCompra" name="numeroCompra"><br><br>
-        
-        <input type="submit" value="Generar Factura">
-    </form>
-    </body>
+       <form method="post" action="generar_factura">
+    <label for="dniCliente">DNI Cliente:</label>
+    <input type="text" id="dniCliente" name="dniCliente" required><br><br>
+
+    <label for="codigoReserva">Código de Reserva:</label>
+    <input type="text" id="codigoReserva" name="codigoReserva" required><br><br>
+
+    <label for="numeroCompra">Número de Compra:</label>
+    <input type="text" id="numeroCompra" name="numeroCompra" required><br><br>
+
+    <input type="submit" id="generarFacturaBtn" value="Generar Factura">
+</form>
+</body>
+<script>
+    $(document).ready(function() {
+        $('#generarFacturaBtn').click(function(event) {
+            event.preventDefault(); // Evitar comportamiento por defecto del botón (enviar formulario)
+
+            var dni = $('#dniCliente').val();
+            var reser = $('#codigoReserva').val();
+            var compra = $('#numeroCompra').val();
+
+            $.post('generar_factura', {
+                dniCliente: dni,
+                codigoReserva: reser,
+                numeroCompra: compra
+            }, function(response) {
+                $('#resultContainer').html('Resultado = ' + response);
+                // Redirigir a otra página si se completan todos los datos
+                if (dni && reser && compra) {
+                    window.location.href = 'Factura.jsp'; // Ajusta la ruta según la estructura de tu proyecto
+                }
+            }).fail(function() {
+                $('#resultContainer').html('Error al generar la factura.');
+            });
+        });
+    });
+</script>
+
+    
+    
 </html>
