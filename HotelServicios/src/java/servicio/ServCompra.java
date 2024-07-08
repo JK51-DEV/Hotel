@@ -1,5 +1,6 @@
 package servicio;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
@@ -50,4 +51,16 @@ public class ServCompra {
         }
         return msg;
     }
+    
+    
+    @WebMethod(operationName = "buscarCompra")
+    public Compra buscarCompra(@WebParam(name = "num") String num) {
+        String res;
+        Compra nom=DaoCompra.buscarcompra(num);
+        if (nom != null) {
+            return nom;
+        }
+    return null;
+    }
+  
 }

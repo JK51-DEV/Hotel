@@ -39,18 +39,39 @@ public interface ServCesta {
 
     /**
      * 
-     * @param cod
      * @return
      *     returns java.lang.String
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "quitarLinea", targetNamespace = "http://servicio/", className = "servicio.QuitarLinea")
-    @ResponseWrapper(localName = "quitarLineaResponse", targetNamespace = "http://servicio/", className = "servicio.QuitarLineaResponse")
-    @Action(input = "http://servicio/ServCesta/quitarLineaRequest", output = "http://servicio/ServCesta/quitarLineaResponse")
-    public String quitarLinea(
-        @WebParam(name = "cod", targetNamespace = "")
-        String cod);
+    @RequestWrapper(localName = "grabarCompra", targetNamespace = "http://servicio/", className = "servicio.GrabarCompra")
+    @ResponseWrapper(localName = "grabarCompraResponse", targetNamespace = "http://servicio/", className = "servicio.GrabarCompraResponse")
+    @Action(input = "http://servicio/ServCesta/grabarCompraRequest", output = "http://servicio/ServCesta/grabarCompraResponse")
+    public String grabarCompra();
+
+    /**
+     * 
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "crearCesta", targetNamespace = "http://servicio/", className = "servicio.CrearCesta")
+    @ResponseWrapper(localName = "crearCestaResponse", targetNamespace = "http://servicio/", className = "servicio.CrearCestaResponse")
+    @Action(input = "http://servicio/ServCesta/crearCestaRequest", output = "http://servicio/ServCesta/crearCestaResponse")
+    public String crearCesta();
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<servicio.Linea>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getCesta", targetNamespace = "http://servicio/", className = "servicio.GetCesta")
+    @ResponseWrapper(localName = "getCestaResponse", targetNamespace = "http://servicio/", className = "servicio.GetCestaResponse")
+    @Action(input = "http://servicio/ServCesta/getCestaRequest", output = "http://servicio/ServCesta/getCestaResponse")
+    public List<Linea> getCesta();
 
     /**
      * 
@@ -78,38 +99,17 @@ public interface ServCesta {
 
     /**
      * 
-     * @return
-     *     returns java.util.List<servicio.Linea>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getCesta", targetNamespace = "http://servicio/", className = "servicio.GetCesta")
-    @ResponseWrapper(localName = "getCestaResponse", targetNamespace = "http://servicio/", className = "servicio.GetCestaResponse")
-    @Action(input = "http://servicio/ServCesta/getCestaRequest", output = "http://servicio/ServCesta/getCestaResponse")
-    public List<Linea> getCesta();
-
-    /**
-     * 
+     * @param cod
      * @return
      *     returns java.lang.String
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "crearCesta", targetNamespace = "http://servicio/", className = "servicio.CrearCesta")
-    @ResponseWrapper(localName = "crearCestaResponse", targetNamespace = "http://servicio/", className = "servicio.CrearCestaResponse")
-    @Action(input = "http://servicio/ServCesta/crearCestaRequest", output = "http://servicio/ServCesta/crearCestaResponse")
-    public String crearCesta();
-
-    /**
-     * 
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "grabarCompra", targetNamespace = "http://servicio/", className = "servicio.GrabarCompra")
-    @ResponseWrapper(localName = "grabarCompraResponse", targetNamespace = "http://servicio/", className = "servicio.GrabarCompraResponse")
-    @Action(input = "http://servicio/ServCesta/grabarCompraRequest", output = "http://servicio/ServCesta/grabarCompraResponse")
-    public String grabarCompra();
+    @RequestWrapper(localName = "quitarLinea", targetNamespace = "http://servicio/", className = "servicio.QuitarLinea")
+    @ResponseWrapper(localName = "quitarLineaResponse", targetNamespace = "http://servicio/", className = "servicio.QuitarLineaResponse")
+    @Action(input = "http://servicio/ServCesta/quitarLineaRequest", output = "http://servicio/ServCesta/quitarLineaResponse")
+    public String quitarLinea(
+        @WebParam(name = "cod", targetNamespace = "")
+        String cod);
 
 }

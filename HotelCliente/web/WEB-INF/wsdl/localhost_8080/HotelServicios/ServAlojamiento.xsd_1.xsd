@@ -68,16 +68,6 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="registrarAlojamiento">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="registrarAlojamientoResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="agregarAlojamiento">
 <xs:sequence>
 <xs:element name="codres" type="xs:string" minOccurs="0"/>
@@ -86,6 +76,16 @@
 </xs:complexType>
 
 <xs:complexType name="agregarAlojamientoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="registrarAlojamiento">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="registrarAlojamientoResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>

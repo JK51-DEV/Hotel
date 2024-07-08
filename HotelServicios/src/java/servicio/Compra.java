@@ -4,9 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Compra {
-    private String num,fec;
+    private String num,fec,tot;
 
     private List cesta=new ArrayList();
+
+    public Compra() {
+    }
+    
+    public Compra(String num, String fec, String tot) {
+        this.num = num;
+        this.fec = fec;
+        this.tot = tot;
+    }
     
     public List agregarLinea(String cod,String nom,double pre,int can){
         Object[]linea=new Object[5];
@@ -55,4 +64,16 @@ public class Compra {
     public List getCesta() {
         return cesta;
     }    
+
+    public String getTot() {
+        return tot;
+    }
+
+    public void setTot(String tot) {
+        this.tot = tot;
+    }
+
+    
+    
+    
 }

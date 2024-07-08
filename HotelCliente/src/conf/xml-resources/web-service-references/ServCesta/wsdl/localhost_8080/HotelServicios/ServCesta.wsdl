@@ -10,23 +10,11 @@
 <message name="getTotalResponse">
 <part name="parameters" element="tns:getTotalResponse"/>
 </message>
-<message name="quitarLinea">
-<part name="parameters" element="tns:quitarLinea"/>
+<message name="grabarCompra">
+<part name="parameters" element="tns:grabarCompra"/>
 </message>
-<message name="quitarLineaResponse">
-<part name="parameters" element="tns:quitarLineaResponse"/>
-</message>
-<message name="agregarLinea">
-<part name="parameters" element="tns:agregarLinea"/>
-</message>
-<message name="agregarLineaResponse">
-<part name="parameters" element="tns:agregarLineaResponse"/>
-</message>
-<message name="getCesta">
-<part name="parameters" element="tns:getCesta"/>
-</message>
-<message name="getCestaResponse">
-<part name="parameters" element="tns:getCestaResponse"/>
+<message name="grabarCompraResponse">
+<part name="parameters" element="tns:grabarCompraResponse"/>
 </message>
 <message name="crearCesta">
 <part name="parameters" element="tns:crearCesta"/>
@@ -34,36 +22,48 @@
 <message name="crearCestaResponse">
 <part name="parameters" element="tns:crearCestaResponse"/>
 </message>
-<message name="grabarCompra">
-<part name="parameters" element="tns:grabarCompra"/>
+<message name="getCesta">
+<part name="parameters" element="tns:getCesta"/>
 </message>
-<message name="grabarCompraResponse">
-<part name="parameters" element="tns:grabarCompraResponse"/>
+<message name="getCestaResponse">
+<part name="parameters" element="tns:getCestaResponse"/>
+</message>
+<message name="agregarLinea">
+<part name="parameters" element="tns:agregarLinea"/>
+</message>
+<message name="agregarLineaResponse">
+<part name="parameters" element="tns:agregarLineaResponse"/>
+</message>
+<message name="quitarLinea">
+<part name="parameters" element="tns:quitarLinea"/>
+</message>
+<message name="quitarLineaResponse">
+<part name="parameters" element="tns:quitarLineaResponse"/>
 </message>
 <portType name="ServCesta">
 <operation name="getTotal">
 <input wsam:Action="http://servicio/ServCesta/getTotalRequest" message="tns:getTotal"/>
 <output wsam:Action="http://servicio/ServCesta/getTotalResponse" message="tns:getTotalResponse"/>
 </operation>
-<operation name="quitarLinea">
-<input wsam:Action="http://servicio/ServCesta/quitarLineaRequest" message="tns:quitarLinea"/>
-<output wsam:Action="http://servicio/ServCesta/quitarLineaResponse" message="tns:quitarLineaResponse"/>
-</operation>
-<operation name="agregarLinea">
-<input wsam:Action="http://servicio/ServCesta/agregarLineaRequest" message="tns:agregarLinea"/>
-<output wsam:Action="http://servicio/ServCesta/agregarLineaResponse" message="tns:agregarLineaResponse"/>
-</operation>
-<operation name="getCesta">
-<input wsam:Action="http://servicio/ServCesta/getCestaRequest" message="tns:getCesta"/>
-<output wsam:Action="http://servicio/ServCesta/getCestaResponse" message="tns:getCestaResponse"/>
+<operation name="grabarCompra">
+<input wsam:Action="http://servicio/ServCesta/grabarCompraRequest" message="tns:grabarCompra"/>
+<output wsam:Action="http://servicio/ServCesta/grabarCompraResponse" message="tns:grabarCompraResponse"/>
 </operation>
 <operation name="crearCesta">
 <input wsam:Action="http://servicio/ServCesta/crearCestaRequest" message="tns:crearCesta"/>
 <output wsam:Action="http://servicio/ServCesta/crearCestaResponse" message="tns:crearCestaResponse"/>
 </operation>
-<operation name="grabarCompra">
-<input wsam:Action="http://servicio/ServCesta/grabarCompraRequest" message="tns:grabarCompra"/>
-<output wsam:Action="http://servicio/ServCesta/grabarCompraResponse" message="tns:grabarCompraResponse"/>
+<operation name="getCesta">
+<input wsam:Action="http://servicio/ServCesta/getCestaRequest" message="tns:getCesta"/>
+<output wsam:Action="http://servicio/ServCesta/getCestaResponse" message="tns:getCestaResponse"/>
+</operation>
+<operation name="agregarLinea">
+<input wsam:Action="http://servicio/ServCesta/agregarLineaRequest" message="tns:agregarLinea"/>
+<output wsam:Action="http://servicio/ServCesta/agregarLineaResponse" message="tns:agregarLineaResponse"/>
+</operation>
+<operation name="quitarLinea">
+<input wsam:Action="http://servicio/ServCesta/quitarLineaRequest" message="tns:quitarLinea"/>
+<output wsam:Action="http://servicio/ServCesta/quitarLineaResponse" message="tns:quitarLineaResponse"/>
 </operation>
 </portType>
 <binding name="ServCestaPortBinding" type="tns:ServCesta">
@@ -77,25 +77,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="quitarLinea">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="agregarLinea">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getCesta">
+<operation name="grabarCompra">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -113,7 +95,25 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="grabarCompra">
+<operation name="getCesta">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="agregarLinea">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="quitarLinea">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

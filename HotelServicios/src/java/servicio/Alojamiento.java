@@ -19,6 +19,12 @@ public class Alojamiento {
         this.empleado = empleado;
     }
 
+    public Alojamiento(String codAloj, Reserva reserva, String fecCreacionAloj) {
+        this.codAloj = codAloj;
+        this.reserva = reserva;
+        this.fecCreacionAloj = fecCreacionAloj;
+    }
+    
     public String getCodAloj() {
         return codAloj;
     }
