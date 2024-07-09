@@ -73,7 +73,7 @@
 
             </form>
         </table>
-        <h3><%= msg %></h3>   
+        <h3><%= msg %></h3>
         <br>
         <table class="table table-bordered">
             <thead class="thead-dark">
@@ -104,7 +104,7 @@
         <form action="ControlConsumo" method="Post">
             <input type="submit" name="acc" class="btn btn-primary" value="Grabar Compra"/>
         </form>
-        <!-- Botón para regresar a Cesta.jsp -->
+        
         <a href="Cesta.jsp" class="btn btn-secondary">Regresar</a>
     </div> </div> </div> <br><br>
     <script src="_sweetAlert/sweetalert.js" type="text/javascript"></script>
@@ -113,7 +113,6 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 <script>
-    // Mostrar SweetAlert con mensaje
     var mensaje = '<%= msg %>';
     if (mensaje !== '') {
         Swal.fire({
@@ -123,8 +122,8 @@
             confirmButtonText: "OK"
         }).then((result) => {
             if (result.isConfirmed) {
-                // Redirigir después de que el usuario hace clic en "OK"
-                window.location.href = 'GenerarFactura.jsp';
+                
+                window.location.href = 'Cesta.jsp'; 
             }
         });
     }

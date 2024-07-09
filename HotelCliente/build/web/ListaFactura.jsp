@@ -4,13 +4,13 @@
 <%@page import="javax.xml.ws.WebServiceRef" %>
 
 <%-- start web service invocation --%>
-<hr/>
+
 <%
     servicio.ServicioFactura_Service service = new servicio.ServicioFactura_Service();
     servicio.ServicioFactura port = service.getServicioFacturaPort();
     // TODO process result here
 %>
-<hr/>
+
 <%-- end web service invocation --%>
 
 <!DOCTYPE html>
@@ -26,7 +26,9 @@
 <body>
 <%@include file="_menu.jsp" %>
 <div class="container">
-    <h4>Facturas</h4>
+            <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">Facturas</h3>
 
     <table>
         <tr>
@@ -73,7 +75,7 @@
         %>
         </tbody>
     </table>
-</div>
+        </div></div></div> <br><br>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
