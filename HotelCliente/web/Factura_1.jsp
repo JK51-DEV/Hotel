@@ -19,13 +19,13 @@
         <div class="slogan">Facturación </div>
 
         
-        <label for="config_note">Nota:
+        <!--<label for="config_note">Nota:
           <input type="checkbox" id="config_note" />
-        </label>
+        </label>-->
         
       </div>
       <div class="col-4 text-right">
-          <a href="login.jsp">Volver</a>
+          <a href="ListaFactura.jsp">Volver</a>
         <a href="javascript:window.print()">Imprimir</a>
       </div><!--.col-->
     </div><!--.row-->
@@ -113,7 +113,7 @@
       
       <th width="10%">Cant.</th>
       <th width="15%">Precio</th>
-      <th class="taxrelated">IVA</th>
+      <!--<th class="taxrelated">IVA</th>-->
       <th width="10%">Total</th>
     </thead>
     <tbody>
@@ -122,7 +122,7 @@
         <td width='60%'><span>Habitación: <%=  d.getAloj().getReserva().getHab().getNom() %></span></td>
         <td class="amount"><input type="text"/><%=  d.getAloj().getReserva().getDia() %></td>
         <td class="rate"><%=d.getAloj().getReserva().getHab().getPre() %></td>
-        <td class="tax taxrelated" value="0"></td>
+       <!-- <td class="tax taxrelated" value="0"></td>-->
         <td class="sum"><%=d.getAloj().getReserva().getImp() %></td>
       </tr>
       <tr>
@@ -130,7 +130,7 @@
         <td width='60%'><span>Consumo durante la estadia</span></td>
         <td class="amount"><input type="text"/>#</td>
         <td class="rate"><%=d.getComp().getTot() %></td>
-        <td class="tax taxrelated" value="0"></td>
+        <!--<td class="tax taxrelated" value="0"></td>-->
         <td class="sum"><%=d.getComp().getTot() %></td>
       </tr>
     </tbody>
@@ -140,8 +140,8 @@
 <div class="invoicelist-footer">
   <table>
     <tr class="taxrelated">
-      <td>IVA:</td>
-      <td id="total_tax">0</td>
+      <!--<td>IVA:</td>
+      <td id="total_tax">0</td>-->
     </tr>
     <tr>
       <td><strong>Total:</strong></td>
