@@ -46,6 +46,8 @@
             <%-- <p id="marca"><a href="login.jsp">INGRESAR</a></p>
              <p ><a href="Menu.jsp" style="color: white; text-decoration: none;">Volver</a></p>--%>
         </div>
+        
+        <br><br>
     </body>
     <script src="_sweetAlert/sweetalert.js" type="text/javascript"></script>
     <script src="_sweetAlert/sweetalert.min.js" type="text/javascript"></script>

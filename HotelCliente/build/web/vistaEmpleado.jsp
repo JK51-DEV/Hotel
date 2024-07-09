@@ -19,8 +19,11 @@ ServiciosEmpleado port = server.getServiciosEmpleadoPort();
     </head>
     <body>
         <%@include file="_menu.jsp" %> 
+        
         <div class="container">
-            <h4>Gestión de Empleados</h4>
+            <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">Gestión de Empleados</h3>
                 <button class="btn btn-success" type="button" onclick="location.href = 'registrarEmpleado.jsp'">Registar Empleado</button>
             <br><br>
             <%--<button class="btn btn-success" type="button" onclick="location.href = 'index_nuevo.jsp'">Nuevo</button>--%>
@@ -76,7 +79,11 @@ ServiciosEmpleado port = server.getServiciosEmpleadoPort();
                 </tbody>
             </table>
         </div>
+                </div>
+                </div>
+                <br><br>
     </body>
+    <br><br>
     <script src="_sweetAlert/sweetalert.js" type="text/javascript"></script>
     <script src="_sweetAlert/sweetalert.min.js" type="text/javascript"></script>
     <script>
@@ -121,4 +128,3 @@ ServiciosEmpleado port = server.getServiciosEmpleadoPort();
         };
     </script>
 </html>
-

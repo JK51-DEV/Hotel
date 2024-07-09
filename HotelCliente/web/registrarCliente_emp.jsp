@@ -1,4 +1,4 @@
-<%-- 
+%-- 
     Document   : registrarCliente
     Created on : 22-abr-2024, 13:08:49
     Author     : Usuario
@@ -45,7 +45,7 @@
             <br/>
            <%-- <p id="marca"><a href="login_emp.jsp">INGRESAR</a></p>
             <p ><a href="vistaCliente.jsp" style="color: white; text-decoration: none;">Volver</a></p>--%>
-        </div>
+        </div><br><br>
     </body>
     <script src="_sweetAlert/sweetalert.js" type="text/javascript"></script>
     <script src="_sweetAlert/sweetalert.min.js" type="text/javascript"></script>

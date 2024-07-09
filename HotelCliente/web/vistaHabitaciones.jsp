@@ -1,4 +1,3 @@
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.*" %>
 <%@page import="servicio.*" %>
@@ -20,8 +19,9 @@ ServHabitacion port = server.getServHabitacionPort();
     <body>
         <%@include file="_menu.jsp" %>
         <div class="container">
-            <h2></h2>
-            <h4>Gestión de Habitaciones</h4>
+            <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">Gestión de Habitaciones</h3>
             <%--<br><br>--%>
            <%-- <table>
                 <tr>
@@ -74,7 +74,7 @@ ServHabitacion port = server.getServHabitacionPort();
                    %>
                 </tbody>
             </table>
-        </div>
+        </div> <br><br>
     </body>
     <script src="_sweetAlert/sweetalert.js" type="text/javascript"></script>
     <script src="_sweetAlert/sweetalert.min.js" type="text/javascript"></script>

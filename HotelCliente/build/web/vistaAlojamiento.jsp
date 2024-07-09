@@ -19,7 +19,7 @@
     <body>
         <%@include file="_menu.jsp" %> 
         <div class="container">
-            <h4>Gestión de Alojamientos</h4>
+            <h3>Gestión de Alojamientos</h3>
             <button class="btn btn-success" type="button" onclick="location.href = 'alojamiento_empleado.jsp'">Registar Alojamiento</button>
             <br><br>
             <%-- <table>
