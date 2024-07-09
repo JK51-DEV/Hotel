@@ -19,9 +19,10 @@ ServHabitacion port = server.getServHabitacionPort();
     </head>
     <body>
         <%@include file="_menu_cli.jsp" %> 
-        <div class="container">
-            <h2></h2>
-            <h4>Gestión de Habitaciones</h4>
+         <div class="container">
+            <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">Gestión de Habitaciones</h3>
             <%--<br><br>--%>
            <%-- <table>
                 <tr>
@@ -74,7 +75,7 @@ ServHabitacion port = server.getServHabitacionPort();
                    %>
                 </tbody>
             </table>
-        </div>
+        </div></div></div> <br><br>
     </body>
     <script src="_sweetAlert/sweetalert.js" type="text/javascript"></script>
     <script src="_sweetAlert/sweetalert.min.js" type="text/javascript"></script>

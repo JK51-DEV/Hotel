@@ -74,7 +74,7 @@ ServHabitacion port = server.getServHabitacionPort();
                    %>
                 </tbody>
             </table>
-        </div> <br><br>
+        </div></div></div> <br><br>
     </body>
     <script src="_sweetAlert/sweetalert.js" type="text/javascript"></script>
     <script src="_sweetAlert/sweetalert.min.js" type="text/javascript"></script>

@@ -19,8 +19,9 @@
     <body>
         <%@include file="_menu_cli.jsp" %> 
         <div class="container">
-            <br>
-            <h4>Registro de nueva reserva</h4>
+            <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">Registro de nueva reserva</h3>
             <table>
                 <tr>
                     <%--<td>Codigo: </td>--%>
@@ -60,7 +61,7 @@
                     </td>
                 </tr>
             </table>
-        </div>
+        </div></div></div> <br><br>
                         
         <script src="_sweetAlert/sweetalert.js" type="text/javascript"></script>
         <script src="_sweetAlert/sweetalert.min.js" type="text/javascript"></script>
