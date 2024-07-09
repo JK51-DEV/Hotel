@@ -16,7 +16,7 @@
                 </form>
                 </li>
                 <li style="display: inline-block"><a><strong>USUARIO: ${nombreAdmin}</strong></a></li>
-                <li style="display: inline-block"><a href="Menu.jsp" class="btn btn-danger">CERRAR SESIÓN</a></li>
+                <li style="display: inline-block"><a href="Inicio.jsp" class="btn btn-danger">CERRAR SESIÓN</a></li>
             </ul> <br><br>
         </div>
     </div>
