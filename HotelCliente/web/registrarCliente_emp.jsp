@@ -28,11 +28,11 @@
                 <br/><br/>
                 <center><label id="subtitulo3">CODIGO DE USUARIO</label></center>
                 <br/>
-                <input type="text" id="dni" name="dni" class="entrada" style="color: black;" required/>
+                <input type="text" id="dni" name="dni" class="entrada" required/>
                 <br/><br/>
                 <center><label id="subtitulo4">NOMBRE DE USUARIO</label></center>
                 <br/>
-                <input type="text" id="nom" name="nom" class="entrada" style="color: black;" required/>
+                <input type="text" id="nom" name="nom" class="entrada" required/>
                 <%
                     Servicios server = new Servicios();
                     ServiciosCliente port = server.getServiciosClientePort();
