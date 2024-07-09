@@ -123,7 +123,7 @@
         }).then((result) => {
             if (result.isConfirmed) {
                 
-                window.location.href = 'Cesta.jsp';
+                window.location.href = 'Cesta.jsp'; 
             }
         });
     }
