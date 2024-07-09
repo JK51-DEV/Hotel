@@ -148,12 +148,19 @@ public class ControlConsumo extends HttpServlet {
             String msgGrabacion = grabarCompra(numVenta, fecVenta, totVenta, dniCliente); // Llamar al método para grabar compra
 
             if (msgGrabacion.equals("OK")) {
-                pres.setMsg("Se agregó su consumo");
+                List<Linea> detalle = getCesta();
+                String msgDetalle = grabarDetalleCompra(numVenta, detalle); // Llamar al método para grabar detalle de compra
+
+                if (msgDetalle.equals("OK")) {
+                    pres.setMsg("Se agregó su consumo");
+                } else {
+                    pres.setMsg("Error al grabar el detalle de la venta en la base de datos: " + msgDetalle);
+                }
             } else {
                 pres.setMsg("Error al grabar la venta en la base de datos: " + msgGrabacion);
             }
             response.sendRedirect("Venta.jsp");
-        } 
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
