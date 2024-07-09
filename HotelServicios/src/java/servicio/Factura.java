@@ -12,7 +12,7 @@ import static servicio.DaoFactura.*;
 public class Factura {
     private String codfac;
     private Cliente cliente;
-    private Reserva res;
+    private Alojamiento aloj;
     private Compra comp;
     private String fecfacturacion;
     private double tot;
@@ -20,20 +20,22 @@ public class Factura {
     public Factura() {
     }
 
-    public Factura(String codfac, Cliente cliente, Reserva res, Compra comp, String fecfacturacion, double tot) {
+    public Factura(Cliente cliente, Alojamiento aloj, Compra comp) {
+        this.cliente = cliente;
+        this.aloj = aloj;
+        this.comp = comp;
+    }
+
+    public Factura(String codfac, Cliente cliente, Alojamiento aloj, Compra comp, String fecfacturacion, double tot) {
         this.codfac = codfac;
         this.cliente = cliente;
-        this.res = res;
+        this.aloj = aloj;
         this.comp = comp;
         this.fecfacturacion = fecfacturacion;
         this.tot = tot;
     }
 
-    public Factura(Cliente cliente, Reserva res, Compra comp) {
-        this.cliente = cliente;
-        this.res = res;
-        this.comp = comp;
-    }
+    
     
     public String Codigoautomatico(){
         List<Factura> factura = listarFacturas();
@@ -63,12 +65,12 @@ public class Factura {
         this.cliente = cliente;
     }
 
-    public Reserva getRes() {
-        return res;
+    public Alojamiento getAloj() {
+        return aloj;
     }
 
-    public void setRes(Reserva res) {
-        this.res = res;
+    public void setAloj(Alojamiento aloj) {
+        this.aloj = aloj;
     }
 
     public Compra getComp() {

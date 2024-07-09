@@ -20,8 +20,9 @@ public class DaoAlojamiento {
     }
     return lis;
     }
+
     
-    public List<Alojamiento> BuscarAlojamiento(String codaloj) {
+    public List<String> BuscarAlojamiento(String codaloj) {
     String sql="select * from alojamiento where cod_aloj='"+codaloj+"'";
     List tabla = Acceso.listar(sql);
     List lis = new ArrayList();
@@ -37,15 +38,28 @@ public class DaoAlojamiento {
     return lis;
     }
     
-    public static String buscarAlojamiento(String codaloj){
-        String sql="select * from alojamiento where cod_aloj='"+codaloj+"'";
-        Object[]f=Acceso.buscar(sql);
-        if(f!=null){
+    public static Alojamiento buscarAlojamientoLista(String codaloj) {
+        String sql = "select * from Alojamiento where cod_aloj='" + codaloj + "'";
+        Object[] f = Acceso.buscar(sql);
+        if (f != null) {
             
-            return "Codigo Alojamiento: "+f[0].toString()+" Codigo Reserva: "+f[1].toString()+" DNI empleado: "+f[2].toString();
-        }
-        return null;
+        Cliente cli = DaoCliente.buscar(f[1].toString()); 
+        Reserva reser = DaoReserva.buscarReservaLista(f[1].toString());
+
+        String fecCreacionAloj = f[3].toString();
+
+        // Crear la instancia de Reserva usando el constructor
+        Alojamiento aloj = new Alojamiento(codaloj, reser, fecCreacionAloj);
+        aloj.setCodAloj(f[0].toString());      
+        aloj.setReserva(reser);
+        aloj.setFecCreacionAloj(f[3].toString());
+
+        return aloj;
     }
+    return null;
+    }
+    
+
     // busca alojamiento por codifo de reserva
     public static String buscarAlojamientocodRES(String codres){
         String sql="select * from alojamiento where COD_RES='"+codres+"'";
@@ -55,6 +69,18 @@ public class DaoAlojamiento {
         }
         return null;
     }
+    
+    
+    public static String buscarAlojamiento(String codaloj){
+        String sql="select * from alojamiento where cod_aloj='"+codaloj+"'";
+        Object[]f=Acceso.buscar(sql);
+        if(f!=null){
+            
+            return "Codigo Alojamiento: "+f[0].toString()+" Codigo Reserva: "+f[1].toString()+" DNI empleado: "+f[2].toString();
+        }
+        return null;
+    }
+    
     
     public static String grabarAlojamiento(Alojamiento a){
         String sql = "insert into alojamiento values ('" + a.CodigoautomaticoAloj() + "','" + a.getReserva().getCodRes()+ "','" + a.getEmpleado().getDni()+ "','" + a.HoyAlojamiento() + "')";

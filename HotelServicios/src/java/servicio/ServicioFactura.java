@@ -20,22 +20,22 @@ public class ServicioFactura {
     
     Factura fac= new Factura();
 
-     @WebMethod(operationName = "generarfactura")
-    public List<Factura> generarfactura(@WebParam(name = "dni") String dni, @WebParam(name = "reser") String res, @WebParam(name = "compra") String compra) {
-        
-        Reserva reserva = DaoReserva.buscarReservaLista(res);
-        
-        if (reserva != null && reserva.getCli() != null && reserva.getCli().getDni().equals(dni)) {
-            List<Factura> facturas = DaoFactura.generar_factura(dni, res, compra);
-            if (facturas != null) {
-                return facturas;
-            } else {
-                return new ArrayList<>();
-            }
-        } else {
-            return new ArrayList<>(); // o lanzar una excepción, según la lógica de tu aplicación
-        }
-    }
+//     @WebMethod(operationName = "generarfactura")
+//    public List<Factura> generarfactura(@WebParam(name = "dni") String dni, @WebParam(name = "reser") String res, @WebParam(name = "compra") String compra) {
+//        
+//        Reserva reserva = DaoReserva.buscarReservaLista(res);
+//        
+//        if (reserva != null && reserva.getCli() != null && reserva.getCli().getDni().equals(dni)) {
+//            List<Factura> facturas = DaoFactura.generar_factura(dni, res, compra);
+//            if (facturas != null) {
+//                return facturas;
+//            } else {
+//                return new ArrayList<>();
+//            }
+//        } else {
+//            return new ArrayList<>(); // o lanzar una excepción, según la lógica de tu aplicación
+//        }
+//    }
 
     @WebMethod(operationName = "buscarMontoCompra")
     public String buscarMontoCompra(@WebParam(name = "num") String num) {
@@ -60,6 +60,7 @@ public class ServicioFactura {
     /**
      * Web service operation
      */
+    //busca por codigo de factura
     @WebMethod(operationName = "listar_factura")
     public List<Factura> listar_factura(@WebParam(name = "codfac") String codfac) {
         DaoFactura fact = new DaoFactura();
@@ -78,13 +79,13 @@ public class ServicioFactura {
      * Web service operation
      */
     @WebMethod(operationName = "agregar_factura")
-    public String agregar_factura(@WebParam(name = "cli") String cli, @WebParam(name = "res") String res, @WebParam(name = "comp") String comp) {
+    public String agregar_factura(@WebParam(name = "cli") String cli, @WebParam(name = "codaloj") String codaloj, @WebParam(name = "comp") String comp) {
         Cliente clie = DaoCliente.buscar(cli);
-        Reserva reser = DaoReserva.buscarReservaLista(res);
+        Alojamiento aloj= DaoAlojamiento.buscarAlojamientoLista(codaloj);
         Compra compra = DaoCompra.buscarcompra(comp);
         
-        if (reser == null) {
-            return "No se encontró reserva con el código: " + reser;
+        if (aloj == null) {
+            return "No se encontró reserva con el código: " + aloj;
         }
         if (clie == null) {
             return "No se encontró el cliente con el DNI: " + clie;
@@ -95,7 +96,7 @@ public class ServicioFactura {
        // Crear objeto Factura
         Factura factura = new Factura();
         factura.setCliente(clie);
-        factura.setRes(reser);
+        factura.setAloj(aloj);
         factura.setComp(compra);
 
         // Guardar factura

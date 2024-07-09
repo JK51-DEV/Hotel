@@ -16,6 +16,8 @@ public class ServReserva {
         return DaoReserva.listarReservas();
     }
     
+    
+    
     // BUSCAR RESERVA POR DNI
     @WebMethod(operationName = "buscarReservaDNI")
     public String buscarReservaDNI(@WebParam(name = "dni") String dni) {
@@ -113,5 +115,10 @@ public class ServReserva {
         DaoReserva dis = new DaoReserva();
         return dis.listar_avanzado_reserva(dni_cliente);
     }
+    
+    
+    
+    
+    
 
     }

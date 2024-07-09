@@ -46,8 +46,19 @@ public class ServAlojamiento {
     return res;
     }
     
+    @WebMethod(operationName = "buscarAlojamientoLista")
+    public Alojamiento buscarAlojamientoLista(@WebParam(name = "codaloj") String codaloj) {
+
+        Alojamiento nom = DaoAlojamiento.buscarAlojamientoLista(codaloj);
+            if (nom != null) {
+                return nom;
+            } else {
+                return null; // Devuelve null si no se encuentra el alojamiento
+            }
+    }
+    
     @WebMethod(operationName = "buscarAlojamientoREStotal")
-    public List<Alojamiento> buscarAlojamientoREStotal(@WebParam(name = "codres") String codres) {
+    public List<String> buscarAlojamientoREStotal(@WebParam(name = "codres") String codres) {
         return daoaloj.BuscarAlojamiento(codres);
     }
     
