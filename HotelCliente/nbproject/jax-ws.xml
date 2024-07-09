@@ -258,9 +258,9 @@
         </wsimport-option>
       </wsimport-options>
     </client>
-    <client name="ServFactura">
-      <wsdl-url>http://localhost:8080/HotelServicios/ServFactura?wsdl</wsdl-url>
-      <local-wsdl-file>localhost_8080/HotelServicios/ServFactura.wsdl</local-wsdl-file>
+    <client name="ServicioFactura">
+      <wsdl-url>http://localhost:8080/HotelServicios/ServicioFactura?wsdl</wsdl-url>
+      <local-wsdl-file>localhost_8080/HotelServicios/ServicioFactura.wsdl</local-wsdl-file>
       <package-name>servicio</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
@@ -278,7 +278,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/HotelServicios/ServFactura?wsdl</wsimport-option-value>
+          <wsimport-option-value>http://localhost:8080/HotelServicios/ServicioFactura?wsdl</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>

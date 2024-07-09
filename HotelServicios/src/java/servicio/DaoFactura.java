@@ -1,4 +1,3 @@
-
 package servicio;
 
 import java.util.ArrayList;
@@ -20,10 +19,16 @@ public class DaoFactura {
     }
     
     
+    public static String grabarFactura(Factura f) {
+        // Construir la consulta SQL para insertar la reserva en la base de datos
+        String sql = "insert into factura values ('f.Codigoautomatico()','" + f.getCliente().getDni() + "',"
+                + "'" + f.getRes().getCodRes() + "','" + f.getComp().getNum() + "','" + f.Hoy() + "')";
+        return Acceso.ejecutar(sql);
+    }
+    
     public static List<Factura> generar_factura(String dni, String res, String compra) {
     List<Factura> lis = new ArrayList<>();
 
-    // Crear la factura
     Factura fac = new Factura();
     Cliente cli = DaoCliente.buscar(dni);
     Reserva reser = DaoReserva.buscarReservaLista(res);
@@ -40,15 +45,56 @@ public class DaoFactura {
             totalFactura += totalCompra;
         }
     
-    fac.setCliente(cli);
-    fac.setRes(reser);
-    fac.setComp(comp);
-    fac.setTot(totalFactura);
-   
-    lis.add(fac);
+        fac.setCliente(cli);
+        fac.setRes(reser);
+        fac.setComp(comp);
+        fac.setTot(totalFactura);
+
+        lis.add(fac);
 
     return lis;
 }
-
     
+    public static List<Factura> listarFacturas() {
+        String sql = "select * from factura";
+        List tabla = Acceso.listar(sql);
+        List lis = new ArrayList();
+        for (int i = 0; i < tabla.size(); i++) {
+            Object[] f = (Object[]) tabla.get(i);
+            Factura fac = new Factura();
+            Cliente cli = DaoCliente.buscar(f[1].toString());
+            Reserva reser = DaoReserva.buscarReservaLista(f[2].toString());
+            Compra comp = DaoCompra.buscarcompra(f[3].toString());
+            
+            fac.setCodfac(f[0].toString());
+            fac.setCliente(cli);
+            fac.setRes(reser);
+            fac.setComp(comp); // Asignar la fecha de creación desde la entidad reserva
+            fac.setFecfacturacion(f[4].toString());// El calculo se hace des la entidad reserva
+            lis.add(fac);
+        }
+        return lis;
+    }
+    
+    
+    public List<Factura> listar_factura(String codfac) {
+        String sql = "select * from factura WHERE codfac='" + codfac + "'";
+        List tabla = Acceso.listar(sql);
+        List lis = new ArrayList();
+        for (int i = 0; i < tabla.size(); i++) {
+            Object[] f = (Object[]) tabla.get(i);
+            Factura fac = new Factura();
+            Cliente cli = DaoCliente.buscar(f[1].toString());
+            Reserva reser = DaoReserva.buscarReservaLista(f[2].toString());
+            Compra comp = DaoCompra.buscarcompra(f[3].toString());
+            fac.setCodfac(f[0].toString());
+            fac.setCliente(cli);
+            fac.setRes(reser);
+            fac.setComp(comp); // Asignar la fecha de creación desde la entidad reserva
+            fac.setFecfacturacion(f[4].toString());// El calculo se hace des la entidad reserva
+            lis.add(fac);
+        }
+        return lis;
+    }
+
 }

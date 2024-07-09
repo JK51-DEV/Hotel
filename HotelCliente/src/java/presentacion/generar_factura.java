@@ -15,10 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.ws.WebServiceRef;
 import servicio.Factura;
-import servicio.ServFactura;
-import servicio.ServFactura_Service;
-import servicio.ServReserva;
-import servicio.ServReserva_Service;
+import servicio.ServicioFactura_Service;
 
 /**
  *
@@ -27,8 +24,9 @@ import servicio.ServReserva_Service;
 @WebServlet(name = "generar_factura", urlPatterns = {"/generar_factura"})
 public class generar_factura extends HttpServlet {
 
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/HotelServicios/ServFactura.wsdl")
-    private ServFactura_Service service;
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/HotelServicios/ServicioFactura.wsdl")
+    private ServicioFactura_Service service_1;
+
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -71,9 +69,21 @@ public class generar_factura extends HttpServlet {
         return "Generacion de factura";
     }// </editor-fold>
 
-    private List<Factura> generarfactura(String dni, String reser, String compra) {
-        ServFactura port = service.getServFacturaPort();
-        return port.generarfactura(dni, reser, compra);
+    private java.util.List<servicio.Factura> listarfacturas() {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        servicio.ServicioFactura port = service_1.getServicioFacturaPort();
+        return port.listarfacturas();
     }
 
+    private java.util.List<servicio.Factura> generarfactura(java.lang.String dni, java.lang.String reser, java.lang.String compra) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        servicio.ServicioFactura port = service_1.getServicioFacturaPort();
+        return port.generarfactura(dni, reser, compra);
+    }
+    
+    
+
+    
 }

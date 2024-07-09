@@ -50,6 +50,18 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="buscarReserva">
+<xs:sequence>
+<xs:element name="codres" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarReservaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="listarReservas">
 <xs:sequence/>
 </xs:complexType>
@@ -86,18 +98,6 @@
 <xs:element name="estado" type="xs:string" minOccurs="0"/>
 <xs:element name="nom" type="xs:string" minOccurs="0"/>
 <xs:element name="pre" type="xs:double"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="buscarReserva">
-<xs:sequence>
-<xs:element name="codres" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="buscarReservaResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 

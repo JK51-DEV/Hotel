@@ -33,4 +33,6 @@
     <system systemId="http://localhost:8080/HotelServicios/ServListarArticulos?xsd=2" uri="wsdl/localhost_8080/HotelServicios/ServListarArticulos.xsd_2.xsd"/>
     <system systemId="http://localhost:8080/HotelServicios/ServFactura?wsdl" uri="wsdl/localhost_8080/HotelServicios/ServFactura.wsdl"/>
     <system systemId="http://localhost:8080/HotelServicios/ServFactura?xsd=1" uri="wsdl/localhost_8080/HotelServicios/ServFactura.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/HotelServicios/ServicioFactura?wsdl" uri="wsdl/localhost_8080/HotelServicios/ServicioFactura.wsdl"/>
+    <system systemId="http://localhost:8080/HotelServicios/ServicioFactura?xsd=1" uri="wsdl/localhost_8080/HotelServicios/ServicioFactura.xsd_1.xsd"/>
 </catalog>

@@ -1,5 +1,9 @@
-
 package servicio;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+import static servicio.DaoFactura.*;
 
 /**
  *
@@ -23,6 +27,24 @@ public class Factura {
         this.comp = comp;
         this.fecfacturacion = fecfacturacion;
         this.tot = tot;
+    }
+
+    public Factura(Cliente cliente, Reserva res, Compra comp) {
+        this.cliente = cliente;
+        this.res = res;
+        this.comp = comp;
+    }
+    
+    public String Codigoautomatico(){
+        List<Factura> factura = listarFacturas();
+        int siguienteNumero = factura.size() + 1;
+        codfac = String.format("F%03d", siguienteNumero);
+        return codfac;
+    }
+    public String Hoy() {
+        Date dat=new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        return sdf.format(dat);
     }
 
     public String getCodfac() {
@@ -72,15 +94,6 @@ public class Factura {
     public void setTot(double tot) {
         this.tot = tot;
     }
-
-    
-//    public void calcularTotal() {
-//    double importe = (res != null) ? res.Importe() : 0.0;
-//    double totalCompra = (comp != null) ? comp.getTotal() : 0.0;
-//    this.tot = importe + 7;
-    
-
-
 
     
     

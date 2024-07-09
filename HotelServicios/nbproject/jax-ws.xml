@@ -31,8 +31,8 @@
     <service name="ServCompra">
       <implementation-class>servicio.ServCompra</implementation-class>
     </service>
-    <service name="ServFactura">
-      <implementation-class>servicio.ServFactura</implementation-class>
+    <service name="ServicioFactura">
+      <implementation-class>servicio.ServicioFactura</implementation-class>
     </service>
   </services>
   <clients/>
