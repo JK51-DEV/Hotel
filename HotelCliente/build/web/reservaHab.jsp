@@ -54,7 +54,7 @@
                 <tr>
                     <td colspan="0"></td>
                     <td>
-                        <a class="btn btn-primary" href="/HotelCliente/vistaHabitaciones_cli.jsp">Cancelar</a>
+                        <a class="btn btn-primary" href="/HotelCliente/vistaHabitaciones.jsp">Cancelar</a>
                         <br><br>
                         <button class="btn btn-info" type="button" onclick="RegistrarReserva()">Registrar</button>
                     </td>
@@ -84,7 +84,7 @@
                 }, function (res) {
                     swal("Bien hecho!", res, "success");
                     setTimeout(function () {
-                        window.location = '/HotelCliente/crearReserva_cli.jsp';
+                        window.location = '/HotelCliente/crearReserva.jsp';
                     }, 1200);
                 });
             };
