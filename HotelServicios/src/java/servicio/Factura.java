@@ -88,12 +88,44 @@ public class Factura {
     }
 
     public double getTot() {
+        double tot = 0.0;
+
+        if (this.aloj != null) {
+            tot += this.aloj.getReserva().Importe();
+        }
+
+        if (this.comp != null) {
+            String totalCompraStr = DaoFactura.buscarMontoCompra(this.comp.getNum());
+            if (totalCompraStr != null) {
+                double totalCompra = Double.parseDouble(totalCompraStr);
+                tot += totalCompra;
+            }
+        }
         return tot;
     }
 
     public void setTot(double tot) {
+        
         this.tot = tot;
     }
+    
+    
+//    public void calcularTotal() {
+//        double totalFactura = 0.0;
+//
+//        if (this.aloj != null) {
+//            totalFactura += this.aloj.getReserva().Importe();
+//        }
+//
+//        if (this.comp != null) {
+//            String totalCompraStr = DaoFactura.buscarMontoCompra(this.comp.getNum());
+//            if (totalCompraStr != null) {
+//                double totalCompra = Double.parseDouble(totalCompraStr);
+//                totalFactura += totalCompra;
+//            }
+//        }
+//        this.tot = totalFactura;
+//    }
 
     
     

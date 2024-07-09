@@ -35,4 +35,6 @@ public class ResuFactura {
     public void limpiar() {
         fact.clear();
     }
+    
 }
+

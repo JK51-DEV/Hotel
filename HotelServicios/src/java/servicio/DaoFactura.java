@@ -20,14 +20,16 @@ public class DaoFactura {
     
     
     public static String grabarFactura(Factura f) {
-        // Construir la consulta SQL para insertar la reserva en la base de datos
+       // f.calcularTotal();
         String sql = "insert into factura values ('" + f.Codigoautomatico() + "','" + f.getCliente().getDni() + "',"
-                + "'" + f.getAloj().getCodAloj() + "','" + f.getComp().getNum() + "','" + f.Hoy() + "')";
+                    + "'" + f.getAloj().getCodAloj() + "','" + f.getComp().getNum() + "','" + f.Hoy() + "'," + f.getTot() + ")";
+
         return Acceso.ejecutar(sql);
     }
     
      public static String RegistrarFactura(List<Factura> factura) {
         StringBuilder errorMessages = new StringBuilder();
+        
         for (Factura f : factura) {
             String result = grabarFactura(f);
             if (result != null) {
