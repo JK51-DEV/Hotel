@@ -1,6 +1,7 @@
 
 package servicio;
 
+import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
@@ -38,9 +39,28 @@ public interface ServVenta {
 
     /**
      * 
+     * @param num
+     * @param detalle
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "grabarDetalleCompra", targetNamespace = "http://servicio/", className = "servicio.GrabarDetalleCompra")
+    @ResponseWrapper(localName = "grabarDetalleCompraResponse", targetNamespace = "http://servicio/", className = "servicio.GrabarDetalleCompraResponse")
+    @Action(input = "http://servicio/ServVenta/grabarDetalleCompraRequest", output = "http://servicio/ServVenta/grabarDetalleCompraResponse")
+    public String grabarDetalleCompra(
+        @WebParam(name = "num", targetNamespace = "")
+        String num,
+        @WebParam(name = "detalle", targetNamespace = "")
+        List<Linea> detalle);
+
+    /**
+     * 
      * @param fec
      * @param num
      * @param tot
+     * @param dni
      * @return
      *     returns java.lang.String
      */
@@ -55,6 +75,8 @@ public interface ServVenta {
         @WebParam(name = "fec", targetNamespace = "")
         String fec,
         @WebParam(name = "tot", targetNamespace = "")
-        double tot);
+        double tot,
+        @WebParam(name = "dni", targetNamespace = "")
+        String dni);
 
 }

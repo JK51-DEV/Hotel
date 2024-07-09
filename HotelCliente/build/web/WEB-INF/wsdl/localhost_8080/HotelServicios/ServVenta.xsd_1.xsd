@@ -4,6 +4,10 @@
 
 <xs:element name="grabarCompraResponse" type="tns:grabarCompraResponse"/>
 
+<xs:element name="grabarDetalleCompra" type="tns:grabarDetalleCompra"/>
+
+<xs:element name="grabarDetalleCompraResponse" type="tns:grabarDetalleCompraResponse"/>
+
 <xs:element name="nuevaVenta" type="tns:nuevaVenta"/>
 
 <xs:element name="nuevaVentaResponse" type="tns:nuevaVentaResponse"/>
@@ -34,10 +38,34 @@
 <xs:element name="num" type="xs:string" minOccurs="0"/>
 <xs:element name="fec" type="xs:string" minOccurs="0"/>
 <xs:element name="tot" type="xs:double"/>
+<xs:element name="dni" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
 <xs:complexType name="grabarCompraResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="grabarDetalleCompra">
+<xs:sequence>
+<xs:element name="num" type="xs:string" minOccurs="0"/>
+<xs:element name="detalle" type="tns:linea" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="linea">
+<xs:sequence>
+<xs:element name="can" type="xs:int"/>
+<xs:element name="cod" type="xs:string" minOccurs="0"/>
+<xs:element name="imp" type="xs:double"/>
+<xs:element name="nom" type="xs:string" minOccurs="0"/>
+<xs:element name="pre" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="grabarDetalleCompraResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>

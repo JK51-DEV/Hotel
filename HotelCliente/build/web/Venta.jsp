@@ -1,6 +1,6 @@
 <%@page import="java.util.List"%>
 <%@page import="presentacion.Presentador"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html; charset=UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,20 +49,27 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>DNI</td>
-                    <td>
-                        <input class="form-control" type="text" name="dni" value='<%= fil2[0] %>'/>
-                    </td>
-                    <td>
-                        <input type="submit" name="acc" class="btn btn-primary" value="Buscar Cliente"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nombre</td>
-                    <td colspan="2">
-                        <input class="form-control" type="text" value='<%= fil2[1] %>' readonly/>
-                    </td>
-                </tr> 
+                <td>Buscar Cliente</td>
+                <td>
+                    <input class="form-control" type="text" name="dni" value=""/>
+                </td>
+                <td>
+                    <input type="submit" name="acc" class="btn btn-primary" value="Buscar Cliente"/>
+                </td>
+            </tr>
+            <tr>
+                <td>DNI</td>
+                <td>
+                    <input class="form-control" type="text" name="dniCliente" value='<%= fil2[0] %>' readonly/>
+                </td>
+            </tr>
+            <tr>
+                <td>Nombre</td>
+                <td colspan="2">
+                    <input class="form-control" type="text" name="nombreCliente" value='<%= fil2[1] %>' readonly/>
+                </td>
+            </tr>
+
             </form>
         </table>
         <h3><%= msg %></h3>   

@@ -140,24 +140,20 @@ public class ControlConsumo extends HttpServlet {
             response.sendRedirect("Venta.jsp");
         }
         if (acc.equals("Grabar Compra")) {
-        String numVenta = pres.getFil()[0].toString(); // Obtener número de venta
-        String fecVenta = pres.getFil()[1].toString(); // Obtener fecha de venta
-        double totVenta = Double.parseDouble(pres.getTot()); // Obtener total de venta
-        String msgGrabacion = grabarCompra(numVenta, fecVenta, totVenta); // Llamar al método para grabar compra
+            String numVenta = pres.getFil()[0].toString(); // Obtener número de venta
+            String fecVenta = pres.getFil()[1].toString(); // Obtener fecha de venta
+            double totVenta = Double.parseDouble(pres.getTot()); // Obtener total de venta
+            String dniCliente = pres.getFil2()[0].toString(); // Obtener DNI del cliente
 
-        if (msgGrabacion.equals("OK")) {
-            pres.setMsg("Compra Exitosa");
-        } else {
-            pres.setMsg("Error al grabar la venta en la base de datos: " + msgGrabacion);
-        }
-        response.sendRedirect("Venta.jsp");
+            String msgGrabacion = grabarCompra(numVenta, fecVenta, totVenta, dniCliente); // Llamar al método para grabar compra
+
+            if (msgGrabacion.equals("OK")) {
+                pres.setMsg("Se agregó su consumo");
+            } else {
+                pres.setMsg("Error al grabar la venta en la base de datos: " + msgGrabacion);
+            }
+            response.sendRedirect("Venta.jsp");
         } 
-        if(acc.equals("")){
-            
-        }
-        if(acc.equals("")){
-            
-        }        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -254,11 +250,17 @@ public class ControlConsumo extends HttpServlet {
         return port.crearCesta();
     }
 
-    private String grabarCompra(java.lang.String num, java.lang.String fec, double tot) {
+    private String grabarDetalleCompra(java.lang.String num, java.util.List<servicio.Linea> detalle) {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
         servicio.ServVenta port = service_2.getServVentaPort();
-        return port.grabarCompra(num, fec, tot);
+        return port.grabarDetalleCompra(num, detalle);
     }
-    
+
+    private String grabarCompra(java.lang.String num, java.lang.String fec, double tot, java.lang.String dni) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        servicio.ServVenta port = service_2.getServVentaPort();
+        return port.grabarCompra(num, fec, tot, dni);
+    }
 }
