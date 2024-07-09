@@ -109,4 +109,23 @@
     <script src="_sweetAlert/sweetalert.js" type="text/javascript"></script>
     <script src="_sweetAlert/sweetalert.min.js" type="text/javascript"></script>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+<script>
+    // Mostrar SweetAlert con mensaje
+    var mensaje = '<%= msg %>';
+    if (mensaje !== '') {
+        Swal.fire({
+            title: "Bien hecho!",
+            text: mensaje,
+            icon: "success",
+            confirmButtonText: "OK"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Redirigir después de que el usuario hace clic en "OK"
+                window.location.href = 'GenerarFactura.jsp';
+            }
+        });
+    }
+</script>
 </html>

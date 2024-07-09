@@ -48,6 +48,12 @@
                 </tr>
             </table>--%>
             <table>
+                <%                        String dise = port.codigoautomatico();
+                %>
+                <tr>
+                    <td style="padding: 0px">Codigo de reserva:</td>
+                    <td style="padding: 10px"><%=dise%></td>
+                </tr>
                 <%                        List<Reserva> dis = port.resumenReserva();
                     for (Reserva l : dis) {
                 %>  
@@ -79,12 +85,18 @@
                     <td style="padding: 0px">Fecha de fin:</td>
                     <td style="padding: 10px"><%=l.getFecFin()%></td>
                 </tr>
+                <%                        String di = port.getTotal();
+                %>
+                <tr>
+                    <td style="padding: 0px">Importe total:</td>
+                    <td style="padding: 10px"><%=di%></td>
+                </tr>
                 <tr>
                     <td colspan="0"></td>
                     <td>
-                        <button class="btn btn-danger" type="button" onclick="RegistrarReserva()">Eliminar Resumen</button>
+                        <button class="btn btn-danger" type="button" onclick="eliminarResumen()">Eliminar Resumen</button>
                         <br><br>
-                        <button class="btn btn-info" type="button" onclick="RegistrarReserva()">Registrar Reserva</button>
+                        <button class="btn btn-info" type="button" onclick="registrarReserva()">Registrar Reserva</button>
                     </td>
                 </tr>
                 <%
@@ -96,33 +108,33 @@
     <script src="_sweetAlert/sweetalert.js" type="text/javascript"></script>
     <script src="_sweetAlert/sweetalert.min.js" type="text/javascript"></script>
     <script>
-                        dis_eliminar = function (id) {
-                            swal({
-                                tittle: "Estas seguro de eliminar?",
-                                text: "Una vez eliminado no se podra recuperar!",
-                                type: "warning",
-                                showCancelButton: true,
-                                confirmButtonClass: "btn-danger",
-                                confirmButtonText: "Si, Eliminar!",
-                                cancelButtonText: "No, Cancelar!",
-                                closeOnConfirm: false,
-                                closeOnCancel: false
-                            },
-                                    function (isConfirm) {
-                                        if (isConfirm) {
-                                            $.post('dis_eliminar.do', {
-                                                id: id
-                                            }, function (res) {
-                                                swal("Alerta del sistema!", res, "success");
-                                                setTimeout(function () {
-                                                    window.location = '/TutorialCliente/index.jsp';
-                                                }, 1200);
-                                            });
-                                        } else {
-                                            swal("Cancelado", "Cancelaste esto :)", "error");
-                                        }
-                                    });
-                        };
+                            dis_eliminar = function (id) {
+                                swal({
+                                    tittle: "Estas seguro de eliminar?",
+                                    text: "Una vez eliminado no se podra recuperar!",
+                                    type: "warning",
+                                    showCancelButton: true,
+                                    confirmButtonClass: "btn-danger",
+                                    confirmButtonText: "Si, Eliminar!",
+                                    cancelButtonText: "No, Cancelar!",
+                                    closeOnConfirm: false,
+                                    closeOnCancel: false
+                                },
+                                        function (isConfirm) {
+                                            if (isConfirm) {
+                                                $.post('dis_eliminar.do', {
+                                                    id: id
+                                                }, function (res) {
+                                                    swal("Alerta del sistema!", res, "success");
+                                                    setTimeout(function () {
+                                                        window.location = '/TutorialCliente/index.jsp';
+                                                    }, 1200);
+                                                });
+                                            } else {
+                                                swal("Cancelado", "Cancelaste esto :)", "error");
+                                            }
+                                        });
+                            };
     </script>
     <script>
         buscar_dis = function () {
@@ -134,4 +146,30 @@
             });
         };
     </script>
+    <script>
+        function eliminarResumen() {
+            // Enviar una solicitud POST al controlador correspondiente
+            $.post('Resumen_reserva_eliminar', function (res) {
+                // Mostrar un mensaje o realizar alguna acción adicional si es necesario
+                //swal("Resumen eliminado!", res, "success");
+                setTimeout(function () {
+                    window.location = '/HotelCliente/vistaHabitaciones.jsp';
+                }, 1200);
+            });
+        }
+    </script>
+    <script>
+        function registrarReserva() {
+            // Enviar una solicitud POST al controlador correspondiente
+            $.post('Resumen_reserva_guardar', function (res) {
+                // Mostrar un mensaje o realizar alguna acción adicional si es necesario
+                swal("Reserva registrada!", res, "success");
+                eliminarResumen();
+                setTimeout(function () {
+                    window.location = '/HotelCliente/vistaHabitaciones.jsp';
+                }, 1200);
+            });
+        }
+    </script>
 </html>
+
