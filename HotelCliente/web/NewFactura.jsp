@@ -15,62 +15,89 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
             .container {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                margin-top: 20px;
-            }
-            .search-box {
-                display: flex;
-                justify-content: center;
-                margin-bottom: 20px;
-            }
-            .search-box input {
-                margin-right: 10px;
-            }
-            .info-box {
-                display: flex;
-                width: 100%;
-                justify-content: space-between;
-            }
-            .info-section {
-                width: 45%;
-                border: 1px solid #ccc;
-                padding: 10px;
-                border-radius: 5px;
-                background-color: white;
-            }
-            .info-section h5 {
-                text-align: center;
-                margin-bottom: 15px;
-            }
-            .consumo-list {
-                width: 100%;
-            }
-            .consumo-list table {
-                width: 100%;
-                border-collapse: collapse;
-            }
-            .consumo-list th, .consumo-list td {
-                border: 1px solid #ccc;
-                padding: 8px;
-                text-align: left;
-            }
-            .consumo-list th {
-                background-color: #f2f2f2;
-            }
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .card {
+            width: 80%; /* Ancho ajustado del card */
+            margin-bottom: 20px;
+        }
+        .search-box {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .search-box input {
+            width: 150px; /* Ancho ajustado del input */
+            margin-right: 10px;
+        }
+        .info-box {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+        }
+        .info-section {
+            width: 45%;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: white;
+        }
+        .info-section h5 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .consumo-list {
+            width: 100%;
+            overflow-x: auto; /* Para manejar el desbordamiento horizontal */
+        }
+        .consumo-list table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .consumo-list th, .consumo-list td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        .consumo-list th {
+            background-color: #f2f2f2;
+        }
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .btn-container button {
+            margin: 0 5px; /* Espacio entre los botones */
+        }
+        .div2{
+            width: 60%;
+        }
+        .div1{
+            margin-right: 35px;
+        }
+        .btncli{
+            margin-right: 35px;
+            margin-left: -10px;
+        }
         </style>
     </head>
     <body>
         <%@include file="_menu.jsp" %>
         <div class="container">
+            <div class="card">
+        <div class="card-body">
+            <h3 class="card-title"> Nueva Factura </h3>
             <div class="search-box">
                 <input class="form-control" id="dni_cliente" name="dni_cliente" size="8" placeholder="DNI" required>
-                <button class="btn btn-primary" onclick="buscar_dis()">Buscar Cliente</button>
+                <button class="btn btn-primary btncli" onclick="buscar_dis()">Buscar Cliente</button>
                 <button class="btn btn-success" onclick="generarFactura()">Generar Factura</button>
             </div>
             <div class="info-box">
-                <div class="info-section">
+                <div class="info-section div1">
                     <h5>Datos de Alojamiento</h5>
                     <p><strong>Código:</strong> A005</p>
                     <p><strong>Fecha de Alojamiento:</strong> 2024-05-28</p>
@@ -85,11 +112,11 @@
                     <p><strong>Fecha de Finalización:</strong> 2024-06-15</p>
                     <p><strong>Importe:</strong> 750.0</p>
                 </div>
-                <div class="info-section">
+                <div class="info-section div2">
                     <h5>Datos de Consumo</h5>
                     <div class="consumo-list">
-                        <table>
-                            <thead>
+                        <table class="table table-bordered">
+                            <thead class="thead-dark">
                                 <tr>
                                     <th>Código de Compra</th>
                                     <th>Código de Producto</th>
@@ -114,7 +141,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div></div></div> <br><br>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="_sweetAlert/sweetalert.js" type="text/javascript"></script>
