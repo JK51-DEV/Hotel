@@ -21,7 +21,7 @@ public class DaoFactura {
     
     public static String grabarFactura(Factura f) {
         // Construir la consulta SQL para insertar la reserva en la base de datos
-        String sql = "insert into factura values ('f.Codigoautomatico()','" + f.getCliente().getDni() + "',"
+        String sql = "insert into factura values ('" + f.Codigoautomatico() + "','" + f.getCliente().getDni() + "',"
                 + "'" + f.getAloj().getCodAloj() + "','" + f.getComp().getNum() + "','" + f.Hoy() + "')";
         return Acceso.ejecutar(sql);
     }
