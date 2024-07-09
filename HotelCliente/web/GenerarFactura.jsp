@@ -19,7 +19,10 @@
     </head>
     <body>
         <%@include file="_menu.jsp" %> 
-        <h1>Generar Factura</h1>
+         <div class="container">
+            <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">Generar Factura</h3>
     
        <form method="post" action="generar_factura">
     <label for="dniCliente">DNI Cliente:</label>
@@ -31,8 +34,9 @@
     <label for="numeroCompra">Número de Compra:</label>
     <input type="text" id="numeroCompra" name="numeroCompra" required><br><br>
 
-    <input type="submit" id="generarFacturaBtn" value="Generar Factura">
+    <input type="submit" class="btn btn-success" id="generarFacturaBtn" value="Generar Factura">
 </form>
+        </div> </div> </div> <br><br>
 </body>
 <script>
     $(document).ready(function() {

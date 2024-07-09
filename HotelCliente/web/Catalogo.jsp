@@ -12,7 +12,9 @@
 <body>
     <%@include file="_menu.jsp" %> 
     <div class="container">
-        <h1>Catálogo de Artículos</h1>
+            <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">Catálogo de Artículos</h3>
         <% Presentador pres = (Presentador)session.getAttribute("pres"); %>
         <% List lis = pres.getLis(); %>
         <table class="table">
@@ -40,6 +42,6 @@
                 <% } %>
             </tbody>
         </table>        
-    </div>
+    </div> </div> </div> <br><br>
 </body>
 </html>

@@ -25,9 +25,10 @@
     <% Object[] fil2 = pres.getFil2(); %>
     <% String msg = pres.getMsg(); %>
     
-    <div class="container">
-        <br>
-        <h4>Proceso de Venta</h4>
+     <div class="container">
+            <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">Proceso de Venta</h3>
         <table>
             <form action="ControlConsumo" method="Post">
                 <tr>
@@ -75,7 +76,7 @@
         <h3><%= msg %></h3>   
         <br>
         <table class="table table-bordered">
-            <thead>
+            <thead class="thead-dark">
                 <tr>
                     <th>Codigo</th>
                     <th>Nombre</th>
@@ -105,7 +106,7 @@
         </form>
         <!-- Botón para regresar a Cesta.jsp -->
         <a href="Cesta.jsp" class="btn btn-secondary">Regresar</a>
-    </div>
+    </div> </div> </div> <br><br>
     <script src="_sweetAlert/sweetalert.js" type="text/javascript"></script>
     <script src="_sweetAlert/sweetalert.min.js" type="text/javascript"></script>
 </body>

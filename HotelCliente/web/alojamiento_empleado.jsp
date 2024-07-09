@@ -24,8 +24,10 @@
         <% Presentador pres = (Presentador) session.getAttribute("pres"); %>
         <%-- Object[] fil2 = pres.getFil2(); %>
         <% String msg = pres.getMsg(); --%>
-        <div class="container">
-            <h1>Proceso de Venta</h1>
+         <div class="container">
+            <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">Proceso de Venta</h3>
             <form >
                 <table>
                     <%  String codigo = port.codigoautomaticoaloj();
@@ -135,7 +137,7 @@
                     <br>
                 </table>
             </form>
-        </div>
+        </div> </div> </div> <br><br>
 
         <script src="_sweetAlert/sweetalert.js" type="text/javascript"></script>
         <script src="_sweetAlert/sweetalert.min.js" type="text/javascript"></script>

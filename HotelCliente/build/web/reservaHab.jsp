@@ -11,16 +11,17 @@
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui/1.12.1/i18n/datepicker-es.js"></script>
-        <%@include file="_referencias_cli.jsp" %> 
+        <%@include file="_referencias.jsp" %> 
         <style>
             td { padding: 10px;}
         </style>
     </head>
     <body>
         <%@include file="_menu.jsp" %> 
-        <div class="container">
-            <br>
-            <h4>Registro de nueva reserva</h4>
+         <div class="container">
+            <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">Registro de nueva reserva</h3>
             <table>
                 <tr>
                     <%--<td>Codigo: </td>--%>
@@ -60,7 +61,7 @@
                     </td>
                 </tr>
             </table>
-        </div>
+        </div> </div> </div> <br><br>
                         
         <script src="_sweetAlert/sweetalert.js" type="text/javascript"></script>
         <script src="_sweetAlert/sweetalert.min.js" type="text/javascript"></script>

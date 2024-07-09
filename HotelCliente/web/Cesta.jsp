@@ -12,7 +12,9 @@
 <body>
     <%@include file="_menu.jsp" %> 
     <div class="container">
-        <h1>Cesta de Servicios</h1>
+            <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">Cesta de Servicios</h3>
         <% Presentador pres = (Presentador)session.getAttribute("pres"); %>
         <% String tot = pres.getTot(); %>
         <% List lis = pres.getLis(); %>
@@ -54,6 +56,6 @@
                 <button type="submit" name="acc" value="Nueva Venta" class="btn btn-primary">Nueva Venta</button>
             </form>
         </div>
-    </div>
+    </div> </div> </div> <br><br>
 </body>
 </html>

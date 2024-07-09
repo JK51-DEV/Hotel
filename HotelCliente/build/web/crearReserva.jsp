@@ -18,8 +18,10 @@
     </head>
     <body>
         <%@include file="_menu.jsp" %> 
-        <div class="container">
-            <h4>Resumen de Reserva</h4>
+         <div class="container">
+            <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">Resumen de Reserva</h3>
             <%--<button class="btn btn-success" type="button" onclick="location.href = 'index_nuevo.jsp'">Nuevo</button>--%>
 
             <%--<table>
@@ -103,7 +105,7 @@
                     }
                 %>
             </table>
-        </div>
+        </div></div> </div> <br><br>
     </body>
     <script src="_sweetAlert/sweetalert.js" type="text/javascript"></script>
     <script src="_sweetAlert/sweetalert.min.js" type="text/javascript"></script>

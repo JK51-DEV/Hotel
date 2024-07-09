@@ -20,7 +20,9 @@ ServiciosCliente port = server.getServiciosClientePort();
     <body>
         <%@include file="_menu.jsp" %> 
         <div class="container">
-            <h4>Gestión de Clientes</h4>
+            <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">Gestión de Clientes</h3>
             <button class="btn btn-success" type="button" onclick="location.href = 'registrarCliente_emp.jsp'">Registar Cliente</button>
             
             <%--<button class="btn btn-success" type="button" onclick="location.href = 'index_nuevo.jsp'">Nuevo</button>--%>
@@ -89,7 +91,7 @@ ServiciosCliente port = server.getServiciosClientePort();
                    %>
                 </tbody>
             </table>
-        </div>
+        </div> </div> </div> <br><br>
     </body>
     <script src="_sweetAlert/sweetalert.js" type="text/javascript"></script>
     <script src="_sweetAlert/sweetalert.min.js" type="text/javascript"></script>

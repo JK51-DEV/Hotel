@@ -1,4 +1,4 @@
-%-- 
+<%-- 
     Document   : registrarCliente
     Created on : 22-abr-2024, 13:08:49
     Author     : Usuario

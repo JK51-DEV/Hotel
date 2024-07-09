@@ -18,8 +18,10 @@
     </head>
     <body>
         <%@include file="_menu.jsp" %> 
-        <div class="container">
-            <h3>Gestión de Alojamientos</h3>
+         <div class="container">
+            <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">Gestión de Alojamientos</h3>
             <button class="btn btn-success" type="button" onclick="location.href = 'alojamiento_empleado.jsp'">Registar Alojamiento</button>
             <br><br>
             <%-- <table>
@@ -84,7 +86,7 @@
                     %>
                 </tbody>
             </table>
-        </div>
+        </div></div> </div> <br><br>
     </body>
     <script src="_sweetAlert/sweetalert.js" type="text/javascript"></script>
     <script src="_sweetAlert/sweetalert.min.js" type="text/javascript"></script>
