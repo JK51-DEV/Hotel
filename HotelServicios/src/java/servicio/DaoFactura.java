@@ -101,11 +101,24 @@ public class DaoFactura {
             //Reserva reser = DaoReserva.buscarReservaLista(f[2].toString());
             Alojamiento aloj = DaoAlojamiento.buscarAlojamientoLista(f[2].toString());
             Compra comp = DaoCompra.buscarcompra(f[3].toString());
+            
+            double totalFactura = 0.0;
+            if (aloj != null) {
+                totalFactura += aloj.getReserva().Importe();
+            }
+
+            String totalCompraStr = buscarMontoCompra(comp.getNum());
+                if (totalCompraStr != null) {
+                    double totalCompra = Double.parseDouble(totalCompraStr);
+                    totalFactura += totalCompra;
+                }
+            
             fac.setCodfac(f[0].toString());
             fac.setCliente(cli);
             fac.setAloj(aloj);
             fac.setComp(comp); // Asignar la fecha de creación desde la entidad reserva
-            fac.setFecfacturacion(f[4].toString());// El calculo se hace des la entidad reserva
+            fac.setFecfacturacion(f[4].toString());
+            fac.setTot(totalFactura);
             lis.add(fac);
         }
         return lis;
