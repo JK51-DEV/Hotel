@@ -10,16 +10,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para generarfacturaResponse complex type.
+ * <p>Clase Java para resumenFacturaResponse complex type.
  * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="generarfacturaResponse"&gt;
+ * &lt;complexType name="resumenFacturaResponse"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="return" type="{http://servicio/}factura" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="return" type="{http://www.w3.org/2001/XMLSchema}anyType" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -29,13 +29,13 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "generarfacturaResponse", propOrder = {
+@XmlType(name = "resumenFacturaResponse", propOrder = {
     "_return"
 })
-public class GenerarfacturaResponse {
+public class ResumenFacturaResponse {
 
     @XmlElement(name = "return")
-    protected List<Factura> _return;
+    protected List<Object> _return;
 
     /**
      * Gets the value of the return property.
@@ -55,13 +55,13 @@ public class GenerarfacturaResponse {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Factura }
+     * {@link Object }
      * 
      * 
      */
-    public List<Factura> getReturn() {
+    public List<Object> getReturn() {
         if (_return == null) {
-            _return = new ArrayList<Factura>();
+            _return = new ArrayList<Object>();
         }
         return this._return;
     }

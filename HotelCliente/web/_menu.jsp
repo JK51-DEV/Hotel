@@ -124,7 +124,7 @@
                                 <li><a href="vistaHabitaciones.jsp">HABITACIONES</a></li>
                                 <li><a href="vistaReservas.jsp">RESERVAS</a></li>
                                 <li><a href="vistaAlojamiento.jsp">ALOJAMIENTO</a></li>
-                                <li><a href="GenerarFactura.jsp">FACTURACION</a></li>
+                                <li><a href="ListaFactura.jsp">FACTURACION</a></li>
                                 <li style="display: inline-block">
                                     <!-- Formulario con estilo específico para evitar conflictos -->
                                     <form action="ControlConsumo" method="post" style="margin-bottom: 0;">

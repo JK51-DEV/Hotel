@@ -26,16 +26,20 @@ public class ObjectFactory {
 
     private final static QName _AgregarFactura_QNAME = new QName("http://servicio/", "agregar_factura");
     private final static QName _AgregarFacturaResponse_QNAME = new QName("http://servicio/", "agregar_facturaResponse");
+    private final static QName _AgregarResumenFactura_QNAME = new QName("http://servicio/", "agregar_resumen_factura");
+    private final static QName _AgregarResumenFacturaResponse_QNAME = new QName("http://servicio/", "agregar_resumen_facturaResponse");
     private final static QName _BuscarMontoCompra_QNAME = new QName("http://servicio/", "buscarMontoCompra");
     private final static QName _BuscarMontoCompraResponse_QNAME = new QName("http://servicio/", "buscarMontoCompraResponse");
     private final static QName _Codigoautomatic_QNAME = new QName("http://servicio/", "codigoautomatic");
     private final static QName _CodigoautomaticResponse_QNAME = new QName("http://servicio/", "codigoautomaticResponse");
-    private final static QName _Generarfactura_QNAME = new QName("http://servicio/", "generarfactura");
-    private final static QName _GenerarfacturaResponse_QNAME = new QName("http://servicio/", "generarfacturaResponse");
     private final static QName _ListarFactura_QNAME = new QName("http://servicio/", "listar_factura");
     private final static QName _ListarFacturaResponse_QNAME = new QName("http://servicio/", "listar_facturaResponse");
     private final static QName _Listarfacturas_QNAME = new QName("http://servicio/", "listarfacturas");
     private final static QName _ListarfacturasResponse_QNAME = new QName("http://servicio/", "listarfacturasResponse");
+    private final static QName _RegistrarFactura_QNAME = new QName("http://servicio/", "registrar_Factura");
+    private final static QName _RegistrarFacturaResponse_QNAME = new QName("http://servicio/", "registrar_FacturaResponse");
+    private final static QName _ResumenFactura_QNAME = new QName("http://servicio/", "resumenFactura");
+    private final static QName _ResumenFacturaResponse_QNAME = new QName("http://servicio/", "resumenFacturaResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: servicio
@@ -58,6 +62,22 @@ public class ObjectFactory {
      */
     public AgregarFacturaResponse createAgregarFacturaResponse() {
         return new AgregarFacturaResponse();
+    }
+
+    /**
+     * Create an instance of {@link AgregarResumenFactura }
+     * 
+     */
+    public AgregarResumenFactura createAgregarResumenFactura() {
+        return new AgregarResumenFactura();
+    }
+
+    /**
+     * Create an instance of {@link AgregarResumenFacturaResponse }
+     * 
+     */
+    public AgregarResumenFacturaResponse createAgregarResumenFacturaResponse() {
+        return new AgregarResumenFacturaResponse();
     }
 
     /**
@@ -93,22 +113,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Generarfactura }
-     * 
-     */
-    public Generarfactura createGenerarfactura() {
-        return new Generarfactura();
-    }
-
-    /**
-     * Create an instance of {@link GenerarfacturaResponse }
-     * 
-     */
-    public GenerarfacturaResponse createGenerarfacturaResponse() {
-        return new GenerarfacturaResponse();
-    }
-
-    /**
      * Create an instance of {@link ListarFactura }
      * 
      */
@@ -141,6 +145,38 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link RegistrarFactura }
+     * 
+     */
+    public RegistrarFactura createRegistrarFactura() {
+        return new RegistrarFactura();
+    }
+
+    /**
+     * Create an instance of {@link RegistrarFacturaResponse }
+     * 
+     */
+    public RegistrarFacturaResponse createRegistrarFacturaResponse() {
+        return new RegistrarFacturaResponse();
+    }
+
+    /**
+     * Create an instance of {@link ResumenFactura }
+     * 
+     */
+    public ResumenFactura createResumenFactura() {
+        return new ResumenFactura();
+    }
+
+    /**
+     * Create an instance of {@link ResumenFacturaResponse }
+     * 
+     */
+    public ResumenFacturaResponse createResumenFacturaResponse() {
+        return new ResumenFacturaResponse();
+    }
+
+    /**
      * Create an instance of {@link Factura }
      * 
      */
@@ -149,19 +185,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Cliente }
+     * Create an instance of {@link Alojamiento }
      * 
      */
-    public Cliente createCliente() {
-        return new Cliente();
+    public Alojamiento createAlojamiento() {
+        return new Alojamiento();
     }
 
     /**
-     * Create an instance of {@link Compra }
+     * Create an instance of {@link Empleado }
      * 
      */
-    public Compra createCompra() {
-        return new Compra();
+    public Empleado createEmpleado() {
+        return new Empleado();
     }
 
     /**
@@ -173,11 +209,27 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Cliente }
+     * 
+     */
+    public Cliente createCliente() {
+        return new Cliente();
+    }
+
+    /**
      * Create an instance of {@link Habitacion }
      * 
      */
     public Habitacion createHabitacion() {
         return new Habitacion();
+    }
+
+    /**
+     * Create an instance of {@link Compra }
+     * 
+     */
+    public Compra createCompra() {
+        return new Compra();
     }
 
     /**
@@ -196,6 +248,24 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://servicio/", name = "agregar_facturaResponse")
     public JAXBElement<AgregarFacturaResponse> createAgregarFacturaResponse(AgregarFacturaResponse value) {
         return new JAXBElement<AgregarFacturaResponse>(_AgregarFacturaResponse_QNAME, AgregarFacturaResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AgregarResumenFactura }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "agregar_resumen_factura")
+    public JAXBElement<AgregarResumenFactura> createAgregarResumenFactura(AgregarResumenFactura value) {
+        return new JAXBElement<AgregarResumenFactura>(_AgregarResumenFactura_QNAME, AgregarResumenFactura.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AgregarResumenFacturaResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "agregar_resumen_facturaResponse")
+    public JAXBElement<AgregarResumenFacturaResponse> createAgregarResumenFacturaResponse(AgregarResumenFacturaResponse value) {
+        return new JAXBElement<AgregarResumenFacturaResponse>(_AgregarResumenFacturaResponse_QNAME, AgregarResumenFacturaResponse.class, null, value);
     }
 
     /**
@@ -235,24 +305,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Generarfactura }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://servicio/", name = "generarfactura")
-    public JAXBElement<Generarfactura> createGenerarfactura(Generarfactura value) {
-        return new JAXBElement<Generarfactura>(_Generarfactura_QNAME, Generarfactura.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GenerarfacturaResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://servicio/", name = "generarfacturaResponse")
-    public JAXBElement<GenerarfacturaResponse> createGenerarfacturaResponse(GenerarfacturaResponse value) {
-        return new JAXBElement<GenerarfacturaResponse>(_GenerarfacturaResponse_QNAME, GenerarfacturaResponse.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ListarFactura }{@code >}}
      * 
      */
@@ -286,6 +338,42 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://servicio/", name = "listarfacturasResponse")
     public JAXBElement<ListarfacturasResponse> createListarfacturasResponse(ListarfacturasResponse value) {
         return new JAXBElement<ListarfacturasResponse>(_ListarfacturasResponse_QNAME, ListarfacturasResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link RegistrarFactura }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "registrar_Factura")
+    public JAXBElement<RegistrarFactura> createRegistrarFactura(RegistrarFactura value) {
+        return new JAXBElement<RegistrarFactura>(_RegistrarFactura_QNAME, RegistrarFactura.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link RegistrarFacturaResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "registrar_FacturaResponse")
+    public JAXBElement<RegistrarFacturaResponse> createRegistrarFacturaResponse(RegistrarFacturaResponse value) {
+        return new JAXBElement<RegistrarFacturaResponse>(_RegistrarFacturaResponse_QNAME, RegistrarFacturaResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ResumenFactura }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "resumenFactura")
+    public JAXBElement<ResumenFactura> createResumenFactura(ResumenFactura value) {
+        return new JAXBElement<ResumenFactura>(_ResumenFactura_QNAME, ResumenFactura.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ResumenFacturaResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "resumenFacturaResponse")
+    public JAXBElement<ResumenFacturaResponse> createResumenFacturaResponse(ResumenFacturaResponse value) {
+        return new JAXBElement<ResumenFacturaResponse>(_ResumenFacturaResponse_QNAME, ResumenFacturaResponse.class, null, value);
     }
 
 }

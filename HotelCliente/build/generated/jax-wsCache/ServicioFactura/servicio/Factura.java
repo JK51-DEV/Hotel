@@ -16,11 +16,11 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
+ *         &lt;element name="aloj" type="{http://servicio/}alojamiento" minOccurs="0"/&gt;
  *         &lt;element name="cliente" type="{http://servicio/}cliente" minOccurs="0"/&gt;
  *         &lt;element name="codfac" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="comp" type="{http://servicio/}compra" minOccurs="0"/&gt;
  *         &lt;element name="fecfacturacion" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="res" type="{http://servicio/}reserva" minOccurs="0"/&gt;
  *         &lt;element name="tot" type="{http://www.w3.org/2001/XMLSchema}double"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
@@ -32,21 +32,45 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "factura", propOrder = {
+    "aloj",
     "cliente",
     "codfac",
     "comp",
     "fecfacturacion",
-    "res",
     "tot"
 })
 public class Factura {
 
+    protected Alojamiento aloj;
     protected Cliente cliente;
     protected String codfac;
     protected Compra comp;
     protected String fecfacturacion;
-    protected Reserva res;
     protected double tot;
+
+    /**
+     * Obtiene el valor de la propiedad aloj.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Alojamiento }
+     *     
+     */
+    public Alojamiento getAloj() {
+        return aloj;
+    }
+
+    /**
+     * Define el valor de la propiedad aloj.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Alojamiento }
+     *     
+     */
+    public void setAloj(Alojamiento value) {
+        this.aloj = value;
+    }
 
     /**
      * Obtiene el valor de la propiedad cliente.
@@ -142,30 +166,6 @@ public class Factura {
      */
     public void setFecfacturacion(String value) {
         this.fecfacturacion = value;
-    }
-
-    /**
-     * Obtiene el valor de la propiedad res.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Reserva }
-     *     
-     */
-    public Reserva getRes() {
-        return res;
-    }
-
-    /**
-     * Define el valor de la propiedad res.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Reserva }
-     *     
-     */
-    public void setRes(Reserva value) {
-        this.res = value;
     }
 
     /**

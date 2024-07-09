@@ -7,18 +7,17 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para generarfactura complex type.
+ * <p>Clase Java para empleado complex type.
  * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="generarfactura"&gt;
+ * &lt;complexType name="empleado"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="dni" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="reser" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="compra" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="nom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -28,16 +27,14 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "generarfactura", propOrder = {
+@XmlType(name = "empleado", propOrder = {
     "dni",
-    "reser",
-    "compra"
+    "nom"
 })
-public class Generarfactura {
+public class Empleado {
 
     protected String dni;
-    protected String reser;
-    protected String compra;
+    protected String nom;
 
     /**
      * Obtiene el valor de la propiedad dni.
@@ -64,51 +61,27 @@ public class Generarfactura {
     }
 
     /**
-     * Obtiene el valor de la propiedad reser.
+     * Obtiene el valor de la propiedad nom.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getReser() {
-        return reser;
+    public String getNom() {
+        return nom;
     }
 
     /**
-     * Define el valor de la propiedad reser.
+     * Define el valor de la propiedad nom.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setReser(String value) {
-        this.reser = value;
-    }
-
-    /**
-     * Obtiene el valor de la propiedad compra.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getCompra() {
-        return compra;
-    }
-
-    /**
-     * Define el valor de la propiedad compra.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCompra(String value) {
-        this.compra = value;
+    public void setNom(String value) {
+        this.nom = value;
     }
 
 }

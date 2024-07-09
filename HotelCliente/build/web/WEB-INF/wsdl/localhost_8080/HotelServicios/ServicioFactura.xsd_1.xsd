@@ -4,6 +4,10 @@
 
 <xs:element name="agregar_facturaResponse" type="tns:agregar_facturaResponse"/>
 
+<xs:element name="agregar_resumen_factura" type="tns:agregar_resumen_factura"/>
+
+<xs:element name="agregar_resumen_facturaResponse" type="tns:agregar_resumen_facturaResponse"/>
+
 <xs:element name="buscarMontoCompra" type="tns:buscarMontoCompra"/>
 
 <xs:element name="buscarMontoCompraResponse" type="tns:buscarMontoCompraResponse"/>
@@ -11,10 +15,6 @@
 <xs:element name="codigoautomatic" type="tns:codigoautomatic"/>
 
 <xs:element name="codigoautomaticResponse" type="tns:codigoautomaticResponse"/>
-
-<xs:element name="generarfactura" type="tns:generarfactura"/>
-
-<xs:element name="generarfacturaResponse" type="tns:generarfacturaResponse"/>
 
 <xs:element name="listar_factura" type="tns:listar_factura"/>
 
@@ -24,13 +24,19 @@
 
 <xs:element name="listarfacturasResponse" type="tns:listarfacturasResponse"/>
 
-<xs:complexType name="listar_factura">
-<xs:sequence>
-<xs:element name="codfac" type="xs:string" minOccurs="0"/>
-</xs:sequence>
+<xs:element name="registrar_Factura" type="tns:registrar_Factura"/>
+
+<xs:element name="registrar_FacturaResponse" type="tns:registrar_FacturaResponse"/>
+
+<xs:element name="resumenFactura" type="tns:resumenFactura"/>
+
+<xs:element name="resumenFacturaResponse" type="tns:resumenFacturaResponse"/>
+
+<xs:complexType name="listarfacturas">
+<xs:sequence/>
 </xs:complexType>
 
-<xs:complexType name="listar_facturaResponse">
+<xs:complexType name="listarfacturasResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:factura" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
@@ -38,27 +44,28 @@
 
 <xs:complexType name="factura">
 <xs:sequence>
+<xs:element name="aloj" type="tns:alojamiento" minOccurs="0"/>
 <xs:element name="cliente" type="tns:cliente" minOccurs="0"/>
 <xs:element name="codfac" type="xs:string" minOccurs="0"/>
 <xs:element name="comp" type="tns:compra" minOccurs="0"/>
 <xs:element name="fecfacturacion" type="xs:string" minOccurs="0"/>
-<xs:element name="res" type="tns:reserva" minOccurs="0"/>
 <xs:element name="tot" type="xs:double"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="cliente">
+<xs:complexType name="alojamiento">
 <xs:sequence>
-<xs:element name="dni" type="xs:string" minOccurs="0"/>
-<xs:element name="nom" type="xs:string" minOccurs="0"/>
+<xs:element name="codAloj" type="xs:string" minOccurs="0"/>
+<xs:element name="empleado" type="tns:empleado" minOccurs="0"/>
+<xs:element name="fecCreacionAloj" type="xs:string" minOccurs="0"/>
+<xs:element name="reserva" type="tns:reserva" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="compra">
+<xs:complexType name="empleado">
 <xs:sequence>
-<xs:element name="fec" type="xs:string" minOccurs="0"/>
-<xs:element name="num" type="xs:string" minOccurs="0"/>
-<xs:element name="tot" type="xs:string" minOccurs="0"/>
+<xs:element name="dni" type="xs:string" minOccurs="0"/>
+<xs:element name="nom" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -75,6 +82,13 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="cliente">
+<xs:sequence>
+<xs:element name="dni" type="xs:string" minOccurs="0"/>
+<xs:element name="nom" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="habitacion">
 <xs:sequence>
 <xs:element name="cod" type="xs:string" minOccurs="0"/>
@@ -84,11 +98,21 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="listarfacturas">
-<xs:sequence/>
+<xs:complexType name="compra">
+<xs:sequence>
+<xs:element name="fec" type="xs:string" minOccurs="0"/>
+<xs:element name="num" type="xs:string" minOccurs="0"/>
+<xs:element name="tot" type="xs:string" minOccurs="0"/>
+</xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="listarfacturasResponse">
+<xs:complexType name="listar_factura">
+<xs:sequence>
+<xs:element name="codfac" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listar_facturaResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:factura" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
@@ -104,24 +128,44 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="generarfactura">
+<xs:complexType name="resumenFactura">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="resumenFacturaResponse">
 <xs:sequence>
-<xs:element name="dni" type="xs:string" minOccurs="0"/>
-<xs:element name="reser" type="xs:string" minOccurs="0"/>
-<xs:element name="compra" type="xs:string" minOccurs="0"/>
+<xs:element name="return" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="generarfacturaResponse">
+<xs:complexType name="registrar_Factura">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="registrar_FacturaResponse">
 <xs:sequence>
-<xs:element name="return" type="tns:factura" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="agregar_resumen_factura">
+<xs:sequence>
+<xs:element name="cli" type="xs:string" minOccurs="0"/>
+<xs:element name="codaloj" type="xs:string" minOccurs="0"/>
+<xs:element name="comp" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="agregar_resumen_facturaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
 <xs:complexType name="agregar_factura">
 <xs:sequence>
 <xs:element name="cli" type="xs:string" minOccurs="0"/>
-<xs:element name="res" type="xs:string" minOccurs="0"/>
+<xs:element name="codaloj" type="xs:string" minOccurs="0"/>
 <xs:element name="comp" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>

@@ -7,18 +7,18 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para generarfactura complex type.
+ * <p>Clase Java para agregar_resumen_factura complex type.
  * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="generarfactura"&gt;
+ * &lt;complexType name="agregar_resumen_factura"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="dni" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="reser" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="compra" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="cli" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="codaloj" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="comp" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -28,87 +28,87 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "generarfactura", propOrder = {
-    "dni",
-    "reser",
-    "compra"
+@XmlType(name = "agregar_resumen_factura", propOrder = {
+    "cli",
+    "codaloj",
+    "comp"
 })
-public class Generarfactura {
+public class AgregarResumenFactura {
 
-    protected String dni;
-    protected String reser;
-    protected String compra;
+    protected String cli;
+    protected String codaloj;
+    protected String comp;
 
     /**
-     * Obtiene el valor de la propiedad dni.
+     * Obtiene el valor de la propiedad cli.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getDni() {
-        return dni;
+    public String getCli() {
+        return cli;
     }
 
     /**
-     * Define el valor de la propiedad dni.
+     * Define el valor de la propiedad cli.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setDni(String value) {
-        this.dni = value;
+    public void setCli(String value) {
+        this.cli = value;
     }
 
     /**
-     * Obtiene el valor de la propiedad reser.
+     * Obtiene el valor de la propiedad codaloj.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getReser() {
-        return reser;
+    public String getCodaloj() {
+        return codaloj;
     }
 
     /**
-     * Define el valor de la propiedad reser.
+     * Define el valor de la propiedad codaloj.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setReser(String value) {
-        this.reser = value;
+    public void setCodaloj(String value) {
+        this.codaloj = value;
     }
 
     /**
-     * Obtiene el valor de la propiedad compra.
+     * Obtiene el valor de la propiedad comp.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getCompra() {
-        return compra;
+    public String getComp() {
+        return comp;
     }
 
     /**
-     * Define el valor de la propiedad compra.
+     * Define el valor de la propiedad comp.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setCompra(String value) {
-        this.compra = value;
+    public void setComp(String value) {
+        this.comp = value;
     }
 
 }

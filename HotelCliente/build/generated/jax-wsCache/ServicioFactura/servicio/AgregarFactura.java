@@ -17,7 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="cli" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="res" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="codaloj" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="comp" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
@@ -30,13 +30,13 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "agregar_factura", propOrder = {
     "cli",
-    "res",
+    "codaloj",
     "comp"
 })
 public class AgregarFactura {
 
     protected String cli;
-    protected String res;
+    protected String codaloj;
     protected String comp;
 
     /**
@@ -64,27 +64,27 @@ public class AgregarFactura {
     }
 
     /**
-     * Obtiene el valor de la propiedad res.
+     * Obtiene el valor de la propiedad codaloj.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getRes() {
-        return res;
+    public String getCodaloj() {
+        return codaloj;
     }
 
     /**
-     * Define el valor de la propiedad res.
+     * Define el valor de la propiedad codaloj.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setRes(String value) {
-        this.res = value;
+    public void setCodaloj(String value) {
+        this.codaloj = value;
     }
 
     /**

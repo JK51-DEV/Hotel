@@ -19,7 +19,6 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="num" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="fec" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="tot" type="{http://www.w3.org/2001/XMLSchema}double"/&gt;
- *         &lt;element name="dni" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -32,15 +31,13 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "grabarCompra", propOrder = {
     "num",
     "fec",
-    "tot",
-    "dni"
+    "tot"
 })
 public class GrabarCompra {
 
     protected String num;
     protected String fec;
     protected double tot;
-    protected String dni;
 
     /**
      * Obtiene el valor de la propiedad num.
@@ -104,30 +101,6 @@ public class GrabarCompra {
      */
     public void setTot(double value) {
         this.tot = value;
-    }
-
-    /**
-     * Obtiene el valor de la propiedad dni.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDni() {
-        return dni;
-    }
-
-    /**
-     * Define el valor de la propiedad dni.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDni(String value) {
-        this.dni = value;
     }
 
 }
