@@ -35,8 +35,6 @@ public class Factura {
         this.tot = tot;
     }
 
-    
-    
     public String Codigoautomatico(){
         List<Factura> factura = listarFacturas();
         int siguienteNumero = factura.size() + 1;

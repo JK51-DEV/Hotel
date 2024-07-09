@@ -19,23 +19,7 @@ import javax.jws.WebParam;
 public class ServicioFactura {
     
     Factura fac= new Factura();
-
-//     @WebMethod(operationName = "generarfactura")
-//    public List<Factura> generarfactura(@WebParam(name = "dni") String dni, @WebParam(name = "reser") String res, @WebParam(name = "compra") String compra) {
-//        
-//        Reserva reserva = DaoReserva.buscarReservaLista(res);
-//        
-//        if (reserva != null && reserva.getCli() != null && reserva.getCli().getDni().equals(dni)) {
-//            List<Factura> facturas = DaoFactura.generar_factura(dni, res, compra);
-//            if (facturas != null) {
-//                return facturas;
-//            } else {
-//                return new ArrayList<>();
-//            }
-//        } else {
-//            return new ArrayList<>(); // o lanzar una excepción, según la lógica de tu aplicación
-//        }
-//    }
+    ResuFactura resfac= new ResuFactura();
 
     @WebMethod(operationName = "buscarMontoCompra")
     public String buscarMontoCompra(@WebParam(name = "num") String num) {
@@ -109,5 +93,65 @@ public class ServicioFactura {
         return msg;
         
     }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "resumenFactura")
+    public List resumenFactura() {
+        //TODO write your implementation code here:
+        return resfac.getResumenFactura();
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "agregar_resumen_factura")
+    public String agregar_resumen_factura(@WebParam(name = "cli") String cli, @WebParam(name = "codaloj") String codaloj, @WebParam(name = "comp") String comp) {
+        Cliente clie = DaoCliente.buscar(cli);
+        Alojamiento aloj= DaoAlojamiento.buscarAlojamientoLista(codaloj);
+        Compra compra = DaoCompra.buscarcompra(comp);
+        
+        if (aloj == null) {
+            return "No se encontró alojamiento con el código: " + aloj;
+        }
+        if (clie == null) {
+            return "No se encontró el cliente con el DNI: " + clie;
+        }
+        if (comp == null) {
+            return "No se encontró la compra con el código: " + compra;
+        }
+        
+        resfac.agregar(clie, aloj, compra);
+        
+        return "La factura se agregó";
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "registrar_Factura")
+    public String registrar_Factura() {
+         try {
+           List<Factura> fac = resfac.getResumenFactura();
+           String fact = DaoFactura.RegistrarFactura(fac);
+
+            if (fact == null) {
+                return "SE guardo la reserva:\n";
+            } else {
+                return "Errores al guardar la reserva:\n" + fact;
+            }
+       } catch (Exception e) {
+           Throwable cause = e.getCause();
+           while (cause != null) {
+               e = (Exception) cause;
+               cause = e.getCause();
+           }
+           return "Error al registrar todas las reservas: " + e.getMessage();
+       }
+    }
+    
+    
+    
 
 }

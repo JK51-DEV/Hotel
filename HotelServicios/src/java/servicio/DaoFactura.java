@@ -26,34 +26,18 @@ public class DaoFactura {
         return Acceso.ejecutar(sql);
     }
     
-//    public static List<Factura> generar_factura(String dni, String res, String compra) {
-//    List<Factura> lis = new ArrayList<>();
-//
-//    Factura fac = new Factura();
-//    Cliente cli = DaoCliente.buscar(dni);
-//    Reserva reser = DaoReserva.buscarReservaLista(res);
-//    Compra comp = DaoCompra.buscarcompra(compra);
-//    
-//    double totalFactura = 0.0;
-//    if (reser != null) {
-//        totalFactura += reser.Importe();
-//    }
-//    
-//    String totalCompraStr = buscarMontoCompra(comp.getNum());
-//        if (totalCompraStr != null) {
-//            double totalCompra = Double.parseDouble(totalCompraStr);
-//            totalFactura += totalCompra;
-//        }
-//    
-//        fac.setCliente(cli);
-//        fac.setRes(reser);
-//        fac.setComp(comp);
-//        fac.setTot(totalFactura);
-//
-//        lis.add(fac);
-//
-//    return lis;
-//}
+     public static String RegistrarFactura(List<Factura> factura) {
+        StringBuilder errorMessages = new StringBuilder();
+        for (Factura f : factura) {
+            String result = grabarFactura(f);
+            if (result != null) {
+                errorMessages.append("Error al guardar el alojamiento ").append(f.getCodfac()).append(": ").append(result).append("\n");
+            }
+        }
+        return errorMessages.length() > 0 ? errorMessages.toString() : null;
+    }
+    
+
     
     public static List<Factura> listarFacturas() {
         String sql = "select * from factura";
