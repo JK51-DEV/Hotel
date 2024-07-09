@@ -104,7 +104,7 @@
         <form action="ControlConsumo" method="Post">
             <input type="submit" name="acc" class="btn btn-primary" value="Grabar Compra"/>
         </form>
-        
+        <!-- Botón para regresar a Cesta.jsp -->
         <a href="Cesta.jsp" class="btn btn-secondary">Regresar</a>
     </div> </div> </div> <br><br>
     <script src="_sweetAlert/sweetalert.js" type="text/javascript"></script>
@@ -122,8 +122,8 @@
             confirmButtonText: "OK"
         }).then((result) => {
             if (result.isConfirmed) {
-                
-                window.location.href = 'Cesta.jsp'; 
+                // Redirigir después de que el usuario hace clic en "OK"
+                window.location.href = 'Cesta.jsp';  
             }
         });
     }
