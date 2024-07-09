@@ -16,7 +16,18 @@ public class ServReserva {
         return DaoReserva.listarReservas();
     }
     
-    
+    // BUSCAR RESERVA POR DNI
+    @WebMethod(operationName = "buscarReservaDNIprueba")
+    public String buscarReservaDNIprueba(@WebParam(name = "dni") String dni) {
+        String res;
+        String nom=DaoReserva.buscarReservaparalojamiento(dni);
+        if (nom != null) {
+            return nom;
+        }else{
+            res="No existe reserva";
+        }
+    return res;
+    }
     
     // BUSCAR RESERVA POR DNI
     @WebMethod(operationName = "buscarReservaDNI")
@@ -46,7 +57,7 @@ public class ServReserva {
         }
     return res;
     }
-
+   
    @WebMethod(operationName = "registrarReserva")
     public String registrarReserva() {
     try {
@@ -115,10 +126,6 @@ public class ServReserva {
         DaoReserva dis = new DaoReserva();
         return dis.listar_avanzado_reserva(dni_cliente);
     }
-    
-    
-    
-    
-    
+
 
     }

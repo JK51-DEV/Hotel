@@ -33,6 +33,8 @@ public class ServAlojamiento {
     return res;
     }
     
+    
+    
     //BUSCA ALOJAMIENTO POR CODIGO DE RESERVA
     @WebMethod(operationName = "buscarAlojamientoRES")
     public String buscarAlojamientoRES(@WebParam(name = "codres") String codres) {
@@ -118,5 +120,16 @@ public class ServAlojamiento {
     public String codigoautomaticoaloj() {
        return String.valueOf(aloj.CodigoautomaticoAloj());
     }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "buscarpordni")
+    public List<Alojamiento> buscarpordni(@WebParam(name = "dni") String dni) {
+        DaoAlojamiento fact = new DaoAlojamiento();
+        return fact.BuscarAlojamientopordni(dni);
+    }
+
+    
 
 }

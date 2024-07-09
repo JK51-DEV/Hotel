@@ -63,6 +63,24 @@ public class DaoReserva {
         return null;
     }
     
+     public static String buscarReservaparalojamiento(String dni_cliente) {
+        String sql = "select * from reserva where DNI_CLIENTE='" + dni_cliente + "'";
+        Object[] f = Acceso.buscar(sql);
+        if (f != null) {
+            return f[0].toString();
+        }
+        return null;
+    }
+    
+    public static String buscarReservacod(String codres) {
+        String sql = "select * from reserva where cod_res='" + codres + "'";
+        Object[] f = Acceso.buscar(sql);
+        if (f != null) {
+            return  f[1].toString();
+        }
+        return null;
+    }
+    
     public static Reserva buscarReservaLista(String codRes) {
         String sql = "select * from reserva where COD_RES='" + codRes + "'";
         Object[] f = Acceso.buscar(sql);
