@@ -16,6 +16,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
+ *         &lt;element name="dni" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="fec" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="num" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="tot" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
@@ -29,15 +30,41 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "compra", propOrder = {
+    "dni",
     "fec",
     "num",
     "tot"
 })
 public class Compra {
 
+    protected String dni;
     protected String fec;
     protected String num;
     protected String tot;
+
+    /**
+     * Obtiene el valor de la propiedad dni.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getDni() {
+        return dni;
+    }
+
+    /**
+     * Define el valor de la propiedad dni.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setDni(String value) {
+        this.dni = value;
+    }
 
     /**
      * Obtiene el valor de la propiedad fec.

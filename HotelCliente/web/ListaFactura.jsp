@@ -38,6 +38,7 @@
                 <input class="form-control" id="factura" name="factura" size="8" required>
             </td>
             <td style="padding: 10px"><button class="btn btn-primary" onclick="buscar_factura()">Buscar</button></td>
+            <td style="padding: 10px"><button class="btn btn-primary" onclick="nueva_factura()">Nueva Factura</button></td>
         </tr>
     </table>
     <table class="table table-bordered">
@@ -91,6 +92,10 @@
     function accionFactura(codfac) {
         // Redirigir a Factura_1.jsp con los parámetros codfac y dniCliente
         window.location.href = 'Factura_1.jsp?codfac=' + codfac ;
+    }
+    function nueva_factura() {
+        // Redirigir a Factura_1.jsp con los parámetros codfac y dniCliente
+        window.location.href = 'NewFactura.jsp' ;
     }
 </script>
 </html>

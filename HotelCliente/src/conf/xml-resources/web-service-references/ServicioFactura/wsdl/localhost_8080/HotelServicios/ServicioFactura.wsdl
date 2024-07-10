@@ -4,29 +4,11 @@
 <xsd:import namespace="http://servicio/" schemaLocation="http://localhost:8080/HotelServicios/ServicioFactura?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="registrar_Factura">
-<part name="parameters" element="tns:registrar_Factura"/>
-</message>
-<message name="registrar_FacturaResponse">
-<part name="parameters" element="tns:registrar_FacturaResponse"/>
-</message>
-<message name="agregar_resumen_factura">
-<part name="parameters" element="tns:agregar_resumen_factura"/>
-</message>
-<message name="agregar_resumen_facturaResponse">
-<part name="parameters" element="tns:agregar_resumen_facturaResponse"/>
-</message>
 <message name="resumenFactura">
 <part name="parameters" element="tns:resumenFactura"/>
 </message>
 <message name="resumenFacturaResponse">
 <part name="parameters" element="tns:resumenFacturaResponse"/>
-</message>
-<message name="listarfacturas">
-<part name="parameters" element="tns:listarfacturas"/>
-</message>
-<message name="listarfacturasResponse">
-<part name="parameters" element="tns:listarfacturasResponse"/>
 </message>
 <message name="agregar_factura">
 <part name="parameters" element="tns:agregar_factura"/>
@@ -46,28 +28,34 @@
 <message name="listar_facturaResponse">
 <part name="parameters" element="tns:listar_facturaResponse"/>
 </message>
+<message name="listarfacturas">
+<part name="parameters" element="tns:listarfacturas"/>
+</message>
+<message name="listarfacturasResponse">
+<part name="parameters" element="tns:listarfacturasResponse"/>
+</message>
 <message name="buscarMontoCompra">
 <part name="parameters" element="tns:buscarMontoCompra"/>
 </message>
 <message name="buscarMontoCompraResponse">
 <part name="parameters" element="tns:buscarMontoCompraResponse"/>
 </message>
+<message name="agregar_resumen_factura">
+<part name="parameters" element="tns:agregar_resumen_factura"/>
+</message>
+<message name="agregar_resumen_facturaResponse">
+<part name="parameters" element="tns:agregar_resumen_facturaResponse"/>
+</message>
+<message name="registrar_Factura">
+<part name="parameters" element="tns:registrar_Factura"/>
+</message>
+<message name="registrar_FacturaResponse">
+<part name="parameters" element="tns:registrar_FacturaResponse"/>
+</message>
 <portType name="ServicioFactura">
-<operation name="registrar_Factura">
-<input wsam:Action="http://servicio/ServicioFactura/registrar_FacturaRequest" message="tns:registrar_Factura"/>
-<output wsam:Action="http://servicio/ServicioFactura/registrar_FacturaResponse" message="tns:registrar_FacturaResponse"/>
-</operation>
-<operation name="agregar_resumen_factura">
-<input wsam:Action="http://servicio/ServicioFactura/agregar_resumen_facturaRequest" message="tns:agregar_resumen_factura"/>
-<output wsam:Action="http://servicio/ServicioFactura/agregar_resumen_facturaResponse" message="tns:agregar_resumen_facturaResponse"/>
-</operation>
 <operation name="resumenFactura">
 <input wsam:Action="http://servicio/ServicioFactura/resumenFacturaRequest" message="tns:resumenFactura"/>
 <output wsam:Action="http://servicio/ServicioFactura/resumenFacturaResponse" message="tns:resumenFacturaResponse"/>
-</operation>
-<operation name="listarfacturas">
-<input wsam:Action="http://servicio/ServicioFactura/listarfacturasRequest" message="tns:listarfacturas"/>
-<output wsam:Action="http://servicio/ServicioFactura/listarfacturasResponse" message="tns:listarfacturasResponse"/>
 </operation>
 <operation name="agregar_factura">
 <input wsam:Action="http://servicio/ServicioFactura/agregar_facturaRequest" message="tns:agregar_factura"/>
@@ -81,41 +69,26 @@
 <input wsam:Action="http://servicio/ServicioFactura/listar_facturaRequest" message="tns:listar_factura"/>
 <output wsam:Action="http://servicio/ServicioFactura/listar_facturaResponse" message="tns:listar_facturaResponse"/>
 </operation>
+<operation name="listarfacturas">
+<input wsam:Action="http://servicio/ServicioFactura/listarfacturasRequest" message="tns:listarfacturas"/>
+<output wsam:Action="http://servicio/ServicioFactura/listarfacturasResponse" message="tns:listarfacturasResponse"/>
+</operation>
 <operation name="buscarMontoCompra">
 <input wsam:Action="http://servicio/ServicioFactura/buscarMontoCompraRequest" message="tns:buscarMontoCompra"/>
 <output wsam:Action="http://servicio/ServicioFactura/buscarMontoCompraResponse" message="tns:buscarMontoCompraResponse"/>
 </operation>
+<operation name="agregar_resumen_factura">
+<input wsam:Action="http://servicio/ServicioFactura/agregar_resumen_facturaRequest" message="tns:agregar_resumen_factura"/>
+<output wsam:Action="http://servicio/ServicioFactura/agregar_resumen_facturaResponse" message="tns:agregar_resumen_facturaResponse"/>
+</operation>
+<operation name="registrar_Factura">
+<input wsam:Action="http://servicio/ServicioFactura/registrar_FacturaRequest" message="tns:registrar_Factura"/>
+<output wsam:Action="http://servicio/ServicioFactura/registrar_FacturaResponse" message="tns:registrar_FacturaResponse"/>
+</operation>
 </portType>
 <binding name="ServicioFacturaPortBinding" type="tns:ServicioFactura">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="registrar_Factura">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="agregar_resumen_factura">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
 <operation name="resumenFactura">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="listarfacturas">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -151,7 +124,34 @@
 <soap:body use="literal"/>
 </output>
 </operation>
+<operation name="listarfacturas">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="buscarMontoCompra">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="agregar_resumen_factura">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="registrar_Factura">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

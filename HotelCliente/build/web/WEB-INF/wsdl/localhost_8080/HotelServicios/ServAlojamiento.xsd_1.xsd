@@ -6,6 +6,10 @@
 
 <xs:element name="buscarAlojamiento" type="tns:buscarAlojamiento"/>
 
+<xs:element name="buscarAlojamientoLista" type="tns:buscarAlojamientoLista"/>
+
+<xs:element name="buscarAlojamientoListaResponse" type="tns:buscarAlojamientoListaResponse"/>
+
 <xs:element name="buscarAlojamientoRES" type="tns:buscarAlojamientoRES"/>
 
 <xs:element name="buscarAlojamientoRESResponse" type="tns:buscarAlojamientoRESResponse"/>
@@ -15,6 +19,10 @@
 <xs:element name="buscarAlojamientoREStotalResponse" type="tns:buscarAlojamientoREStotalResponse"/>
 
 <xs:element name="buscarAlojamientoResponse" type="tns:buscarAlojamientoResponse"/>
+
+<xs:element name="buscarpordni" type="tns:buscarpordni"/>
+
+<xs:element name="buscarpordniResponse" type="tns:buscarpordniResponse"/>
 
 <xs:element name="codigoautomaticoaloj" type="tns:codigoautomaticoaloj"/>
 
@@ -91,11 +99,13 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="listarAlojamiento">
-<xs:sequence/>
+<xs:complexType name="buscarpordni">
+<xs:sequence>
+<xs:element name="dni" type="xs:string" minOccurs="0"/>
+</xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="listarAlojamientoResponse">
+<xs:complexType name="buscarpordniResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:alojamiento" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
@@ -146,6 +156,16 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="listarAlojamiento">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listarAlojamientoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:alojamiento" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="resumenAlojamiento">
 <xs:sequence/>
 </xs:complexType>
@@ -153,6 +173,18 @@
 <xs:complexType name="resumenAlojamientoResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:alojamiento" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarAlojamientoLista">
+<xs:sequence>
+<xs:element name="codaloj" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarAlojamientoListaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:alojamiento" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -176,7 +208,7 @@
 
 <xs:complexType name="buscarAlojamientoREStotalResponse">
 <xs:sequence>
-<xs:element name="return" type="tns:alojamiento" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="return" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>

@@ -28,39 +28,6 @@ public interface ServicioFactura {
     /**
      * 
      * @return
-     *     returns java.lang.String
-     */
-    @WebMethod(operationName = "registrar_Factura")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "registrar_Factura", targetNamespace = "http://servicio/", className = "servicio.RegistrarFactura")
-    @ResponseWrapper(localName = "registrar_FacturaResponse", targetNamespace = "http://servicio/", className = "servicio.RegistrarFacturaResponse")
-    @Action(input = "http://servicio/ServicioFactura/registrar_FacturaRequest", output = "http://servicio/ServicioFactura/registrar_FacturaResponse")
-    public String registrarFactura();
-
-    /**
-     * 
-     * @param cli
-     * @param comp
-     * @param codaloj
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod(operationName = "agregar_resumen_factura")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "agregar_resumen_factura", targetNamespace = "http://servicio/", className = "servicio.AgregarResumenFactura")
-    @ResponseWrapper(localName = "agregar_resumen_facturaResponse", targetNamespace = "http://servicio/", className = "servicio.AgregarResumenFacturaResponse")
-    @Action(input = "http://servicio/ServicioFactura/agregar_resumen_facturaRequest", output = "http://servicio/ServicioFactura/agregar_resumen_facturaResponse")
-    public String agregarResumenFactura(
-        @WebParam(name = "cli", targetNamespace = "")
-        String cli,
-        @WebParam(name = "codaloj", targetNamespace = "")
-        String codaloj,
-        @WebParam(name = "comp", targetNamespace = "")
-        String comp);
-
-    /**
-     * 
-     * @return
      *     returns java.util.List<java.lang.Object>
      */
     @WebMethod
@@ -69,18 +36,6 @@ public interface ServicioFactura {
     @ResponseWrapper(localName = "resumenFacturaResponse", targetNamespace = "http://servicio/", className = "servicio.ResumenFacturaResponse")
     @Action(input = "http://servicio/ServicioFactura/resumenFacturaRequest", output = "http://servicio/ServicioFactura/resumenFacturaResponse")
     public List<Object> resumenFactura();
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<servicio.Factura>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listarfacturas", targetNamespace = "http://servicio/", className = "servicio.Listarfacturas")
-    @ResponseWrapper(localName = "listarfacturasResponse", targetNamespace = "http://servicio/", className = "servicio.ListarfacturasResponse")
-    @Action(input = "http://servicio/ServicioFactura/listarfacturasRequest", output = "http://servicio/ServicioFactura/listarfacturasResponse")
-    public List<Factura> listarfacturas();
 
     /**
      * 
@@ -132,6 +87,18 @@ public interface ServicioFactura {
 
     /**
      * 
+     * @return
+     *     returns java.util.List<servicio.Factura>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listarfacturas", targetNamespace = "http://servicio/", className = "servicio.Listarfacturas")
+    @ResponseWrapper(localName = "listarfacturasResponse", targetNamespace = "http://servicio/", className = "servicio.ListarfacturasResponse")
+    @Action(input = "http://servicio/ServicioFactura/listarfacturasRequest", output = "http://servicio/ServicioFactura/listarfacturasResponse")
+    public List<Factura> listarfacturas();
+
+    /**
+     * 
      * @param num
      * @return
      *     returns java.lang.String
@@ -144,5 +111,38 @@ public interface ServicioFactura {
     public String buscarMontoCompra(
         @WebParam(name = "num", targetNamespace = "")
         String num);
+
+    /**
+     * 
+     * @param cli
+     * @param comp
+     * @param codaloj
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "agregar_resumen_factura")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "agregar_resumen_factura", targetNamespace = "http://servicio/", className = "servicio.AgregarResumenFactura")
+    @ResponseWrapper(localName = "agregar_resumen_facturaResponse", targetNamespace = "http://servicio/", className = "servicio.AgregarResumenFacturaResponse")
+    @Action(input = "http://servicio/ServicioFactura/agregar_resumen_facturaRequest", output = "http://servicio/ServicioFactura/agregar_resumen_facturaResponse")
+    public String agregarResumenFactura(
+        @WebParam(name = "cli", targetNamespace = "")
+        String cli,
+        @WebParam(name = "codaloj", targetNamespace = "")
+        String codaloj,
+        @WebParam(name = "comp", targetNamespace = "")
+        String comp);
+
+    /**
+     * 
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "registrar_Factura")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "registrar_Factura", targetNamespace = "http://servicio/", className = "servicio.RegistrarFactura")
+    @ResponseWrapper(localName = "registrar_FacturaResponse", targetNamespace = "http://servicio/", className = "servicio.RegistrarFacturaResponse")
+    @Action(input = "http://servicio/ServicioFactura/registrar_FacturaRequest", output = "http://servicio/ServicioFactura/registrar_FacturaResponse")
+    public String registrarFactura();
 
 }

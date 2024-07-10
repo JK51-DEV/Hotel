@@ -93,6 +93,8 @@ public class ServicioFactura {
         return msg;
         
     }
+    
+    
 
     /**
      * Web service operation
@@ -149,6 +151,15 @@ public class ServicioFactura {
            }
            return "Error al registrar todas las reservas: " + e.getMessage();
        }
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "guardarfactura")
+    public String guardarfactura(@WebParam(name = "cli") String cli, @WebParam(name = "codaloj") String codaloj, @WebParam(name = "comp") String comp) {
+        //TODO write your implementation code here:
+        return null;
     }
     
     

@@ -27,11 +27,15 @@ public class ObjectFactory {
     private final static QName _AgregarAlojamiento_QNAME = new QName("http://servicio/", "agregarAlojamiento");
     private final static QName _AgregarAlojamientoResponse_QNAME = new QName("http://servicio/", "agregarAlojamientoResponse");
     private final static QName _BuscarAlojamiento_QNAME = new QName("http://servicio/", "buscarAlojamiento");
+    private final static QName _BuscarAlojamientoLista_QNAME = new QName("http://servicio/", "buscarAlojamientoLista");
+    private final static QName _BuscarAlojamientoListaResponse_QNAME = new QName("http://servicio/", "buscarAlojamientoListaResponse");
     private final static QName _BuscarAlojamientoRES_QNAME = new QName("http://servicio/", "buscarAlojamientoRES");
     private final static QName _BuscarAlojamientoRESResponse_QNAME = new QName("http://servicio/", "buscarAlojamientoRESResponse");
     private final static QName _BuscarAlojamientoREStotal_QNAME = new QName("http://servicio/", "buscarAlojamientoREStotal");
     private final static QName _BuscarAlojamientoREStotalResponse_QNAME = new QName("http://servicio/", "buscarAlojamientoREStotalResponse");
     private final static QName _BuscarAlojamientoResponse_QNAME = new QName("http://servicio/", "buscarAlojamientoResponse");
+    private final static QName _Buscarpordni_QNAME = new QName("http://servicio/", "buscarpordni");
+    private final static QName _BuscarpordniResponse_QNAME = new QName("http://servicio/", "buscarpordniResponse");
     private final static QName _Codigoautomaticoaloj_QNAME = new QName("http://servicio/", "codigoautomaticoaloj");
     private final static QName _CodigoautomaticoalojResponse_QNAME = new QName("http://servicio/", "codigoautomaticoalojResponse");
     private final static QName _EliminarResumenAloj_QNAME = new QName("http://servicio/", "eliminarResumenAloj");
@@ -75,6 +79,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link BuscarAlojamientoLista }
+     * 
+     */
+    public BuscarAlojamientoLista createBuscarAlojamientoLista() {
+        return new BuscarAlojamientoLista();
+    }
+
+    /**
+     * Create an instance of {@link BuscarAlojamientoListaResponse }
+     * 
+     */
+    public BuscarAlojamientoListaResponse createBuscarAlojamientoListaResponse() {
+        return new BuscarAlojamientoListaResponse();
+    }
+
+    /**
      * Create an instance of {@link BuscarAlojamientoRES }
      * 
      */
@@ -112,6 +132,22 @@ public class ObjectFactory {
      */
     public BuscarAlojamientoResponse createBuscarAlojamientoResponse() {
         return new BuscarAlojamientoResponse();
+    }
+
+    /**
+     * Create an instance of {@link Buscarpordni }
+     * 
+     */
+    public Buscarpordni createBuscarpordni() {
+        return new Buscarpordni();
+    }
+
+    /**
+     * Create an instance of {@link BuscarpordniResponse }
+     * 
+     */
+    public BuscarpordniResponse createBuscarpordniResponse() {
+        return new BuscarpordniResponse();
     }
 
     /**
@@ -262,6 +298,24 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BuscarAlojamientoLista }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "buscarAlojamientoLista")
+    public JAXBElement<BuscarAlojamientoLista> createBuscarAlojamientoLista(BuscarAlojamientoLista value) {
+        return new JAXBElement<BuscarAlojamientoLista>(_BuscarAlojamientoLista_QNAME, BuscarAlojamientoLista.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BuscarAlojamientoListaResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "buscarAlojamientoListaResponse")
+    public JAXBElement<BuscarAlojamientoListaResponse> createBuscarAlojamientoListaResponse(BuscarAlojamientoListaResponse value) {
+        return new JAXBElement<BuscarAlojamientoListaResponse>(_BuscarAlojamientoListaResponse_QNAME, BuscarAlojamientoListaResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link BuscarAlojamientoRES }{@code >}}
      * 
      */
@@ -304,6 +358,24 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://servicio/", name = "buscarAlojamientoResponse")
     public JAXBElement<BuscarAlojamientoResponse> createBuscarAlojamientoResponse(BuscarAlojamientoResponse value) {
         return new JAXBElement<BuscarAlojamientoResponse>(_BuscarAlojamientoResponse_QNAME, BuscarAlojamientoResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Buscarpordni }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "buscarpordni")
+    public JAXBElement<Buscarpordni> createBuscarpordni(Buscarpordni value) {
+        return new JAXBElement<Buscarpordni>(_Buscarpordni_QNAME, Buscarpordni.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BuscarpordniResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "buscarpordniResponse")
+    public JAXBElement<BuscarpordniResponse> createBuscarpordniResponse(BuscarpordniResponse value) {
+        return new JAXBElement<BuscarpordniResponse>(_BuscarpordniResponse_QNAME, BuscarpordniResponse.class, null, value);
     }
 
     /**

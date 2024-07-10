@@ -45,7 +45,7 @@ public class DaoAlojamiento {
         String reserdni = DaoReserva.buscarReservaparalojamiento(dni);
         String aloja = buscarAlojamientocodRES(reserdni);
     
-        String sql="select * from alojamiento where cod_res='"+aloja+"'";
+        String sql="select * from alojamiento where cod_res='"+aloja+"' ORDER BY FEC_CREACION_ALOJAMIENTO DESC FETCH FIRST 1 ROW ONLY";
         List tabla = Acceso.listar(sql);
         List lis = new ArrayList();
         for (int i = 0; i < tabla.size(); i++) {

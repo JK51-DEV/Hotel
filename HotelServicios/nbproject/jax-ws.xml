@@ -34,6 +34,9 @@
     <service name="ServicioFactura">
       <implementation-class>servicio.ServicioFactura</implementation-class>
     </service>
+    <service name="servicioCompra">
+      <implementation-class>servicio.servicioCompra</implementation-class>
+    </service>
   </services>
   <clients/>
 </jax-ws>

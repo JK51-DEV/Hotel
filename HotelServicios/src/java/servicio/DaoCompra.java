@@ -33,6 +33,24 @@ public class DaoCompra {
     return null;
     }
     
+    public List<Compra> BuscarComprapordni(String dni) {
+        
+        String sql="select * from Compra where dni='"+dni+"' ORDER BY FEC DESC FETCH FIRST 1 ROW ONLY";
+        List tabla = Acceso.listar(sql);
+        List lis = new ArrayList();
+        for (int i = 0; i < tabla.size(); i++) {
+            Object[] f = (Object[]) tabla.get(i);
+            Compra aloj = new Compra();
+            
+            aloj.setNum(f[0].toString());
+            aloj.setFec(f[1].toString());
+            aloj.setTot(f[2].toString());
+            aloj.setDni(f[3].toString());
+            lis.add(aloj);
+        }
+    return lis;
+    }
+    
     
     
 }

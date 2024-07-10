@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Compra {
-    private String num,fec,tot;
+    private String num,fec,tot,dni;
 
     private List cesta=new ArrayList();
 
@@ -73,7 +73,16 @@ public class Compra {
         this.tot = tot;
     }
 
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
     
+    
+
     
     
 }

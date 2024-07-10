@@ -1,10 +1,16 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.*" %>
 <%@page import="servicio.*" %>
-<%
-    ServReserva_Service server = new ServReserva_Service();
-    ServReserva port = server.getServReservaPort();
-%>
+   
+    <%-- start web service invocation --%><hr/>
+    <%
+	servicio.ServAlojamiento_Service service = new servicio.ServAlojamiento_Service();
+	servicio.ServAlojamiento port = service.getServAlojamientoPort();
+	 
+    %>
+    
+    <%-- end web service invocation --%><hr/>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -74,7 +80,7 @@
             margin: 0 5px; /* Espacio entre los botones */
         }
         .div2{
-            width: 60%;
+            width: 100%;
         }
         .div1{
             margin-right: 35px;
@@ -93,25 +99,44 @@
             <h3 class="card-title"> Nueva Factura </h3>
             <div class="search-box">
                 <input class="form-control" id="dni_cliente" name="dni_cliente" size="8" placeholder="DNI" required>
-                <button class="btn btn-primary btncli" onclick="buscar_dis()">Buscar Cliente</button>
+                <button class="btn btn-primary btncli" onclick="buscar_aloj_factura2(); buscar_compra_factura()">Buscar Cliente</button>
                 <button class="btn btn-success" onclick="generarFactura()">Generar Factura</button>
             </div>
-            <div class="info-box">
-                <div class="info-section div1">
+            
+                <%-- start web service invocation --%><hr/>
+    
+    <%-- end web service invocation --%><hr/>
+
+            
+            <div class="info-section div2">
                     <h5>Datos de Alojamiento</h5>
-                    <p><strong>Código:</strong> A005</p>
-                    <p><strong>Fecha de Alojamiento:</strong> 2024-05-28</p>
-                    <p><strong>Reserva:</strong> R008</p>
-                    <p><strong>DNI:</strong> 88888888</p>
-                    <p><strong>Nombre:</strong> Sol</p>
-                    <p><strong>Habitación:</strong> H005</p>
-                    <p><strong>Descripción:</strong> Triple</p>
-                    <p><strong>Precio:</strong> 150.0</p>
-                    <p><strong>Fecha de Reserva:</strong> 2024-05-28</p>
-                    <p><strong>Fecha de Inicio:</strong> 2024-06-10</p>
-                    <p><strong>Fecha de Finalización:</strong> 2024-06-15</p>
-                    <p><strong>Importe:</strong> 750.0</p>
+                    <div class="consumo-list">
+                        <table class="table table-bordered">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Código: </th>
+                                    <th>Fecha de Alojamiento:</th>
+                                    <th>Reserva:</th>
+                                    <th>DNI:</th>
+                                    <th>Nombre:</th>
+                                    <th>Habitación:</th>
+                                    <th>Descripción:</th>
+                                    <th>Precio: </th>
+                                    <th>Fecha de Reserva:</th>
+                                    <th>Fecha de Inicio:</th>
+                                    <th>Fecha de Finalización:</th>
+                                    <th>Dias de estadia:</th>
+                                    <th>Importe:</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabla1">
+                                <tr>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
+                
                 <div class="info-section div2">
                     <h5>Datos de Consumo</h5>
                     <div class="consumo-list">
@@ -119,21 +144,14 @@
                             <thead class="thead-dark">
                                 <tr>
                                     <th>Código de Compra</th>
-                                    <th>Código de Producto</th>
-                                    <th>Descripción</th>
-                                    <th>Precio</th>
-                                    <th>Cantidad</th>
-                                    <th>Importe</th>
+                                    <th>Dni del cliente</th>
+                                    <th>Fecha de compra</th>
+                                    <th>Total de compra</th>
                                 </tr>
                             </thead>
-                            <tbody id="tablaConsumo">
+                            <tbody id="tabla2">
                                 <tr>
-                                    <td>C00011</td>
-                                    <td>S001</td>
-                                    <td>Desayuno Buffet</td>
-                                    <td>15.0</td>
-                                    <td>2</td>
-                                    <td>30.0</td>
+                                    
                                 </tr>
                                 <!-- Aquí se pueden agregar más filas de consumo si es necesario -->
                             </tbody>
@@ -147,16 +165,33 @@
         <script src="_sweetAlert/sweetalert.js" type="text/javascript"></script>
         <script src="_sweetAlert/sweetalert.min.js" type="text/javascript"></script>
         <script>
-            function buscar_dis() {
+            function buscar_aloj_factura2() {
                 var dni_cliente = $("#dni_cliente").val();
-                $.post('dis_buscar_reserva', {
+                $.post('buscarAlojamiento_Factura', {
                     dni_cliente: dni_cliente
                 }, function (res) {
-                    // Actualizar tabla con las reservas obtenidas
+                    // Actualizar la tabla con las reservas obtenidas
+                    $('#tabla1').empty(); // Limpiamos el contenido anterior de la tabla
+
+                    // Insertamos las nuevas filas obtenidas del servidor
                     $('#tabla1').html(res);
                 });
             }
             
+            function buscar_compra_factura() {
+                var dni_cliente = $("#dni_cliente").val();
+                $.post('buscarConsumo_Factura', {
+                    dni_cliente: dni_cliente
+                }, function (res) {
+                    // Actualizar la tabla con las reservas obtenidas
+                    $('#tabla2').empty(); // Limpiamos el contenido anterior de la tabla
+
+                    // Insertamos las nuevas filas obtenidas del servidor
+                    $('#tabla2').html(res);
+                });
+            }
+            
+           
             function generarFactura() {
                 var dni_cliente = $("#dni_cliente").val();
                 if (dni_cliente) {
