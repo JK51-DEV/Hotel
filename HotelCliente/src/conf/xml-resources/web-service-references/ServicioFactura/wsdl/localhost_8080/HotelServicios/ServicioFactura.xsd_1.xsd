@@ -16,6 +16,10 @@
 
 <xs:element name="codigoautomaticResponse" type="tns:codigoautomaticResponse"/>
 
+<xs:element name="guardarfactura" type="tns:guardarfactura"/>
+
+<xs:element name="guardarfacturaResponse" type="tns:guardarfacturaResponse"/>
+
 <xs:element name="listar_factura" type="tns:listar_factura"/>
 
 <xs:element name="listar_facturaResponse" type="tns:listar_facturaResponse"/>
@@ -124,6 +128,20 @@
 </xs:complexType>
 
 <xs:complexType name="codigoautomaticResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="guardarfactura">
+<xs:sequence>
+<xs:element name="cli" type="xs:string" minOccurs="0"/>
+<xs:element name="codaloj" type="xs:string" minOccurs="0"/>
+<xs:element name="comp" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="guardarfacturaResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>

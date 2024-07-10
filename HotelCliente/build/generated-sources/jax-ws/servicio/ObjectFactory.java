@@ -32,6 +32,8 @@ public class ObjectFactory {
     private final static QName _BuscarMontoCompraResponse_QNAME = new QName("http://servicio/", "buscarMontoCompraResponse");
     private final static QName _Codigoautomatic_QNAME = new QName("http://servicio/", "codigoautomatic");
     private final static QName _CodigoautomaticResponse_QNAME = new QName("http://servicio/", "codigoautomaticResponse");
+    private final static QName _Guardarfactura_QNAME = new QName("http://servicio/", "guardarfactura");
+    private final static QName _GuardarfacturaResponse_QNAME = new QName("http://servicio/", "guardarfacturaResponse");
     private final static QName _ListarFactura_QNAME = new QName("http://servicio/", "listar_factura");
     private final static QName _ListarFacturaResponse_QNAME = new QName("http://servicio/", "listar_facturaResponse");
     private final static QName _Listarfacturas_QNAME = new QName("http://servicio/", "listarfacturas");
@@ -110,6 +112,22 @@ public class ObjectFactory {
      */
     public CodigoautomaticResponse createCodigoautomaticResponse() {
         return new CodigoautomaticResponse();
+    }
+
+    /**
+     * Create an instance of {@link Guardarfactura }
+     * 
+     */
+    public Guardarfactura createGuardarfactura() {
+        return new Guardarfactura();
+    }
+
+    /**
+     * Create an instance of {@link GuardarfacturaResponse }
+     * 
+     */
+    public GuardarfacturaResponse createGuardarfacturaResponse() {
+        return new GuardarfacturaResponse();
     }
 
     /**
@@ -302,6 +320,24 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://servicio/", name = "codigoautomaticResponse")
     public JAXBElement<CodigoautomaticResponse> createCodigoautomaticResponse(CodigoautomaticResponse value) {
         return new JAXBElement<CodigoautomaticResponse>(_CodigoautomaticResponse_QNAME, CodigoautomaticResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Guardarfactura }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "guardarfactura")
+    public JAXBElement<Guardarfactura> createGuardarfactura(Guardarfactura value) {
+        return new JAXBElement<Guardarfactura>(_Guardarfactura_QNAME, Guardarfactura.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GuardarfacturaResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "guardarfacturaResponse")
+    public JAXBElement<GuardarfacturaResponse> createGuardarfacturaResponse(GuardarfacturaResponse value) {
+        return new JAXBElement<GuardarfacturaResponse>(_GuardarfacturaResponse_QNAME, GuardarfacturaResponse.class, null, value);
     }
 
     /**

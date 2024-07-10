@@ -20,6 +20,7 @@ public class ServicioFactura {
     
     Factura fac= new Factura();
     ResuFactura resfac= new ResuFactura();
+    DaoFactura daofac=new DaoFactura();
 
     @WebMethod(operationName = "buscarMontoCompra")
     public String buscarMontoCompra(@WebParam(name = "num") String num) {
@@ -128,7 +129,7 @@ public class ServicioFactura {
         
         return "La factura se agregó";
     }
-
+    
     /**
      * Web service operation
      */
@@ -158,8 +159,19 @@ public class ServicioFactura {
      */
     @WebMethod(operationName = "guardarfactura")
     public String guardarfactura(@WebParam(name = "cli") String cli, @WebParam(name = "codaloj") String codaloj, @WebParam(name = "comp") String comp) {
-        //TODO write your implementation code here:
-        return null;
+        Cliente clie = DaoCliente.buscar(cli);
+        Alojamiento aloj= DaoAlojamiento.buscarAlojamientoLista(codaloj);
+        Compra compra = DaoCompra.buscarcompra(comp);
+        
+        Factura f=new Factura(clie,aloj,compra);
+        String msg= DaoFactura.grabarFactura(f);
+        if (msg==null) {
+            msg="Se guardo habitacion";
+        }else{
+            msg="NO se guardo habitacion";
+        }
+        return msg;
+            
     }
     
     

@@ -99,6 +99,27 @@ public interface ServicioFactura {
 
     /**
      * 
+     * @param cli
+     * @param comp
+     * @param codaloj
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "guardarfactura", targetNamespace = "http://servicio/", className = "servicio.Guardarfactura")
+    @ResponseWrapper(localName = "guardarfacturaResponse", targetNamespace = "http://servicio/", className = "servicio.GuardarfacturaResponse")
+    @Action(input = "http://servicio/ServicioFactura/guardarfacturaRequest", output = "http://servicio/ServicioFactura/guardarfacturaResponse")
+    public String guardarfactura(
+        @WebParam(name = "cli", targetNamespace = "")
+        String cli,
+        @WebParam(name = "codaloj", targetNamespace = "")
+        String codaloj,
+        @WebParam(name = "comp", targetNamespace = "")
+        String comp);
+
+    /**
+     * 
      * @param num
      * @return
      *     returns java.lang.String

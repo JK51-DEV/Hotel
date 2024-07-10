@@ -34,6 +34,12 @@
 <message name="listarfacturasResponse">
 <part name="parameters" element="tns:listarfacturasResponse"/>
 </message>
+<message name="guardarfactura">
+<part name="parameters" element="tns:guardarfactura"/>
+</message>
+<message name="guardarfacturaResponse">
+<part name="parameters" element="tns:guardarfacturaResponse"/>
+</message>
 <message name="buscarMontoCompra">
 <part name="parameters" element="tns:buscarMontoCompra"/>
 </message>
@@ -72,6 +78,10 @@
 <operation name="listarfacturas">
 <input wsam:Action="http://servicio/ServicioFactura/listarfacturasRequest" message="tns:listarfacturas"/>
 <output wsam:Action="http://servicio/ServicioFactura/listarfacturasResponse" message="tns:listarfacturasResponse"/>
+</operation>
+<operation name="guardarfactura">
+<input wsam:Action="http://servicio/ServicioFactura/guardarfacturaRequest" message="tns:guardarfactura"/>
+<output wsam:Action="http://servicio/ServicioFactura/guardarfacturaResponse" message="tns:guardarfacturaResponse"/>
 </operation>
 <operation name="buscarMontoCompra">
 <input wsam:Action="http://servicio/ServicioFactura/buscarMontoCompraRequest" message="tns:buscarMontoCompra"/>
@@ -125,6 +135,15 @@
 </output>
 </operation>
 <operation name="listarfacturas">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="guardarfactura">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
