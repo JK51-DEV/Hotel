@@ -31,6 +31,7 @@ public class DaoReserva {
             res.setFecInicio(f[4].toString());
             res.setFecFin(f[5].toString());
             res.setImp(Double.parseDouble(f[6].toString())); // El calculo se hace des la entidad reserva
+            res.setEstado(f[7].toString()); // Asignar el estado desde la entidad reserva
             lis.add(res);
         }
         return lis;
@@ -52,6 +53,7 @@ public class DaoReserva {
             res.setFecInicio(f[4].toString());
             res.setFecFin(f[5].toString());
             res.setImp(Double.parseDouble(f[6].toString())); // El calculo se hace des la entidad reserva
+            res.setEstado(f[7].toString()); // Asignar el estado desde la entidad reserva
             lis.add(res);
         }
         return lis;
@@ -157,7 +159,7 @@ public class DaoReserva {
         }
     }
     
-    private static List<Reserva> listarReservasAnuladas() {
+    public static List<Reserva> listarReservasAnuladas() {
         String sql = "select * from reserva where estado = 'A'";
         List tabla = Acceso.listar(sql);
         List<Reserva> lis = new ArrayList<>();
@@ -180,6 +182,13 @@ public class DaoReserva {
         
         return lis;
     }
+    
+    
+    public static String confirmarReserva(String codRes) {
+    String sql = "update reserva set estado = 'R' where cod_res = '" + codRes + "'";
+    return Acceso.ejecutar(sql);
+}
+    
 }
     
 

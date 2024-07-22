@@ -129,5 +129,29 @@ public class ServReserva {
     }
 
 
+    
+    // Método para listar reservas con estado 'A'
+    @WebMethod(operationName = "listarReservasAnuladas")
+    public List<Reserva> listarReservasAnuladas() {
+        return DaoReserva.listarReservasAnuladas();
+    }
+    
 
+    @WebMethod(operationName = "confirmarReserva")
+public String confirmarReserva(@WebParam(name = "codRes") String codRes) {
+    try {
+        // Cambiar el estado de la reserva a 'R' (Por confirmar)
+        String result = DaoReserva.confirmarReserva(codRes);
+        
+        if (result == null) {
+            return "Reserva confirmada correctamente";
+        } else {
+            return "Error al confirmar la reserva: " + result;
+        }
+    } catch (Exception e) {
+        return "Error al confirmar la reserva: " + e.getMessage();
+    }
+}
+    
+    
     }

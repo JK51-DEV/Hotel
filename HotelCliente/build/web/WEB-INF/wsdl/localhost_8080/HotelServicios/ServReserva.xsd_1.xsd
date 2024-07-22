@@ -10,11 +10,19 @@
 
 <xs:element name="buscarReservaDNIResponse" type="tns:buscarReservaDNIResponse"/>
 
+<xs:element name="buscarReservaDNIprueba" type="tns:buscarReservaDNIprueba"/>
+
+<xs:element name="buscarReservaDNIpruebaResponse" type="tns:buscarReservaDNIpruebaResponse"/>
+
 <xs:element name="buscarReservaResponse" type="tns:buscarReservaResponse"/>
 
 <xs:element name="codigoautomatico" type="tns:codigoautomatico"/>
 
 <xs:element name="codigoautomaticoResponse" type="tns:codigoautomaticoResponse"/>
+
+<xs:element name="confirmarReserva" type="tns:confirmarReserva"/>
+
+<xs:element name="confirmarReservaResponse" type="tns:confirmarReservaResponse"/>
 
 <xs:element name="eliminarResumen" type="tns:eliminarResumen"/>
 
@@ -25,6 +33,10 @@
 <xs:element name="getTotalResponse" type="tns:getTotalResponse"/>
 
 <xs:element name="listarReservas" type="tns:listarReservas"/>
+
+<xs:element name="listarReservasAnuladas" type="tns:listarReservasAnuladas"/>
+
+<xs:element name="listarReservasAnuladasResponse" type="tns:listarReservasAnuladasResponse"/>
 
 <xs:element name="listarReservasResponse" type="tns:listarReservasResponse"/>
 
@@ -50,23 +62,21 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="buscarReserva">
-<xs:sequence>
-<xs:element name="codres" type="xs:string" minOccurs="0"/>
-</xs:sequence>
+<xs:complexType name="registrarReserva">
+<xs:sequence/>
 </xs:complexType>
 
-<xs:complexType name="buscarReservaResponse">
+<xs:complexType name="registrarReservaResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="listarReservas">
+<xs:complexType name="resumenReserva">
 <xs:sequence/>
 </xs:complexType>
 
-<xs:complexType name="listarReservasResponse">
+<xs:complexType name="resumenReservaResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:reserva" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
@@ -77,6 +87,7 @@
 <xs:element name="cli" type="tns:cliente" minOccurs="0"/>
 <xs:element name="codRes" type="xs:string" minOccurs="0"/>
 <xs:element name="dia" type="xs:int"/>
+<xs:element name="estado" type="xs:string" minOccurs="0"/>
 <xs:element name="fecCreacion" type="xs:string" minOccurs="0"/>
 <xs:element name="fecFin" type="xs:string" minOccurs="0"/>
 <xs:element name="fecInicio" type="xs:string" minOccurs="0"/>
@@ -101,11 +112,69 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="registrarReserva">
+<xs:complexType name="buscarReservaDNI">
+<xs:sequence>
+<xs:element name="dni" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarReservaDNIResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarReservaDNIprueba">
+<xs:sequence>
+<xs:element name="dni" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarReservaDNIpruebaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="confirmarReserva">
+<xs:sequence>
+<xs:element name="codRes" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="confirmarReservaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarResumen">
 <xs:sequence/>
 </xs:complexType>
 
-<xs:complexType name="registrarReservaResponse">
+<xs:complexType name="eliminarResumenResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listarReservas">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listarReservasResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:reserva" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarReserva">
+<xs:sequence>
+<xs:element name="codres" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarReservaResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
@@ -121,11 +190,11 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="resumenReserva">
+<xs:complexType name="listarReservasAnuladas">
 <xs:sequence/>
 </xs:complexType>
 
-<xs:complexType name="resumenReservaResponse">
+<xs:complexType name="listarReservasAnuladasResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:reserva" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
@@ -155,28 +224,6 @@
 <xs:complexType name="listar_avanzado_reservaResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:reserva" minOccurs="0" maxOccurs="unbounded"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="buscarReservaDNI">
-<xs:sequence>
-<xs:element name="dni" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="buscarReservaDNIResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="eliminarResumen">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="eliminarResumenResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>

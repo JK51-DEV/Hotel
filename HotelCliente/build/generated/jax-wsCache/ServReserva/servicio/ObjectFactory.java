@@ -29,14 +29,20 @@ public class ObjectFactory {
     private final static QName _BuscarReserva_QNAME = new QName("http://servicio/", "buscarReserva");
     private final static QName _BuscarReservaDNI_QNAME = new QName("http://servicio/", "buscarReservaDNI");
     private final static QName _BuscarReservaDNIResponse_QNAME = new QName("http://servicio/", "buscarReservaDNIResponse");
+    private final static QName _BuscarReservaDNIprueba_QNAME = new QName("http://servicio/", "buscarReservaDNIprueba");
+    private final static QName _BuscarReservaDNIpruebaResponse_QNAME = new QName("http://servicio/", "buscarReservaDNIpruebaResponse");
     private final static QName _BuscarReservaResponse_QNAME = new QName("http://servicio/", "buscarReservaResponse");
     private final static QName _Codigoautomatico_QNAME = new QName("http://servicio/", "codigoautomatico");
     private final static QName _CodigoautomaticoResponse_QNAME = new QName("http://servicio/", "codigoautomaticoResponse");
+    private final static QName _ConfirmarReserva_QNAME = new QName("http://servicio/", "confirmarReserva");
+    private final static QName _ConfirmarReservaResponse_QNAME = new QName("http://servicio/", "confirmarReservaResponse");
     private final static QName _EliminarResumen_QNAME = new QName("http://servicio/", "eliminarResumen");
     private final static QName _EliminarResumenResponse_QNAME = new QName("http://servicio/", "eliminarResumenResponse");
     private final static QName _GetTotal_QNAME = new QName("http://servicio/", "getTotal");
     private final static QName _GetTotalResponse_QNAME = new QName("http://servicio/", "getTotalResponse");
     private final static QName _ListarReservas_QNAME = new QName("http://servicio/", "listarReservas");
+    private final static QName _ListarReservasAnuladas_QNAME = new QName("http://servicio/", "listarReservasAnuladas");
+    private final static QName _ListarReservasAnuladasResponse_QNAME = new QName("http://servicio/", "listarReservasAnuladasResponse");
     private final static QName _ListarReservasResponse_QNAME = new QName("http://servicio/", "listarReservasResponse");
     private final static QName _ListarAvanzadoReserva_QNAME = new QName("http://servicio/", "listar_avanzado_reserva");
     private final static QName _ListarAvanzadoReservaResponse_QNAME = new QName("http://servicio/", "listar_avanzado_reservaResponse");
@@ -93,6 +99,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link BuscarReservaDNIprueba }
+     * 
+     */
+    public BuscarReservaDNIprueba createBuscarReservaDNIprueba() {
+        return new BuscarReservaDNIprueba();
+    }
+
+    /**
+     * Create an instance of {@link BuscarReservaDNIpruebaResponse }
+     * 
+     */
+    public BuscarReservaDNIpruebaResponse createBuscarReservaDNIpruebaResponse() {
+        return new BuscarReservaDNIpruebaResponse();
+    }
+
+    /**
      * Create an instance of {@link BuscarReservaResponse }
      * 
      */
@@ -114,6 +136,22 @@ public class ObjectFactory {
      */
     public CodigoautomaticoResponse createCodigoautomaticoResponse() {
         return new CodigoautomaticoResponse();
+    }
+
+    /**
+     * Create an instance of {@link ConfirmarReserva }
+     * 
+     */
+    public ConfirmarReserva createConfirmarReserva() {
+        return new ConfirmarReserva();
+    }
+
+    /**
+     * Create an instance of {@link ConfirmarReservaResponse }
+     * 
+     */
+    public ConfirmarReservaResponse createConfirmarReservaResponse() {
+        return new ConfirmarReservaResponse();
     }
 
     /**
@@ -154,6 +192,22 @@ public class ObjectFactory {
      */
     public ListarReservas createListarReservas() {
         return new ListarReservas();
+    }
+
+    /**
+     * Create an instance of {@link ListarReservasAnuladas }
+     * 
+     */
+    public ListarReservasAnuladas createListarReservasAnuladas() {
+        return new ListarReservasAnuladas();
+    }
+
+    /**
+     * Create an instance of {@link ListarReservasAnuladasResponse }
+     * 
+     */
+    public ListarReservasAnuladasResponse createListarReservasAnuladasResponse() {
+        return new ListarReservasAnuladasResponse();
     }
 
     /**
@@ -282,6 +336,24 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BuscarReservaDNIprueba }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "buscarReservaDNIprueba")
+    public JAXBElement<BuscarReservaDNIprueba> createBuscarReservaDNIprueba(BuscarReservaDNIprueba value) {
+        return new JAXBElement<BuscarReservaDNIprueba>(_BuscarReservaDNIprueba_QNAME, BuscarReservaDNIprueba.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BuscarReservaDNIpruebaResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "buscarReservaDNIpruebaResponse")
+    public JAXBElement<BuscarReservaDNIpruebaResponse> createBuscarReservaDNIpruebaResponse(BuscarReservaDNIpruebaResponse value) {
+        return new JAXBElement<BuscarReservaDNIpruebaResponse>(_BuscarReservaDNIpruebaResponse_QNAME, BuscarReservaDNIpruebaResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link BuscarReservaResponse }{@code >}}
      * 
      */
@@ -306,6 +378,24 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://servicio/", name = "codigoautomaticoResponse")
     public JAXBElement<CodigoautomaticoResponse> createCodigoautomaticoResponse(CodigoautomaticoResponse value) {
         return new JAXBElement<CodigoautomaticoResponse>(_CodigoautomaticoResponse_QNAME, CodigoautomaticoResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ConfirmarReserva }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "confirmarReserva")
+    public JAXBElement<ConfirmarReserva> createConfirmarReserva(ConfirmarReserva value) {
+        return new JAXBElement<ConfirmarReserva>(_ConfirmarReserva_QNAME, ConfirmarReserva.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ConfirmarReservaResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "confirmarReservaResponse")
+    public JAXBElement<ConfirmarReservaResponse> createConfirmarReservaResponse(ConfirmarReservaResponse value) {
+        return new JAXBElement<ConfirmarReservaResponse>(_ConfirmarReservaResponse_QNAME, ConfirmarReservaResponse.class, null, value);
     }
 
     /**
@@ -351,6 +441,24 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://servicio/", name = "listarReservas")
     public JAXBElement<ListarReservas> createListarReservas(ListarReservas value) {
         return new JAXBElement<ListarReservas>(_ListarReservas_QNAME, ListarReservas.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListarReservasAnuladas }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "listarReservasAnuladas")
+    public JAXBElement<ListarReservasAnuladas> createListarReservasAnuladas(ListarReservasAnuladas value) {
+        return new JAXBElement<ListarReservasAnuladas>(_ListarReservasAnuladas_QNAME, ListarReservasAnuladas.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListarReservasAnuladasResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicio/", name = "listarReservasAnuladasResponse")
+    public JAXBElement<ListarReservasAnuladasResponse> createListarReservasAnuladasResponse(ListarReservasAnuladasResponse value) {
+        return new JAXBElement<ListarReservasAnuladasResponse>(_ListarReservasAnuladasResponse_QNAME, ListarReservasAnuladasResponse.class, null, value);
     }
 
     /**

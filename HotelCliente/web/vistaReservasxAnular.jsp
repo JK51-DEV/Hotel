@@ -21,26 +21,10 @@
          <div class="container">
             <div class="card">
         <div class="card-body">
-            <h3 class="card-title">Gestión de Reservas</h3>
+            <h3 class="card-title">Gestión de Reservas por anularse</h3>
             <%--<button class="btn btn-success" type="button" onclick="location.href = 'index_nuevo.jsp'">Nuevo</button>--%>
 
-            <table>
-                <tr>
-                    <td style="padding: 0px">Ingresar filtro:</td>
-                    <td style="padding: 10px">DNI:</td>
-                    <td style="padding: 10px">
-                        <input class="form-control" id="dni_cliente" name="dni_cliente" size="8" required>
-                    </td>
-                    <%--<td style="padding: 10px">Categoria</td>
-                    <td style="padding: 10px">
-                    <input class="form-control" id="categoria" name="categoria" size="1" required>
-                    </td>--%>
-
-                    <td style="padding: 10px"><button class="btn btn-primary" onclick="buscar_dis()">Buscar</button></td>
-                   <td style="padding: 10px"><button class="btn btn-danger" onclick="window.location.href = 'vistaReservasxAnular.jsp';">Por confirmar</button></td>
-                </tr>
-            </table>
-            <%--<table>
+                        <%--<table>
                 <tr>
                     <td style="padding: 0px">Seleccionar filtro:</td>
                     <td style="padding: 10px">Fabricante</td>
@@ -69,13 +53,13 @@
                 <thead style="background-color: black; color: white">
                     <tr>
                         <%--<<th>Código</th><th>DNI</th><th>Nombre</th><th>F. Creacion</th><th>F. Inicio</th><th>F. Fin</th><th>Importe</th>--%>
-                        <th>Código</th><th>DNI</th><th>Nombre</th><th>Habitación</th><th>H. Tipo</th><th>Precio Ind.</th><th>F. Creacion</th><th>Estado</th><th>F. Inicio</th><th>F. Fin</th><th>Importe</th>
+                        <th>Código</th><th>DNI</th><th>Nombre</th><th>Habitación</th><th>H. Tipo</th><th>Precio Ind.</th><th>F. Creacion</th><th>Estado</th><th>F. Inicio</th><th>F. Fin</th><th>Importe</th><th>Accion</th>
                             <%--  <th>Código</th><th>DNI</th><th>Habitación</th><th>F. Creación</th><th>F. Inicio</th><th>F. Fin</th><th>Importe</th>
                             <%--<th class="text-center">Mantenimiento</th>--%>
                     </tr>
                 </thead>
                 <tbody id="tabla1">
-                    <%                        List<Reserva> dis = port.listarReservas();
+                    <%                        List<Reserva> dis = port.listarReservasAnuladas();
                         for (Reserva l : dis) {
                     %>  
                     <tr>
@@ -92,6 +76,7 @@
                         <td><%=l.getFecFin()%></td>
                         <td>S/. <%=l.getImp()%></td>
                         <td class="text-center">
+                            <a class="btn btn-success confirmar-btn" href="#" data-codres="<%=l.getCodRes()%>">Confirmar</a>
                             <%--<a class="btn btn-warning" href="/TutorialCliente/index_editar.jsp?id=<%=l.getIdDpc()%>">Editar</a>
                             <button class="btn btn-danger" type="button" onclick="dis.eliminar(<%=l.getCodRes()%>)">Eliminar</button>--%>
                         </td>
@@ -144,4 +129,38 @@
             });
         };
     </script>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.confirmar-btn').click(function(e) {
+            e.preventDefault(); // Evitar que el enlace cambie de página
+
+            var codReserva = $(this).data('codres'); // Obtener el código de reserva
+            confirmarReserva(codReserva); // Llamar a la función para confirmar la reserva
+        });
+
+        function confirmarReserva(codReserva) {
+            $.ajax({
+                url: 'confirmarReserva', // Ruta al servlet que maneja la confirmación
+                type: 'POST', // Método HTTP
+                data: { codRes: codReserva }, // Parámetro: código de reserva
+                success: function(response) {
+                    alert(response); // Mostrar mensaje de éxito o error
+
+                    // Redirigir a vistaReservas.jsp después de 1.2 segundos (1200 milisegundos)
+                    setTimeout(function () {
+                        window.location = 'vistaReservas.jsp';
+                    }, 1200);
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error al confirmar la reserva', error);
+                    alert('Error al confirmar la reserva');
+                }
+            });
+        }
+    });
+</script>
 </html>
+

@@ -37,6 +37,7 @@
                     </td>--%>
 
                     <td style="padding: 10px"><button class="btn btn-primary" onclick="buscar_dis()">Buscar</button></td>
+                   <td style="padding: 10px"><button class="btn btn-danger" onclick="window.location.href = 'vistaReservasxAnular.jsp';">Por confirmar</button></td>
                 </tr>
             </table>
             <%--<table>
@@ -68,7 +69,7 @@
                 <thead style="background-color: black; color: white">
                     <tr>
                         <%--<<th>Código</th><th>DNI</th><th>Nombre</th><th>F. Creacion</th><th>F. Inicio</th><th>F. Fin</th><th>Importe</th>--%>
-                        <th>Código</th><th>DNI</th><th>Nombre</th><th>Habitación</th><th>H. Tipo</th><th>Precio Ind.</th><th>F. Creacion</th><th>F. Inicio</th><th>F. Fin</th><th>Importe</th>
+                        <th>Código</th><th>DNI</th><th>Nombre</th><th>Habitación</th><th>H. Tipo</th><th>Precio Ind.</th><th>F. Creacion</th><th>Estado</th><th>F. Inicio</th><th>F. Fin</th><th>Importe</th>
                             <%--  <th>Código</th><th>DNI</th><th>Habitación</th><th>F. Creación</th><th>F. Inicio</th><th>F. Fin</th><th>Importe</th>
                             <%--<th class="text-center">Mantenimiento</th>--%>
                     </tr>
@@ -85,6 +86,7 @@
                         <td><%=l.getHab().getNom()%></td>
                         <td><%=l.getHab().getPre()%></td>
                         <td><%=l.getFecCreacion()%></td>
+                        <td><%=l.getEstado()%></td> 
                         <%-- <td><%=l.getFecCreacion()%></td>--%>
                         <td><%=l.getFecInicio()%></td>
                         <td><%=l.getFecFin()%></td>

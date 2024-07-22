@@ -19,6 +19,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="cli" type="{http://servicio/}cliente" minOccurs="0"/&gt;
  *         &lt;element name="codRes" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="dia" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="estado" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="fecCreacion" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="fecFin" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="fecInicio" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
@@ -37,6 +38,7 @@ import javax.xml.bind.annotation.XmlType;
     "cli",
     "codRes",
     "dia",
+    "estado",
     "fecCreacion",
     "fecFin",
     "fecInicio",
@@ -48,6 +50,7 @@ public class Reserva {
     protected Cliente cli;
     protected String codRes;
     protected int dia;
+    protected String estado;
     protected String fecCreacion;
     protected String fecFin;
     protected String fecInicio;
@@ -116,6 +119,30 @@ public class Reserva {
      */
     public void setDia(int value) {
         this.dia = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad estado.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getEstado() {
+        return estado;
+    }
+
+    /**
+     * Define el valor de la propiedad estado.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setEstado(String value) {
+        this.estado = value;
     }
 
     /**
