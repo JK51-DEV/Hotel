@@ -51,6 +51,18 @@ public interface ServHabitacion {
 
     /**
      * 
+     * @return
+     *     returns java.util.List<servicio.Habitacion>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listarHabitacion", targetNamespace = "http://servicio/", className = "servicio.ListarHabitacion")
+    @ResponseWrapper(localName = "listarHabitacionResponse", targetNamespace = "http://servicio/", className = "servicio.ListarHabitacionResponse")
+    @Action(input = "http://servicio/ServHabitacion/listarHabitacionRequest", output = "http://servicio/ServHabitacion/listarHabitacionResponse")
+    public List<Habitacion> listarHabitacion();
+
+    /**
+     * 
      * @param cod
      * @return
      *     returns java.lang.String
@@ -63,17 +75,5 @@ public interface ServHabitacion {
     public String buscarHabitacion(
         @WebParam(name = "cod", targetNamespace = "")
         String cod);
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<servicio.Habitacion>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listarHabitacion", targetNamespace = "http://servicio/", className = "servicio.ListarHabitacion")
-    @ResponseWrapper(localName = "listarHabitacionResponse", targetNamespace = "http://servicio/", className = "servicio.ListarHabitacionResponse")
-    @Action(input = "http://servicio/ServHabitacion/listarHabitacionRequest", output = "http://servicio/ServHabitacion/listarHabitacionResponse")
-    public List<Habitacion> listarHabitacion();
 
 }

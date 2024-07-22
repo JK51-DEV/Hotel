@@ -36,13 +36,11 @@
 
 <xs:element name="resumenFacturaResponse" type="tns:resumenFacturaResponse"/>
 
-<xs:complexType name="listar_factura">
-<xs:sequence>
-<xs:element name="codfac" type="xs:string" minOccurs="0"/>
-</xs:sequence>
+<xs:complexType name="listarfacturas">
+<xs:sequence/>
 </xs:complexType>
 
-<xs:complexType name="listar_facturaResponse">
+<xs:complexType name="listarfacturasResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:factura" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
@@ -80,6 +78,7 @@
 <xs:element name="cli" type="tns:cliente" minOccurs="0"/>
 <xs:element name="codRes" type="xs:string" minOccurs="0"/>
 <xs:element name="dia" type="xs:int"/>
+<xs:element name="estado" type="xs:string" minOccurs="0"/>
 <xs:element name="fecCreacion" type="xs:string" minOccurs="0"/>
 <xs:element name="fecFin" type="xs:string" minOccurs="0"/>
 <xs:element name="fecInicio" type="xs:string" minOccurs="0"/>
@@ -113,11 +112,13 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="listarfacturas">
-<xs:sequence/>
+<xs:complexType name="listar_factura">
+<xs:sequence>
+<xs:element name="codfac" type="xs:string" minOccurs="0"/>
+</xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="listarfacturasResponse">
+<xs:complexType name="listar_facturaResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:factura" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
@@ -157,15 +158,11 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="agregar_factura">
-<xs:sequence>
-<xs:element name="cli" type="xs:string" minOccurs="0"/>
-<xs:element name="codaloj" type="xs:string" minOccurs="0"/>
-<xs:element name="comp" type="xs:string" minOccurs="0"/>
-</xs:sequence>
+<xs:complexType name="registrar_Factura">
+<xs:sequence/>
 </xs:complexType>
 
-<xs:complexType name="agregar_facturaResponse">
+<xs:complexType name="registrar_FacturaResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
@@ -185,11 +182,15 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="registrar_Factura">
-<xs:sequence/>
+<xs:complexType name="agregar_factura">
+<xs:sequence>
+<xs:element name="cli" type="xs:string" minOccurs="0"/>
+<xs:element name="codaloj" type="xs:string" minOccurs="0"/>
+<xs:element name="comp" type="xs:string" minOccurs="0"/>
+</xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="registrar_FacturaResponse">
+<xs:complexType name="agregar_facturaResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>

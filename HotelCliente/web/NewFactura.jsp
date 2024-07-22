@@ -27,7 +27,7 @@
             margin-top: 20px;
         }
         .card {
-            width: 80%; /* Ancho ajustado del card */
+            width: 120%; /* Ancho ajustado del card */
             margin-bottom: 20px;
         }
         .search-box {
@@ -120,9 +120,9 @@
                                     <th>DNI:</th>
                                     <th>Nombre:</th>
                                     <th>Habitación:</th>
-                                    <th>Descripción:</th>
+                                    <%--<th>Descripción:</th>--%>
                                     <th>Precio: </th>
-                                    <th>Fecha de Reserva:</th>
+                                    <%--<th>Fecha de Reserva:</th>--%>
                                     <th>Fecha de Inicio:</th>
                                     <th>Fecha de Finalización:</th>
                                     <th>Dias de estadia:</th>

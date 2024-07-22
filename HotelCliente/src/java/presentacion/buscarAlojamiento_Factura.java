@@ -54,10 +54,10 @@ public class buscarAlojamiento_Factura extends HttpServlet {
                 out.print("<td>" + d.getReserva().getCodRes()+"</td>");
                 out.print("<td>" + d.getReserva().getCli().getDni()+"</td>");
                 out.print("<td>" + d.getReserva().getCli().getNom()+"</td>");
-                out.print("<td>" + d.getReserva().getHab().getCod()+"</td>");
+//                out.print("<td>" + d.getReserva().getHab().getCod()+"</td>");
                 out.print("<td>" + d.getReserva().getHab().getNom()+"</td>");
                 out.print("<td>" + d.getReserva().getHab().getPre()+"</td>");
-                out.print("<td>" + d.getReserva().getFecCreacion()+"</td>");
+//                out.print("<td>" + d.getReserva().getFecCreacion()+"</td>");
                 out.print("<td>" + d.getReserva().getFecInicio()+"</td>");
                 out.print("<td>" + d.getReserva().getFecFin()+"</td>");
                 out.print("<td>" + d.getReserva().getDia()+"</td>");

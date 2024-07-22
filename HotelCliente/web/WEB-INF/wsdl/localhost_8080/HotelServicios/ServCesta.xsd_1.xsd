@@ -24,21 +24,6 @@
 
 <xs:element name="quitarLineaResponse" type="tns:quitarLineaResponse"/>
 
-<xs:complexType name="agregarLinea">
-<xs:sequence>
-<xs:element name="cod" type="xs:string" minOccurs="0"/>
-<xs:element name="nom" type="xs:string" minOccurs="0"/>
-<xs:element name="pre" type="xs:string" minOccurs="0"/>
-<xs:element name="can" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="agregarLineaResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="getCesta">
 <xs:sequence/>
 </xs:complexType>
@@ -56,6 +41,21 @@
 <xs:element name="imp" type="xs:double"/>
 <xs:element name="nom" type="xs:string" minOccurs="0"/>
 <xs:element name="pre" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="agregarLinea">
+<xs:sequence>
+<xs:element name="cod" type="xs:string" minOccurs="0"/>
+<xs:element name="nom" type="xs:string" minOccurs="0"/>
+<xs:element name="pre" type="xs:string" minOccurs="0"/>
+<xs:element name="can" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="agregarLineaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -96,6 +96,7 @@
 <xs:element name="num" type="xs:string" minOccurs="0"/>
 <xs:element name="fec" type="xs:string" minOccurs="0"/>
 <xs:element name="tot" type="xs:double"/>
+<xs:element name="dni" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 

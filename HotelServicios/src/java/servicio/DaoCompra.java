@@ -35,7 +35,7 @@ public class DaoCompra {
     
     public List<Compra> BuscarComprapordni(String dni) {
         
-        String sql="select * from Compra where dni='"+dni+"' ORDER BY FEC DESC FETCH FIRST 1 ROW ONLY";
+        String sql="select * from Compra where dni='"+dni+"' AND CAST(SUBSTR(fec, 7, 4) || '-' || SUBSTR(fec, 4, 2) || '-' || SUBSTR(fec, 1, 2) AS DATE) = CURRENT_DATE";
         List tabla = Acceso.listar(sql);
         List lis = new ArrayList();
         for (int i = 0; i < tabla.size(); i++) {

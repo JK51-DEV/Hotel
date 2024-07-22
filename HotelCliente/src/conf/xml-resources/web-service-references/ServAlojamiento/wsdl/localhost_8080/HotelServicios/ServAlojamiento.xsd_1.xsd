@@ -76,6 +76,16 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="registrarAlojamiento">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="registrarAlojamientoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="agregarAlojamiento">
 <xs:sequence>
 <xs:element name="codres" type="xs:string" minOccurs="0"/>
@@ -89,23 +99,11 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="registrarAlojamiento">
+<xs:complexType name="listarAlojamiento">
 <xs:sequence/>
 </xs:complexType>
 
-<xs:complexType name="registrarAlojamientoResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="buscarpordni">
-<xs:sequence>
-<xs:element name="dni" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="buscarpordniResponse">
+<xs:complexType name="listarAlojamientoResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:alojamiento" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
@@ -132,6 +130,7 @@
 <xs:element name="cli" type="tns:cliente" minOccurs="0"/>
 <xs:element name="codRes" type="xs:string" minOccurs="0"/>
 <xs:element name="dia" type="xs:int"/>
+<xs:element name="estado" type="xs:string" minOccurs="0"/>
 <xs:element name="fecCreacion" type="xs:string" minOccurs="0"/>
 <xs:element name="fecFin" type="xs:string" minOccurs="0"/>
 <xs:element name="fecInicio" type="xs:string" minOccurs="0"/>
@@ -156,11 +155,13 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="listarAlojamiento">
-<xs:sequence/>
+<xs:complexType name="buscarpordni">
+<xs:sequence>
+<xs:element name="dni" type="xs:string" minOccurs="0"/>
+</xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="listarAlojamientoResponse">
+<xs:complexType name="buscarpordniResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:alojamiento" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>

@@ -4,23 +4,17 @@
 <xsd:import namespace="http://servicio/" schemaLocation="http://localhost:8080/HotelServicios/ServAlojamiento?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="buscarpordni">
-<part name="parameters" element="tns:buscarpordni"/>
+<message name="registrarAlojamiento">
+<part name="parameters" element="tns:registrarAlojamiento"/>
 </message>
-<message name="buscarpordniResponse">
-<part name="parameters" element="tns:buscarpordniResponse"/>
+<message name="registrarAlojamientoResponse">
+<part name="parameters" element="tns:registrarAlojamientoResponse"/>
 </message>
-<message name="agregarAlojamiento">
-<part name="parameters" element="tns:agregarAlojamiento"/>
+<message name="eliminarResumenAloj">
+<part name="parameters" element="tns:eliminarResumenAloj"/>
 </message>
-<message name="agregarAlojamientoResponse">
-<part name="parameters" element="tns:agregarAlojamientoResponse"/>
-</message>
-<message name="listarAlojamiento">
-<part name="parameters" element="tns:listarAlojamiento"/>
-</message>
-<message name="listarAlojamientoResponse">
-<part name="parameters" element="tns:listarAlojamientoResponse"/>
+<message name="eliminarResumenAlojResponse">
+<part name="parameters" element="tns:eliminarResumenAlojResponse"/>
 </message>
 <message name="buscarAlojamientoLista">
 <part name="parameters" element="tns:buscarAlojamientoLista"/>
@@ -28,11 +22,29 @@
 <message name="buscarAlojamientoListaResponse">
 <part name="parameters" element="tns:buscarAlojamientoListaResponse"/>
 </message>
-<message name="registrarAlojamiento">
-<part name="parameters" element="tns:registrarAlojamiento"/>
+<message name="buscarAlojamientoRES">
+<part name="parameters" element="tns:buscarAlojamientoRES"/>
 </message>
-<message name="registrarAlojamientoResponse">
-<part name="parameters" element="tns:registrarAlojamientoResponse"/>
+<message name="buscarAlojamientoRESResponse">
+<part name="parameters" element="tns:buscarAlojamientoRESResponse"/>
+</message>
+<message name="agregarAlojamiento">
+<part name="parameters" element="tns:agregarAlojamiento"/>
+</message>
+<message name="agregarAlojamientoResponse">
+<part name="parameters" element="tns:agregarAlojamientoResponse"/>
+</message>
+<message name="codigoautomaticoaloj">
+<part name="parameters" element="tns:codigoautomaticoaloj"/>
+</message>
+<message name="codigoautomaticoalojResponse">
+<part name="parameters" element="tns:codigoautomaticoalojResponse"/>
+</message>
+<message name="listarAlojamiento">
+<part name="parameters" element="tns:listarAlojamiento"/>
+</message>
+<message name="listarAlojamientoResponse">
+<part name="parameters" element="tns:listarAlojamientoResponse"/>
 </message>
 <message name="buscarAlojamiento">
 <part name="parameters" element="tns:buscarAlojamiento"/>
@@ -46,50 +58,46 @@
 <message name="resumenAlojamientoResponse">
 <part name="parameters" element="tns:resumenAlojamientoResponse"/>
 </message>
-<message name="buscarAlojamientoRES">
-<part name="parameters" element="tns:buscarAlojamientoRES"/>
-</message>
-<message name="buscarAlojamientoRESResponse">
-<part name="parameters" element="tns:buscarAlojamientoRESResponse"/>
-</message>
-<message name="codigoautomaticoaloj">
-<part name="parameters" element="tns:codigoautomaticoaloj"/>
-</message>
-<message name="codigoautomaticoalojResponse">
-<part name="parameters" element="tns:codigoautomaticoalojResponse"/>
-</message>
 <message name="buscarAlojamientoREStotal">
 <part name="parameters" element="tns:buscarAlojamientoREStotal"/>
 </message>
 <message name="buscarAlojamientoREStotalResponse">
 <part name="parameters" element="tns:buscarAlojamientoREStotalResponse"/>
 </message>
-<message name="eliminarResumenAloj">
-<part name="parameters" element="tns:eliminarResumenAloj"/>
+<message name="buscarpordni">
+<part name="parameters" element="tns:buscarpordni"/>
 </message>
-<message name="eliminarResumenAlojResponse">
-<part name="parameters" element="tns:eliminarResumenAlojResponse"/>
+<message name="buscarpordniResponse">
+<part name="parameters" element="tns:buscarpordniResponse"/>
 </message>
 <portType name="ServAlojamiento">
-<operation name="buscarpordni">
-<input wsam:Action="http://servicio/ServAlojamiento/buscarpordniRequest" message="tns:buscarpordni"/>
-<output wsam:Action="http://servicio/ServAlojamiento/buscarpordniResponse" message="tns:buscarpordniResponse"/>
+<operation name="registrarAlojamiento">
+<input wsam:Action="http://servicio/ServAlojamiento/registrarAlojamientoRequest" message="tns:registrarAlojamiento"/>
+<output wsam:Action="http://servicio/ServAlojamiento/registrarAlojamientoResponse" message="tns:registrarAlojamientoResponse"/>
 </operation>
-<operation name="agregarAlojamiento">
-<input wsam:Action="http://servicio/ServAlojamiento/agregarAlojamientoRequest" message="tns:agregarAlojamiento"/>
-<output wsam:Action="http://servicio/ServAlojamiento/agregarAlojamientoResponse" message="tns:agregarAlojamientoResponse"/>
-</operation>
-<operation name="listarAlojamiento">
-<input wsam:Action="http://servicio/ServAlojamiento/listarAlojamientoRequest" message="tns:listarAlojamiento"/>
-<output wsam:Action="http://servicio/ServAlojamiento/listarAlojamientoResponse" message="tns:listarAlojamientoResponse"/>
+<operation name="eliminarResumenAloj">
+<input wsam:Action="http://servicio/ServAlojamiento/eliminarResumenAlojRequest" message="tns:eliminarResumenAloj"/>
+<output wsam:Action="http://servicio/ServAlojamiento/eliminarResumenAlojResponse" message="tns:eliminarResumenAlojResponse"/>
 </operation>
 <operation name="buscarAlojamientoLista">
 <input wsam:Action="http://servicio/ServAlojamiento/buscarAlojamientoListaRequest" message="tns:buscarAlojamientoLista"/>
 <output wsam:Action="http://servicio/ServAlojamiento/buscarAlojamientoListaResponse" message="tns:buscarAlojamientoListaResponse"/>
 </operation>
-<operation name="registrarAlojamiento">
-<input wsam:Action="http://servicio/ServAlojamiento/registrarAlojamientoRequest" message="tns:registrarAlojamiento"/>
-<output wsam:Action="http://servicio/ServAlojamiento/registrarAlojamientoResponse" message="tns:registrarAlojamientoResponse"/>
+<operation name="buscarAlojamientoRES">
+<input wsam:Action="http://servicio/ServAlojamiento/buscarAlojamientoRESRequest" message="tns:buscarAlojamientoRES"/>
+<output wsam:Action="http://servicio/ServAlojamiento/buscarAlojamientoRESResponse" message="tns:buscarAlojamientoRESResponse"/>
+</operation>
+<operation name="agregarAlojamiento">
+<input wsam:Action="http://servicio/ServAlojamiento/agregarAlojamientoRequest" message="tns:agregarAlojamiento"/>
+<output wsam:Action="http://servicio/ServAlojamiento/agregarAlojamientoResponse" message="tns:agregarAlojamientoResponse"/>
+</operation>
+<operation name="codigoautomaticoaloj">
+<input wsam:Action="http://servicio/ServAlojamiento/codigoautomaticoalojRequest" message="tns:codigoautomaticoaloj"/>
+<output wsam:Action="http://servicio/ServAlojamiento/codigoautomaticoalojResponse" message="tns:codigoautomaticoalojResponse"/>
+</operation>
+<operation name="listarAlojamiento">
+<input wsam:Action="http://servicio/ServAlojamiento/listarAlojamientoRequest" message="tns:listarAlojamiento"/>
+<output wsam:Action="http://servicio/ServAlojamiento/listarAlojamientoResponse" message="tns:listarAlojamientoResponse"/>
 </operation>
 <operation name="buscarAlojamiento">
 <input wsam:Action="http://servicio/ServAlojamiento/buscarAlojamientoRequest" message="tns:buscarAlojamiento"/>
@@ -99,26 +107,18 @@
 <input wsam:Action="http://servicio/ServAlojamiento/resumenAlojamientoRequest" message="tns:resumenAlojamiento"/>
 <output wsam:Action="http://servicio/ServAlojamiento/resumenAlojamientoResponse" message="tns:resumenAlojamientoResponse"/>
 </operation>
-<operation name="buscarAlojamientoRES">
-<input wsam:Action="http://servicio/ServAlojamiento/buscarAlojamientoRESRequest" message="tns:buscarAlojamientoRES"/>
-<output wsam:Action="http://servicio/ServAlojamiento/buscarAlojamientoRESResponse" message="tns:buscarAlojamientoRESResponse"/>
-</operation>
-<operation name="codigoautomaticoaloj">
-<input wsam:Action="http://servicio/ServAlojamiento/codigoautomaticoalojRequest" message="tns:codigoautomaticoaloj"/>
-<output wsam:Action="http://servicio/ServAlojamiento/codigoautomaticoalojResponse" message="tns:codigoautomaticoalojResponse"/>
-</operation>
 <operation name="buscarAlojamientoREStotal">
 <input wsam:Action="http://servicio/ServAlojamiento/buscarAlojamientoREStotalRequest" message="tns:buscarAlojamientoREStotal"/>
 <output wsam:Action="http://servicio/ServAlojamiento/buscarAlojamientoREStotalResponse" message="tns:buscarAlojamientoREStotalResponse"/>
 </operation>
-<operation name="eliminarResumenAloj">
-<input wsam:Action="http://servicio/ServAlojamiento/eliminarResumenAlojRequest" message="tns:eliminarResumenAloj"/>
-<output wsam:Action="http://servicio/ServAlojamiento/eliminarResumenAlojResponse" message="tns:eliminarResumenAlojResponse"/>
+<operation name="buscarpordni">
+<input wsam:Action="http://servicio/ServAlojamiento/buscarpordniRequest" message="tns:buscarpordni"/>
+<output wsam:Action="http://servicio/ServAlojamiento/buscarpordniResponse" message="tns:buscarpordniResponse"/>
 </operation>
 </portType>
 <binding name="ServAlojamientoPortBinding" type="tns:ServAlojamiento">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="buscarpordni">
+<operation name="registrarAlojamiento">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -127,16 +127,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="agregarAlojamiento">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="listarAlojamiento">
+<operation name="eliminarResumenAloj">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -154,7 +145,34 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="registrarAlojamiento">
+<operation name="buscarAlojamientoRES">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="agregarAlojamiento">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="codigoautomaticoaloj">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="listarAlojamiento">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -181,24 +199,6 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="buscarAlojamientoRES">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="codigoautomaticoaloj">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
 <operation name="buscarAlojamientoREStotal">
 <soap:operation soapAction=""/>
 <input>
@@ -208,7 +208,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="eliminarResumenAloj">
+<operation name="buscarpordni">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

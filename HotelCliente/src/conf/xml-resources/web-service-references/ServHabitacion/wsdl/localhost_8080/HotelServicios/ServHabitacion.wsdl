@@ -10,30 +10,30 @@
 <message name="registrarHabitacionResponse">
 <part name="parameters" element="tns:registrarHabitacionResponse"/>
 </message>
-<message name="buscarHabitacion">
-<part name="parameters" element="tns:buscarHabitacion"/>
-</message>
-<message name="buscarHabitacionResponse">
-<part name="parameters" element="tns:buscarHabitacionResponse"/>
-</message>
 <message name="listarHabitacion">
 <part name="parameters" element="tns:listarHabitacion"/>
 </message>
 <message name="listarHabitacionResponse">
 <part name="parameters" element="tns:listarHabitacionResponse"/>
 </message>
+<message name="buscarHabitacion">
+<part name="parameters" element="tns:buscarHabitacion"/>
+</message>
+<message name="buscarHabitacionResponse">
+<part name="parameters" element="tns:buscarHabitacionResponse"/>
+</message>
 <portType name="ServHabitacion">
 <operation name="registrarHabitacion">
 <input wsam:Action="http://servicio/ServHabitacion/registrarHabitacionRequest" message="tns:registrarHabitacion"/>
 <output wsam:Action="http://servicio/ServHabitacion/registrarHabitacionResponse" message="tns:registrarHabitacionResponse"/>
 </operation>
-<operation name="buscarHabitacion">
-<input wsam:Action="http://servicio/ServHabitacion/buscarHabitacionRequest" message="tns:buscarHabitacion"/>
-<output wsam:Action="http://servicio/ServHabitacion/buscarHabitacionResponse" message="tns:buscarHabitacionResponse"/>
-</operation>
 <operation name="listarHabitacion">
 <input wsam:Action="http://servicio/ServHabitacion/listarHabitacionRequest" message="tns:listarHabitacion"/>
 <output wsam:Action="http://servicio/ServHabitacion/listarHabitacionResponse" message="tns:listarHabitacionResponse"/>
+</operation>
+<operation name="buscarHabitacion">
+<input wsam:Action="http://servicio/ServHabitacion/buscarHabitacionRequest" message="tns:buscarHabitacion"/>
+<output wsam:Action="http://servicio/ServHabitacion/buscarHabitacionResponse" message="tns:buscarHabitacionResponse"/>
 </operation>
 </portType>
 <binding name="ServHabitacionPortBinding" type="tns:ServHabitacion">
@@ -47,7 +47,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="buscarHabitacion">
+<operation name="listarHabitacion">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -56,7 +56,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="listarHabitacion">
+<operation name="buscarHabitacion">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
