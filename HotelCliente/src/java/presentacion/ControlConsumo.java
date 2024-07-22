@@ -159,7 +159,13 @@ public class ControlConsumo extends HttpServlet {
             } else {
                 pres.setMsg("Error al grabar la venta en la base de datos: " + msgGrabacion);
             }
-            response.sendRedirect("Venta.jsp");
+
+            // Limpiar sesión y presentador
+            request.getSession().invalidate(); // Limpiar toda la sesión
+            pres = new Presentador(); // Crear un nuevo objeto Presentador
+            request.getSession().setAttribute("pres", pres); // Establecer el nuevo Presentador en la sesión
+
+            response.sendRedirect("Cesta.jsp");
         }
     }
 
