@@ -13,6 +13,7 @@ public class ServReserva {
     
     @WebMethod(operationName = "listarReservas")
     public List<Reserva> listarReservas() {
+        DaoReserva.eliminarReservasAnuladasExpiradas();
         return DaoReserva.listarReservas();
     }
     
@@ -126,6 +127,7 @@ public class ServReserva {
         DaoReserva dis = new DaoReserva();
         return dis.listar_avanzado_reserva(dni_cliente);
     }
+
 
 
     }

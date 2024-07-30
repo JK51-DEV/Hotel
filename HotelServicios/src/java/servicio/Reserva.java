@@ -18,6 +18,7 @@ public class Reserva {
     private String fecCreacion;
     private Double imp;
     private int dia;
+    private String estado;
 
     public Reserva() {
     }
@@ -30,6 +31,7 @@ public class Reserva {
         this.cli = cli;
         this.fecInicio = fecInicio;
         this.fecFin = fecFin;
+        this.estado = "A";
     }
 
     public String getCodRes() {
@@ -137,7 +139,13 @@ public class Reserva {
     public void setDia(int dia) {
         this.dia = dia;
     }
-    
-    
 
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+  
 }

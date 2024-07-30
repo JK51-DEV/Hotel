@@ -3,6 +3,9 @@ package servicio;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import servicio.Habitacion;
 import java.util.ArrayList;
 import java.util.List;
@@ -109,7 +112,7 @@ public class DaoReserva {
         // Construir la consulta SQL para insertar la reserva en la base de datos
         String sql = "insert into reserva values ('" + r.Codigoautomatico() + "','" + r.getCli().getDni() + "',"
                 + "'" + r.getHab().getCod() + "','" + r.Hoy() + "','" + r.getFecInicio() + "',"
-                + "'" + r.getFecFin() + "'," + r.Importe() + ")";
+                + "'" + r.getFecFin() + "'," + r.Importe() + ",'" + r.getEstado() + "')";
         return Acceso.ejecutar(sql);
     }
 
@@ -129,4 +132,54 @@ public class DaoReserva {
         return Acceso.ejecutar(sql);
     }
 
+    
+    public static void eliminarReservasAnuladasExpiradas() {
+         List<Reserva> reservasAnuladas = listarReservasAnuladas();
+    
+    for (Reserva reserva : reservasAnuladas) {
+        String fecInicio = reserva.getFecInicio();
+        
+        // Obtener la fecha actual y calcular la diferencia en horas
+        LocalDateTime ahora = LocalDateTime.now();
+        LocalDateTime fechaInicio = LocalDate.parse(fecInicio).atStartOfDay();
+        
+        // Calcular la diferencia de tiempo en horas desde la fecha de inicio
+        long horasDesdeInicio = ChronoUnit.HOURS.between(fechaInicio, ahora);
+        
+        if (horasDesdeInicio >= 20) { // Verifica si han pasado al menos 20 horas desde la fecha de inicio
+            String sql = "delete from reserva where cod_res = '" + reserva.getCodRes() + "'";
+            Acceso.ejecutar(sql);
+
+            // Cambiar el estado de la habitación a 'D' (Disponible)
+            String cambiarEstadoHabitacion = "update habitacion set ESTADO = 'D' where COD = '" + reserva.getHab().getCod() + "'";
+            Acceso.ejecutar(cambiarEstadoHabitacion);
+        }
+        }
+    }
+    
+    private static List<Reserva> listarReservasAnuladas() {
+        String sql = "select * from reserva where estado = 'A'";
+        List tabla = Acceso.listar(sql);
+        List<Reserva> lis = new ArrayList<>();
+        
+        for (int i = 0; i < tabla.size(); i++) {
+            Object[] f = (Object[]) tabla.get(i);
+            Reserva res = new Reserva();
+            Cliente cli = DaoCliente.buscar(f[1].toString());
+            Habitacion hab = DaoHabitacion.buscarHabitacionCOD(f[2].toString());
+            res.setCodRes(f[0].toString());
+            res.setCli(cli);
+            res.setHab(hab);
+            res.setFecCreacion(f[3].toString()); // Asignar la fecha de creación desde la entidad reserva
+            res.setFecInicio(f[4].toString());
+            res.setFecFin(f[5].toString());
+            res.setImp(Double.parseDouble(f[6].toString())); // El cálculo se hace desde la entidad reserva
+            res.setEstado(f[7].toString()); // Asignar el estado desde la entidad reserva
+            lis.add(res);
+        }
+        
+        return lis;
+    }
 }
+    
+
